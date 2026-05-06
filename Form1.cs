@@ -9,7 +9,6 @@ namespace d.labdemo
 {
     public partial class d_lab : Form
     {
-        bool sidebarexpand;
         private string Catagory;
 
         public string? Role { get; private set; }
@@ -24,15 +23,6 @@ namespace d.labdemo
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            if (sidebarexpand)
-            {
-                sidebar.Width = MaximumSize.Width;
-
-            }
         }
 
         private void logibtn_Click(object sender, EventArgs e)
@@ -96,12 +86,6 @@ namespace d.labdemo
         {
 
         }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void member_shelfbtn_Click(object sender, EventArgs e)
         {
             /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
