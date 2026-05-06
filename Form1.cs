@@ -7,8 +7,6 @@ namespace d.labdemo
 {
     public partial class d_lab : Form
     {
-        bool sidebarexpand;
-
         public string? Role { get; private set; }
 
         public d_lab()

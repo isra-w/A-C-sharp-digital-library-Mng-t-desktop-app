@@ -12,9 +12,6 @@ namespace d.labdemo.DB
     {
         static string connectionString = @"Data Source=HP-ELITE;Initial Catalog=d_lab;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
         public static SqlConnection checkConnection = new SqlConnection(connectionString);
-        private static string? query;
-
-
         public static void intiate()
         {
             try
