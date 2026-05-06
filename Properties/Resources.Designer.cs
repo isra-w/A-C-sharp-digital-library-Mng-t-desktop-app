@@ -59,5 +59,25 @@ namespace d_labdemo.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bookshelf_Wallpaper_Desktop_HD {
+            get {
+                object obj = ResourceManager.GetObject("Bookshelf Wallpaper Desktop HD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bookshelf_Wallpaper_Desktop_HD__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Bookshelf Wallpaper Desktop HD (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

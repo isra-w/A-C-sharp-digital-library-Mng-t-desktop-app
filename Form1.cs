@@ -1,5 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
+using System.Runtime.Intrinsics.X86;
 
 
 
@@ -7,6 +8,9 @@ namespace d.labdemo
 {
     public partial class d_lab : Form
     {
+        bool sidebarexpand;
+        private string Catagory;
+
         public string? Role { get; private set; }
 
         public d_lab()
@@ -32,7 +36,7 @@ namespace d.labdemo
         {
 
 
-            string query = $"SELECT Role FROM Admins WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
+            string query = $"SELECT Role FROM Admins UNION SELECT Role FROM Member WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
             //string query2 = string.Format("SELECT Role FROM Admins WHERE Username = '{0}' AND Password = '{1}';", namebx.Text,passbx.Text);
             DBConnection.intiate();
             SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
@@ -45,13 +49,13 @@ namespace d.labdemo
             else if (Role == "Admin")
             {
                 loginpnl.Visible = false;
-                userpnl.Visible = false;
+                memberpnl.Visible = false;
                 adminpnl.Visible = true;
             }
-            else if (Role == "user")
+            else if (Role == "member")
             {
                 loginpnl.Visible = false;
-                userpnl.Visible = true;
+                memberpnl.Visible = true;
                 adminpnl.Visible = false;
             }
             else if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
@@ -67,5 +71,54 @@ namespace d.labdemo
 
         }
 
+        private void loginpnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void member_shelfbtn_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
+            DBConnection.intiate();
+            SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+            var Role = cmd.ExecuteScalar().ToString().Trim();
+            if (Role == null)
+            {
+                MessageBox.Show($"Record not found", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else if (Catagory == "Programming")
+            {
+                Programmingtab.Visible = true;
+                Noveltab.Visible = false;
+                Medicinetab.Visible = false;
+            }
+            else if (Catagory == "Medicine")
+            {
+                Programmingtab.Visible = false;
+                Noveltab.Visible = false;
+                Medicinetab.Visible = true;
+            }
+            else if (Catagory == "novel")
+            {
+                Programmingtab.Visible = false;
+                Noveltab.Visible = true;
+                Medicinetab.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            }
     }
 }
