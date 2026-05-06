@@ -61,6 +61,7 @@
             passlbl = new Label();
             usernamelbl = new Label();
             welcome_labele = new Label();
+            librarianpnl = new Panel();
             adminpnl.SuspendLayout();
             sidebar.SuspendLayout();
             Titlepnl.SuspendLayout();
@@ -508,10 +509,11 @@
             // namebx
             // 
             namebx.BackColor = Color.LightYellow;
+            namebx.BorderStyle = BorderStyle.None;
             namebx.Location = new Point(301, 210);
             namebx.Name = "namebx";
             namebx.PlaceholderText = "User name or email";
-            namebx.Size = new Size(300, 29);
+            namebx.Size = new Size(300, 22);
             namebx.TabIndex = 9;
             // 
             // passlbl
@@ -552,6 +554,15 @@
             welcome_labele.TextAlign = ContentAlignment.MiddleCenter;
             welcome_labele.UseCompatibleTextRendering = true;
             // 
+            // librarianpnl
+            // 
+            librarianpnl.BackColor = SystemColors.ControlDarkDark;
+            librarianpnl.Dock = DockStyle.Fill;
+            librarianpnl.Location = new Point(0, 0);
+            librarianpnl.Name = "librarianpnl";
+            librarianpnl.Size = new Size(841, 589);
+            librarianpnl.TabIndex = 13;
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -560,6 +571,7 @@
             Controls.Add(loginpnl);
             Controls.Add(memberpnl);
             Controls.Add(adminpnl);
+            Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(859, 637);
             Name = "d_lab";
@@ -612,5 +624,6 @@
         private TabPage Programmingtab;
         private TabPage Medicinetab;
         private TabPage Noveltab;
+        private Panel librarianpnl;
     }
 }

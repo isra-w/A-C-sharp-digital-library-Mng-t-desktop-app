@@ -36,8 +36,9 @@ namespace d.labdemo
         {
 
 
-            string query = $"SELECT Role FROM Admins UNION SELECT Role FROM Member WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
-            //string query2 = string.Format("SELECT Role FROM Admins WHERE Username = '{0}' AND Password = '{1}';", namebx.Text,passbx.Text);
+            string query = $"SELECT Role FROM Admins UNION SELECT Role FROM Librarian" +
+                $" UNION SELECT Role FROM Member WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
+
             DBConnection.intiate();
             SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
             var Role = cmd.ExecuteScalar().ToString().Trim();
@@ -51,12 +52,21 @@ namespace d.labdemo
                 loginpnl.Visible = false;
                 memberpnl.Visible = false;
                 adminpnl.Visible = true;
+                librarianpnl.Visible = false;
             }
             else if (Role == "member")
             {
                 loginpnl.Visible = false;
                 memberpnl.Visible = true;
                 adminpnl.Visible = false;
+                librarianpnl.Visible = false;
+            }
+            else if (Role == "librarian")
+            {
+                loginpnl.Visible = false;
+                memberpnl.Visible = false;
+                adminpnl.Visible = false;
+                librarianpnl.Visible = true;
             }
             else if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
             {
@@ -88,7 +98,7 @@ namespace d.labdemo
 
         private void member_shelfbtn_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
+           /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
             DBConnection.intiate();
             SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
             var Role = cmd.ExecuteScalar().ToString().Trim();
@@ -118,7 +128,7 @@ namespace d.labdemo
             else
             {
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
+            }*/
             }
     }
 }
