@@ -62,6 +62,15 @@
             usernamelbl = new Label();
             welcome_labele = new Label();
             librarianpnl = new Panel();
+            signuppnl = new Panel();
+            textBox3 = new TextBox();
+            linkLabel3 = new LinkLabel();
+            button3 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             adminpnl.SuspendLayout();
             sidebar.SuspendLayout();
             Titlepnl.SuspendLayout();
@@ -70,6 +79,7 @@
             member_sidebar.SuspendLayout();
             panel1.SuspendLayout();
             loginpnl.SuspendLayout();
+            signuppnl.SuspendLayout();
             SuspendLayout();
             // 
             // adminpnl
@@ -483,6 +493,7 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Don' have an account?\r\nSIGN IP";
             linkLabel1.TextAlign = ContentAlignment.TopCenter;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // logibtn
             // 
@@ -563,11 +574,124 @@
             librarianpnl.Size = new Size(841, 589);
             librarianpnl.TabIndex = 13;
             // 
+            // signuppnl
+            // 
+            signuppnl.BackgroundImage = d_labdemo.Properties.Resources.Bookshelf_Wallpaper_Desktop_HD__1_;
+            signuppnl.BackgroundImageLayout = ImageLayout.Stretch;
+            signuppnl.Controls.Add(textBox3);
+            signuppnl.Controls.Add(linkLabel3);
+            signuppnl.Controls.Add(button3);
+            signuppnl.Controls.Add(textBox1);
+            signuppnl.Controls.Add(textBox2);
+            signuppnl.Controls.Add(label1);
+            signuppnl.Controls.Add(label2);
+            signuppnl.Controls.Add(label3);
+            signuppnl.Dock = DockStyle.Fill;
+            signuppnl.Location = new Point(0, 0);
+            signuppnl.Name = "signuppnl";
+            signuppnl.Size = new Size(841, 589);
+            signuppnl.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.LightYellow;
+            textBox3.Location = new Point(310, 268);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Password";
+            textBox3.Size = new Size(300, 29);
+            textBox3.TabIndex = 20;
+            textBox3.UseSystemPasswordChar = true;
+            // 
+            // linkLabel3
+            // 
+            linkLabel3.AutoSize = true;
+            linkLabel3.BackColor = Color.Transparent;
+            linkLabel3.LinkColor = Color.LightYellow;
+            linkLabel3.Location = new Point(349, 474);
+            linkLabel3.Name = "linkLabel3";
+            linkLabel3.Size = new Size(166, 42);
+            linkLabel3.TabIndex = 19;
+            linkLabel3.TabStop = true;
+            linkLabel3.Text = "Don' have an account?\r\nSIGN IP";
+            linkLabel3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.LightYellow;
+            button3.Font = new Font("Segoe UI", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(367, 380);
+            button3.Name = "button3";
+            button3.Size = new Size(168, 55);
+            button3.TabIndex = 18;
+            button3.Text = "LOGIN";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.LightYellow;
+            textBox1.Location = new Point(310, 210);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Password";
+            textBox1.Size = new Size(300, 29);
+            textBox1.TabIndex = 17;
+            textBox1.UseSystemPasswordChar = true;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.LightYellow;
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Location = new Point(310, 157);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "User name or email";
+            textBox2.Size = new Size(300, 22);
+            textBox2.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
+            label1.ForeColor = Color.LightYellow;
+            label1.Location = new Point(154, 210);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 23);
+            label1.TabIndex = 15;
+            label1.Text = "Password";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
+            label2.ForeColor = Color.LightYellow;
+            label2.Location = new Point(154, 156);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 23);
+            label2.TabIndex = 14;
+            label2.Text = "User Name";
+            label2.Click += label2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Ravie", 24.192F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.LightYellow;
+            label3.Location = new Point(242, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(337, 65);
+            label3.TabIndex = 13;
+            label3.Text = "WELLCOME";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.UseCompatibleTextRendering = true;
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(841, 589);
+            Controls.Add(signuppnl);
             Controls.Add(loginpnl);
             Controls.Add(memberpnl);
             Controls.Add(adminpnl);
@@ -587,6 +711,8 @@
             panel1.PerformLayout();
             loginpnl.ResumeLayout(false);
             loginpnl.PerformLayout();
+            signuppnl.ResumeLayout(false);
+            signuppnl.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -625,5 +751,14 @@
         private TabPage Medicinetab;
         private TabPage Noveltab;
         private Panel librarianpnl;
+        private Panel signuppnl;
+        private LinkLabel linkLabel3;
+        private Button button3;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private TextBox textBox3;
     }
 }

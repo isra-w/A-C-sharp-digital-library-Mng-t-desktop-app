@@ -1,5 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
+using System.Drawing.Printing;
 using System.Runtime.Intrinsics.X86;
 
 
@@ -12,6 +13,8 @@ namespace d.labdemo
         private string Catagory;
 
         public string? Role { get; private set; }
+        public object Last_name { get; private set; }
+        public object First_name { get; private set; }
 
         public d_lab()
         {
@@ -53,6 +56,7 @@ namespace d.labdemo
                 memberpnl.Visible = false;
                 adminpnl.Visible = true;
                 librarianpnl.Visible = false;
+                signuppnl.Visible = false;
             }
             else if (Role == "member")
             {
@@ -60,6 +64,7 @@ namespace d.labdemo
                 memberpnl.Visible = true;
                 adminpnl.Visible = false;
                 librarianpnl.Visible = false;
+                signuppnl.Visible = false;
             }
             else if (Role == "librarian")
             {
@@ -67,6 +72,7 @@ namespace d.labdemo
                 memberpnl.Visible = false;
                 adminpnl.Visible = false;
                 librarianpnl.Visible = true;
+                signuppnl.Visible = false;
             }
             else if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
             {
@@ -98,37 +104,62 @@ namespace d.labdemo
 
         private void member_shelfbtn_Click(object sender, EventArgs e)
         {
-           /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
-            DBConnection.intiate();
-            SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
-            var Role = cmd.ExecuteScalar().ToString().Trim();
-            if (Role == null)
-            {
-                MessageBox.Show($"Record not found", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
+             DBConnection.intiate();
+             SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+             var Role = cmd.ExecuteScalar().ToString().Trim();
+             if (Role == null)
+             {
+                 MessageBox.Show($"Record not found", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
 
-            else if (Catagory == "Programming")
-            {
-                Programmingtab.Visible = true;
-                Noveltab.Visible = false;
-                Medicinetab.Visible = false;
-            }
-            else if (Catagory == "Medicine")
-            {
-                Programmingtab.Visible = false;
-                Noveltab.Visible = false;
-                Medicinetab.Visible = true;
-            }
-            else if (Catagory == "novel")
-            {
-                Programmingtab.Visible = false;
-                Noveltab.Visible = true;
-                Medicinetab.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }*/
-            }
+             else if (Catagory == "Programming")
+             {
+                 Programmingtab.Visible = true;
+                 Noveltab.Visible = false;
+                 Medicinetab.Visible = false;
+             }
+             else if (Catagory == "Medicine")
+             {
+                 Programmingtab.Visible = false;
+                 Noveltab.Visible = false;
+                 Medicinetab.Visible = true;
+             }
+             else if (Catagory == "novel")
+             {
+                 Programmingtab.Visible = false;
+                 Noveltab.Visible = true;
+                 Medicinetab.Visible = false;
+             }
+             else
+             {
+                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+             }*/
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            loginpnl.Visible = false;
+            memberpnl.Visible = false;
+            adminpnl.Visible = false;
+            librarianpnl.Visible = false;
+            signuppnl.Visible = true;
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //DBConnection.Initialte();
+            string userName = namebx.Text;
+            string password = passbx.Text;
+
+            string query = $@"INSERT INTO Members(Memberid,First_name,Last_name, UserName, Password) VALUES('{1}','{First_name}','{Last_name}','{userName}','{password}') ";
+            DBConnection.ExecuteNonQuery(query);
+        }
     }
 }

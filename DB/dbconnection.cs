@@ -24,5 +24,10 @@ namespace d.labdemo.DB
             }
 
         }
+
+        internal static void ExecuteNonQuery(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
