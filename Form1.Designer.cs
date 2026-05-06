@@ -40,16 +40,16 @@
             menubtn = new Button();
             profilelnk = new LinkLabel();
             memberpnl = new Panel();
+            member_sidebar = new Panel();
+            Member_study_assistbtn = new Button();
+            member_favoritebtn = new Button();
+            member_shelfbtn = new Button();
+            member_homebtn = new Button();
+            member_settingbtn = new Button();
             tabControl1 = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
             Noveltab = new TabPage();
-            member_sidebar = new Panel();
-            Member_study_assistbtn = new Button();
-            button4 = new Button();
-            member_shelfbtn = new Button();
-            member_homebtn = new Button();
-            member_settingbtn = new Button();
             panel1 = new Panel();
             button1 = new Button();
             linkLabel2 = new LinkLabel();
@@ -63,20 +63,23 @@
             welcome_labele = new Label();
             librarianpnl = new Panel();
             signuppnl = new Panel();
-            textBox3 = new TextBox();
-            linkLabel3 = new LinkLabel();
-            button3 = new Button();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
+            signusername = new Label();
+            signpass = new Label();
+            signpassbx = new TextBox();
+            linkLabel3 = new LinkLabel();
+            signupbtn = new Button();
+            signlnamebx = new TextBox();
+            signnfamebx = new TextBox();
+            signlname = new Label();
+            signfname = new Label();
             label3 = new Label();
             adminpnl.SuspendLayout();
             sidebar.SuspendLayout();
             Titlepnl.SuspendLayout();
             memberpnl.SuspendLayout();
-            tabControl1.SuspendLayout();
             member_sidebar.SuspendLayout();
+            tabControl1.SuspendLayout();
             panel1.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -252,8 +255,8 @@
             // memberpnl
             // 
             memberpnl.BackColor = Color.FromArgb(188, 193, 199);
-            memberpnl.Controls.Add(tabControl1);
             memberpnl.Controls.Add(member_sidebar);
+            memberpnl.Controls.Add(tabControl1);
             memberpnl.Controls.Add(panel1);
             memberpnl.Dock = DockStyle.Fill;
             memberpnl.Location = new Point(0, 0);
@@ -261,56 +264,12 @@
             memberpnl.Size = new Size(841, 589);
             memberpnl.TabIndex = 7;
             // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(Programmingtab);
-            tabControl1.Controls.Add(Medicinetab);
-            tabControl1.Controls.Add(Noveltab);
-            tabControl1.Location = new Point(172, 69);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(647, 508);
-            tabControl1.TabIndex = 4;
-            // 
-            // Programmingtab
-            // 
-            Programmingtab.AccessibleName = "";
-            Programmingtab.AllowDrop = true;
-            Programmingtab.BackColor = SystemColors.ActiveBorder;
-            Programmingtab.Cursor = Cursors.Hand;
-            Programmingtab.Font = new Font("Segoe UI Semibold", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Programmingtab.Location = new Point(4, 30);
-            Programmingtab.Name = "Programmingtab";
-            Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(639, 474);
-            Programmingtab.TabIndex = 0;
-            Programmingtab.Text = "Programming";
-            // 
-            // Medicinetab
-            // 
-            Medicinetab.BackColor = SystemColors.ActiveBorder;
-            Medicinetab.Location = new Point(4, 30);
-            Medicinetab.Name = "Medicinetab";
-            Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(639, 474);
-            Medicinetab.TabIndex = 1;
-            Medicinetab.Text = "Medicine";
-            // 
-            // Noveltab
-            // 
-            Noveltab.Location = new Point(4, 30);
-            Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(639, 474);
-            Noveltab.TabIndex = 2;
-            Noveltab.Text = "Novel tab";
-            Noveltab.UseVisualStyleBackColor = true;
-            // 
             // member_sidebar
             // 
             member_sidebar.BackColor = Color.FromArgb(35, 40, 45);
             member_sidebar.BorderStyle = BorderStyle.Fixed3D;
             member_sidebar.Controls.Add(Member_study_assistbtn);
-            member_sidebar.Controls.Add(button4);
+            member_sidebar.Controls.Add(member_favoritebtn);
             member_sidebar.Controls.Add(member_shelfbtn);
             member_sidebar.Controls.Add(member_homebtn);
             member_sidebar.Controls.Add(member_settingbtn);
@@ -340,24 +299,24 @@
             Member_study_assistbtn.Text = "🏠︎ study";
             Member_study_assistbtn.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // member_favoritebtn
             // 
-            button4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button4.BackColor = Color.FromArgb(30, 40, 45);
-            button4.Cursor = Cursors.Hand;
-            button4.Dock = DockStyle.Top;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.CheckedBackColor = Color.White;
-            button4.FlatAppearance.MouseOverBackColor = Color.Black;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.LightYellow;
-            button4.Location = new Point(0, 88);
-            button4.Name = "button4";
-            button4.Size = new Size(162, 44);
-            button4.TabIndex = 7;
-            button4.Text = "❤️Favorites";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            member_favoritebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            member_favoritebtn.BackColor = Color.FromArgb(30, 40, 45);
+            member_favoritebtn.Cursor = Cursors.Hand;
+            member_favoritebtn.Dock = DockStyle.Top;
+            member_favoritebtn.FlatAppearance.BorderSize = 0;
+            member_favoritebtn.FlatAppearance.CheckedBackColor = Color.White;
+            member_favoritebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            member_favoritebtn.FlatStyle = FlatStyle.Flat;
+            member_favoritebtn.ForeColor = Color.LightYellow;
+            member_favoritebtn.Location = new Point(0, 88);
+            member_favoritebtn.Name = "member_favoritebtn";
+            member_favoritebtn.Size = new Size(162, 44);
+            member_favoritebtn.TabIndex = 7;
+            member_favoritebtn.Text = "❤️Favorites";
+            member_favoritebtn.UseVisualStyleBackColor = false;
+            member_favoritebtn.Click += member_favoritebtn_Click;
             // 
             // member_shelfbtn
             // 
@@ -415,6 +374,50 @@
             member_settingbtn.TabIndex = 5;
             member_settingbtn.Text = "⚙️ Setting";
             member_settingbtn.UseVisualStyleBackColor = false;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(Programmingtab);
+            tabControl1.Controls.Add(Medicinetab);
+            tabControl1.Controls.Add(Noveltab);
+            tabControl1.Location = new Point(172, 69);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(647, 508);
+            tabControl1.TabIndex = 4;
+            // 
+            // Programmingtab
+            // 
+            Programmingtab.AccessibleName = "";
+            Programmingtab.AllowDrop = true;
+            Programmingtab.BackColor = SystemColors.ActiveBorder;
+            Programmingtab.Cursor = Cursors.Hand;
+            Programmingtab.Font = new Font("Segoe UI Semibold", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Programmingtab.Location = new Point(4, 30);
+            Programmingtab.Name = "Programmingtab";
+            Programmingtab.Padding = new Padding(3);
+            Programmingtab.Size = new Size(639, 474);
+            Programmingtab.TabIndex = 0;
+            Programmingtab.Text = "Programming";
+            // 
+            // Medicinetab
+            // 
+            Medicinetab.BackColor = SystemColors.ActiveBorder;
+            Medicinetab.Location = new Point(4, 30);
+            Medicinetab.Name = "Medicinetab";
+            Medicinetab.Padding = new Padding(3);
+            Medicinetab.Size = new Size(639, 474);
+            Medicinetab.TabIndex = 1;
+            Medicinetab.Text = "Medicine";
+            // 
+            // Noveltab
+            // 
+            Noveltab.Location = new Point(4, 30);
+            Noveltab.Name = "Noveltab";
+            Noveltab.Size = new Size(639, 474);
+            Noveltab.TabIndex = 2;
+            Noveltab.Text = "Novel tab";
+            Noveltab.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -578,13 +581,16 @@
             // 
             signuppnl.BackgroundImage = d_labdemo.Properties.Resources.Bookshelf_Wallpaper_Desktop_HD__1_;
             signuppnl.BackgroundImageLayout = ImageLayout.Stretch;
-            signuppnl.Controls.Add(textBox3);
-            signuppnl.Controls.Add(linkLabel3);
-            signuppnl.Controls.Add(button3);
             signuppnl.Controls.Add(textBox1);
-            signuppnl.Controls.Add(textBox2);
-            signuppnl.Controls.Add(label1);
-            signuppnl.Controls.Add(label2);
+            signuppnl.Controls.Add(signusername);
+            signuppnl.Controls.Add(signpass);
+            signuppnl.Controls.Add(signpassbx);
+            signuppnl.Controls.Add(linkLabel3);
+            signuppnl.Controls.Add(signupbtn);
+            signuppnl.Controls.Add(signlnamebx);
+            signuppnl.Controls.Add(signnfamebx);
+            signuppnl.Controls.Add(signlname);
+            signuppnl.Controls.Add(signfname);
             signuppnl.Controls.Add(label3);
             signuppnl.Dock = DockStyle.Fill;
             signuppnl.Location = new Point(0, 0);
@@ -592,15 +598,48 @@
             signuppnl.Size = new Size(841, 589);
             signuppnl.TabIndex = 13;
             // 
-            // textBox3
+            // textBox1
             // 
-            textBox3.BackColor = Color.LightYellow;
-            textBox3.Location = new Point(310, 268);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Password";
-            textBox3.Size = new Size(300, 29);
-            textBox3.TabIndex = 20;
-            textBox3.UseSystemPasswordChar = true;
+            textBox1.BackColor = Color.LightYellow;
+            textBox1.Location = new Point(310, 321);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Password";
+            textBox1.Size = new Size(300, 29);
+            textBox1.TabIndex = 23;
+            textBox1.UseSystemPasswordChar = true;
+            // 
+            // signusername
+            // 
+            signusername.AutoSize = true;
+            signusername.BackColor = Color.Transparent;
+            signusername.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
+            signusername.ForeColor = Color.LightYellow;
+            signusername.Location = new Point(152, 268);
+            signusername.Name = "signusername";
+            signusername.Size = new Size(91, 23);
+            signusername.TabIndex = 22;
+            signusername.Text = "User name";
+            // 
+            // signpass
+            // 
+            signpass.AutoSize = true;
+            signpass.BackColor = Color.Transparent;
+            signpass.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
+            signpass.ForeColor = Color.LightYellow;
+            signpass.Location = new Point(154, 327);
+            signpass.Name = "signpass";
+            signpass.Size = new Size(85, 23);
+            signpass.TabIndex = 21;
+            signpass.Text = "password";
+            // 
+            // signpassbx
+            // 
+            signpassbx.BackColor = Color.LightYellow;
+            signpassbx.Location = new Point(310, 268);
+            signpassbx.Name = "signpassbx";
+            signpassbx.PlaceholderText = "Username";
+            signpassbx.Size = new Size(300, 29);
+            signpassbx.TabIndex = 20;
             // 
             // linkLabel3
             // 
@@ -615,62 +654,61 @@
             linkLabel3.Text = "Don' have an account?\r\nSIGN IP";
             linkLabel3.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button3
+            // signupbtn
             // 
-            button3.BackColor = Color.LightYellow;
-            button3.Font = new Font("Segoe UI", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(367, 380);
-            button3.Name = "button3";
-            button3.Size = new Size(168, 55);
-            button3.TabIndex = 18;
-            button3.Text = "LOGIN";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            signupbtn.BackColor = Color.LightYellow;
+            signupbtn.Font = new Font("Segoe UI", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            signupbtn.Location = new Point(347, 384);
+            signupbtn.Name = "signupbtn";
+            signupbtn.Size = new Size(168, 55);
+            signupbtn.TabIndex = 18;
+            signupbtn.Text = "SIGN UP";
+            signupbtn.UseVisualStyleBackColor = false;
+            signupbtn.Click += signupbtn_Click;
             // 
-            // textBox1
+            // signlnamebx
             // 
-            textBox1.BackColor = Color.LightYellow;
-            textBox1.Location = new Point(310, 210);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Password";
-            textBox1.Size = new Size(300, 29);
-            textBox1.TabIndex = 17;
-            textBox1.UseSystemPasswordChar = true;
+            signlnamebx.BackColor = Color.LightYellow;
+            signlnamebx.Location = new Point(310, 210);
+            signlnamebx.Name = "signlnamebx";
+            signlnamebx.PlaceholderText = "Last name";
+            signlnamebx.Size = new Size(300, 29);
+            signlnamebx.TabIndex = 17;
             // 
-            // textBox2
+            // signnfamebx
             // 
-            textBox2.BackColor = Color.LightYellow;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(310, 157);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "User name or email";
-            textBox2.Size = new Size(300, 22);
-            textBox2.TabIndex = 16;
+            signnfamebx.BackColor = Color.LightYellow;
+            signnfamebx.BorderStyle = BorderStyle.None;
+            signnfamebx.Location = new Point(310, 157);
+            signnfamebx.Name = "signnfamebx";
+            signnfamebx.PlaceholderText = "Enter your name";
+            signnfamebx.Size = new Size(300, 22);
+            signnfamebx.TabIndex = 16;
             // 
-            // label1
+            // signlname
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
-            label1.ForeColor = Color.LightYellow;
-            label1.Location = new Point(154, 210);
-            label1.Name = "label1";
-            label1.Size = new Size(85, 23);
-            label1.TabIndex = 15;
-            label1.Text = "Password";
+            signlname.AutoSize = true;
+            signlname.BackColor = Color.Transparent;
+            signlname.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
+            signlname.ForeColor = Color.LightYellow;
+            signlname.Location = new Point(154, 210);
+            signlname.Name = "signlname";
+            signlname.Size = new Size(89, 23);
+            signlname.TabIndex = 15;
+            signlname.Text = "Last name";
             // 
-            // label2
+            // signfname
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
-            label2.ForeColor = Color.LightYellow;
-            label2.Location = new Point(154, 156);
-            label2.Name = "label2";
-            label2.Size = new Size(92, 23);
-            label2.TabIndex = 14;
-            label2.Text = "User Name";
-            label2.Click += label2_Click;
+            signfname.AutoSize = true;
+            signfname.BackColor = Color.Transparent;
+            signfname.Font = new Font("Arial Narrow", 10.9439993F, FontStyle.Bold);
+            signfname.ForeColor = Color.LightYellow;
+            signfname.Location = new Point(155, 151);
+            signfname.Name = "signfname";
+            signfname.Size = new Size(91, 23);
+            signfname.TabIndex = 14;
+            signfname.Text = "First Name";
+            signfname.Click += label2_Click;
             // 
             // label3
             // 
@@ -692,8 +730,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(841, 589);
             Controls.Add(signuppnl);
-            Controls.Add(loginpnl);
             Controls.Add(memberpnl);
+            Controls.Add(loginpnl);
             Controls.Add(adminpnl);
             Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -705,8 +743,8 @@
             Titlepnl.ResumeLayout(false);
             Titlepnl.PerformLayout();
             memberpnl.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
             member_sidebar.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             loginpnl.ResumeLayout(false);
@@ -739,7 +777,7 @@
         private LinkLabel linkLabel1;
         private Panel member_sidebar;
         private Button Member_study_assistbtn;
-        private Button button4;
+        private Button member_favoritebtn;
         private Button member_shelfbtn;
         private Button member_homebtn;
         private Button member_settingbtn;
@@ -753,12 +791,15 @@
         private Panel librarianpnl;
         private Panel signuppnl;
         private LinkLabel linkLabel3;
-        private Button button3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label1;
-        private Label label2;
+        private Button signupbtn;
+        private TextBox signlnamebx;
+        private TextBox signnfamebx;
+        private Label signlname;
+        private Label signfname;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox signpassbx;
+        private Label signpass;
+        private TextBox textBox1;
+        private Label signusername;
     }
 }

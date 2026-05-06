@@ -9,7 +9,7 @@ namespace d.labdemo
 {
     public partial class d_lab : Form
     {
-        private string Catagory;
+        //private string Catagory;
 
         public string? Role { get; private set; }
         public object Last_name { get; private set; }
@@ -24,6 +24,7 @@ namespace d.labdemo
         {
 
         }
+
 
         private void logibtn_Click(object sender, EventArgs e)
         {
@@ -82,10 +83,16 @@ namespace d.labdemo
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void member_favoritebtn_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void member_shelfbtn_Click(object sender, EventArgs e)
         {
             /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
@@ -136,7 +143,7 @@ namespace d.labdemo
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void signupbtn_Click(object sender, EventArgs e)
         {
             //DBConnection.Initialte();
             string userName = namebx.Text;
@@ -144,6 +151,11 @@ namespace d.labdemo
 
             string query = $@"INSERT INTO Members(Memberid,First_name,Last_name, UserName, Password) VALUES('{1}','{First_name}','{Last_name}','{userName}','{password}') ";
             DBConnection.ExecuteNonQuery(query);
+            loginpnl.Visible = true;
+            memberpnl.Visible = false;
+            adminpnl.Visible = false;
+            librarianpnl.Visible = false;
+            signuppnl.Visible = false;
         }
     }
 }
