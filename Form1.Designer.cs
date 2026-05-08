@@ -29,23 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
-            adminpnl = new Panel();
-            sidebar = new Panel();
-            Homebtn = new Button();
-            Usersbtn = new Button();
-            Shelfbtn = new Button();
-            button2 = new Button();
-            settignbtn = new Button();
-            Titlepnl = new Panel();
-            menubtn = new Button();
-            profilelnk = new LinkLabel();
-            memberpnl = new Panel();
-            member_sidebar = new Panel();
-            Member_study_assistbtn = new Button();
-            member_favoritebtn = new Button();
-            member_shelfbtn = new Button();
-            member_homebtn = new Button();
-            member_settingbtn = new Button();
+            Userpnl = new Panel();
+            User_sidebar = new Panel();
+            User_study_assistbtn = new Button();
+            User_favoritebtn = new Button();
+            User_shelfbtn = new Button();
+            User_homebtn = new Button();
+            User_settingbtn = new Button();
             tabControl1 = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
@@ -75,307 +65,153 @@
             Wellcome_page = new Panel();
             Wellcome_signupbtn = new Button();
             Wellcome_loginbtn = new Button();
-            adminpnl.SuspendLayout();
-            sidebar.SuspendLayout();
-            Titlepnl.SuspendLayout();
-            memberpnl.SuspendLayout();
-            member_sidebar.SuspendLayout();
+            Titlepnl = new Panel();
+            menubtn = new Button();
+            profilelnk = new LinkLabel();
+            sidebar = new Panel();
+            Homebtn = new Button();
+            Usersbtn = new Button();
+            Shelfbtn = new Button();
+            button2 = new Button();
+            settignbtn = new Button();
+            adminpnl = new Panel();
+            Admin_userspnl = new Panel();
+            Admin_homepnl = new Panel();
+            Admin_shelfpnl = new Panel();
+            Userpnl.SuspendLayout();
+            User_sidebar.SuspendLayout();
             tabControl1.SuspendLayout();
             panel1.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
             Wellcome_page.SuspendLayout();
+            Titlepnl.SuspendLayout();
+            sidebar.SuspendLayout();
+            adminpnl.SuspendLayout();
             SuspendLayout();
             // 
-            // adminpnl
+            // Userpnl
             // 
-            adminpnl.AutoSize = true;
-            adminpnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            adminpnl.BackColor = Color.FromArgb(188, 193, 199);
-            adminpnl.Controls.Add(sidebar);
-            adminpnl.Controls.Add(Titlepnl);
-            adminpnl.Dock = DockStyle.Fill;
-            adminpnl.Location = new Point(0, 0);
-            adminpnl.MinimumSize = new Size(841, 589);
-            adminpnl.Name = "adminpnl";
-            adminpnl.Size = new Size(1090, 641);
-            adminpnl.TabIndex = 7;
+            Userpnl.BackColor = Color.FromArgb(188, 193, 199);
+            Userpnl.Controls.Add(User_sidebar);
+            Userpnl.Controls.Add(tabControl1);
+            Userpnl.Controls.Add(panel1);
+            Userpnl.Dock = DockStyle.Fill;
+            Userpnl.Location = new Point(0, 0);
+            Userpnl.Name = "Userpnl";
+            Userpnl.Size = new Size(1090, 641);
+            Userpnl.TabIndex = 7;
             // 
-            // sidebar
+            // User_sidebar
             // 
-            sidebar.BackColor = Color.FromArgb(35, 40, 45);
-            sidebar.Controls.Add(Homebtn);
-            sidebar.Controls.Add(Usersbtn);
-            sidebar.Controls.Add(Shelfbtn);
-            sidebar.Controls.Add(button2);
-            sidebar.Controls.Add(settignbtn);
-            sidebar.Dock = DockStyle.Left;
-            sidebar.Location = new Point(0, 63);
-            sidebar.MaximumSize = new Size(190, 999);
-            sidebar.MinimumSize = new Size(91, 526);
-            sidebar.Name = "sidebar";
-            sidebar.Size = new Size(146, 578);
-            sidebar.TabIndex = 0;
+            User_sidebar.BackColor = Color.FromArgb(35, 40, 45);
+            User_sidebar.BorderStyle = BorderStyle.Fixed3D;
+            User_sidebar.Controls.Add(User_study_assistbtn);
+            User_sidebar.Controls.Add(User_favoritebtn);
+            User_sidebar.Controls.Add(User_shelfbtn);
+            User_sidebar.Controls.Add(User_homebtn);
+            User_sidebar.Controls.Add(User_settingbtn);
+            User_sidebar.Dock = DockStyle.Left;
+            User_sidebar.Location = new Point(0, 63);
+            User_sidebar.MaximumSize = new Size(190, 999);
+            User_sidebar.MinimumSize = new Size(107, 526);
+            User_sidebar.Name = "User_sidebar";
+            User_sidebar.Size = new Size(166, 578);
+            User_sidebar.TabIndex = 3;
             // 
-            // Homebtn
+            // User_study_assistbtn
             // 
-            Homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            Homebtn.Cursor = Cursors.Hand;
-            Homebtn.Dock = DockStyle.Top;
-            Homebtn.FlatAppearance.BorderSize = 0;
-            Homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            Homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Homebtn.FlatStyle = FlatStyle.Flat;
-            Homebtn.ForeColor = Color.LightYellow;
-            Homebtn.Location = new Point(0, 132);
-            Homebtn.Name = "Homebtn";
-            Homebtn.Size = new Size(146, 57);
-            Homebtn.TabIndex = 6;
-            Homebtn.Text = "🏠︎ Home";
-            Homebtn.UseVisualStyleBackColor = false;
+            User_study_assistbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            User_study_assistbtn.BackColor = Color.FromArgb(30, 40, 45);
+            User_study_assistbtn.Cursor = Cursors.Hand;
+            User_study_assistbtn.Dock = DockStyle.Top;
+            User_study_assistbtn.FlatAppearance.BorderSize = 0;
+            User_study_assistbtn.FlatAppearance.CheckedBackColor = Color.White;
+            User_study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            User_study_assistbtn.FlatStyle = FlatStyle.Flat;
+            User_study_assistbtn.ForeColor = Color.LightYellow;
+            User_study_assistbtn.Location = new Point(0, 132);
+            User_study_assistbtn.Name = "User_study_assistbtn";
+            User_study_assistbtn.Size = new Size(162, 57);
+            User_study_assistbtn.TabIndex = 6;
+            User_study_assistbtn.Text = "🏠︎ study";
+            User_study_assistbtn.UseVisualStyleBackColor = false;
             // 
-            // Usersbtn
+            // User_favoritebtn
             // 
-            Usersbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Usersbtn.BackColor = Color.FromArgb(30, 40, 45);
-            Usersbtn.Cursor = Cursors.Hand;
-            Usersbtn.Dock = DockStyle.Top;
-            Usersbtn.FlatAppearance.BorderSize = 0;
-            Usersbtn.FlatAppearance.CheckedBackColor = Color.White;
-            Usersbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Usersbtn.FlatStyle = FlatStyle.Flat;
-            Usersbtn.ForeColor = Color.LightYellow;
-            Usersbtn.Location = new Point(0, 88);
-            Usersbtn.Name = "Usersbtn";
-            Usersbtn.Size = new Size(146, 44);
-            Usersbtn.TabIndex = 7;
-            Usersbtn.Text = "👤  Users";
-            Usersbtn.UseVisualStyleBackColor = false;
+            User_favoritebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            User_favoritebtn.BackColor = Color.FromArgb(30, 40, 45);
+            User_favoritebtn.Cursor = Cursors.Hand;
+            User_favoritebtn.Dock = DockStyle.Top;
+            User_favoritebtn.FlatAppearance.BorderSize = 0;
+            User_favoritebtn.FlatAppearance.CheckedBackColor = Color.White;
+            User_favoritebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            User_favoritebtn.FlatStyle = FlatStyle.Flat;
+            User_favoritebtn.ForeColor = Color.LightYellow;
+            User_favoritebtn.Location = new Point(0, 88);
+            User_favoritebtn.Name = "User_favoritebtn";
+            User_favoritebtn.Size = new Size(162, 44);
+            User_favoritebtn.TabIndex = 7;
+            User_favoritebtn.Text = "❤️Favorites";
+            User_favoritebtn.UseVisualStyleBackColor = false;
+            User_favoritebtn.Click += User_favoritebtn_Click;
             // 
-            // Shelfbtn
+            // User_shelfbtn
             // 
-            Shelfbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Shelfbtn.BackColor = Color.FromArgb(30, 40, 45);
-            Shelfbtn.Cursor = Cursors.Hand;
-            Shelfbtn.Dock = DockStyle.Top;
-            Shelfbtn.FlatAppearance.BorderSize = 0;
-            Shelfbtn.FlatAppearance.CheckedBackColor = Color.White;
-            Shelfbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Shelfbtn.FlatStyle = FlatStyle.Flat;
-            Shelfbtn.ForeColor = Color.LightYellow;
-            Shelfbtn.Location = new Point(0, 44);
-            Shelfbtn.Name = "Shelfbtn";
-            Shelfbtn.Size = new Size(146, 44);
-            Shelfbtn.TabIndex = 9;
-            Shelfbtn.Text = "📊  Shelf";
-            Shelfbtn.UseVisualStyleBackColor = false;
+            User_shelfbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            User_shelfbtn.BackColor = Color.FromArgb(30, 40, 45);
+            User_shelfbtn.Cursor = Cursors.Hand;
+            User_shelfbtn.Dock = DockStyle.Top;
+            User_shelfbtn.FlatAppearance.BorderSize = 0;
+            User_shelfbtn.FlatAppearance.CheckedBackColor = Color.White;
+            User_shelfbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            User_shelfbtn.FlatStyle = FlatStyle.Flat;
+            User_shelfbtn.ForeColor = Color.LightYellow;
+            User_shelfbtn.Location = new Point(0, 44);
+            User_shelfbtn.Name = "User_shelfbtn";
+            User_shelfbtn.Size = new Size(162, 44);
+            User_shelfbtn.TabIndex = 9;
+            User_shelfbtn.Text = "📊  Shelf";
+            User_shelfbtn.UseVisualStyleBackColor = false;
+            User_shelfbtn.Click += User_shelfbtn_Click;
             // 
-            // button2
+            // User_homebtn
             // 
-            button2.AutoEllipsis = true;
-            button2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button2.BackColor = Color.FromArgb(30, 40, 45);
-            button2.Cursor = Cursors.Hand;
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.CheckedBackColor = Color.White;
-            button2.FlatAppearance.MouseOverBackColor = Color.Black;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.LightYellow;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(146, 44);
-            button2.TabIndex = 8;
-            button2.Text = "🏠︎ Home";
-            button2.UseVisualStyleBackColor = false;
+            User_homebtn.AutoEllipsis = true;
+            User_homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            User_homebtn.BackColor = Color.FromArgb(30, 40, 45);
+            User_homebtn.Cursor = Cursors.Hand;
+            User_homebtn.Dock = DockStyle.Top;
+            User_homebtn.FlatAppearance.BorderSize = 0;
+            User_homebtn.FlatAppearance.CheckedBackColor = Color.White;
+            User_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            User_homebtn.FlatStyle = FlatStyle.Flat;
+            User_homebtn.ForeColor = Color.LightYellow;
+            User_homebtn.Location = new Point(0, 0);
+            User_homebtn.Name = "User_homebtn";
+            User_homebtn.Size = new Size(162, 44);
+            User_homebtn.TabIndex = 8;
+            User_homebtn.Text = "🏠︎ Home";
+            User_homebtn.UseVisualStyleBackColor = false;
             // 
-            // settignbtn
+            // User_settingbtn
             // 
-            settignbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            settignbtn.BackColor = Color.FromArgb(30, 40, 45);
-            settignbtn.Dock = DockStyle.Bottom;
-            settignbtn.FlatAppearance.BorderSize = 0;
-            settignbtn.FlatAppearance.CheckedBackColor = Color.White;
-            settignbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            settignbtn.FlatStyle = FlatStyle.Flat;
-            settignbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            settignbtn.ForeColor = Color.LightYellow;
-            settignbtn.Location = new Point(0, 534);
-            settignbtn.Margin = new Padding(0, 0, 0, 3);
-            settignbtn.Name = "settignbtn";
-            settignbtn.Size = new Size(146, 44);
-            settignbtn.TabIndex = 5;
-            settignbtn.Text = "⚙️ Setting";
-            settignbtn.UseVisualStyleBackColor = false;
-            // 
-            // Titlepnl
-            // 
-            Titlepnl.BackColor = SystemColors.ActiveCaptionText;
-            Titlepnl.Controls.Add(menubtn);
-            Titlepnl.Controls.Add(profilelnk);
-            Titlepnl.Dock = DockStyle.Top;
-            Titlepnl.Location = new Point(0, 0);
-            Titlepnl.Name = "Titlepnl";
-            Titlepnl.Size = new Size(1090, 63);
-            Titlepnl.TabIndex = 1;
-            // 
-            // menubtn
-            // 
-            menubtn.BackColor = Color.Transparent;
-            menubtn.Cursor = Cursors.Hand;
-            menubtn.Dock = DockStyle.Left;
-            menubtn.FlatAppearance.BorderSize = 0;
-            menubtn.FlatAppearance.CheckedBackColor = Color.White;
-            menubtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            menubtn.FlatStyle = FlatStyle.Flat;
-            menubtn.Font = new Font("Segoe UI", 21.8879986F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            menubtn.ForeColor = Color.LightYellow;
-            menubtn.Location = new Point(0, 0);
-            menubtn.Name = "menubtn";
-            menubtn.Size = new Size(107, 63);
-            menubtn.TabIndex = 3;
-            menubtn.Text = "☰";
-            menubtn.UseVisualStyleBackColor = false;
-            // 
-            // profilelnk
-            // 
-            profilelnk.ActiveLinkColor = SystemColors.ActiveCaption;
-            profilelnk.AutoSize = true;
-            profilelnk.Dock = DockStyle.Right;
-            profilelnk.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            profilelnk.LinkColor = Color.AliceBlue;
-            profilelnk.Location = new Point(979, 0);
-            profilelnk.Margin = new Padding(3, 3, 3, 0);
-            profilelnk.Name = "profilelnk";
-            profilelnk.Size = new Size(111, 30);
-            profilelnk.TabIndex = 0;
-            profilelnk.TabStop = true;
-            profilelnk.Text = "👤 profile";
-            profilelnk.VisitedLinkColor = Color.Blue;
-            // 
-            // memberpnl
-            // 
-            memberpnl.BackColor = Color.FromArgb(188, 193, 199);
-            memberpnl.Controls.Add(member_sidebar);
-            memberpnl.Controls.Add(tabControl1);
-            memberpnl.Controls.Add(panel1);
-            memberpnl.Dock = DockStyle.Fill;
-            memberpnl.Location = new Point(0, 0);
-            memberpnl.Name = "memberpnl";
-            memberpnl.Size = new Size(1090, 641);
-            memberpnl.TabIndex = 7;
-            // 
-            // member_sidebar
-            // 
-            member_sidebar.BackColor = Color.FromArgb(35, 40, 45);
-            member_sidebar.BorderStyle = BorderStyle.Fixed3D;
-            member_sidebar.Controls.Add(Member_study_assistbtn);
-            member_sidebar.Controls.Add(member_favoritebtn);
-            member_sidebar.Controls.Add(member_shelfbtn);
-            member_sidebar.Controls.Add(member_homebtn);
-            member_sidebar.Controls.Add(member_settingbtn);
-            member_sidebar.Dock = DockStyle.Left;
-            member_sidebar.Location = new Point(0, 63);
-            member_sidebar.MaximumSize = new Size(190, 999);
-            member_sidebar.MinimumSize = new Size(107, 526);
-            member_sidebar.Name = "member_sidebar";
-            member_sidebar.Size = new Size(166, 578);
-            member_sidebar.TabIndex = 3;
-            // 
-            // Member_study_assistbtn
-            // 
-            Member_study_assistbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Member_study_assistbtn.BackColor = Color.FromArgb(30, 40, 45);
-            Member_study_assistbtn.Cursor = Cursors.Hand;
-            Member_study_assistbtn.Dock = DockStyle.Top;
-            Member_study_assistbtn.FlatAppearance.BorderSize = 0;
-            Member_study_assistbtn.FlatAppearance.CheckedBackColor = Color.White;
-            Member_study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Member_study_assistbtn.FlatStyle = FlatStyle.Flat;
-            Member_study_assistbtn.ForeColor = Color.LightYellow;
-            Member_study_assistbtn.Location = new Point(0, 132);
-            Member_study_assistbtn.Name = "Member_study_assistbtn";
-            Member_study_assistbtn.Size = new Size(162, 57);
-            Member_study_assistbtn.TabIndex = 6;
-            Member_study_assistbtn.Text = "🏠︎ study";
-            Member_study_assistbtn.UseVisualStyleBackColor = false;
-            // 
-            // member_favoritebtn
-            // 
-            member_favoritebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            member_favoritebtn.BackColor = Color.FromArgb(30, 40, 45);
-            member_favoritebtn.Cursor = Cursors.Hand;
-            member_favoritebtn.Dock = DockStyle.Top;
-            member_favoritebtn.FlatAppearance.BorderSize = 0;
-            member_favoritebtn.FlatAppearance.CheckedBackColor = Color.White;
-            member_favoritebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            member_favoritebtn.FlatStyle = FlatStyle.Flat;
-            member_favoritebtn.ForeColor = Color.LightYellow;
-            member_favoritebtn.Location = new Point(0, 88);
-            member_favoritebtn.Name = "member_favoritebtn";
-            member_favoritebtn.Size = new Size(162, 44);
-            member_favoritebtn.TabIndex = 7;
-            member_favoritebtn.Text = "❤️Favorites";
-            member_favoritebtn.UseVisualStyleBackColor = false;
-            member_favoritebtn.Click += member_favoritebtn_Click;
-            // 
-            // member_shelfbtn
-            // 
-            member_shelfbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            member_shelfbtn.BackColor = Color.FromArgb(30, 40, 45);
-            member_shelfbtn.Cursor = Cursors.Hand;
-            member_shelfbtn.Dock = DockStyle.Top;
-            member_shelfbtn.FlatAppearance.BorderSize = 0;
-            member_shelfbtn.FlatAppearance.CheckedBackColor = Color.White;
-            member_shelfbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            member_shelfbtn.FlatStyle = FlatStyle.Flat;
-            member_shelfbtn.ForeColor = Color.LightYellow;
-            member_shelfbtn.Location = new Point(0, 44);
-            member_shelfbtn.Name = "member_shelfbtn";
-            member_shelfbtn.Size = new Size(162, 44);
-            member_shelfbtn.TabIndex = 9;
-            member_shelfbtn.Text = "📊  Shelf";
-            member_shelfbtn.UseVisualStyleBackColor = false;
-            member_shelfbtn.Click += member_shelfbtn_Click;
-            // 
-            // member_homebtn
-            // 
-            member_homebtn.AutoEllipsis = true;
-            member_homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            member_homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            member_homebtn.Cursor = Cursors.Hand;
-            member_homebtn.Dock = DockStyle.Top;
-            member_homebtn.FlatAppearance.BorderSize = 0;
-            member_homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            member_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            member_homebtn.FlatStyle = FlatStyle.Flat;
-            member_homebtn.ForeColor = Color.LightYellow;
-            member_homebtn.Location = new Point(0, 0);
-            member_homebtn.Name = "member_homebtn";
-            member_homebtn.Size = new Size(162, 44);
-            member_homebtn.TabIndex = 8;
-            member_homebtn.Text = "🏠︎ Home";
-            member_homebtn.UseVisualStyleBackColor = false;
-            // 
-            // member_settingbtn
-            // 
-            member_settingbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            member_settingbtn.BackColor = Color.FromArgb(30, 40, 45);
-            member_settingbtn.Dock = DockStyle.Bottom;
-            member_settingbtn.FlatAppearance.BorderSize = 0;
-            member_settingbtn.FlatAppearance.CheckedBackColor = Color.White;
-            member_settingbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            member_settingbtn.FlatStyle = FlatStyle.Flat;
-            member_settingbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            member_settingbtn.ForeColor = Color.LightYellow;
-            member_settingbtn.Location = new Point(0, 530);
-            member_settingbtn.Margin = new Padding(0, 0, 0, 3);
-            member_settingbtn.Name = "member_settingbtn";
-            member_settingbtn.Size = new Size(162, 44);
-            member_settingbtn.TabIndex = 5;
-            member_settingbtn.Text = "⚙️ Setting";
-            member_settingbtn.UseVisualStyleBackColor = false;
+            User_settingbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            User_settingbtn.BackColor = Color.FromArgb(30, 40, 45);
+            User_settingbtn.Dock = DockStyle.Bottom;
+            User_settingbtn.FlatAppearance.BorderSize = 0;
+            User_settingbtn.FlatAppearance.CheckedBackColor = Color.White;
+            User_settingbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            User_settingbtn.FlatStyle = FlatStyle.Flat;
+            User_settingbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            User_settingbtn.ForeColor = Color.LightYellow;
+            User_settingbtn.Location = new Point(0, 530);
+            User_settingbtn.Margin = new Padding(0, 0, 0, 3);
+            User_settingbtn.Name = "User_settingbtn";
+            User_settingbtn.Size = new Size(162, 44);
+            User_settingbtn.TabIndex = 5;
+            User_settingbtn.Text = "⚙️ Setting";
+            User_settingbtn.UseVisualStyleBackColor = false;
             // 
             // tabControl1
             // 
@@ -757,28 +593,224 @@
             Wellcome_loginbtn.UseVisualStyleBackColor = false;
             Wellcome_loginbtn.Click += Wellcome_loginbtn_Click;
             // 
+            // Titlepnl
+            // 
+            Titlepnl.BackColor = SystemColors.ActiveCaptionText;
+            Titlepnl.Controls.Add(menubtn);
+            Titlepnl.Controls.Add(profilelnk);
+            Titlepnl.Dock = DockStyle.Top;
+            Titlepnl.Location = new Point(0, 0);
+            Titlepnl.Name = "Titlepnl";
+            Titlepnl.Size = new Size(1090, 63);
+            Titlepnl.TabIndex = 1;
+            // 
+            // menubtn
+            // 
+            menubtn.BackColor = Color.Transparent;
+            menubtn.Cursor = Cursors.Hand;
+            menubtn.Dock = DockStyle.Left;
+            menubtn.FlatAppearance.BorderSize = 0;
+            menubtn.FlatAppearance.CheckedBackColor = Color.White;
+            menubtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            menubtn.FlatStyle = FlatStyle.Flat;
+            menubtn.Font = new Font("Segoe UI", 21.8879986F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            menubtn.ForeColor = Color.LightYellow;
+            menubtn.Location = new Point(0, 0);
+            menubtn.Name = "menubtn";
+            menubtn.Size = new Size(107, 63);
+            menubtn.TabIndex = 3;
+            menubtn.Text = "☰";
+            menubtn.UseVisualStyleBackColor = false;
+            // 
+            // profilelnk
+            // 
+            profilelnk.ActiveLinkColor = SystemColors.ActiveCaption;
+            profilelnk.AutoSize = true;
+            profilelnk.Dock = DockStyle.Right;
+            profilelnk.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            profilelnk.LinkColor = Color.AliceBlue;
+            profilelnk.Location = new Point(979, 0);
+            profilelnk.Margin = new Padding(3, 3, 3, 0);
+            profilelnk.Name = "profilelnk";
+            profilelnk.Size = new Size(111, 30);
+            profilelnk.TabIndex = 0;
+            profilelnk.TabStop = true;
+            profilelnk.Text = "👤 profile";
+            profilelnk.VisitedLinkColor = Color.Blue;
+            // 
+            // sidebar
+            // 
+            sidebar.BackColor = Color.FromArgb(35, 40, 45);
+            sidebar.Controls.Add(Homebtn);
+            sidebar.Controls.Add(Usersbtn);
+            sidebar.Controls.Add(Shelfbtn);
+            sidebar.Controls.Add(button2);
+            sidebar.Controls.Add(settignbtn);
+            sidebar.Dock = DockStyle.Left;
+            sidebar.Location = new Point(0, 63);
+            sidebar.MaximumSize = new Size(190, 999);
+            sidebar.MinimumSize = new Size(91, 526);
+            sidebar.Name = "sidebar";
+            sidebar.Size = new Size(146, 578);
+            sidebar.TabIndex = 0;
+            // 
+            // Homebtn
+            // 
+            Homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Homebtn.BackColor = Color.FromArgb(30, 40, 45);
+            Homebtn.Cursor = Cursors.Hand;
+            Homebtn.Dock = DockStyle.Top;
+            Homebtn.FlatAppearance.BorderSize = 0;
+            Homebtn.FlatAppearance.CheckedBackColor = Color.White;
+            Homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Homebtn.FlatStyle = FlatStyle.Flat;
+            Homebtn.ForeColor = Color.LightYellow;
+            Homebtn.Location = new Point(0, 132);
+            Homebtn.Name = "Homebtn";
+            Homebtn.Size = new Size(146, 57);
+            Homebtn.TabIndex = 6;
+            Homebtn.Text = "🏠︎ Home";
+            Homebtn.UseVisualStyleBackColor = false;
+            // 
+            // Usersbtn
+            // 
+            Usersbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Usersbtn.BackColor = Color.FromArgb(30, 40, 45);
+            Usersbtn.Cursor = Cursors.Hand;
+            Usersbtn.Dock = DockStyle.Top;
+            Usersbtn.FlatAppearance.BorderSize = 0;
+            Usersbtn.FlatAppearance.CheckedBackColor = Color.White;
+            Usersbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Usersbtn.FlatStyle = FlatStyle.Flat;
+            Usersbtn.ForeColor = Color.LightYellow;
+            Usersbtn.Location = new Point(0, 88);
+            Usersbtn.Name = "Usersbtn";
+            Usersbtn.Size = new Size(146, 44);
+            Usersbtn.TabIndex = 7;
+            Usersbtn.Text = "👤  Users";
+            Usersbtn.UseVisualStyleBackColor = false;
+            Usersbtn.Click += Usersbtn_Click;
+            // 
+            // Shelfbtn
+            // 
+            Shelfbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Shelfbtn.BackColor = Color.FromArgb(30, 40, 45);
+            Shelfbtn.Cursor = Cursors.Hand;
+            Shelfbtn.Dock = DockStyle.Top;
+            Shelfbtn.FlatAppearance.BorderSize = 0;
+            Shelfbtn.FlatAppearance.CheckedBackColor = Color.White;
+            Shelfbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Shelfbtn.FlatStyle = FlatStyle.Flat;
+            Shelfbtn.ForeColor = Color.LightYellow;
+            Shelfbtn.Location = new Point(0, 44);
+            Shelfbtn.Name = "Shelfbtn";
+            Shelfbtn.Size = new Size(146, 44);
+            Shelfbtn.TabIndex = 9;
+            Shelfbtn.Text = "📊  Shelf";
+            Shelfbtn.UseVisualStyleBackColor = false;
+            Shelfbtn.Click += Shelfbtn_Click;
+            // 
+            // button2
+            // 
+            button2.AutoEllipsis = true;
+            button2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button2.BackColor = Color.FromArgb(30, 40, 45);
+            button2.Cursor = Cursors.Hand;
+            button2.Dock = DockStyle.Top;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.CheckedBackColor = Color.White;
+            button2.FlatAppearance.MouseOverBackColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.LightYellow;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(146, 44);
+            button2.TabIndex = 8;
+            button2.Text = "🏠︎ Home";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // settignbtn
+            // 
+            settignbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            settignbtn.BackColor = Color.FromArgb(30, 40, 45);
+            settignbtn.Dock = DockStyle.Bottom;
+            settignbtn.FlatAppearance.BorderSize = 0;
+            settignbtn.FlatAppearance.CheckedBackColor = Color.White;
+            settignbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            settignbtn.FlatStyle = FlatStyle.Flat;
+            settignbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            settignbtn.ForeColor = Color.LightYellow;
+            settignbtn.Location = new Point(0, 534);
+            settignbtn.Margin = new Padding(0, 0, 0, 3);
+            settignbtn.Name = "settignbtn";
+            settignbtn.Size = new Size(146, 44);
+            settignbtn.TabIndex = 5;
+            settignbtn.Text = "⚙️ Setting";
+            settignbtn.UseVisualStyleBackColor = false;
+            // 
+            // adminpnl
+            // 
+            adminpnl.AutoSize = true;
+            adminpnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            adminpnl.BackColor = Color.FromArgb(188, 193, 199);
+            adminpnl.Controls.Add(Admin_userspnl);
+            adminpnl.Controls.Add(Admin_homepnl);
+            adminpnl.Controls.Add(Admin_shelfpnl);
+            adminpnl.Controls.Add(sidebar);
+            adminpnl.Controls.Add(Titlepnl);
+            adminpnl.Dock = DockStyle.Fill;
+            adminpnl.Location = new Point(0, 0);
+            adminpnl.MinimumSize = new Size(841, 589);
+            adminpnl.Name = "adminpnl";
+            adminpnl.Size = new Size(1090, 641);
+            adminpnl.TabIndex = 7;
+            // 
+            // Admin_userspnl
+            // 
+            Admin_userspnl.BackColor = Color.SlateGray;
+            Admin_userspnl.Dock = DockStyle.Fill;
+            Admin_userspnl.Location = new Point(146, 63);
+            Admin_userspnl.Name = "Admin_userspnl";
+            Admin_userspnl.Size = new Size(944, 578);
+            Admin_userspnl.TabIndex = 3;
+            // 
+            // Admin_homepnl
+            // 
+            Admin_homepnl.BackColor = Color.FromArgb(192, 255, 255);
+            Admin_homepnl.Dock = DockStyle.Fill;
+            Admin_homepnl.Location = new Point(146, 63);
+            Admin_homepnl.Name = "Admin_homepnl";
+            Admin_homepnl.Size = new Size(944, 578);
+            Admin_homepnl.TabIndex = 2;
+            // 
+            // Admin_shelfpnl
+            // 
+            Admin_shelfpnl.BackColor = Color.FromArgb(224, 224, 224);
+            Admin_shelfpnl.Dock = DockStyle.Fill;
+            Admin_shelfpnl.Location = new Point(146, 63);
+            Admin_shelfpnl.Name = "Admin_shelfpnl";
+            Admin_shelfpnl.Size = new Size(944, 578);
+            Admin_shelfpnl.TabIndex = 3;
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
             Controls.Add(adminpnl);
-            Controls.Add(signuppnl);
             Controls.Add(loginpnl);
+            Controls.Add(signuppnl);
             Controls.Add(Wellcome_page);
-            Controls.Add(memberpnl);
+            Controls.Add(Userpnl);
             Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1108, 689);
             MinimumSize = new Size(1108, 689);
             Name = "d_lab";
             Text = "d_lab";
-            adminpnl.ResumeLayout(false);
-            sidebar.ResumeLayout(false);
-            Titlepnl.ResumeLayout(false);
-            Titlepnl.PerformLayout();
-            memberpnl.ResumeLayout(false);
-            member_sidebar.ResumeLayout(false);
+            Userpnl.ResumeLayout(false);
+            User_sidebar.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -788,22 +820,16 @@
             signuppnl.PerformLayout();
             Wellcome_page.ResumeLayout(false);
             Wellcome_page.PerformLayout();
+            Titlepnl.ResumeLayout(false);
+            Titlepnl.PerformLayout();
+            sidebar.ResumeLayout(false);
+            adminpnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Panel adminpnl;
-        private Panel Titlepnl;
-        private LinkLabel profilelnk;
-        private Panel memberpnl;
-        private Button menubtn;
-        private Panel sidebar;
-        private Button settignbtn;
-        private Button Homebtn;
-        private Button Usersbtn;
-        private Button Shelfbtn;
-        private Button button2;
+        private Panel Userpnl;
         private Panel loginpnl;
         private Button logibtn;
         private TextBox passbx;
@@ -812,12 +838,12 @@
         private Label usernamelbl;
         private Label welcome_labele;
         private LinkLabel login_signup;
-        private Panel member_sidebar;
-        private Button Member_study_assistbtn;
-        private Button member_favoritebtn;
-        private Button member_shelfbtn;
-        private Button member_homebtn;
-        private Button member_settingbtn;
+        private Panel User_sidebar;
+        private Button User_study_assistbtn;
+        private Button User_favoritebtn;
+        private Button User_shelfbtn;
+        private Button User_homebtn;
+        private Button User_settingbtn;
         private Panel panel1;
         private Button button1;
         private LinkLabel linkLabel2;
@@ -839,5 +865,18 @@
         private Panel Wellcome_page;
         private Button Wellcome_signupbtn;
         private Button Wellcome_loginbtn;
+        private Panel Titlepnl;
+        private Button menubtn;
+        private LinkLabel profilelnk;
+        private Panel sidebar;
+        private Button Homebtn;
+        private Button Usersbtn;
+        private Button Shelfbtn;
+        private Button button2;
+        private Button settignbtn;
+        private Panel adminpnl;
+        private Panel Admin_homepnl;
+        private Panel Admin_shelfpnl;
+        private Panel Admin_userspnl;
     }
 }

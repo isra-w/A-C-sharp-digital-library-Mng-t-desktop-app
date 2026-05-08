@@ -43,15 +43,15 @@ namespace d.labdemo
             else if (Role == "Admin")
             {
                 loginpnl.Visible = false;
-                memberpnl.Visible = false;
+                Userpnl.Visible = false;
                 adminpnl.Visible = true;
                 librarianpnl.Visible = false;
                 signuppnl.Visible = false;
             }
-            else if (Role == "member")
+            else if (Role == "User")
             {
                 loginpnl.Visible = false;
-                memberpnl.Visible = true;
+                Userpnl.Visible = true;
                 adminpnl.Visible = false;
                 librarianpnl.Visible = false;
                 signuppnl.Visible = false;
@@ -59,7 +59,7 @@ namespace d.labdemo
             else if (Role == "librarian")
             {
                 loginpnl.Visible = false;
-                memberpnl.Visible = false;
+                Userpnl.Visible = false;
                 adminpnl.Visible = false;
                 librarianpnl.Visible = true;
                 signuppnl.Visible = false;
@@ -82,7 +82,7 @@ namespace d.labdemo
 
         }
 
-        private void member_favoritebtn_Click(object sender, EventArgs e)
+        private void User_favoritebtn_Click(object sender, EventArgs e)
         {
 
         }
@@ -92,7 +92,7 @@ namespace d.labdemo
 
         }
 
-        private void member_shelfbtn_Click(object sender, EventArgs e)
+        private void User_shelfbtn_Click(object sender, EventArgs e)
         {
             /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
              DBConnection.intiate();
@@ -130,7 +130,7 @@ namespace d.labdemo
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             loginpnl.Visible = false;
-            memberpnl.Visible = false;
+            Userpnl.Visible = false;
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = true;
@@ -148,10 +148,10 @@ namespace d.labdemo
             string userName = namebx.Text;
             string password = passbx.Text;
 
-            string query = $@"INSERT INTO Members(Memberid,First_name,Last_name, UserName, Password) VALUES('{1}','{First_name}','{Last_name}','{userName}','{password}') ";
+            string query = $@"INSERT INTO Users(Userid,First_name,Last_name, UserName, Password) VALUES('{1}','{First_name}','{Last_name}','{userName}','{password}') ";
             DBConnection.ExecuteNonQuery(query);
             loginpnl.Visible = true;
-            memberpnl.Visible = false;
+            Userpnl.Visible = false;
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = false;
@@ -165,7 +165,7 @@ namespace d.labdemo
         private void Wellcome_loginbtn_Click(object sender, EventArgs e)
         {
             loginpnl.Visible = true;
-            memberpnl.Visible = false;
+            Userpnl.Visible = false;
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = false;
@@ -175,7 +175,7 @@ namespace d.labdemo
         private void Wellcome_page_Paint(object sender, PaintEventArgs e)
         {
             loginpnl.Visible = false;
-            memberpnl.Visible = false;
+            Userpnl.Visible = false;
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = false;
@@ -185,7 +185,7 @@ namespace d.labdemo
         private void Signup_loginlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             loginpnl.Visible = true;
-            memberpnl.Visible = false;
+            Userpnl.Visible = false;
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = false;
@@ -196,12 +196,44 @@ namespace d.labdemo
         private void Wellcome_signupbtn_Click(object sender, EventArgs e)
         {
             loginpnl.Visible = false;
-            memberpnl.Visible = false;
+            Userpnl.Visible = false;
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin_homepnl.Visible = true;
+            Admin_shelfpnl.Visible = false;
+            Admin_userspnl.Visible = false;
+
+        }
+
+        private void Shelfbtn_Click(object sender, EventArgs e)
+        {
+            Admin_homepnl.Visible = false;
+            Admin_shelfpnl.Visible = true;
+            Admin_userspnl.Visible = false;
+        }
+
+        private void Usersbtn_Click(object sender, EventArgs e)
+        {
+            Admin_homepnl.Visible = false;
+            Admin_shelfpnl.Visible = false;
+            Admin_userspnl.Visible = true;
         }
     }
 }
