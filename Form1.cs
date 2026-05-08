@@ -239,12 +239,19 @@ namespace d.labdemo
 
         private void fetch_databtn_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd= new SqlCommand("SELECT * FROM Users", DBConnection.checkConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users", DBConnection.checkConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             User_tabeltbl.DataSource = dt;
 
         }
+
+        /*private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            adminpnl back = new adminpnl();
+            back.Show();
+        }*/
     }
 }

@@ -66,6 +66,7 @@
             Wellcome_signupbtn = new Button();
             Wellcome_loginbtn = new Button();
             Titlepnl = new Panel();
+            button3 = new Button();
             menubtn = new Button();
             profilelnk = new LinkLabel();
             sidebar = new Panel();
@@ -75,6 +76,7 @@
             settignbtn = new Button();
             adminpnl = new Panel();
             Admin_userspnl = new Panel();
+            updatebtn = new Button();
             User_tabeltbl = new DataGridView();
             fetch_databtn = new Button();
             Admin_homepnl = new Panel();
@@ -599,6 +601,7 @@
             // Titlepnl
             // 
             Titlepnl.BackColor = SystemColors.ActiveCaptionText;
+            Titlepnl.Controls.Add(button3);
             Titlepnl.Controls.Add(menubtn);
             Titlepnl.Controls.Add(profilelnk);
             Titlepnl.Dock = DockStyle.Top;
@@ -606,6 +609,20 @@
             Titlepnl.Name = "Titlepnl";
             Titlepnl.Size = new Size(1090, 63);
             Titlepnl.TabIndex = 1;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Black;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(113, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(81, 34);
+            button3.TabIndex = 4;
+            button3.Text = "back";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // menubtn
             // 
@@ -753,6 +770,7 @@
             // Admin_userspnl
             // 
             Admin_userspnl.BackColor = Color.SlateGray;
+            Admin_userspnl.Controls.Add(updatebtn);
             Admin_userspnl.Controls.Add(User_tabeltbl);
             Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
@@ -761,6 +779,15 @@
             Admin_userspnl.Size = new Size(944, 578);
             Admin_userspnl.TabIndex = 3;
             // 
+            // updatebtn
+            // 
+            updatebtn.Location = new Point(799, 12);
+            updatebtn.Name = "updatebtn";
+            updatebtn.Size = new Size(136, 34);
+            updatebtn.TabIndex = 2;
+            updatebtn.Text = "Update";
+            updatebtn.UseVisualStyleBackColor = true;
+            // 
             // User_tabeltbl
             // 
             User_tabeltbl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -768,7 +795,7 @@
             User_tabeltbl.Location = new Point(22, 62);
             User_tabeltbl.Name = "User_tabeltbl";
             User_tabeltbl.RowHeadersWidth = 53;
-            User_tabeltbl.Size = new Size(913, 406);
+            User_tabeltbl.Size = new Size(913, 486);
             User_tabeltbl.TabIndex = 1;
             // 
             // fetch_databtn
@@ -887,5 +914,7 @@
         private Panel Admin_userspnl;
         private DataGridView User_tabeltbl;
         private Button fetch_databtn;
+        private Button updatebtn;
+        private Button button3;
     }
 }
