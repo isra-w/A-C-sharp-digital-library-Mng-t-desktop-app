@@ -69,13 +69,14 @@
             menubtn = new Button();
             profilelnk = new LinkLabel();
             sidebar = new Panel();
-            Homebtn = new Button();
             Usersbtn = new Button();
             Shelfbtn = new Button();
             button2 = new Button();
             settignbtn = new Button();
             adminpnl = new Panel();
             Admin_userspnl = new Panel();
+            User_tabeltbl = new DataGridView();
+            fetch_databtn = new Button();
             Admin_homepnl = new Panel();
             Admin_shelfpnl = new Panel();
             Userpnl.SuspendLayout();
@@ -88,6 +89,8 @@
             Titlepnl.SuspendLayout();
             sidebar.SuspendLayout();
             adminpnl.SuspendLayout();
+            Admin_userspnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)User_tabeltbl).BeginInit();
             SuspendLayout();
             // 
             // Userpnl
@@ -641,7 +644,6 @@
             // sidebar
             // 
             sidebar.BackColor = Color.FromArgb(35, 40, 45);
-            sidebar.Controls.Add(Homebtn);
             sidebar.Controls.Add(Usersbtn);
             sidebar.Controls.Add(Shelfbtn);
             sidebar.Controls.Add(button2);
@@ -653,24 +655,6 @@
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(146, 578);
             sidebar.TabIndex = 0;
-            // 
-            // Homebtn
-            // 
-            Homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            Homebtn.Cursor = Cursors.Hand;
-            Homebtn.Dock = DockStyle.Top;
-            Homebtn.FlatAppearance.BorderSize = 0;
-            Homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            Homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Homebtn.FlatStyle = FlatStyle.Flat;
-            Homebtn.ForeColor = Color.LightYellow;
-            Homebtn.Location = new Point(0, 132);
-            Homebtn.Name = "Homebtn";
-            Homebtn.Size = new Size(146, 57);
-            Homebtn.TabIndex = 6;
-            Homebtn.Text = "🏠︎ Home";
-            Homebtn.UseVisualStyleBackColor = false;
             // 
             // Usersbtn
             // 
@@ -769,11 +753,33 @@
             // Admin_userspnl
             // 
             Admin_userspnl.BackColor = Color.SlateGray;
+            Admin_userspnl.Controls.Add(User_tabeltbl);
+            Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
             Admin_userspnl.Location = new Point(146, 63);
             Admin_userspnl.Name = "Admin_userspnl";
             Admin_userspnl.Size = new Size(944, 578);
             Admin_userspnl.TabIndex = 3;
+            // 
+            // User_tabeltbl
+            // 
+            User_tabeltbl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            User_tabeltbl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            User_tabeltbl.Location = new Point(22, 62);
+            User_tabeltbl.Name = "User_tabeltbl";
+            User_tabeltbl.RowHeadersWidth = 53;
+            User_tabeltbl.Size = new Size(913, 406);
+            User_tabeltbl.TabIndex = 1;
+            // 
+            // fetch_databtn
+            // 
+            fetch_databtn.Location = new Point(29, 12);
+            fetch_databtn.Name = "fetch_databtn";
+            fetch_databtn.Size = new Size(136, 34);
+            fetch_databtn.TabIndex = 0;
+            fetch_databtn.Text = "Fetch data";
+            fetch_databtn.UseVisualStyleBackColor = true;
+            fetch_databtn.Click += fetch_databtn_Click;
             // 
             // Admin_homepnl
             // 
@@ -824,6 +830,8 @@
             Titlepnl.PerformLayout();
             sidebar.ResumeLayout(false);
             adminpnl.ResumeLayout(false);
+            Admin_userspnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)User_tabeltbl).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -869,7 +877,6 @@
         private Button menubtn;
         private LinkLabel profilelnk;
         private Panel sidebar;
-        private Button Homebtn;
         private Button Usersbtn;
         private Button Shelfbtn;
         private Button button2;
@@ -878,5 +885,7 @@
         private Panel Admin_homepnl;
         private Panel Admin_shelfpnl;
         private Panel Admin_userspnl;
+        private DataGridView User_tabeltbl;
+        private Button fetch_databtn;
     }
 }

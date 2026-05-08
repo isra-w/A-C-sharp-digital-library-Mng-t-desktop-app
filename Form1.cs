@@ -1,5 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
+using System.Data;
 using System.Drawing.Printing;
 using System.Runtime.Intrinsics.X86;
 
@@ -234,6 +235,16 @@ namespace d.labdemo
             Admin_homepnl.Visible = false;
             Admin_shelfpnl.Visible = false;
             Admin_userspnl.Visible = true;
+        }
+
+        private void fetch_databtn_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd= new SqlCommand("SELECT * FROM Users", DBConnection.checkConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            User_tabeltbl.DataSource = dt;
+
         }
     }
 }
