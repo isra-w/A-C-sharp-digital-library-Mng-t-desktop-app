@@ -1,6 +1,6 @@
+# dlab
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=4F8EF7&center=true&vCenter=true&width=700&lines=📚+D-Lab+Digital+Library;🗓️+Smart+Study+Planner;Built+with+C%23+%26+.NET" alt="Typing SVG" />
 
 <br/>
 
