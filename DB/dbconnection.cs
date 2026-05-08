@@ -16,6 +16,7 @@ namespace d.labdemo.DB
         {
             try
             {
+               // if(checkConnection = !)
                 checkConnection.Open();
             }
             catch (Exception ex)
@@ -23,6 +24,11 @@ namespace d.labdemo.DB
                 MessageBox.Show($"unable to connect to database: \n{ex.Message}", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        internal static void ExecuteNonQuery(string query)
+        {
+            throw new NotImplementedException();
         }
     }
 }
