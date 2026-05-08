@@ -16,6 +16,7 @@ namespace d.labdemo.DB
         {
             try
             {
+               // if(checkConnection = !)
                 checkConnection.Open();
             }
             catch (Exception ex)

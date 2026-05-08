@@ -30,8 +30,7 @@ namespace d.labdemo
         {
 
 
-            string query = $"SELECT Role FROM Admins UNION SELECT Role FROM Librarian" +
-                $" UNION SELECT Role FROM Member WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
+            string query = $"SELECT Role FROM Users WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
 
             DBConnection.intiate();
             SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
@@ -135,7 +134,7 @@ namespace d.labdemo
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = true;
-
+            Wellcome_page.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -156,6 +155,52 @@ namespace d.labdemo
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = false;
+        }
+
+        private void namebx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Wellcome_loginbtn_Click(object sender, EventArgs e)
+        {
+            loginpnl.Visible = true;
+            memberpnl.Visible = false;
+            adminpnl.Visible = false;
+            librarianpnl.Visible = false;
+            signuppnl.Visible = false;
+            Wellcome_page.Visible = false;
+        }
+
+        private void Wellcome_page_Paint(object sender, PaintEventArgs e)
+        {
+            loginpnl.Visible = false;
+            memberpnl.Visible = false;
+            adminpnl.Visible = false;
+            librarianpnl.Visible = false;
+            signuppnl.Visible = false;
+            Wellcome_page.Visible = true;
+        }
+
+        private void Signup_loginlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            loginpnl.Visible = true;
+            memberpnl.Visible = false;
+            adminpnl.Visible = false;
+            librarianpnl.Visible = false;
+            signuppnl.Visible = false;
+            Wellcome_page.Visible = false;
+
+        }
+
+        private void Wellcome_signupbtn_Click(object sender, EventArgs e)
+        {
+            loginpnl.Visible = false;
+            memberpnl.Visible = false;
+            adminpnl.Visible = false;
+            librarianpnl.Visible = false;
+            signuppnl.Visible = true;
+            Wellcome_page.Visible = false;
         }
     }
 }
