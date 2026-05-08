@@ -219,7 +219,6 @@ namespace d.labdemo
             Admin_homepnl.Visible = true;
             Admin_shelfpnl.Visible = false;
             Admin_userspnl.Visible = false;
-            Admin_controllpnl.Visible = false;
 
         }
 
@@ -228,7 +227,6 @@ namespace d.labdemo
             Admin_homepnl.Visible = false;
             Admin_shelfpnl.Visible = true;
             Admin_userspnl.Visible = false;
-            Admin_controllpnl.Visible = false;
         }
 
         private void Usersbtn_Click(object sender, EventArgs e)
@@ -236,15 +234,6 @@ namespace d.labdemo
             Admin_homepnl.Visible = false;
             Admin_shelfpnl.Visible = false;
             Admin_userspnl.Visible = true;
-            Admin_controllpnl.Visible = false;
-        }
-
-        private void Controllbtn_Click(object sender, EventArgs e)
-        {
-            Admin_homepnl.Visible = false;
-            Admin_shelfpnl.Visible = false;
-            Admin_userspnl.Visible = false;
-            Admin_controllpnl.Visible = true;
         }
     }
 }
