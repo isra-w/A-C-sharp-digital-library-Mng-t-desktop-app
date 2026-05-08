@@ -69,14 +69,15 @@
             menubtn = new Button();
             profilelnk = new LinkLabel();
             sidebar = new Panel();
-            Homebtn = new Button();
+            Controllbtn = new Button();
             Usersbtn = new Button();
             Shelfbtn = new Button();
             button2 = new Button();
             settignbtn = new Button();
             adminpnl = new Panel();
-            Admin_userspnl = new Panel();
             Admin_homepnl = new Panel();
+            Admin_controllpnl = new Panel();
+            Admin_userspnl = new Panel();
             Admin_shelfpnl = new Panel();
             Userpnl.SuspendLayout();
             User_sidebar.SuspendLayout();
@@ -641,7 +642,7 @@
             // sidebar
             // 
             sidebar.BackColor = Color.FromArgb(35, 40, 45);
-            sidebar.Controls.Add(Homebtn);
+            sidebar.Controls.Add(Controllbtn);
             sidebar.Controls.Add(Usersbtn);
             sidebar.Controls.Add(Shelfbtn);
             sidebar.Controls.Add(button2);
@@ -654,23 +655,24 @@
             sidebar.Size = new Size(146, 578);
             sidebar.TabIndex = 0;
             // 
-            // Homebtn
+            // Controllbtn
             // 
-            Homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            Homebtn.Cursor = Cursors.Hand;
-            Homebtn.Dock = DockStyle.Top;
-            Homebtn.FlatAppearance.BorderSize = 0;
-            Homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            Homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Homebtn.FlatStyle = FlatStyle.Flat;
-            Homebtn.ForeColor = Color.LightYellow;
-            Homebtn.Location = new Point(0, 132);
-            Homebtn.Name = "Homebtn";
-            Homebtn.Size = new Size(146, 57);
-            Homebtn.TabIndex = 6;
-            Homebtn.Text = "🏠︎ Home";
-            Homebtn.UseVisualStyleBackColor = false;
+            Controllbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Controllbtn.BackColor = Color.FromArgb(30, 40, 45);
+            Controllbtn.Cursor = Cursors.Hand;
+            Controllbtn.Dock = DockStyle.Top;
+            Controllbtn.FlatAppearance.BorderSize = 0;
+            Controllbtn.FlatAppearance.CheckedBackColor = Color.White;
+            Controllbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Controllbtn.FlatStyle = FlatStyle.Flat;
+            Controllbtn.ForeColor = Color.LightYellow;
+            Controllbtn.Location = new Point(0, 132);
+            Controllbtn.Name = "Controllbtn";
+            Controllbtn.Size = new Size(146, 57);
+            Controllbtn.TabIndex = 6;
+            Controllbtn.Text = "controll";
+            Controllbtn.UseVisualStyleBackColor = false;
+            Controllbtn.Click += Controllbtn_Click;
             // 
             // Usersbtn
             // 
@@ -754,8 +756,9 @@
             adminpnl.AutoSize = true;
             adminpnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             adminpnl.BackColor = Color.FromArgb(188, 193, 199);
-            adminpnl.Controls.Add(Admin_userspnl);
             adminpnl.Controls.Add(Admin_homepnl);
+            adminpnl.Controls.Add(Admin_controllpnl);
+            adminpnl.Controls.Add(Admin_userspnl);
             adminpnl.Controls.Add(Admin_shelfpnl);
             adminpnl.Controls.Add(sidebar);
             adminpnl.Controls.Add(Titlepnl);
@@ -766,15 +769,6 @@
             adminpnl.Size = new Size(1090, 641);
             adminpnl.TabIndex = 7;
             // 
-            // Admin_userspnl
-            // 
-            Admin_userspnl.BackColor = Color.SlateGray;
-            Admin_userspnl.Dock = DockStyle.Fill;
-            Admin_userspnl.Location = new Point(146, 63);
-            Admin_userspnl.Name = "Admin_userspnl";
-            Admin_userspnl.Size = new Size(944, 578);
-            Admin_userspnl.TabIndex = 3;
-            // 
             // Admin_homepnl
             // 
             Admin_homepnl.BackColor = Color.FromArgb(192, 255, 255);
@@ -783,6 +777,24 @@
             Admin_homepnl.Name = "Admin_homepnl";
             Admin_homepnl.Size = new Size(944, 578);
             Admin_homepnl.TabIndex = 2;
+            // 
+            // Admin_controllpnl
+            // 
+            Admin_controllpnl.BackColor = Color.Black;
+            Admin_controllpnl.Dock = DockStyle.Fill;
+            Admin_controllpnl.Location = new Point(146, 63);
+            Admin_controllpnl.Name = "Admin_controllpnl";
+            Admin_controllpnl.Size = new Size(944, 578);
+            Admin_controllpnl.TabIndex = 0;
+            // 
+            // Admin_userspnl
+            // 
+            Admin_userspnl.BackColor = Color.SlateGray;
+            Admin_userspnl.Dock = DockStyle.Fill;
+            Admin_userspnl.Location = new Point(146, 63);
+            Admin_userspnl.Name = "Admin_userspnl";
+            Admin_userspnl.Size = new Size(944, 578);
+            Admin_userspnl.TabIndex = 3;
             // 
             // Admin_shelfpnl
             // 
@@ -869,7 +881,7 @@
         private Button menubtn;
         private LinkLabel profilelnk;
         private Panel sidebar;
-        private Button Homebtn;
+        private Button Controllbtn;
         private Button Usersbtn;
         private Button Shelfbtn;
         private Button button2;
@@ -878,5 +890,6 @@
         private Panel Admin_homepnl;
         private Panel Admin_shelfpnl;
         private Panel Admin_userspnl;
+        private Panel Admin_controllpnl;
     }
 }
