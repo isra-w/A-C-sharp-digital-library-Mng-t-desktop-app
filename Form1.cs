@@ -143,9 +143,9 @@ namespace d.labdemo
         private void signupbtn_Click(object sender, EventArgs e)
         {
             DBConnection.intiate();
-            string Full_Name = namebx.Text;
+            string Full_Name = signnfamebx.Text;
             string Username = Signup_usernamebx.Text;
-            string password = passbx.Text;
+            string password = Signup_passbx.Text;
 
             string query = $@"INSERT INTO Users(Full_Name, Username, Password) VALUES('{Full_Name}','{Username}','{password}') ";
             DBConnection.ExecuteNonQuery(query);
@@ -154,6 +154,7 @@ namespace d.labdemo
             adminpnl.Visible = false;
             librarianpnl.Visible = false;
             signuppnl.Visible = false;
+            profilepnl.Visible = false;
         }
 
         private void namebx_TextChanged(object sender, EventArgs e)
