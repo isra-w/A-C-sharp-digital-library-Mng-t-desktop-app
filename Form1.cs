@@ -1,8 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Drawing.Printing;
-using System.Runtime.Intrinsics.X86;
 
 
 
@@ -13,8 +11,7 @@ namespace d.labdemo
         //private string Catagory;
 
         public string? Role { get; private set; }
-        public object Last_name { get; private set; }
-        public object First_name { get; private set; }
+        public object? Full_Name { get; private set; }
 
         public d_lab()
         {
@@ -145,11 +142,12 @@ namespace d.labdemo
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
-            //DBConnection.Initialte();
-            string userName = namebx.Text;
+            DBConnection.intiate();
+            string Full_Name = namebx.Text;
+            string Username = Signup_usernamebx.Text;
             string password = passbx.Text;
 
-            string query = $@"INSERT INTO Users(Userid,First_name,Last_name, UserName, Password) VALUES('{1}','{First_name}','{Last_name}','{userName}','{password}') ";
+            string query = $@"INSERT INTO Users(Full_Name, Username, Password) VALUES('{Full_Name}','{Username}','{password}') ";
             DBConnection.ExecuteNonQuery(query);
             loginpnl.Visible = true;
             Userpnl.Visible = false;
@@ -239,19 +237,43 @@ namespace d.labdemo
 
         private void fetch_databtn_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users", DBConnection.checkConnection);
+            SqlCommand cmd = new SqlCommand("SELECT Userid,Full_Name,Username,Role from Users", DBConnection.checkConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            User_tabeltbl.DataSource = dt;
+            Admin_useresdatagrid.DataSource = dt;
 
         }
 
-        /*private void button3_Click(object sender, EventArgs e)
+        private void updatebtn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            adminpnl back = new adminpnl();
-            back.Show();
-        }*/
+            for (int i = 0; i <= Admin_useresdatagrid.Rows.Count; i++)
+            {
+                SqlCommand cmd2 = new SqlCommand("update Admin_useresdatagrid2 set Full_Name=@Full_Name,Username=@Username,Password=@password where Role=@Role", DBConnection.checkConnection);
+                cmd2.Parameters.AddWithValue("@Fill-Name", Admin_useresdatagrid.Rows[i].Cells[1].Value);
+                cmd2.Parameters.AddWithValue("@Username", Admin_useresdatagrid.Rows[i].Cells[2].Value);
+                cmd2.Parameters.AddWithValue("@Password", Admin_useresdatagrid.Rows[i].Cells[3].Value);
+                cmd2.Parameters.AddWithValue("Role", Admin_useresdatagrid.Rows[i].Cells[0].Value);
+
+                DBConnection.checkConnection.Open();
+                cmd2.ExecuteNonQuery();
+                DBConnection.checkConnection.Close();
+
+                MessageBox.Show("Role has updated successfully");
+            }
+
+            /*private void button3_Click(object sender, EventArgs e)
+            {
+                this.Close();
+                adminpnl back = new adminpnl();
+                back.Show();
+            }*/
+        }
+
+        private void profilelnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           
+            
+        }
     }
 }
