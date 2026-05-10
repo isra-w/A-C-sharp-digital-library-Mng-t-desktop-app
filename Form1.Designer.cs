@@ -56,7 +56,7 @@
             Signup_passbx = new TextBox();
             signusername = new Label();
             signpass = new Label();
-            signpassbx = new TextBox();
+            Signup_usernamebx = new TextBox();
             Signup_loginlink = new LinkLabel();
             signupbtn = new Button();
             signnfamebx = new TextBox();
@@ -77,10 +77,18 @@
             adminpnl = new Panel();
             Admin_userspnl = new Panel();
             updatebtn = new Button();
-            User_tabeltbl = new DataGridView();
+            Admin_useresdatagrid = new DataGridView();
             fetch_databtn = new Button();
             Admin_homepnl = new Panel();
             Admin_shelfpnl = new Panel();
+            profilepnl = new Panel();
+            Profile_titlebar = new Panel();
+            button1 = new Button();
+            button2 = new Button();
+            linkLabel1 = new LinkLabel();
+            Profile_sidebar = new Panel();
+            Profile_homebtn = new Button();
+            button4 = new Button();
             Userpnl.SuspendLayout();
             User_sidebar.SuspendLayout();
             shelf_catagorytab.SuspendLayout();
@@ -92,7 +100,10 @@
             sidebar.SuspendLayout();
             adminpnl.SuspendLayout();
             Admin_userspnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)User_tabeltbl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
+            profilepnl.SuspendLayout();
+            Profile_titlebar.SuspendLayout();
+            Profile_sidebar.SuspendLayout();
             SuspendLayout();
             // 
             // Userpnl
@@ -431,7 +442,7 @@
             signuppnl.Controls.Add(Signup_passbx);
             signuppnl.Controls.Add(signusername);
             signuppnl.Controls.Add(signpass);
-            signuppnl.Controls.Add(signpassbx);
+            signuppnl.Controls.Add(Signup_usernamebx);
             signuppnl.Controls.Add(Signup_loginlink);
             signuppnl.Controls.Add(signupbtn);
             signuppnl.Controls.Add(signnfamebx);
@@ -477,15 +488,15 @@
             signpass.TabIndex = 21;
             signpass.Text = "password";
             // 
-            // signpassbx
+            // Signup_usernamebx
             // 
-            signpassbx.BackColor = Color.LightYellow;
-            signpassbx.Location = new Point(478, 242);
-            signpassbx.Multiline = true;
-            signpassbx.Name = "signpassbx";
-            signpassbx.PlaceholderText = "Username";
-            signpassbx.Size = new Size(300, 29);
-            signpassbx.TabIndex = 20;
+            Signup_usernamebx.BackColor = Color.LightYellow;
+            Signup_usernamebx.Location = new Point(478, 242);
+            Signup_usernamebx.Multiline = true;
+            Signup_usernamebx.Name = "Signup_usernamebx";
+            Signup_usernamebx.PlaceholderText = "Username";
+            Signup_usernamebx.Size = new Size(300, 29);
+            Signup_usernamebx.TabIndex = 20;
             // 
             // Signup_loginlink
             // 
@@ -656,6 +667,7 @@
             profilelnk.TabStop = true;
             profilelnk.Text = "👤 profile";
             profilelnk.VisitedLinkColor = Color.Blue;
+            profilelnk.LinkClicked += profilelnk_LinkClicked;
             // 
             // sidebar
             // 
@@ -770,7 +782,7 @@
             // 
             Admin_userspnl.BackColor = Color.SlateGray;
             Admin_userspnl.Controls.Add(updatebtn);
-            Admin_userspnl.Controls.Add(User_tabeltbl);
+            Admin_userspnl.Controls.Add(Admin_useresdatagrid);
             Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
             Admin_userspnl.Location = new Point(146, 63);
@@ -786,16 +798,17 @@
             updatebtn.TabIndex = 2;
             updatebtn.Text = "Update";
             updatebtn.UseVisualStyleBackColor = true;
+            updatebtn.Click += updatebtn_Click;
             // 
-            // User_tabeltbl
+            // Admin_useresdatagrid
             // 
-            User_tabeltbl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            User_tabeltbl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            User_tabeltbl.Location = new Point(22, 62);
-            User_tabeltbl.Name = "User_tabeltbl";
-            User_tabeltbl.RowHeadersWidth = 53;
-            User_tabeltbl.Size = new Size(913, 486);
-            User_tabeltbl.TabIndex = 1;
+            Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Admin_useresdatagrid.Location = new Point(22, 62);
+            Admin_useresdatagrid.Name = "Admin_useresdatagrid";
+            Admin_useresdatagrid.RowHeadersWidth = 53;
+            Admin_useresdatagrid.Size = new Size(913, 486);
+            Admin_useresdatagrid.TabIndex = 1;
             // 
             // fetch_databtn
             // 
@@ -825,16 +838,135 @@
             Admin_shelfpnl.Size = new Size(944, 578);
             Admin_shelfpnl.TabIndex = 3;
             // 
+            // profilepnl
+            // 
+            profilepnl.Controls.Add(Profile_titlebar);
+            profilepnl.Controls.Add(Profile_sidebar);
+            profilepnl.Dock = DockStyle.Fill;
+            profilepnl.Location = new Point(0, 0);
+            profilepnl.Name = "profilepnl";
+            profilepnl.Size = new Size(1090, 641);
+            profilepnl.TabIndex = 3;
+            // 
+            // Profile_titlebar
+            // 
+            Profile_titlebar.BackColor = SystemColors.ActiveCaptionText;
+            Profile_titlebar.Controls.Add(button1);
+            Profile_titlebar.Controls.Add(button2);
+            Profile_titlebar.Controls.Add(linkLabel1);
+            Profile_titlebar.Dock = DockStyle.Top;
+            Profile_titlebar.Location = new Point(194, 0);
+            Profile_titlebar.Name = "Profile_titlebar";
+            Profile_titlebar.Size = new Size(896, 72);
+            Profile_titlebar.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(113, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 34);
+            button1.TabIndex = 4;
+            button1.Text = "back";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.Cursor = Cursors.Hand;
+            button2.Dock = DockStyle.Left;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.CheckedBackColor = Color.White;
+            button2.FlatAppearance.MouseOverBackColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 21.8879986F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.LightYellow;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(107, 72);
+            button2.TabIndex = 3;
+            button2.Text = "☰";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = SystemColors.ActiveCaption;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Dock = DockStyle.Right;
+            linkLabel1.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLabel1.LinkColor = Color.AliceBlue;
+            linkLabel1.Location = new Point(785, 0);
+            linkLabel1.Margin = new Padding(3, 3, 3, 0);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(111, 30);
+            linkLabel1.TabIndex = 0;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "👤 profile";
+            linkLabel1.VisitedLinkColor = Color.Blue;
+            // 
+            // Profile_sidebar
+            // 
+            Profile_sidebar.BackColor = Color.FromArgb(35, 40, 45);
+            Profile_sidebar.Controls.Add(Profile_homebtn);
+            Profile_sidebar.Controls.Add(button4);
+            Profile_sidebar.Dock = DockStyle.Left;
+            Profile_sidebar.Location = new Point(0, 0);
+            Profile_sidebar.MaximumSize = new Size(194, 641);
+            Profile_sidebar.MinimumSize = new Size(194, 641);
+            Profile_sidebar.Name = "Profile_sidebar";
+            Profile_sidebar.Size = new Size(194, 641);
+            Profile_sidebar.TabIndex = 1;
+            // 
+            // Profile_homebtn
+            // 
+            Profile_homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Profile_homebtn.BackColor = Color.FromArgb(30, 40, 45);
+            Profile_homebtn.Cursor = Cursors.Hand;
+            Profile_homebtn.FlatAppearance.BorderSize = 0;
+            Profile_homebtn.FlatAppearance.CheckedBackColor = Color.White;
+            Profile_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Profile_homebtn.FlatStyle = FlatStyle.Flat;
+            Profile_homebtn.ForeColor = Color.LightYellow;
+            Profile_homebtn.Location = new Point(0, 0);
+            Profile_homebtn.Name = "Profile_homebtn";
+            Profile_homebtn.Size = new Size(190, 72);
+            Profile_homebtn.TabIndex = 8;
+            Profile_homebtn.Text = "🏠︎ Home";
+            Profile_homebtn.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button4.BackColor = Color.FromArgb(30, 40, 45);
+            button4.Dock = DockStyle.Bottom;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.CheckedBackColor = Color.White;
+            button4.FlatAppearance.MouseOverBackColor = Color.Black;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.LightYellow;
+            button4.Location = new Point(0, 597);
+            button4.Margin = new Padding(0, 0, 0, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(194, 44);
+            button4.TabIndex = 5;
+            button4.Text = "⚙️ Setting";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
             Controls.Add(signuppnl);
-            Controls.Add(Userpnl);
-            Controls.Add(adminpnl);
-            Controls.Add(loginpnl);
             Controls.Add(Wellcome_page);
+            Controls.Add(adminpnl);
+            Controls.Add(profilepnl);
+            Controls.Add(Userpnl);
+            Controls.Add(loginpnl);
             Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1108, 689);
@@ -857,7 +989,11 @@
             sidebar.ResumeLayout(false);
             adminpnl.ResumeLayout(false);
             Admin_userspnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)User_tabeltbl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
+            profilepnl.ResumeLayout(false);
+            Profile_titlebar.ResumeLayout(false);
+            Profile_titlebar.PerformLayout();
+            Profile_sidebar.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -892,7 +1028,7 @@
         private TextBox signnfamebx;
         private Label signfname;
         private Label signup_wellcomebx;
-        private TextBox signpassbx;
+        private TextBox Signup_usernamebx;
         private Label signpass;
         private TextBox Signup_passbx;
         private Label signusername;
@@ -911,9 +1047,17 @@
         private Panel Admin_homepnl;
         private Panel Admin_shelfpnl;
         private Panel Admin_userspnl;
-        private DataGridView User_tabeltbl;
+        private DataGridView Admin_useresdatagrid;
         private Button fetch_databtn;
         private Button updatebtn;
         private Button Admin_backbtn;
+        private Panel profilepnl;
+        private Panel Profile_titlebar;
+        private Button button1;
+        private Button button2;
+        private LinkLabel linkLabel1;
+        private Panel Profile_sidebar;
+        private Button Profile_homebtn;
+        private Button button4;
     }
 }
