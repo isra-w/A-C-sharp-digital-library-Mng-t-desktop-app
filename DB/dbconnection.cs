@@ -21,14 +21,16 @@ namespace d.labdemo.DB
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"unable to connect to database: \n{ex.Message}", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"unable to connect database\n {ex.Message} ", "DB ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        internal static void ExecuteNonQuery(string query)
+        public static int ExecuteNonQuery(string query)
         {
-            throw new NotImplementedException();
+            /*throw new NotImplementedException();*/
+            SqlCommand sqlCommand = new SqlCommand(query, checkConnection);// it's used to send the query commands to the database
+            return sqlCommand.ExecuteNonQuery();
         }
     }
 }

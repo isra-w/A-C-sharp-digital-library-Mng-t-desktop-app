@@ -961,12 +961,12 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
+            Controls.Add(loginpnl);
             Controls.Add(signuppnl);
             Controls.Add(Wellcome_page);
             Controls.Add(adminpnl);
             Controls.Add(profilepnl);
             Controls.Add(Userpnl);
-            Controls.Add(loginpnl);
             Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1108, 689);
