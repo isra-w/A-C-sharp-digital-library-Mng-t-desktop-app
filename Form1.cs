@@ -14,6 +14,7 @@ namespace d.labdemo
         public d_lab()
         {
             InitializeComponent();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
