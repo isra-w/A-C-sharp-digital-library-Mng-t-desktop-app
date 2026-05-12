@@ -53,14 +53,16 @@
             welcome_labele = new Label();
             librarianpnl = new Panel();
             signuppnl = new Panel();
+            Signup_lastnamebx = new TextBox();
+            Signup_Lastnamelbl = new Label();
             Signup_passbx = new TextBox();
-            signusername = new Label();
+            Signup_Usernamelbl = new Label();
             signpass = new Label();
             Signup_usernamebx = new TextBox();
             Signup_loginlink = new LinkLabel();
             signupbtn = new Button();
-            signnfamebx = new TextBox();
-            signfname = new Label();
+            Signup_firstnamebx = new TextBox();
+            signup_Firstnamelbl = new Label();
             signup_wellcomebx = new Label();
             Wellcome_page = new Panel();
             Wellcome_signupbtn = new Button();
@@ -437,16 +439,18 @@
             // 
             // signuppnl
             // 
-            signuppnl.BackgroundImage = d_labdemo.Properties.Resources.Bookshelf_Wallpaper_Desktop_HD__1_;
+            signuppnl.BackColor = Color.FromArgb(26, 26, 0);
             signuppnl.BackgroundImageLayout = ImageLayout.Stretch;
+            signuppnl.Controls.Add(Signup_lastnamebx);
+            signuppnl.Controls.Add(Signup_Lastnamelbl);
             signuppnl.Controls.Add(Signup_passbx);
-            signuppnl.Controls.Add(signusername);
+            signuppnl.Controls.Add(Signup_Usernamelbl);
             signuppnl.Controls.Add(signpass);
             signuppnl.Controls.Add(Signup_usernamebx);
             signuppnl.Controls.Add(Signup_loginlink);
             signuppnl.Controls.Add(signupbtn);
-            signuppnl.Controls.Add(signnfamebx);
-            signuppnl.Controls.Add(signfname);
+            signuppnl.Controls.Add(Signup_firstnamebx);
+            signuppnl.Controls.Add(signup_Firstnamelbl);
             signuppnl.Controls.Add(signup_wellcomebx);
             signuppnl.Dock = DockStyle.Fill;
             signuppnl.Location = new Point(0, 0);
@@ -454,44 +458,68 @@
             signuppnl.Size = new Size(1090, 641);
             signuppnl.TabIndex = 13;
             // 
+            // Signup_lastnamebx
+            // 
+            Signup_lastnamebx.BackColor = Color.LightYellow;
+            Signup_lastnamebx.BorderStyle = BorderStyle.None;
+            Signup_lastnamebx.Location = new Point(478, 230);
+            Signup_lastnamebx.Multiline = true;
+            Signup_lastnamebx.Name = "Signup_lastnamebx";
+            Signup_lastnamebx.PlaceholderText = "Enter your Last Name";
+            Signup_lastnamebx.Size = new Size(300, 29);
+            Signup_lastnamebx.TabIndex = 25;
+            // 
+            // Signup_Lastnamelbl
+            // 
+            Signup_Lastnamelbl.AutoSize = true;
+            Signup_Lastnamelbl.BackColor = Color.Transparent;
+            Signup_Lastnamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Signup_Lastnamelbl.ForeColor = Color.FromArgb(255, 255, 204);
+            Signup_Lastnamelbl.Location = new Point(179, 225);
+            Signup_Lastnamelbl.Name = "Signup_Lastnamelbl";
+            Signup_Lastnamelbl.Size = new Size(127, 29);
+            Signup_Lastnamelbl.TabIndex = 24;
+            Signup_Lastnamelbl.Text = "Last Name";
+            Signup_Lastnamelbl.Click += label1_Click;
+            // 
             // Signup_passbx
             // 
             Signup_passbx.BackColor = Color.LightYellow;
-            Signup_passbx.Location = new Point(478, 326);
+            Signup_passbx.Location = new Point(478, 378);
             Signup_passbx.Name = "Signup_passbx";
             Signup_passbx.PlaceholderText = "Password";
             Signup_passbx.Size = new Size(300, 29);
             Signup_passbx.TabIndex = 23;
             Signup_passbx.UseSystemPasswordChar = true;
             // 
-            // signusername
+            // Signup_Usernamelbl
             // 
-            signusername.AutoSize = true;
-            signusername.BackColor = Color.Transparent;
-            signusername.Font = new Font("Bell MT", 12.096F, FontStyle.Bold);
-            signusername.ForeColor = Color.LightYellow;
-            signusername.Location = new Point(290, 242);
-            signusername.Name = "signusername";
-            signusername.Size = new Size(110, 25);
-            signusername.TabIndex = 22;
-            signusername.Text = "User name";
+            Signup_Usernamelbl.AutoSize = true;
+            Signup_Usernamelbl.BackColor = Color.Transparent;
+            Signup_Usernamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Signup_Usernamelbl.ForeColor = Color.FromArgb(255, 255, 204);
+            Signup_Usernamelbl.Location = new Point(175, 297);
+            Signup_Usernamelbl.Name = "Signup_Usernamelbl";
+            Signup_Usernamelbl.Size = new Size(131, 29);
+            Signup_Usernamelbl.TabIndex = 22;
+            Signup_Usernamelbl.Text = "User Name";
             // 
             // signpass
             // 
             signpass.AutoSize = true;
             signpass.BackColor = Color.Transparent;
-            signpass.Font = new Font("Bell MT", 12.096F, FontStyle.Bold);
-            signpass.ForeColor = Color.LightYellow;
-            signpass.Location = new Point(290, 326);
+            signpass.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            signpass.ForeColor = Color.FromArgb(255, 255, 204);
+            signpass.Location = new Point(179, 376);
             signpass.Name = "signpass";
-            signpass.Size = new Size(97, 25);
+            signpass.Size = new Size(111, 29);
             signpass.TabIndex = 21;
             signpass.Text = "password";
             // 
             // Signup_usernamebx
             // 
             Signup_usernamebx.BackColor = Color.LightYellow;
-            Signup_usernamebx.Location = new Point(478, 242);
+            Signup_usernamebx.Location = new Point(478, 299);
             Signup_usernamebx.Multiline = true;
             Signup_usernamebx.Name = "Signup_usernamebx";
             Signup_usernamebx.PlaceholderText = "Username";
@@ -503,7 +531,8 @@
             Signup_loginlink.AutoSize = true;
             Signup_loginlink.BackColor = Color.Transparent;
             Signup_loginlink.Font = new Font("Segoe UI Semibold", 9.792F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Signup_loginlink.LinkColor = Color.LightYellow;
+            Signup_loginlink.ForeColor = Color.FromArgb(255, 255, 204);
+            Signup_loginlink.LinkColor = Color.FromArgb(0, 15, 255, 204);
             Signup_loginlink.Location = new Point(12, 565);
             Signup_loginlink.Name = "Signup_loginlink";
             Signup_loginlink.Size = new Size(213, 46);
@@ -516,9 +545,10 @@
             // 
             // signupbtn
             // 
-            signupbtn.BackColor = Color.LightYellow;
+            signupbtn.BackColor = Color.FromArgb(50, 50, 50);
             signupbtn.Font = new Font("Segoe UI", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            signupbtn.Location = new Point(448, 420);
+            signupbtn.ForeColor = Color.FromArgb(255, 255, 204);
+            signupbtn.Location = new Point(415, 461);
             signupbtn.Name = "signupbtn";
             signupbtn.Size = new Size(191, 66);
             signupbtn.TabIndex = 18;
@@ -526,43 +556,44 @@
             signupbtn.UseVisualStyleBackColor = false;
             signupbtn.Click += signupbtn_Click;
             // 
-            // signnfamebx
+            // Signup_firstnamebx
             // 
-            signnfamebx.BackColor = Color.LightYellow;
-            signnfamebx.BorderStyle = BorderStyle.None;
-            signnfamebx.Location = new Point(478, 151);
-            signnfamebx.Multiline = true;
-            signnfamebx.Name = "signnfamebx";
-            signnfamebx.PlaceholderText = "Enter your name";
-            signnfamebx.Size = new Size(300, 29);
-            signnfamebx.TabIndex = 16;
+            Signup_firstnamebx.BackColor = Color.LightYellow;
+            Signup_firstnamebx.BorderStyle = BorderStyle.None;
+            Signup_firstnamebx.Location = new Point(478, 151);
+            Signup_firstnamebx.Multiline = true;
+            Signup_firstnamebx.Name = "Signup_firstnamebx";
+            Signup_firstnamebx.PlaceholderText = "Enter your First Name";
+            Signup_firstnamebx.Size = new Size(300, 29);
+            Signup_firstnamebx.TabIndex = 16;
             // 
-            // signfname
+            // signup_Firstnamelbl
             // 
-            signfname.AutoSize = true;
-            signfname.BackColor = Color.Transparent;
-            signfname.Font = new Font("Bell MT", 12.096F, FontStyle.Bold);
-            signfname.ForeColor = Color.LightYellow;
-            signfname.Location = new Point(290, 149);
-            signfname.Name = "signfname";
-            signfname.Size = new Size(107, 25);
-            signfname.TabIndex = 14;
-            signfname.Text = "Full Name";
-            signfname.Click += label2_Click;
+            signup_Firstnamelbl.AutoSize = true;
+            signup_Firstnamelbl.BackColor = Color.Transparent;
+            signup_Firstnamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            signup_Firstnamelbl.ForeColor = Color.FromArgb(255, 255, 204);
+            signup_Firstnamelbl.Location = new Point(179, 153);
+            signup_Firstnamelbl.Name = "signup_Firstnamelbl";
+            signup_Firstnamelbl.Size = new Size(132, 29);
+            signup_Firstnamelbl.TabIndex = 14;
+            signup_Firstnamelbl.Text = "First Name";
+            signup_Firstnamelbl.Click += label2_Click;
             // 
             // signup_wellcomebx
             // 
             signup_wellcomebx.AutoSize = true;
             signup_wellcomebx.BackColor = Color.Transparent;
-            signup_wellcomebx.Font = new Font("Ravie", 25.92F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            signup_wellcomebx.ForeColor = Color.LightYellow;
-            signup_wellcomebx.Location = new Point(378, 63);
+            signup_wellcomebx.Font = new Font("Ravie", 36.288F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            signup_wellcomebx.ForeColor = Color.FromArgb(255, 255, 204);
+            signup_wellcomebx.Location = new Point(290, 21);
             signup_wellcomebx.Name = "signup_wellcomebx";
-            signup_wellcomebx.Size = new Size(368, 69);
+            signup_wellcomebx.Size = new Size(515, 95);
             signup_wellcomebx.TabIndex = 13;
             signup_wellcomebx.Text = "WELLCOME";
             signup_wellcomebx.TextAlign = ContentAlignment.MiddleCenter;
             signup_wellcomebx.UseCompatibleTextRendering = true;
+            signup_wellcomebx.Click += signup_wellcomebx_Click;
             // 
             // Wellcome_page
             // 
@@ -961,10 +992,10 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
-            Controls.Add(Wellcome_page);
             Controls.Add(adminpnl);
-            Controls.Add(Userpnl);
             Controls.Add(signuppnl);
+            Controls.Add(Wellcome_page);
+            Controls.Add(Userpnl);
             Controls.Add(loginpnl);
             Controls.Add(profilepnl);
             Controls.Add(librarianpnl);
@@ -1025,13 +1056,13 @@
         private Panel signuppnl;
         private LinkLabel Signup_loginlink;
         private Button signupbtn;
-        private TextBox signnfamebx;
-        private Label signfname;
+        private TextBox Signup_firstnamebx;
+        private Label signup_Firstnamelbl;
         private Label signup_wellcomebx;
         private TextBox Signup_usernamebx;
         private Label signpass;
         private TextBox Signup_passbx;
-        private Label signusername;
+        private Label Signup_Usernamelbl;
         private Panel Wellcome_page;
         private Button Wellcome_signupbtn;
         private Button Wellcome_loginbtn;
@@ -1059,5 +1090,7 @@
         private Panel Profile_sidebar;
         private Button Profile_homebtn;
         private Button button4;
+        private Label Signup_Lastnamelbl;
+        private TextBox Signup_lastnamebx;
     }
 }
