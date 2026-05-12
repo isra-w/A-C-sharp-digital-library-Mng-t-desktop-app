@@ -14,6 +14,8 @@ namespace d.labdemo
         public d_lab()
         {
             InitializeComponent();
+          /*  Wellcome_page.Visible = true;
+            Wellcome_page.BringToFront  ();*/
 
         }
 
@@ -44,7 +46,7 @@ namespace d.labdemo
                 adminpnl.Visible = true;
                 librarianpnl.Visible = false;
                 signuppnl.Visible = false;
-                            }
+            }
             else if (Role == "User")
             {
                 loginpnl.Visible = false;
@@ -143,7 +145,7 @@ namespace d.labdemo
         private void signupbtn_Click(object sender, EventArgs e)
         {
             DBConnection.intiate();
-            string Full_Name = signnfamebx.Text;
+            string Full_Name = Signup_firstnamebx.Text;
             string Username = Signup_usernamebx.Text;
             string password = Signup_passbx.Text;
 
@@ -256,8 +258,7 @@ namespace d.labdemo
             {
                 try
                 {
-                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@rolw WHERE UserId = @userId" , DBConnection.checkConnection);
-
+                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
                     DBConnection.checkConnection.Open();
                     cmd2.ExecuteReader();
                     DBConnection.checkConnection.Close();
@@ -266,9 +267,10 @@ namespace d.labdemo
                 }
                 catch (Exception ex1)
                 {
-                
-                MessageBox.Show(ex1.Message);
-                };
+
+                    MessageBox.Show(ex1.Message);
+                }
+                ;
                 DBConnection.checkConnection.Close();
 
             }
@@ -283,8 +285,18 @@ namespace d.labdemo
 
         private void profilelnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
-            
+
+
+        }
+
+        private void signup_wellcomebx_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
