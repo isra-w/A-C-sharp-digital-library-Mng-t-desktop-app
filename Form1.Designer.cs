@@ -29,20 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
-            Userpnl = new Panel();
-            User_sidebar = new Panel();
             User_study_assistbtn = new Button();
-            User_favoritebtn = new Button();
-            User_shelfbtn = new Button();
-            User_homebtn = new Button();
-            User_settingbtn = new Button();
             Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
             Noveltab = new TabPage();
-            User_titlepnl = new Panel();
-            Admin_menubtn = new Button();
-            User_profilelnk = new LinkLabel();
             loginpnl = new Panel();
             login_signup = new LinkLabel();
             logibtn = new Button();
@@ -51,7 +42,6 @@
             passlbl = new Label();
             usernamelbl = new Label();
             welcome_labele = new Label();
-            librarianpnl = new Panel();
             signuppnl = new Panel();
             Signup_lastnamebx = new TextBox();
             Signup_Lastnamelbl = new Label();
@@ -76,65 +66,24 @@
             Bookbtn = new Button();
             Admin_homebtn = new Button();
             settignbtn = new Button();
-            adminpnl = new Panel();
             Admin_userspnl = new Panel();
             updatebtn = new Button();
             Admin_useresdatagrid = new DataGridView();
             fetch_databtn = new Button();
-            Admin_homepnl = new Panel();
             profilepnl = new Panel();
-            Profile_titlebar = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            linkLabel1 = new LinkLabel();
-            Profile_sidebar = new Panel();
-            Profile_homebtn = new Button();
-            button4 = new Button();
-            Userpnl.SuspendLayout();
-            User_sidebar.SuspendLayout();
+            Homepagepnl = new Panel();
+            Userpnl = new Panel();
             Book_catagorytab.SuspendLayout();
-            User_titlepnl.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
             Wellcome_page.SuspendLayout();
             Titlepnl.SuspendLayout();
             sidebar.SuspendLayout();
-            adminpnl.SuspendLayout();
             Admin_userspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
-            profilepnl.SuspendLayout();
-            Profile_titlebar.SuspendLayout();
-            Profile_sidebar.SuspendLayout();
+            Homepagepnl.SuspendLayout();
+            Userpnl.SuspendLayout();
             SuspendLayout();
-            // 
-            // Userpnl
-            // 
-            Userpnl.BackColor = Color.FromArgb(188, 193, 199);
-            Userpnl.Controls.Add(User_sidebar);
-            Userpnl.Controls.Add(Book_catagorytab);
-            Userpnl.Controls.Add(User_titlepnl);
-            Userpnl.Dock = DockStyle.Fill;
-            Userpnl.Location = new Point(0, 0);
-            Userpnl.Name = "Userpnl";
-            Userpnl.Size = new Size(1090, 641);
-            Userpnl.TabIndex = 7;
-            // 
-            // User_sidebar
-            // 
-            User_sidebar.BackColor = Color.FromArgb(35, 40, 45);
-            User_sidebar.BorderStyle = BorderStyle.Fixed3D;
-            User_sidebar.Controls.Add(User_study_assistbtn);
-            User_sidebar.Controls.Add(User_favoritebtn);
-            User_sidebar.Controls.Add(User_shelfbtn);
-            User_sidebar.Controls.Add(User_homebtn);
-            User_sidebar.Controls.Add(User_settingbtn);
-            User_sidebar.Dock = DockStyle.Left;
-            User_sidebar.Location = new Point(0, 63);
-            User_sidebar.MaximumSize = new Size(190, 999);
-            User_sidebar.MinimumSize = new Size(107, 526);
-            User_sidebar.Name = "User_sidebar";
-            User_sidebar.Size = new Size(166, 578);
-            User_sidebar.TabIndex = 3;
             // 
             // User_study_assistbtn
             // 
@@ -147,88 +96,12 @@
             User_study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             User_study_assistbtn.FlatStyle = FlatStyle.Flat;
             User_study_assistbtn.ForeColor = Color.LightYellow;
-            User_study_assistbtn.Location = new Point(0, 132);
+            User_study_assistbtn.Location = new Point(0, 0);
             User_study_assistbtn.Name = "User_study_assistbtn";
-            User_study_assistbtn.Size = new Size(162, 57);
+            User_study_assistbtn.Size = new Size(161, 57);
             User_study_assistbtn.TabIndex = 6;
             User_study_assistbtn.Text = "🏠︎ study";
             User_study_assistbtn.UseVisualStyleBackColor = false;
-            // 
-            // User_favoritebtn
-            // 
-            User_favoritebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            User_favoritebtn.BackColor = Color.FromArgb(30, 40, 45);
-            User_favoritebtn.Cursor = Cursors.Hand;
-            User_favoritebtn.Dock = DockStyle.Top;
-            User_favoritebtn.FlatAppearance.BorderSize = 0;
-            User_favoritebtn.FlatAppearance.CheckedBackColor = Color.White;
-            User_favoritebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            User_favoritebtn.FlatStyle = FlatStyle.Flat;
-            User_favoritebtn.ForeColor = Color.LightYellow;
-            User_favoritebtn.Location = new Point(0, 88);
-            User_favoritebtn.Name = "User_favoritebtn";
-            User_favoritebtn.Size = new Size(162, 44);
-            User_favoritebtn.TabIndex = 7;
-            User_favoritebtn.Text = "❤️Favorites";
-            User_favoritebtn.UseVisualStyleBackColor = false;
-            User_favoritebtn.Click += User_favoritebtn_Click;
-            // 
-            // User_shelfbtn
-            // 
-            User_shelfbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            User_shelfbtn.BackColor = Color.FromArgb(30, 40, 45);
-            User_shelfbtn.Cursor = Cursors.Hand;
-            User_shelfbtn.Dock = DockStyle.Top;
-            User_shelfbtn.FlatAppearance.BorderSize = 0;
-            User_shelfbtn.FlatAppearance.CheckedBackColor = Color.White;
-            User_shelfbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            User_shelfbtn.FlatStyle = FlatStyle.Flat;
-            User_shelfbtn.ForeColor = Color.LightYellow;
-            User_shelfbtn.Location = new Point(0, 44);
-            User_shelfbtn.Name = "User_shelfbtn";
-            User_shelfbtn.Size = new Size(162, 44);
-            User_shelfbtn.TabIndex = 9;
-            User_shelfbtn.Text = "📊  Shelf";
-            User_shelfbtn.UseVisualStyleBackColor = false;
-            User_shelfbtn.Click += User_shelfbtn_Click;
-            // 
-            // User_homebtn
-            // 
-            User_homebtn.AutoEllipsis = true;
-            User_homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            User_homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            User_homebtn.Cursor = Cursors.Hand;
-            User_homebtn.Dock = DockStyle.Top;
-            User_homebtn.FlatAppearance.BorderSize = 0;
-            User_homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            User_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            User_homebtn.FlatStyle = FlatStyle.Flat;
-            User_homebtn.ForeColor = Color.LightYellow;
-            User_homebtn.Location = new Point(0, 0);
-            User_homebtn.Name = "User_homebtn";
-            User_homebtn.Size = new Size(162, 44);
-            User_homebtn.TabIndex = 8;
-            User_homebtn.Text = "🏠︎ Home";
-            User_homebtn.UseVisualStyleBackColor = false;
-            // 
-            // User_settingbtn
-            // 
-            User_settingbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            User_settingbtn.BackColor = Color.FromArgb(30, 40, 45);
-            User_settingbtn.Dock = DockStyle.Bottom;
-            User_settingbtn.FlatAppearance.BorderSize = 0;
-            User_settingbtn.FlatAppearance.CheckedBackColor = Color.White;
-            User_settingbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            User_settingbtn.FlatStyle = FlatStyle.Flat;
-            User_settingbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            User_settingbtn.ForeColor = Color.LightYellow;
-            User_settingbtn.Location = new Point(0, 530);
-            User_settingbtn.Margin = new Padding(0, 0, 0, 3);
-            User_settingbtn.Name = "User_settingbtn";
-            User_settingbtn.Size = new Size(162, 44);
-            User_settingbtn.TabIndex = 5;
-            User_settingbtn.Text = "⚙️ Setting";
-            User_settingbtn.UseVisualStyleBackColor = false;
             // 
             // Book_catagorytab
             // 
@@ -236,7 +109,7 @@
             Book_catagorytab.Controls.Add(Medicinetab);
             Book_catagorytab.Controls.Add(Noveltab);
             Book_catagorytab.Dock = DockStyle.Right;
-            Book_catagorytab.Location = new Point(175, 63);
+            Book_catagorytab.Location = new Point(14, 0);
             Book_catagorytab.Name = "Book_catagorytab";
             Book_catagorytab.SelectedIndex = 0;
             Book_catagorytab.Size = new Size(915, 578);
@@ -274,51 +147,6 @@
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
-            // 
-            // User_titlepnl
-            // 
-            User_titlepnl.BackColor = SystemColors.ActiveCaptionText;
-            User_titlepnl.Controls.Add(Admin_menubtn);
-            User_titlepnl.Controls.Add(User_profilelnk);
-            User_titlepnl.Dock = DockStyle.Top;
-            User_titlepnl.Location = new Point(0, 0);
-            User_titlepnl.Name = "User_titlepnl";
-            User_titlepnl.Size = new Size(1090, 63);
-            User_titlepnl.TabIndex = 2;
-            // 
-            // Admin_menubtn
-            // 
-            Admin_menubtn.BackColor = Color.Transparent;
-            Admin_menubtn.Cursor = Cursors.Hand;
-            Admin_menubtn.Dock = DockStyle.Left;
-            Admin_menubtn.FlatAppearance.BorderSize = 0;
-            Admin_menubtn.FlatAppearance.CheckedBackColor = Color.White;
-            Admin_menubtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Admin_menubtn.FlatStyle = FlatStyle.Flat;
-            Admin_menubtn.Font = new Font("Segoe UI", 21.8879986F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Admin_menubtn.ForeColor = Color.LightYellow;
-            Admin_menubtn.Location = new Point(0, 0);
-            Admin_menubtn.Name = "Admin_menubtn";
-            Admin_menubtn.Size = new Size(107, 63);
-            Admin_menubtn.TabIndex = 3;
-            Admin_menubtn.Text = "☰";
-            Admin_menubtn.UseVisualStyleBackColor = false;
-            // 
-            // User_profilelnk
-            // 
-            User_profilelnk.ActiveLinkColor = SystemColors.ActiveCaption;
-            User_profilelnk.AutoSize = true;
-            User_profilelnk.Dock = DockStyle.Right;
-            User_profilelnk.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            User_profilelnk.LinkColor = Color.AliceBlue;
-            User_profilelnk.Location = new Point(979, 0);
-            User_profilelnk.Margin = new Padding(3, 3, 3, 0);
-            User_profilelnk.Name = "User_profilelnk";
-            User_profilelnk.Size = new Size(111, 30);
-            User_profilelnk.TabIndex = 0;
-            User_profilelnk.TabStop = true;
-            User_profilelnk.Text = "👤 profile";
-            User_profilelnk.VisitedLinkColor = Color.Blue;
             // 
             // loginpnl
             // 
@@ -426,15 +254,6 @@
             welcome_labele.Text = "WELLCOME";
             welcome_labele.TextAlign = ContentAlignment.MiddleCenter;
             welcome_labele.UseCompatibleTextRendering = true;
-            // 
-            // librarianpnl
-            // 
-            librarianpnl.BackColor = SystemColors.ControlDarkDark;
-            librarianpnl.Dock = DockStyle.Fill;
-            librarianpnl.Location = new Point(0, 0);
-            librarianpnl.Name = "librarianpnl";
-            librarianpnl.Size = new Size(1090, 641);
-            librarianpnl.TabIndex = 13;
             // 
             // signuppnl
             // 
@@ -705,6 +524,7 @@
             sidebar.Controls.Add(Usersbtn);
             sidebar.Controls.Add(Bookbtn);
             sidebar.Controls.Add(Admin_homebtn);
+            sidebar.Controls.Add(User_study_assistbtn);
             sidebar.Controls.Add(settignbtn);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 63);
@@ -725,7 +545,7 @@
             Usersbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Usersbtn.FlatStyle = FlatStyle.Flat;
             Usersbtn.ForeColor = Color.LightYellow;
-            Usersbtn.Location = new Point(0, 88);
+            Usersbtn.Location = new Point(0, 145);
             Usersbtn.Name = "Usersbtn";
             Usersbtn.Size = new Size(161, 44);
             Usersbtn.TabIndex = 7;
@@ -744,7 +564,7 @@
             Bookbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Bookbtn.FlatStyle = FlatStyle.Flat;
             Bookbtn.ForeColor = Color.LightYellow;
-            Bookbtn.Location = new Point(0, 44);
+            Bookbtn.Location = new Point(0, 101);
             Bookbtn.Name = "Bookbtn";
             Bookbtn.Size = new Size(161, 44);
             Bookbtn.TabIndex = 9;
@@ -764,7 +584,7 @@
             Admin_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Admin_homebtn.FlatStyle = FlatStyle.Flat;
             Admin_homebtn.ForeColor = Color.LightYellow;
-            Admin_homebtn.Location = new Point(0, 0);
+            Admin_homebtn.Location = new Point(0, 57);
             Admin_homebtn.Name = "Admin_homebtn";
             Admin_homebtn.Size = new Size(161, 44);
             Admin_homebtn.TabIndex = 8;
@@ -790,22 +610,6 @@
             settignbtn.TabIndex = 5;
             settignbtn.Text = "⚙️ Setting";
             settignbtn.UseVisualStyleBackColor = false;
-            // 
-            // adminpnl
-            // 
-            adminpnl.AutoSize = true;
-            adminpnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            adminpnl.BackColor = Color.FromArgb(188, 193, 199);
-            adminpnl.Controls.Add(Admin_userspnl);
-            adminpnl.Controls.Add(Admin_homepnl);
-            adminpnl.Controls.Add(sidebar);
-            adminpnl.Controls.Add(Titlepnl);
-            adminpnl.Dock = DockStyle.Fill;
-            adminpnl.Location = new Point(0, 0);
-            adminpnl.MinimumSize = new Size(841, 589);
-            adminpnl.Name = "adminpnl";
-            adminpnl.Size = new Size(1090, 641);
-            adminpnl.TabIndex = 7;
             // 
             // Admin_userspnl
             // 
@@ -849,155 +653,53 @@
             fetch_databtn.UseVisualStyleBackColor = true;
             fetch_databtn.Click += fetch_databtn_Click;
             // 
-            // Admin_homepnl
-            // 
-            Admin_homepnl.BackColor = Color.FromArgb(192, 255, 255);
-            Admin_homepnl.Dock = DockStyle.Fill;
-            Admin_homepnl.Location = new Point(161, 63);
-            Admin_homepnl.Name = "Admin_homepnl";
-            Admin_homepnl.Size = new Size(929, 578);
-            Admin_homepnl.TabIndex = 2;
-            // 
             // profilepnl
             // 
-            profilepnl.Controls.Add(Profile_titlebar);
-            profilepnl.Controls.Add(Profile_sidebar);
+            profilepnl.BackColor = Color.PowderBlue;
             profilepnl.Dock = DockStyle.Fill;
-            profilepnl.Location = new Point(0, 0);
+            profilepnl.Location = new Point(161, 63);
             profilepnl.Name = "profilepnl";
-            profilepnl.Size = new Size(1090, 641);
+            profilepnl.Size = new Size(929, 578);
             profilepnl.TabIndex = 3;
             // 
-            // Profile_titlebar
+            // Homepagepnl
             // 
-            Profile_titlebar.BackColor = SystemColors.ActiveCaptionText;
-            Profile_titlebar.Controls.Add(button1);
-            Profile_titlebar.Controls.Add(button2);
-            Profile_titlebar.Controls.Add(linkLabel1);
-            Profile_titlebar.Dock = DockStyle.Top;
-            Profile_titlebar.Location = new Point(194, 0);
-            Profile_titlebar.Name = "Profile_titlebar";
-            Profile_titlebar.Size = new Size(896, 72);
-            Profile_titlebar.TabIndex = 2;
+            Homepagepnl.Controls.Add(profilepnl);
+            Homepagepnl.Controls.Add(Admin_userspnl);
+            Homepagepnl.Controls.Add(Userpnl);
+            Homepagepnl.Controls.Add(sidebar);
+            Homepagepnl.Controls.Add(Titlepnl);
+            Homepagepnl.Dock = DockStyle.Fill;
+            Homepagepnl.Location = new Point(0, 0);
+            Homepagepnl.Name = "Homepagepnl";
+            Homepagepnl.Size = new Size(1090, 641);
+            Homepagepnl.TabIndex = 0;
             // 
-            // button1
+            // Userpnl
             // 
-            button1.BackColor = Color.Black;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(113, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(81, 34);
-            button1.TabIndex = 4;
-            button1.Text = "back";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.Cursor = Cursors.Hand;
-            button2.Dock = DockStyle.Left;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.CheckedBackColor = Color.White;
-            button2.FlatAppearance.MouseOverBackColor = Color.Black;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 21.8879986F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.LightYellow;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(107, 72);
-            button2.TabIndex = 3;
-            button2.Text = "☰";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.ActiveLinkColor = SystemColors.ActiveCaption;
-            linkLabel1.AutoSize = true;
-            linkLabel1.Dock = DockStyle.Right;
-            linkLabel1.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            linkLabel1.LinkColor = Color.AliceBlue;
-            linkLabel1.Location = new Point(785, 0);
-            linkLabel1.Margin = new Padding(3, 3, 3, 0);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(111, 30);
-            linkLabel1.TabIndex = 0;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "👤 profile";
-            linkLabel1.VisitedLinkColor = Color.Blue;
-            // 
-            // Profile_sidebar
-            // 
-            Profile_sidebar.BackColor = Color.FromArgb(35, 40, 45);
-            Profile_sidebar.Controls.Add(Profile_homebtn);
-            Profile_sidebar.Controls.Add(button4);
-            Profile_sidebar.Dock = DockStyle.Left;
-            Profile_sidebar.Location = new Point(0, 0);
-            Profile_sidebar.MaximumSize = new Size(194, 641);
-            Profile_sidebar.MinimumSize = new Size(194, 641);
-            Profile_sidebar.Name = "Profile_sidebar";
-            Profile_sidebar.Size = new Size(194, 641);
-            Profile_sidebar.TabIndex = 1;
-            // 
-            // Profile_homebtn
-            // 
-            Profile_homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Profile_homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            Profile_homebtn.Cursor = Cursors.Hand;
-            Profile_homebtn.FlatAppearance.BorderSize = 0;
-            Profile_homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            Profile_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Profile_homebtn.FlatStyle = FlatStyle.Flat;
-            Profile_homebtn.ForeColor = Color.LightYellow;
-            Profile_homebtn.Location = new Point(0, 0);
-            Profile_homebtn.Name = "Profile_homebtn";
-            Profile_homebtn.Size = new Size(190, 72);
-            Profile_homebtn.TabIndex = 8;
-            Profile_homebtn.Text = "🏠︎ Home";
-            Profile_homebtn.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button4.BackColor = Color.FromArgb(30, 40, 45);
-            button4.Dock = DockStyle.Bottom;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.CheckedBackColor = Color.White;
-            button4.FlatAppearance.MouseOverBackColor = Color.Black;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.LightYellow;
-            button4.Location = new Point(0, 597);
-            button4.Margin = new Padding(0, 0, 0, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(194, 44);
-            button4.TabIndex = 5;
-            button4.Text = "⚙️ Setting";
-            button4.UseVisualStyleBackColor = false;
+            Userpnl.BackColor = Color.FromArgb(128, 64, 64);
+            Userpnl.Controls.Add(Book_catagorytab);
+            Userpnl.Dock = DockStyle.Fill;
+            Userpnl.Location = new Point(161, 63);
+            Userpnl.Name = "Userpnl";
+            Userpnl.Size = new Size(929, 578);
+            Userpnl.TabIndex = 7;
             // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
+            Controls.Add(Homepagepnl);
             Controls.Add(signuppnl);
             Controls.Add(loginpnl);
-            Controls.Add(adminpnl);
-            Controls.Add(Userpnl);
             Controls.Add(Wellcome_page);
-            Controls.Add(profilepnl);
-            Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1108, 689);
             MinimumSize = new Size(1108, 689);
             Name = "d_lab";
             Text = "d_lab";
-            Userpnl.ResumeLayout(false);
-            User_sidebar.ResumeLayout(false);
             Book_catagorytab.ResumeLayout(false);
-            User_titlepnl.ResumeLayout(false);
-            User_titlepnl.PerformLayout();
             loginpnl.ResumeLayout(false);
             loginpnl.PerformLayout();
             signuppnl.ResumeLayout(false);
@@ -1007,19 +709,15 @@
             Titlepnl.ResumeLayout(false);
             Titlepnl.PerformLayout();
             sidebar.ResumeLayout(false);
-            adminpnl.ResumeLayout(false);
             Admin_userspnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
-            profilepnl.ResumeLayout(false);
-            Profile_titlebar.ResumeLayout(false);
-            Profile_titlebar.PerformLayout();
-            Profile_sidebar.ResumeLayout(false);
+            Homepagepnl.ResumeLayout(false);
+            Userpnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Panel Userpnl;
         private Panel loginpnl;
         private Button logibtn;
         private TextBox passbx;
@@ -1028,20 +726,11 @@
         private Label usernamelbl;
         private Label welcome_labele;
         private LinkLabel login_signup;
-        private Panel User_sidebar;
         private Button User_study_assistbtn;
-        private Button User_favoritebtn;
-        private Button User_shelfbtn;
-        private Button User_homebtn;
-        private Button User_settingbtn;
-        private Panel User_titlepnl;
-        private Button Admin_menubtn;
-        private LinkLabel User_profilelnk;
         private TabControl Book_catagorytab;
         private TabPage Programmingtab;
         private TabPage Medicinetab;
         private TabPage Noveltab;
-        private Panel librarianpnl;
         private Panel signuppnl;
         private LinkLabel Signup_loginlink;
         private Button signupbtn;
@@ -1063,22 +752,15 @@
         private Button Bookbtn;
         private Button Admin_homebtn;
         private Button settignbtn;
-        private Panel adminpnl;
-        private Panel Admin_homepnl;
         private Panel Admin_userspnl;
         private DataGridView Admin_useresdatagrid;
         private Button fetch_databtn;
         private Button updatebtn;
         private Button Admin_backbtn;
         private Panel profilepnl;
-        private Panel Profile_titlebar;
-        private Button button1;
-        private Button button2;
-        private LinkLabel linkLabel1;
-        private Panel Profile_sidebar;
-        private Button Profile_homebtn;
-        private Button button4;
         private Label Signup_Lastnamelbl;
         private TextBox Signup_lastnamebx;
+        private Panel Homepagepnl;
+        private Panel Userpnl;
     }
 }
