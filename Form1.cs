@@ -63,20 +63,21 @@ namespace d.labdemo
                                 MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                             return;
                         }
-
                         loginpnl.Visible = false;
                         signuppnl.Visible = false;
                         profilepnl.Visible = false;
 
                         if (role == "Admin")
                         {
-                            Userpnl.Visible = false;
-                            profilepnl.Visible = false;
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
                         }
                         else if (role == "User")
                         {
-                            Userpnl.Visible = true;
-                            profilepnl.Visible = false;
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
                         }
                     }
                 }
