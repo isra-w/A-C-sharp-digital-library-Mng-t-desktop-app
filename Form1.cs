@@ -14,8 +14,8 @@ namespace d.labdemo
         public d_lab()
         {
             InitializeComponent();
-          /*  Wellcome_page.Visible = true;
-            Wellcome_page.BringToFront  ();*/
+            Wellcome_page.Visible = true;
+            Wellcome_page.BringToFront();
 
         }
 
@@ -25,56 +25,71 @@ namespace d.labdemo
         }
 
 
-        private void logibtn_Click(object sender, EventArgs e)
+        private void Logibtn_Click(object sender, EventArgs e)
         {
-
-
-            string query = $"SELECT Role FROM Users WHERE Username = '{namebx.Text}' AND Password = '{passbx.Text}';";
+            if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
+            {
+                MessageBox.Show("Please enter your username and password.", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             DBConnection.intiate();
-            SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
-            var Role = cmd.ExecuteScalar().ToString().Trim();
-            if (Role == null)
-            {
-                MessageBox.Show($"Record not found", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            string query = "SELECT Password, Role FROM Users WHERE Username = @Username;";
 
-            else if (Role == "Admin")
+            using (SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection))
             {
-                loginpnl.Visible = false;
-                Userpnl.Visible = false;
-                adminpnl.Visible = true;
-                librarianpnl.Visible = false;
-                signuppnl.Visible = false;
-            }
-            else if (Role == "User")
-            {
-                loginpnl.Visible = false;
-                Userpnl.Visible = true;
-                adminpnl.Visible = false;
-                librarianpnl.Visible = false;
-                signuppnl.Visible = false;
-            }
-            else if (Role == "librarian")
-            {
-                loginpnl.Visible = false;
-                Userpnl.Visible = false;
-                adminpnl.Visible = false;
-                librarianpnl.Visible = true;
-                signuppnl.Visible = false;
-            }
-            else if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
-            {
-                MessageBox.Show("Please enter your username and password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@Username", namebx.Text);
 
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            DBConnection.checkConnection.Close();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                        {
+                            MessageBox.Show("Record not found.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
 
+                        string storedHash = reader["Password"].ToString().Trim();
+                        string role = reader["Role"].ToString().Trim();
 
+                        bool passwordVerified = BCrypt.Net.BCrypt.EnhancedVerify(passbx.Text, storedHash);
+
+                        if (!passwordVerified)
+                        {
+                            MessageBox.Show("Invalid username or password.", "Error",
+                                MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        loginpnl.Visible = false;
+                        signuppnl.Visible = false;
+
+                        if (role == "Admin")
+                        {
+                            adminpnl.Visible = true;
+                            Userpnl.Visible = false;
+                            librarianpnl.Visible = false;
+                        }
+                        else if (role == "User")
+                        {
+                            Userpnl.Visible = true;
+                            adminpnl.Visible = false;
+                            librarianpnl.Visible = false;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    DBConnection.checkConnection.Close();
+                }
+            }
         }
 
         private void loginpnl_Paint(object sender, PaintEventArgs e)
@@ -145,13 +160,23 @@ namespace d.labdemo
         private void signupbtn_Click(object sender, EventArgs e)
         {
             DBConnection.intiate();
-            string Full_Name = Signup_firstnamebx.Text;
+            string First_Name = Signup_firstnamebx.Text;
+            string Last_Name = Signup_lastnamebx.Text;
             string Username = Signup_usernamebx.Text;
             string password = Signup_passbx.Text;
 
+            string hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(password);
 
-            string query = $@"INSERT INTO Users(Full_Name, Username, Password) VALUES('{Full_Name}','{Username}','{password}') ";
-            DBConnection.ExecuteNonQuery(query);
+            string query = "INSERT INTO Users(First_Name, Last_Name, Username, Password) VALUES(@FirstName, @LastName, @Username, @Password)";
+            SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+            cmd.Parameters.AddWithValue("@FirstName", First_Name);
+            cmd.Parameters.AddWithValue("@LastName", Last_Name);
+            cmd.Parameters.AddWithValue("@Username", Username);
+            cmd.Parameters.AddWithValue("@Password", hashedPassword);
+            cmd.ExecuteNonQuery();
+
+            string query1 = $@"INSERT INTO Users(First_Name, Last_Name, Username, Password) VALUES('{First_Name}','{Last_Name}','{Username}','{password}') ";
+            DBConnection.ExecuteNonQuery(query1);
             loginpnl.Visible = true;
             Userpnl.Visible = false;
             adminpnl.Visible = false;
@@ -222,7 +247,7 @@ namespace d.labdemo
         private void button2_Click(object sender, EventArgs e)
         {
             Admin_homepnl.Visible = true;
-            Admin_shelfpnl.Visible = false;
+            Book_catagorytab.Visible = false;
             Admin_userspnl.Visible = false;
 
         }
@@ -230,14 +255,14 @@ namespace d.labdemo
         private void Shelfbtn_Click(object sender, EventArgs e)
         {
             Admin_homepnl.Visible = false;
-            Admin_shelfpnl.Visible = true;
+            Book_catagorytab.Visible = true;
             Admin_userspnl.Visible = false;
         }
 
         private void Usersbtn_Click(object sender, EventArgs e)
         {
             Admin_homepnl.Visible = false;
-            Admin_shelfpnl.Visible = false;
+            Book_catagorytab.Visible = false;
             Admin_userspnl.Visible = true;
         }
 
@@ -258,7 +283,7 @@ namespace d.labdemo
             {
                 try
                 {
-                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
+                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@R WHERE UserId = @userId", DBConnection.checkConnection);
                     DBConnection.checkConnection.Open();
                     cmd2.ExecuteReader();
                     DBConnection.checkConnection.Close();
