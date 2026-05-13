@@ -1,6 +1,7 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
@@ -173,9 +174,6 @@ namespace d.labdemo
             cmd.Parameters.AddWithValue("@Username", Username);
             cmd.Parameters.AddWithValue("@Password", hashedPassword);
             cmd.ExecuteNonQuery();
-
-            string query1 = $@"INSERT INTO Users(First_Name, Last_Name, Username, Password) VALUES('{First_Name}','{Last_Name}','{Username}','{password}') ";
-            DBConnection.ExecuteNonQuery(query1);
             loginpnl.Visible = true;
             Book_catagorypnl.Visible = false;
             signuppnl.Visible = false;
@@ -233,15 +231,6 @@ namespace d.labdemo
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
         private void Booksbtn_Click(object sender, EventArgs e)
         {
             Book_catagorypnl.Visible = true;
@@ -286,36 +275,29 @@ namespace d.labdemo
                 DBConnection.checkConnection.Close();
 
             }
+        }
 
-            /*private void button3_Click(object sender, EventArgs e)
-            {
-                this.Close();
-                adminpnl back = new adminpnl();
-                back.Show();
-            }*/
+        private void button3_Click(object sender, EventArgs e)
+        {
+            /*this.Close();
+            adminpnl back = new adminpnl();
+            back.Show();*/
         }
 
         private void profilelnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-
+            profilepnl.Visible = true;
+            profilepnl.BringToFront();
         }
 
         private void signup_wellcomebx_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
         private void Study_assistbtn_Click(object sender, EventArgs e)
         {
             Studypnl.BringToFront();
@@ -326,5 +308,6 @@ namespace d.labdemo
         {
             Homepnl.BringToFront();
         }
+
     }
 }
