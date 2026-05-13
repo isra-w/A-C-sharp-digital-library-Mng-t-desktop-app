@@ -243,7 +243,7 @@ namespace d.labdemo
 
         private void fetch_databtn_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT Userid, Full_Name, Username, Role from Users", DBConnection.checkConnection);
+            SqlCommand cmd = new SqlCommand("SELECT Userid, First_Name, Last_Name, Username, Role from Users", DBConnection.checkConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
