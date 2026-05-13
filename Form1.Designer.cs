@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
-            User_study_assistbtn = new Button();
+            Study_assistbtn = new Button();
             Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
@@ -64,7 +64,7 @@
             sidebar = new Panel();
             Usersbtn = new Button();
             Bookbtn = new Button();
-            Admin_homebtn = new Button();
+            Homebtn = new Button();
             settignbtn = new Button();
             Admin_userspnl = new Panel();
             updatebtn = new Button();
@@ -72,7 +72,9 @@
             fetch_databtn = new Button();
             profilepnl = new Panel();
             Homepagepnl = new Panel();
-            Userpnl = new Panel();
+            Book_catagorypnl = new Panel();
+            Homepnl = new Panel();
+            Studypnl = new Panel();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -82,37 +84,38 @@
             Admin_userspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
             Homepagepnl.SuspendLayout();
-            Userpnl.SuspendLayout();
+            Book_catagorypnl.SuspendLayout();
             SuspendLayout();
             // 
-            // User_study_assistbtn
+            // Study_assistbtn
             // 
-            User_study_assistbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            User_study_assistbtn.BackColor = Color.FromArgb(30, 40, 45);
-            User_study_assistbtn.Cursor = Cursors.Hand;
-            User_study_assistbtn.Dock = DockStyle.Top;
-            User_study_assistbtn.FlatAppearance.BorderSize = 0;
-            User_study_assistbtn.FlatAppearance.CheckedBackColor = Color.White;
-            User_study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            User_study_assistbtn.FlatStyle = FlatStyle.Flat;
-            User_study_assistbtn.ForeColor = Color.LightYellow;
-            User_study_assistbtn.Location = new Point(0, 0);
-            User_study_assistbtn.Name = "User_study_assistbtn";
-            User_study_assistbtn.Size = new Size(161, 57);
-            User_study_assistbtn.TabIndex = 6;
-            User_study_assistbtn.Text = "🏠︎ study";
-            User_study_assistbtn.UseVisualStyleBackColor = false;
+            Study_assistbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Study_assistbtn.BackColor = Color.FromArgb(30, 40, 45);
+            Study_assistbtn.Cursor = Cursors.Hand;
+            Study_assistbtn.Dock = DockStyle.Top;
+            Study_assistbtn.FlatAppearance.BorderSize = 0;
+            Study_assistbtn.FlatAppearance.CheckedBackColor = Color.White;
+            Study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Study_assistbtn.FlatStyle = FlatStyle.Flat;
+            Study_assistbtn.ForeColor = Color.LightYellow;
+            Study_assistbtn.Location = new Point(0, 132);
+            Study_assistbtn.Name = "Study_assistbtn";
+            Study_assistbtn.Size = new Size(161, 57);
+            Study_assistbtn.TabIndex = 6;
+            Study_assistbtn.Text = "🏠︎ study";
+            Study_assistbtn.UseVisualStyleBackColor = false;
+            Study_assistbtn.Click += Study_assistbtn_Click;
             // 
             // Book_catagorytab
             // 
             Book_catagorytab.Controls.Add(Programmingtab);
             Book_catagorytab.Controls.Add(Medicinetab);
             Book_catagorytab.Controls.Add(Noveltab);
-            Book_catagorytab.Dock = DockStyle.Right;
-            Book_catagorytab.Location = new Point(14, 0);
+            Book_catagorytab.Dock = DockStyle.Fill;
+            Book_catagorytab.Location = new Point(0, 0);
             Book_catagorytab.Name = "Book_catagorytab";
             Book_catagorytab.SelectedIndex = 0;
-            Book_catagorytab.Size = new Size(915, 578);
+            Book_catagorytab.Size = new Size(929, 578);
             Book_catagorytab.TabIndex = 4;
             // 
             // Programmingtab
@@ -125,7 +128,7 @@
             Programmingtab.Location = new Point(4, 30);
             Programmingtab.Name = "Programmingtab";
             Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(907, 544);
+            Programmingtab.Size = new Size(921, 544);
             Programmingtab.TabIndex = 0;
             Programmingtab.Text = "Programming";
             // 
@@ -135,7 +138,7 @@
             Medicinetab.Location = new Point(4, 30);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(907, 544);
+            Medicinetab.Size = new Size(921, 544);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
@@ -143,7 +146,7 @@
             // 
             Noveltab.Location = new Point(4, 30);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(907, 544);
+            Noveltab.Size = new Size(921, 544);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
@@ -521,10 +524,10 @@
             // sidebar
             // 
             sidebar.BackColor = Color.FromArgb(35, 40, 45);
+            sidebar.Controls.Add(Study_assistbtn);
             sidebar.Controls.Add(Usersbtn);
             sidebar.Controls.Add(Bookbtn);
-            sidebar.Controls.Add(Admin_homebtn);
-            sidebar.Controls.Add(User_study_assistbtn);
+            sidebar.Controls.Add(Homebtn);
             sidebar.Controls.Add(settignbtn);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 63);
@@ -545,7 +548,7 @@
             Usersbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Usersbtn.FlatStyle = FlatStyle.Flat;
             Usersbtn.ForeColor = Color.LightYellow;
-            Usersbtn.Location = new Point(0, 145);
+            Usersbtn.Location = new Point(0, 88);
             Usersbtn.Name = "Usersbtn";
             Usersbtn.Size = new Size(161, 44);
             Usersbtn.TabIndex = 7;
@@ -564,33 +567,33 @@
             Bookbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Bookbtn.FlatStyle = FlatStyle.Flat;
             Bookbtn.ForeColor = Color.LightYellow;
-            Bookbtn.Location = new Point(0, 101);
+            Bookbtn.Location = new Point(0, 44);
             Bookbtn.Name = "Bookbtn";
             Bookbtn.Size = new Size(161, 44);
             Bookbtn.TabIndex = 9;
             Bookbtn.Text = "📊  Books";
             Bookbtn.UseVisualStyleBackColor = false;
-            Bookbtn.Click += Shelfbtn_Click;
+            Bookbtn.Click += Booksbtn_Click;
             // 
-            // Admin_homebtn
+            // Homebtn
             // 
-            Admin_homebtn.AutoEllipsis = true;
-            Admin_homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Admin_homebtn.BackColor = Color.FromArgb(30, 40, 45);
-            Admin_homebtn.Cursor = Cursors.Hand;
-            Admin_homebtn.Dock = DockStyle.Top;
-            Admin_homebtn.FlatAppearance.BorderSize = 0;
-            Admin_homebtn.FlatAppearance.CheckedBackColor = Color.White;
-            Admin_homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Admin_homebtn.FlatStyle = FlatStyle.Flat;
-            Admin_homebtn.ForeColor = Color.LightYellow;
-            Admin_homebtn.Location = new Point(0, 57);
-            Admin_homebtn.Name = "Admin_homebtn";
-            Admin_homebtn.Size = new Size(161, 44);
-            Admin_homebtn.TabIndex = 8;
-            Admin_homebtn.Text = "🏠︎ Home";
-            Admin_homebtn.UseVisualStyleBackColor = false;
-            Admin_homebtn.Click += button2_Click;
+            Homebtn.AutoEllipsis = true;
+            Homebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Homebtn.BackColor = Color.FromArgb(30, 40, 45);
+            Homebtn.Cursor = Cursors.Hand;
+            Homebtn.Dock = DockStyle.Top;
+            Homebtn.FlatAppearance.BorderSize = 0;
+            Homebtn.FlatAppearance.CheckedBackColor = Color.White;
+            Homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Homebtn.FlatStyle = FlatStyle.Flat;
+            Homebtn.ForeColor = Color.LightYellow;
+            Homebtn.Location = new Point(0, 0);
+            Homebtn.Name = "Homebtn";
+            Homebtn.Size = new Size(161, 44);
+            Homebtn.TabIndex = 8;
+            Homebtn.Text = "🏠︎ Home";
+            Homebtn.UseVisualStyleBackColor = false;
+            Homebtn.Click += Homebtn_Click;
             // 
             // settignbtn
             // 
@@ -664,9 +667,12 @@
             // 
             // Homepagepnl
             // 
+            Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(Book_catagorypnl);
+            Homepagepnl.Controls.Add(Homepnl);
+            Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
-            Homepagepnl.Controls.Add(Userpnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Controls.Add(Titlepnl);
             Homepagepnl.Dock = DockStyle.Fill;
@@ -675,15 +681,35 @@
             Homepagepnl.Size = new Size(1090, 641);
             Homepagepnl.TabIndex = 0;
             // 
-            // Userpnl
+            // Book_catagorypnl
             // 
-            Userpnl.BackColor = Color.FromArgb(128, 64, 64);
-            Userpnl.Controls.Add(Book_catagorytab);
-            Userpnl.Dock = DockStyle.Fill;
-            Userpnl.Location = new Point(161, 63);
-            Userpnl.Name = "Userpnl";
-            Userpnl.Size = new Size(929, 578);
-            Userpnl.TabIndex = 7;
+            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
+            Book_catagorypnl.Controls.Add(Book_catagorytab);
+            Book_catagorypnl.Dock = DockStyle.Fill;
+            Book_catagorypnl.Location = new Point(161, 63);
+            Book_catagorypnl.Name = "Book_catagorypnl";
+            Book_catagorypnl.Size = new Size(929, 578);
+            Book_catagorypnl.TabIndex = 7;
+            Book_catagorypnl.TabStop = true;
+            // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = Color.FromArgb(0, 0, 64);
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(161, 63);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(929, 578);
+            Homepnl.TabIndex = 1;
+            // 
+            // Studypnl
+            // 
+            Studypnl.BackColor = Color.FromArgb(0, 64, 0);
+            Studypnl.Dock = DockStyle.Fill;
+            Studypnl.Location = new Point(161, 63);
+            Studypnl.Name = "Studypnl";
+            Studypnl.Size = new Size(929, 578);
+            Studypnl.TabIndex = 0;
             // 
             // d_lab
             // 
@@ -691,9 +717,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
             Controls.Add(Homepagepnl);
-            Controls.Add(signuppnl);
-            Controls.Add(loginpnl);
             Controls.Add(Wellcome_page);
+            Controls.Add(loginpnl);
+            Controls.Add(signuppnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1108, 689);
             MinimumSize = new Size(1108, 689);
@@ -712,7 +738,7 @@
             Admin_userspnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
             Homepagepnl.ResumeLayout(false);
-            Userpnl.ResumeLayout(false);
+            Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -726,7 +752,7 @@
         private Label usernamelbl;
         private Label welcome_labele;
         private LinkLabel login_signup;
-        private Button User_study_assistbtn;
+        private Button Study_assistbtn;
         private TabControl Book_catagorytab;
         private TabPage Programmingtab;
         private TabPage Medicinetab;
@@ -750,7 +776,7 @@
         private Panel sidebar;
         private Button Usersbtn;
         private Button Bookbtn;
-        private Button Admin_homebtn;
+        private Button Homebtn;
         private Button settignbtn;
         private Panel Admin_userspnl;
         private DataGridView Admin_useresdatagrid;
@@ -761,6 +787,8 @@
         private Label Signup_Lastnamelbl;
         private TextBox Signup_lastnamebx;
         private Panel Homepagepnl;
-        private Panel Userpnl;
+        private Panel Book_catagorypnl;
+        private Panel Studypnl;
+        private Panel Homepnl;
     }
 }

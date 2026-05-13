@@ -63,20 +63,25 @@ namespace d.labdemo
                                 MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                             return;
                         }
-
                         loginpnl.Visible = false;
                         signuppnl.Visible = false;
-                        profilepnl.Visible = false;
+                        Homepagepnl.Visible = true;
 
                         if (role == "Admin")
                         {
-                            Userpnl.Visible = false;
-                            profilepnl.Visible = false;
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
+                            Study_assistbtn.Visible = false;
+                            Studypnl.Visible = false;
                         }
                         else if (role == "User")
                         {
-                            Userpnl.Visible = true;
-                            profilepnl.Visible = false;
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
+                            Admin_userspnl.Visible = false;
+                            Usersbtn.Visible = false;
                         }
                     }
                 }
@@ -92,11 +97,6 @@ namespace d.labdemo
         }
 
         private void loginpnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void User_favoritebtn_Click(object sender, EventArgs e)
         {
 
         }
@@ -145,7 +145,7 @@ namespace d.labdemo
         {
             Homepagepnl.Visible = false;
             loginpnl.Visible = false;
-            Userpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
@@ -177,7 +177,7 @@ namespace d.labdemo
             string query1 = $@"INSERT INTO Users(First_Name, Last_Name, Username, Password) VALUES('{First_Name}','{Last_Name}','{Username}','{password}') ";
             DBConnection.ExecuteNonQuery(query1);
             loginpnl.Visible = true;
-            Userpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
             signuppnl.Visible = false;
             profilepnl.Visible = false;
             Homepagepnl.Visible = false;
@@ -195,7 +195,7 @@ namespace d.labdemo
             Homepagepnl.Visible = false;
             loginpnl.Visible = true;
             profilepnl.Visible = false;
-            Userpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
@@ -205,7 +205,7 @@ namespace d.labdemo
         {
             Homepagepnl.Visible = false;
             loginpnl.Visible = false;
-            Userpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
             signuppnl.Visible = false;
             Wellcome_page.Visible = true;
             profilepnl.Visible = false;
@@ -215,7 +215,7 @@ namespace d.labdemo
         {
             Homepagepnl.Visible = false;
             loginpnl.Visible = true;
-            Userpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
@@ -226,7 +226,7 @@ namespace d.labdemo
         {
             Homepagepnl.Visible = false;
             loginpnl.Visible = false;
-            Userpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
@@ -242,30 +242,15 @@ namespace d.labdemo
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Booksbtn_Click(object sender, EventArgs e)
         {
-            Homepagepnl.Visible = true;
-            Book_catagorytab.Visible = false;
-            Admin_userspnl.Visible = false;
-            profilepnl.Visible = false;
-
-        }
-
-        private void Shelfbtn_Click(object sender, EventArgs e)
-        {
-            Homepagepnl.Visible = false;
-            Book_catagorytab.Visible = true;
-            Admin_userspnl.Visible = false;
-            profilepnl.Visible = false;
+            Book_catagorypnl.Visible = true;
+            Book_catagorypnl.BringToFront();
         }
 
         private void Usersbtn_Click(object sender, EventArgs e)
         {
-            Homepagepnl.Visible = false;
-            Book_catagorytab.Visible = false;
-            Admin_userspnl.Visible = true;
-            profilepnl.Visible = false;
+            Admin_userspnl.BringToFront();
         }
 
         private void fetch_databtn_Click(object sender, EventArgs e)
@@ -329,6 +314,17 @@ namespace d.labdemo
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void Study_assistbtn_Click(object sender, EventArgs e)
+        {
+            Studypnl.BringToFront();
+
+        }
+
+        private void Homebtn_Click(object sender, EventArgs e)
+        {
+            Homepnl.BringToFront();
         }
     }
 }
