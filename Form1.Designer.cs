@@ -36,7 +36,7 @@
             User_shelfbtn = new Button();
             User_homebtn = new Button();
             User_settingbtn = new Button();
-            shelf_catagorytab = new TabControl();
+            Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
             Noveltab = new TabPage();
@@ -73,7 +73,7 @@
             profilelnk = new LinkLabel();
             sidebar = new Panel();
             Usersbtn = new Button();
-            Shelfbtn = new Button();
+            Bookbtn = new Button();
             Admin_homebtn = new Button();
             settignbtn = new Button();
             adminpnl = new Panel();
@@ -82,7 +82,6 @@
             Admin_useresdatagrid = new DataGridView();
             fetch_databtn = new Button();
             Admin_homepnl = new Panel();
-            Admin_shelfpnl = new Panel();
             profilepnl = new Panel();
             Profile_titlebar = new Panel();
             button1 = new Button();
@@ -93,7 +92,7 @@
             button4 = new Button();
             Userpnl.SuspendLayout();
             User_sidebar.SuspendLayout();
-            shelf_catagorytab.SuspendLayout();
+            Book_catagorytab.SuspendLayout();
             User_titlepnl.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -112,7 +111,7 @@
             // 
             Userpnl.BackColor = Color.FromArgb(188, 193, 199);
             Userpnl.Controls.Add(User_sidebar);
-            Userpnl.Controls.Add(shelf_catagorytab);
+            Userpnl.Controls.Add(Book_catagorytab);
             Userpnl.Controls.Add(User_titlepnl);
             Userpnl.Dock = DockStyle.Fill;
             Userpnl.Location = new Point(0, 0);
@@ -231,17 +230,17 @@
             User_settingbtn.Text = "⚙️ Setting";
             User_settingbtn.UseVisualStyleBackColor = false;
             // 
-            // shelf_catagorytab
+            // Book_catagorytab
             // 
-            shelf_catagorytab.Controls.Add(Programmingtab);
-            shelf_catagorytab.Controls.Add(Medicinetab);
-            shelf_catagorytab.Controls.Add(Noveltab);
-            shelf_catagorytab.Dock = DockStyle.Right;
-            shelf_catagorytab.Location = new Point(175, 63);
-            shelf_catagorytab.Name = "shelf_catagorytab";
-            shelf_catagorytab.SelectedIndex = 0;
-            shelf_catagorytab.Size = new Size(915, 578);
-            shelf_catagorytab.TabIndex = 4;
+            Book_catagorytab.Controls.Add(Programmingtab);
+            Book_catagorytab.Controls.Add(Medicinetab);
+            Book_catagorytab.Controls.Add(Noveltab);
+            Book_catagorytab.Dock = DockStyle.Right;
+            Book_catagorytab.Location = new Point(175, 63);
+            Book_catagorytab.Name = "Book_catagorytab";
+            Book_catagorytab.SelectedIndex = 0;
+            Book_catagorytab.Size = new Size(915, 578);
+            Book_catagorytab.TabIndex = 4;
             // 
             // Programmingtab
             // 
@@ -365,7 +364,7 @@
             logibtn.TabIndex = 11;
             logibtn.Text = "LOGIN";
             logibtn.UseVisualStyleBackColor = false;
-            logibtn.Click += logibtn_Click;
+            logibtn.Click += Logibtn_Click;
             // 
             // passbx
             // 
@@ -704,15 +703,15 @@
             // 
             sidebar.BackColor = Color.FromArgb(35, 40, 45);
             sidebar.Controls.Add(Usersbtn);
-            sidebar.Controls.Add(Shelfbtn);
+            sidebar.Controls.Add(Bookbtn);
             sidebar.Controls.Add(Admin_homebtn);
             sidebar.Controls.Add(settignbtn);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 63);
-            sidebar.MaximumSize = new Size(190, 999);
-            sidebar.MinimumSize = new Size(91, 526);
+            sidebar.MaximumSize = new Size(161, 578);
+            sidebar.MinimumSize = new Size(161, 578);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(146, 578);
+            sidebar.Size = new Size(161, 578);
             sidebar.TabIndex = 0;
             // 
             // Usersbtn
@@ -728,30 +727,30 @@
             Usersbtn.ForeColor = Color.LightYellow;
             Usersbtn.Location = new Point(0, 88);
             Usersbtn.Name = "Usersbtn";
-            Usersbtn.Size = new Size(146, 44);
+            Usersbtn.Size = new Size(161, 44);
             Usersbtn.TabIndex = 7;
             Usersbtn.Text = "👤  Users";
             Usersbtn.UseVisualStyleBackColor = false;
             Usersbtn.Click += Usersbtn_Click;
             // 
-            // Shelfbtn
+            // Bookbtn
             // 
-            Shelfbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Shelfbtn.BackColor = Color.FromArgb(30, 40, 45);
-            Shelfbtn.Cursor = Cursors.Hand;
-            Shelfbtn.Dock = DockStyle.Top;
-            Shelfbtn.FlatAppearance.BorderSize = 0;
-            Shelfbtn.FlatAppearance.CheckedBackColor = Color.White;
-            Shelfbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            Shelfbtn.FlatStyle = FlatStyle.Flat;
-            Shelfbtn.ForeColor = Color.LightYellow;
-            Shelfbtn.Location = new Point(0, 44);
-            Shelfbtn.Name = "Shelfbtn";
-            Shelfbtn.Size = new Size(146, 44);
-            Shelfbtn.TabIndex = 9;
-            Shelfbtn.Text = "📊  Shelf";
-            Shelfbtn.UseVisualStyleBackColor = false;
-            Shelfbtn.Click += Shelfbtn_Click;
+            Bookbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Bookbtn.BackColor = Color.FromArgb(30, 40, 45);
+            Bookbtn.Cursor = Cursors.Hand;
+            Bookbtn.Dock = DockStyle.Top;
+            Bookbtn.FlatAppearance.BorderSize = 0;
+            Bookbtn.FlatAppearance.CheckedBackColor = Color.White;
+            Bookbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Bookbtn.FlatStyle = FlatStyle.Flat;
+            Bookbtn.ForeColor = Color.LightYellow;
+            Bookbtn.Location = new Point(0, 44);
+            Bookbtn.Name = "Bookbtn";
+            Bookbtn.Size = new Size(161, 44);
+            Bookbtn.TabIndex = 9;
+            Bookbtn.Text = "📊  Books";
+            Bookbtn.UseVisualStyleBackColor = false;
+            Bookbtn.Click += Shelfbtn_Click;
             // 
             // Admin_homebtn
             // 
@@ -767,7 +766,7 @@
             Admin_homebtn.ForeColor = Color.LightYellow;
             Admin_homebtn.Location = new Point(0, 0);
             Admin_homebtn.Name = "Admin_homebtn";
-            Admin_homebtn.Size = new Size(146, 44);
+            Admin_homebtn.Size = new Size(161, 44);
             Admin_homebtn.TabIndex = 8;
             Admin_homebtn.Text = "🏠︎ Home";
             Admin_homebtn.UseVisualStyleBackColor = false;
@@ -787,7 +786,7 @@
             settignbtn.Location = new Point(0, 534);
             settignbtn.Margin = new Padding(0, 0, 0, 3);
             settignbtn.Name = "settignbtn";
-            settignbtn.Size = new Size(146, 44);
+            settignbtn.Size = new Size(161, 44);
             settignbtn.TabIndex = 5;
             settignbtn.Text = "⚙️ Setting";
             settignbtn.UseVisualStyleBackColor = false;
@@ -799,7 +798,6 @@
             adminpnl.BackColor = Color.FromArgb(188, 193, 199);
             adminpnl.Controls.Add(Admin_userspnl);
             adminpnl.Controls.Add(Admin_homepnl);
-            adminpnl.Controls.Add(Admin_shelfpnl);
             adminpnl.Controls.Add(sidebar);
             adminpnl.Controls.Add(Titlepnl);
             adminpnl.Dock = DockStyle.Fill;
@@ -816,9 +814,9 @@
             Admin_userspnl.Controls.Add(Admin_useresdatagrid);
             Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
-            Admin_userspnl.Location = new Point(146, 63);
+            Admin_userspnl.Location = new Point(161, 63);
             Admin_userspnl.Name = "Admin_userspnl";
-            Admin_userspnl.Size = new Size(944, 578);
+            Admin_userspnl.Size = new Size(929, 578);
             Admin_userspnl.TabIndex = 3;
             // 
             // updatebtn
@@ -855,19 +853,10 @@
             // 
             Admin_homepnl.BackColor = Color.FromArgb(192, 255, 255);
             Admin_homepnl.Dock = DockStyle.Fill;
-            Admin_homepnl.Location = new Point(146, 63);
+            Admin_homepnl.Location = new Point(161, 63);
             Admin_homepnl.Name = "Admin_homepnl";
-            Admin_homepnl.Size = new Size(944, 578);
+            Admin_homepnl.Size = new Size(929, 578);
             Admin_homepnl.TabIndex = 2;
-            // 
-            // Admin_shelfpnl
-            // 
-            Admin_shelfpnl.BackColor = Color.FromArgb(224, 224, 224);
-            Admin_shelfpnl.Dock = DockStyle.Fill;
-            Admin_shelfpnl.Location = new Point(146, 63);
-            Admin_shelfpnl.Name = "Admin_shelfpnl";
-            Admin_shelfpnl.Size = new Size(944, 578);
-            Admin_shelfpnl.TabIndex = 3;
             // 
             // profilepnl
             // 
@@ -992,11 +981,11 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 641);
-            Controls.Add(adminpnl);
             Controls.Add(signuppnl);
-            Controls.Add(Wellcome_page);
-            Controls.Add(Userpnl);
             Controls.Add(loginpnl);
+            Controls.Add(adminpnl);
+            Controls.Add(Userpnl);
+            Controls.Add(Wellcome_page);
             Controls.Add(profilepnl);
             Controls.Add(librarianpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -1006,7 +995,7 @@
             Text = "d_lab";
             Userpnl.ResumeLayout(false);
             User_sidebar.ResumeLayout(false);
-            shelf_catagorytab.ResumeLayout(false);
+            Book_catagorytab.ResumeLayout(false);
             User_titlepnl.ResumeLayout(false);
             User_titlepnl.PerformLayout();
             loginpnl.ResumeLayout(false);
@@ -1048,7 +1037,7 @@
         private Panel User_titlepnl;
         private Button Admin_menubtn;
         private LinkLabel User_profilelnk;
-        private TabControl shelf_catagorytab;
+        private TabControl Book_catagorytab;
         private TabPage Programmingtab;
         private TabPage Medicinetab;
         private TabPage Noveltab;
@@ -1071,12 +1060,11 @@
         private LinkLabel profilelnk;
         private Panel sidebar;
         private Button Usersbtn;
-        private Button Shelfbtn;
+        private Button Bookbtn;
         private Button Admin_homebtn;
         private Button settignbtn;
         private Panel adminpnl;
         private Panel Admin_homepnl;
-        private Panel Admin_shelfpnl;
         private Panel Admin_userspnl;
         private DataGridView Admin_useresdatagrid;
         private Button fetch_databtn;
