@@ -66,18 +66,17 @@ namespace d.labdemo
 
                         loginpnl.Visible = false;
                         signuppnl.Visible = false;
+                        profilepnl.Visible = false;
 
                         if (role == "Admin")
                         {
-                            adminpnl.Visible = true;
                             Userpnl.Visible = false;
-                            librarianpnl.Visible = false;
+                            profilepnl.Visible = false;
                         }
                         else if (role == "User")
                         {
                             Userpnl.Visible = true;
-                            adminpnl.Visible = false;
-                            librarianpnl.Visible = false;
+                            profilepnl.Visible = false;
                         }
                     }
                 }
@@ -144,12 +143,12 @@ namespace d.labdemo
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Homepagepnl.Visible = false;
             loginpnl.Visible = false;
             Userpnl.Visible = false;
-            adminpnl.Visible = false;
-            librarianpnl.Visible = false;
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
+            profilepnl.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -179,10 +178,9 @@ namespace d.labdemo
             DBConnection.ExecuteNonQuery(query1);
             loginpnl.Visible = true;
             Userpnl.Visible = false;
-            adminpnl.Visible = false;
-            librarianpnl.Visible = false;
             signuppnl.Visible = false;
             profilepnl.Visible = false;
+            Homepagepnl.Visible = false;
             DBConnection.checkConnection.Close();
 
         }
@@ -194,43 +192,44 @@ namespace d.labdemo
 
         private void Wellcome_loginbtn_Click(object sender, EventArgs e)
         {
+            Homepagepnl.Visible = false;
             loginpnl.Visible = true;
+            profilepnl.Visible = false;
             Userpnl.Visible = false;
-            adminpnl.Visible = false;
-            librarianpnl.Visible = false;
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
+            profilepnl.Visible = false;
         }
 
         private void Wellcome_page_Paint(object sender, PaintEventArgs e)
         {
+            Homepagepnl.Visible = false;
             loginpnl.Visible = false;
             Userpnl.Visible = false;
-            adminpnl.Visible = false;
-            librarianpnl.Visible = false;
             signuppnl.Visible = false;
             Wellcome_page.Visible = true;
+            profilepnl.Visible = false;
         }
 
         private void Signup_loginlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Homepagepnl.Visible = false;
             loginpnl.Visible = true;
             Userpnl.Visible = false;
-            adminpnl.Visible = false;
-            librarianpnl.Visible = false;
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
+            profilepnl.Visible = false;
 
         }
 
         private void Wellcome_signupbtn_Click(object sender, EventArgs e)
         {
+            Homepagepnl.Visible = false;
             loginpnl.Visible = false;
             Userpnl.Visible = false;
-            adminpnl.Visible = false;
-            librarianpnl.Visible = false;
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
+            profilepnl.Visible = false;
 
         }
 
@@ -246,24 +245,27 @@ namespace d.labdemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Admin_homepnl.Visible = true;
+            Homepagepnl.Visible = true;
             Book_catagorytab.Visible = false;
             Admin_userspnl.Visible = false;
+            profilepnl.Visible = false;
 
         }
 
         private void Shelfbtn_Click(object sender, EventArgs e)
         {
-            Admin_homepnl.Visible = false;
+            Homepagepnl.Visible = false;
             Book_catagorytab.Visible = true;
             Admin_userspnl.Visible = false;
+            profilepnl.Visible = false;
         }
 
         private void Usersbtn_Click(object sender, EventArgs e)
         {
-            Admin_homepnl.Visible = false;
+            Homepagepnl.Visible = false;
             Book_catagorytab.Visible = false;
             Admin_userspnl.Visible = true;
+            profilepnl.Visible = false;
         }
 
         private void fetch_databtn_Click(object sender, EventArgs e)
@@ -283,7 +285,7 @@ namespace d.labdemo
             {
                 try
                 {
-                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@R WHERE UserId = @userId", DBConnection.checkConnection);
+                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
                     DBConnection.checkConnection.Open();
                     cmd2.ExecuteReader();
                     DBConnection.checkConnection.Close();
@@ -320,6 +322,11 @@ namespace d.labdemo
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }
