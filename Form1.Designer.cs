@@ -58,8 +58,6 @@
             Wellcome_signupbtn = new Button();
             Wellcome_loginbtn = new Button();
             Titlepnl = new Panel();
-            Admin_backbtn = new Button();
-            menubtn = new Button();
             profilelnk = new LinkLabel();
             sidebar = new Panel();
             Usersbtn = new Button();
@@ -71,10 +69,17 @@
             Admin_useresdatagrid = new DataGridView();
             fetch_databtn = new Button();
             profilepnl = new Panel();
+            Profile_lastnamebx = new TextBox();
+            Profile_usernamebx = new TextBox();
+            Profile_firstnamebx = new TextBox();
+            Profile_usernamelbl = new Label();
+            Profile_lastnamelbl = new Label();
+            Profile_firstnamelbl = new Label();
+            Profilepic = new PictureBox();
             Homepagepnl = new Panel();
-            Book_catagorypnl = new Panel();
             Homepnl = new Panel();
             Studypnl = new Panel();
+            Book_catagorypnl = new Panel();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -83,6 +88,8 @@
             sidebar.SuspendLayout();
             Admin_userspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
+            profilepnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
             SuspendLayout();
@@ -112,41 +119,48 @@
             Book_catagorytab.Controls.Add(Medicinetab);
             Book_catagorytab.Controls.Add(Noveltab);
             Book_catagorytab.Dock = DockStyle.Fill;
+            Book_catagorytab.ItemSize = new Size(109, 50);
             Book_catagorytab.Location = new Point(0, 0);
             Book_catagorytab.Name = "Book_catagorytab";
+            Book_catagorytab.Padding = new Point(11, 3);
+            Book_catagorytab.RightToLeftLayout = true;
             Book_catagorytab.SelectedIndex = 0;
-            Book_catagorytab.Size = new Size(929, 578);
+            Book_catagorytab.Size = new Size(929, 572);
             Book_catagorytab.TabIndex = 4;
+            Book_catagorytab.Tag = "";
             // 
             // Programmingtab
             // 
             Programmingtab.AccessibleName = "";
             Programmingtab.AllowDrop = true;
-            Programmingtab.BackColor = SystemColors.ActiveBorder;
+            Programmingtab.BackColor = SystemColors.ActiveCaption;
+            Programmingtab.BorderStyle = BorderStyle.Fixed3D;
             Programmingtab.Cursor = Cursors.Hand;
             Programmingtab.Font = new Font("Segoe UI Semibold", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Programmingtab.Location = new Point(4, 30);
+            Programmingtab.Location = new Point(4, 54);
             Programmingtab.Name = "Programmingtab";
             Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(921, 544);
+            Programmingtab.Size = new Size(921, 514);
             Programmingtab.TabIndex = 0;
             Programmingtab.Text = "Programming";
             // 
             // Medicinetab
             // 
             Medicinetab.BackColor = SystemColors.ActiveBorder;
-            Medicinetab.Location = new Point(4, 30);
+            Medicinetab.BorderStyle = BorderStyle.Fixed3D;
+            Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(921, 544);
+            Medicinetab.Size = new Size(921, 514);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
             // Noveltab
             // 
-            Noveltab.Location = new Point(4, 30);
+            Noveltab.BorderStyle = BorderStyle.Fixed3D;
+            Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(921, 544);
+            Noveltab.Size = new Size(921, 514);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
@@ -167,7 +181,7 @@
             loginpnl.Dock = DockStyle.Fill;
             loginpnl.Location = new Point(0, 0);
             loginpnl.Name = "loginpnl";
-            loginpnl.Size = new Size(1090, 641);
+            loginpnl.Size = new Size(1090, 652);
             loginpnl.TabIndex = 2;
             loginpnl.Paint += loginpnl_Paint;
             // 
@@ -276,7 +290,7 @@
             signuppnl.Dock = DockStyle.Fill;
             signuppnl.Location = new Point(0, 0);
             signuppnl.Name = "signuppnl";
-            signuppnl.Size = new Size(1090, 641);
+            signuppnl.Size = new Size(1090, 652);
             signuppnl.TabIndex = 13;
             // 
             // Signup_lastnamebx
@@ -426,7 +440,7 @@
             Wellcome_page.Controls.Add(Wellcome_loginbtn);
             Wellcome_page.Location = new Point(0, 0);
             Wellcome_page.Name = "Wellcome_page";
-            Wellcome_page.Size = new Size(1090, 641);
+            Wellcome_page.Size = new Size(1090, 652);
             Wellcome_page.TabIndex = 2;
             Wellcome_page.Paint += Wellcome_page_Paint;
             // 
@@ -438,7 +452,7 @@
             Wellcome_signupbtn.Cursor = Cursors.Hand;
             Wellcome_signupbtn.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Wellcome_signupbtn.ForeColor = Color.White;
-            Wellcome_signupbtn.Location = new Point(393, 341);
+            Wellcome_signupbtn.Location = new Point(393, 347);
             Wellcome_signupbtn.Name = "Wellcome_signupbtn";
             Wellcome_signupbtn.Size = new Size(183, 67);
             Wellcome_signupbtn.TabIndex = 1;
@@ -453,7 +467,7 @@
             Wellcome_loginbtn.Cursor = Cursors.Hand;
             Wellcome_loginbtn.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Wellcome_loginbtn.ForeColor = Color.White;
-            Wellcome_loginbtn.Location = new Point(70, 341);
+            Wellcome_loginbtn.Location = new Point(70, 347);
             Wellcome_loginbtn.Name = "Wellcome_loginbtn";
             Wellcome_loginbtn.Size = new Size(183, 67);
             Wellcome_loginbtn.TabIndex = 0;
@@ -464,54 +478,20 @@
             // Titlepnl
             // 
             Titlepnl.BackColor = SystemColors.ActiveCaptionText;
-            Titlepnl.Controls.Add(Admin_backbtn);
-            Titlepnl.Controls.Add(menubtn);
             Titlepnl.Controls.Add(profilelnk);
             Titlepnl.Dock = DockStyle.Top;
             Titlepnl.Location = new Point(0, 0);
             Titlepnl.Name = "Titlepnl";
-            Titlepnl.Size = new Size(1090, 63);
+            Titlepnl.Size = new Size(1090, 80);
             Titlepnl.TabIndex = 1;
-            // 
-            // Admin_backbtn
-            // 
-            Admin_backbtn.BackColor = Color.Black;
-            Admin_backbtn.FlatAppearance.BorderSize = 0;
-            Admin_backbtn.FlatStyle = FlatStyle.Flat;
-            Admin_backbtn.ForeColor = Color.White;
-            Admin_backbtn.Location = new Point(113, 12);
-            Admin_backbtn.Name = "Admin_backbtn";
-            Admin_backbtn.Size = new Size(81, 34);
-            Admin_backbtn.TabIndex = 4;
-            Admin_backbtn.Text = "back";
-            Admin_backbtn.UseVisualStyleBackColor = false;
-            // 
-            // menubtn
-            // 
-            menubtn.BackColor = Color.Transparent;
-            menubtn.Cursor = Cursors.Hand;
-            menubtn.Dock = DockStyle.Left;
-            menubtn.FlatAppearance.BorderSize = 0;
-            menubtn.FlatAppearance.CheckedBackColor = Color.White;
-            menubtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            menubtn.FlatStyle = FlatStyle.Flat;
-            menubtn.Font = new Font("Segoe UI", 21.8879986F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            menubtn.ForeColor = Color.LightYellow;
-            menubtn.Location = new Point(0, 0);
-            menubtn.Name = "menubtn";
-            menubtn.Size = new Size(107, 63);
-            menubtn.TabIndex = 3;
-            menubtn.Text = "☰";
-            menubtn.UseVisualStyleBackColor = false;
             // 
             // profilelnk
             // 
             profilelnk.ActiveLinkColor = SystemColors.ActiveCaption;
             profilelnk.AutoSize = true;
-            profilelnk.Dock = DockStyle.Right;
             profilelnk.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
             profilelnk.LinkColor = Color.AliceBlue;
-            profilelnk.Location = new Point(979, 0);
+            profilelnk.Location = new Point(943, 21);
             profilelnk.Margin = new Padding(3, 3, 3, 0);
             profilelnk.Name = "profilelnk";
             profilelnk.Size = new Size(111, 30);
@@ -530,11 +510,11 @@
             sidebar.Controls.Add(Homebtn);
             sidebar.Controls.Add(settignbtn);
             sidebar.Dock = DockStyle.Left;
-            sidebar.Location = new Point(0, 63);
+            sidebar.Location = new Point(0, 80);
             sidebar.MaximumSize = new Size(161, 578);
-            sidebar.MinimumSize = new Size(161, 578);
+            sidebar.MinimumSize = new Size(161, 560);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(161, 578);
+            sidebar.Size = new Size(161, 572);
             sidebar.TabIndex = 0;
             // 
             // Usersbtn
@@ -606,7 +586,7 @@
             settignbtn.FlatStyle = FlatStyle.Flat;
             settignbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
             settignbtn.ForeColor = Color.LightYellow;
-            settignbtn.Location = new Point(0, 534);
+            settignbtn.Location = new Point(0, 528);
             settignbtn.Margin = new Padding(0, 0, 0, 3);
             settignbtn.Name = "settignbtn";
             settignbtn.Size = new Size(161, 44);
@@ -616,14 +596,14 @@
             // 
             // Admin_userspnl
             // 
-            Admin_userspnl.BackColor = Color.SlateGray;
+            Admin_userspnl.BackColor = Color.FromArgb(192, 192, 255);
             Admin_userspnl.Controls.Add(updatebtn);
             Admin_userspnl.Controls.Add(Admin_useresdatagrid);
             Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
-            Admin_userspnl.Location = new Point(161, 63);
+            Admin_userspnl.Location = new Point(161, 80);
             Admin_userspnl.Name = "Admin_userspnl";
-            Admin_userspnl.Size = new Size(929, 578);
+            Admin_userspnl.Size = new Size(929, 572);
             Admin_userspnl.TabIndex = 3;
             // 
             // updatebtn
@@ -659,18 +639,90 @@
             // profilepnl
             // 
             profilepnl.BackColor = Color.PowderBlue;
+            profilepnl.Controls.Add(Profile_lastnamebx);
+            profilepnl.Controls.Add(Profile_usernamebx);
+            profilepnl.Controls.Add(Profile_firstnamebx);
+            profilepnl.Controls.Add(Profile_usernamelbl);
+            profilepnl.Controls.Add(Profile_lastnamelbl);
+            profilepnl.Controls.Add(Profile_firstnamelbl);
+            profilepnl.Controls.Add(Profilepic);
             profilepnl.Dock = DockStyle.Fill;
-            profilepnl.Location = new Point(161, 63);
+            profilepnl.Location = new Point(161, 80);
             profilepnl.Name = "profilepnl";
-            profilepnl.Size = new Size(929, 578);
+            profilepnl.Size = new Size(929, 572);
             profilepnl.TabIndex = 3;
+            // 
+            // Profile_lastnamebx
+            // 
+            Profile_lastnamebx.BackColor = Color.PowderBlue;
+            Profile_lastnamebx.Location = new Point(480, 117);
+            Profile_lastnamebx.Name = "Profile_lastnamebx";
+            Profile_lastnamebx.Size = new Size(352, 29);
+            Profile_lastnamebx.TabIndex = 17;
+            // 
+            // Profile_usernamebx
+            // 
+            Profile_usernamebx.BackColor = Color.PowderBlue;
+            Profile_usernamebx.Location = new Point(480, 187);
+            Profile_usernamebx.Name = "Profile_usernamebx";
+            Profile_usernamebx.Size = new Size(352, 29);
+            Profile_usernamebx.TabIndex = 16;
+            // 
+            // Profile_firstnamebx
+            // 
+            Profile_firstnamebx.BackColor = Color.PowderBlue;
+            Profile_firstnamebx.Location = new Point(480, 49);
+            Profile_firstnamebx.Name = "Profile_firstnamebx";
+            Profile_firstnamebx.Size = new Size(352, 29);
+            Profile_firstnamebx.TabIndex = 15;
+            // 
+            // Profile_usernamelbl
+            // 
+            Profile_usernamelbl.AutoSize = true;
+            Profile_usernamelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Profile_usernamelbl.Location = new Point(287, 186);
+            Profile_usernamelbl.Name = "Profile_usernamelbl";
+            Profile_usernamelbl.Size = new Size(119, 30);
+            Profile_usernamelbl.TabIndex = 14;
+            Profile_usernamelbl.Text = "User Name";
+            // 
+            // Profile_lastnamelbl
+            // 
+            Profile_lastnamelbl.AutoSize = true;
+            Profile_lastnamelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Profile_lastnamelbl.Location = new Point(287, 116);
+            Profile_lastnamelbl.Name = "Profile_lastnamelbl";
+            Profile_lastnamelbl.Size = new Size(114, 30);
+            Profile_lastnamelbl.TabIndex = 2;
+            Profile_lastnamelbl.Text = "Last Name";
+            // 
+            // Profile_firstnamelbl
+            // 
+            Profile_firstnamelbl.AutoSize = true;
+            Profile_firstnamelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Profile_firstnamelbl.Location = new Point(287, 49);
+            Profile_firstnamelbl.Name = "Profile_firstnamelbl";
+            Profile_firstnamelbl.Size = new Size(117, 30);
+            Profile_firstnamelbl.TabIndex = 1;
+            Profile_firstnamelbl.Text = "First Name";
+            // 
+            // Profilepic
+            // 
+            Profilepic.BackColor = Color.DarkSlateGray;
+            Profilepic.BackgroundImage = d_labdemo.Properties.Resources.Screenshot_2026_05_13_222611;
+            Profilepic.BackgroundImageLayout = ImageLayout.Zoom;
+            Profilepic.Location = new Point(49, 28);
+            Profilepic.Name = "Profilepic";
+            Profilepic.Size = new Size(180, 146);
+            Profilepic.TabIndex = 0;
+            Profilepic.TabStop = false;
             // 
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Studypnl);
+            Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(sidebar);
@@ -678,8 +730,26 @@
             Homepagepnl.Dock = DockStyle.Fill;
             Homepagepnl.Location = new Point(0, 0);
             Homepagepnl.Name = "Homepagepnl";
-            Homepagepnl.Size = new Size(1090, 641);
+            Homepagepnl.Size = new Size(1090, 652);
             Homepagepnl.TabIndex = 0;
+            // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = SystemColors.InactiveBorder;
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(161, 80);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(929, 572);
+            Homepnl.TabIndex = 1;
+            // 
+            // Studypnl
+            // 
+            Studypnl.BackColor = Color.FromArgb(192, 255, 192);
+            Studypnl.Dock = DockStyle.Fill;
+            Studypnl.Location = new Point(161, 80);
+            Studypnl.Name = "Studypnl";
+            Studypnl.Size = new Size(929, 572);
+            Studypnl.TabIndex = 0;
             // 
             // Book_catagorypnl
             // 
@@ -687,42 +757,24 @@
             Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
             Book_catagorypnl.Controls.Add(Book_catagorytab);
             Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(161, 63);
+            Book_catagorypnl.Location = new Point(161, 80);
             Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(929, 578);
+            Book_catagorypnl.Size = new Size(929, 572);
             Book_catagorypnl.TabIndex = 7;
             Book_catagorypnl.TabStop = true;
-            // 
-            // Homepnl
-            // 
-            Homepnl.BackColor = Color.FromArgb(0, 0, 64);
-            Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(161, 63);
-            Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(929, 578);
-            Homepnl.TabIndex = 1;
-            // 
-            // Studypnl
-            // 
-            Studypnl.BackColor = Color.FromArgb(0, 64, 0);
-            Studypnl.Dock = DockStyle.Fill;
-            Studypnl.Location = new Point(161, 63);
-            Studypnl.Name = "Studypnl";
-            Studypnl.Size = new Size(929, 578);
-            Studypnl.TabIndex = 0;
             // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1090, 641);
+            ClientSize = new Size(1090, 652);
             Controls.Add(Homepagepnl);
             Controls.Add(Wellcome_page);
             Controls.Add(loginpnl);
             Controls.Add(signuppnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(1108, 689);
-            MinimumSize = new Size(1108, 689);
+            MaximumSize = new Size(1108, 700);
+            MinimumSize = new Size(1108, 700);
             Name = "d_lab";
             Text = "d_lab";
             Book_catagorytab.ResumeLayout(false);
@@ -737,6 +789,9 @@
             sidebar.ResumeLayout(false);
             Admin_userspnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
+            profilepnl.ResumeLayout(false);
+            profilepnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
             Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
@@ -753,7 +808,6 @@
         private Label welcome_labele;
         private LinkLabel login_signup;
         private Button Study_assistbtn;
-        private TabControl Book_catagorytab;
         private TabPage Programmingtab;
         private TabPage Medicinetab;
         private TabPage Noveltab;
@@ -771,7 +825,6 @@
         private Button Wellcome_signupbtn;
         private Button Wellcome_loginbtn;
         private Panel Titlepnl;
-        private Button menubtn;
         private LinkLabel profilelnk;
         private Panel sidebar;
         private Button Usersbtn;
@@ -782,7 +835,6 @@
         private DataGridView Admin_useresdatagrid;
         private Button fetch_databtn;
         private Button updatebtn;
-        private Button Admin_backbtn;
         private Panel profilepnl;
         private Label Signup_Lastnamelbl;
         private TextBox Signup_lastnamebx;
@@ -790,5 +842,13 @@
         private Panel Book_catagorypnl;
         private Panel Studypnl;
         private Panel Homepnl;
+        public TabControl Book_catagorytab;
+        private PictureBox Profilepic;
+        private Label Profile_usernamelbl;
+        private Label Profile_lastnamelbl;
+        private Label Profile_firstnamelbl;
+        private TextBox Profile_lastnamebx;
+        private TextBox Profile_usernamebx;
+        private TextBox Profile_firstnamebx;
     }
 }
