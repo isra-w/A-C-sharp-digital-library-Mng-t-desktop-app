@@ -68,6 +68,7 @@
             settignbtn = new Button();
             Admin_userspnl = new Panel();
             updatebtn = new Button();
+            Admin_useresdatagrid = new DataGridView();
             fetch_databtn = new Button();
             profilepnl = new Panel();
             Profile_lastnamebx = new TextBox();
@@ -81,7 +82,6 @@
             Homepnl = new Panel();
             Studypnl = new Panel();
             Book_catagorypnl = new Panel();
-            Admin_useresdatagrid = new DataGridView();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -89,11 +89,11 @@
             Titlepnl.SuspendLayout();
             sidebar.SuspendLayout();
             Admin_userspnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
             profilepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
             SuspendLayout();
             // 
             // Study_assistbtn
@@ -642,6 +642,17 @@
             updatebtn.UseVisualStyleBackColor = true;
             updatebtn.Click += updatebtn_Click;
             // 
+            // Admin_useresdatagrid
+            // 
+            Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Admin_useresdatagrid.Location = new Point(9, 57);
+            Admin_useresdatagrid.Name = "Admin_useresdatagrid";
+            Admin_useresdatagrid.RowHeadersWidth = 53;
+            Admin_useresdatagrid.Size = new Size(913, 503);
+            Admin_useresdatagrid.TabIndex = 1;
+            Admin_useresdatagrid.CellContentClick += Admin_useresdatagrid_CellContentClick_1;
+            // 
             // fetch_databtn
             // 
             fetch_databtn.Location = new Point(29, 12);
@@ -779,25 +790,14 @@
             Book_catagorypnl.TabIndex = 7;
             Book_catagorypnl.TabStop = true;
             // 
-            // Admin_useresdatagrid
-            // 
-            Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Admin_useresdatagrid.Location = new Point(9, 57);
-            Admin_useresdatagrid.Name = "Admin_useresdatagrid";
-            Admin_useresdatagrid.RowHeadersWidth = 53;
-            Admin_useresdatagrid.Size = new Size(913, 503);
-            Admin_useresdatagrid.TabIndex = 1;
-            Admin_useresdatagrid.CellContentClick += Admin_useresdatagrid_CellContentClick_1;
-            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 652);
+            Controls.Add(loginpnl);
             Controls.Add(Homepagepnl);
             Controls.Add(Wellcome_page);
-            Controls.Add(loginpnl);
             Controls.Add(signuppnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1108, 700);
@@ -815,12 +815,12 @@
             Titlepnl.PerformLayout();
             sidebar.ResumeLayout(false);
             Admin_userspnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
             profilepnl.ResumeLayout(false);
             profilepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
             Book_catagorypnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
