@@ -253,28 +253,41 @@ namespace d.labdemo
 
         }
 
-        private void updatebtn_Click(object sender, EventArgs e)
+        private void Admin_useresdatagrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i <= Admin_useresdatagrid.Rows.Count; i++)
+            DBConnection.checkConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Userid, First_Name, Last_Name, Username, Role from Users", DBConnection.checkConnection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                try
-                {
-                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
-                    DBConnection.checkConnection.Open();
-                    cmd2.ExecuteReader();
-                    DBConnection.checkConnection.Close();
 
-                    MessageBox.Show("Role has updated successfully");
-                }
-                catch (Exception ex1)
-                {
-
-                    MessageBox.Show(ex1.Message);
-                }
-                ;
-                DBConnection.checkConnection.Close();
 
             }
+            reader.Close();
+            DBConnection.checkConnection.Close();
+
+        }
+
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
+                DBConnection.checkConnection.Open();
+                cmd2.ExecuteReader();
+                DBConnection.checkConnection.Close();
+
+                MessageBox.Show("Role has updated successfully");
+            }
+            catch (Exception ex1)
+            {
+
+                MessageBox.Show(ex1.Message);
+            }
+                ;
+            DBConnection.checkConnection.Close();
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -308,6 +321,7 @@ namespace d.labdemo
         {
             Homepnl.BringToFront();
         }
+
 
     }
 }

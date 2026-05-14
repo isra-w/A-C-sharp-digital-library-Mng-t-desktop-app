@@ -43,6 +43,8 @@
             usernamelbl = new Label();
             welcome_labele = new Label();
             signuppnl = new Panel();
+            Signip_rolecbx = new ComboBox();
+            Signip_rolelbl = new Label();
             Signup_lastnamebx = new TextBox();
             Signup_Lastnamelbl = new Label();
             Signup_passbx = new TextBox();
@@ -66,7 +68,6 @@
             settignbtn = new Button();
             Admin_userspnl = new Panel();
             updatebtn = new Button();
-            Admin_useresdatagrid = new DataGridView();
             fetch_databtn = new Button();
             profilepnl = new Panel();
             Profile_lastnamebx = new TextBox();
@@ -80,6 +81,7 @@
             Homepnl = new Panel();
             Studypnl = new Panel();
             Book_catagorypnl = new Panel();
+            Admin_useresdatagrid = new DataGridView();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -87,11 +89,11 @@
             Titlepnl.SuspendLayout();
             sidebar.SuspendLayout();
             Admin_userspnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
             profilepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).BeginInit();
             SuspendLayout();
             // 
             // Study_assistbtn
@@ -276,6 +278,8 @@
             // 
             signuppnl.BackColor = Color.FromArgb(26, 26, 0);
             signuppnl.BackgroundImageLayout = ImageLayout.Stretch;
+            signuppnl.Controls.Add(Signip_rolecbx);
+            signuppnl.Controls.Add(Signip_rolelbl);
             signuppnl.Controls.Add(Signup_lastnamebx);
             signuppnl.Controls.Add(Signup_Lastnamelbl);
             signuppnl.Controls.Add(Signup_passbx);
@@ -293,11 +297,33 @@
             signuppnl.Size = new Size(1090, 652);
             signuppnl.TabIndex = 13;
             // 
+            // Signip_rolecbx
+            // 
+            Signip_rolecbx.BackColor = Color.LightYellow;
+            Signip_rolecbx.FormattingEnabled = true;
+            Signip_rolecbx.Items.AddRange(new object[] { "Admin", "User" });
+            Signip_rolecbx.Location = new Point(478, 326);
+            Signip_rolecbx.Name = "Signip_rolecbx";
+            Signip_rolecbx.Size = new Size(304, 29);
+            Signip_rolecbx.TabIndex = 27;
+            // 
+            // Signip_rolelbl
+            // 
+            Signip_rolelbl.AutoSize = true;
+            Signip_rolelbl.BackColor = Color.Transparent;
+            Signip_rolelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Signip_rolelbl.ForeColor = Color.FromArgb(255, 255, 204);
+            Signip_rolelbl.Location = new Point(179, 322);
+            Signip_rolelbl.Name = "Signip_rolelbl";
+            Signip_rolelbl.Size = new Size(62, 29);
+            Signip_rolelbl.TabIndex = 26;
+            Signip_rolelbl.Text = "Role";
+            // 
             // Signup_lastnamebx
             // 
             Signup_lastnamebx.BackColor = Color.LightYellow;
             Signup_lastnamebx.BorderStyle = BorderStyle.None;
-            Signup_lastnamebx.Location = new Point(478, 230);
+            Signup_lastnamebx.Location = new Point(478, 188);
             Signup_lastnamebx.Multiline = true;
             Signup_lastnamebx.Name = "Signup_lastnamebx";
             Signup_lastnamebx.PlaceholderText = "Enter your Last Name";
@@ -310,7 +336,7 @@
             Signup_Lastnamelbl.BackColor = Color.Transparent;
             Signup_Lastnamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Signup_Lastnamelbl.ForeColor = Color.FromArgb(255, 255, 204);
-            Signup_Lastnamelbl.Location = new Point(179, 225);
+            Signup_Lastnamelbl.Location = new Point(179, 190);
             Signup_Lastnamelbl.Name = "Signup_Lastnamelbl";
             Signup_Lastnamelbl.Size = new Size(127, 29);
             Signup_Lastnamelbl.TabIndex = 24;
@@ -320,7 +346,7 @@
             // Signup_passbx
             // 
             Signup_passbx.BackColor = Color.LightYellow;
-            Signup_passbx.Location = new Point(478, 378);
+            Signup_passbx.Location = new Point(478, 389);
             Signup_passbx.Name = "Signup_passbx";
             Signup_passbx.PlaceholderText = "Password";
             Signup_passbx.Size = new Size(300, 29);
@@ -333,7 +359,7 @@
             Signup_Usernamelbl.BackColor = Color.Transparent;
             Signup_Usernamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Signup_Usernamelbl.ForeColor = Color.FromArgb(255, 255, 204);
-            Signup_Usernamelbl.Location = new Point(175, 297);
+            Signup_Usernamelbl.Location = new Point(179, 260);
             Signup_Usernamelbl.Name = "Signup_Usernamelbl";
             Signup_Usernamelbl.Size = new Size(131, 29);
             Signup_Usernamelbl.TabIndex = 22;
@@ -345,7 +371,7 @@
             signpass.BackColor = Color.Transparent;
             signpass.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signpass.ForeColor = Color.FromArgb(255, 255, 204);
-            signpass.Location = new Point(179, 376);
+            signpass.Location = new Point(179, 387);
             signpass.Name = "signpass";
             signpass.Size = new Size(111, 29);
             signpass.TabIndex = 21;
@@ -354,7 +380,7 @@
             // Signup_usernamebx
             // 
             Signup_usernamebx.BackColor = Color.LightYellow;
-            Signup_usernamebx.Location = new Point(478, 299);
+            Signup_usernamebx.Location = new Point(478, 262);
             Signup_usernamebx.Multiline = true;
             Signup_usernamebx.Name = "Signup_usernamebx";
             Signup_usernamebx.PlaceholderText = "Username";
@@ -395,7 +421,7 @@
             // 
             Signup_firstnamebx.BackColor = Color.LightYellow;
             Signup_firstnamebx.BorderStyle = BorderStyle.None;
-            Signup_firstnamebx.Location = new Point(478, 151);
+            Signup_firstnamebx.Location = new Point(478, 124);
             Signup_firstnamebx.Multiline = true;
             Signup_firstnamebx.Name = "Signup_firstnamebx";
             Signup_firstnamebx.PlaceholderText = "Enter your First Name";
@@ -408,7 +434,7 @@
             signup_Firstnamelbl.BackColor = Color.Transparent;
             signup_Firstnamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signup_Firstnamelbl.ForeColor = Color.FromArgb(255, 255, 204);
-            signup_Firstnamelbl.Location = new Point(179, 153);
+            signup_Firstnamelbl.Location = new Point(179, 124);
             signup_Firstnamelbl.Name = "signup_Firstnamelbl";
             signup_Firstnamelbl.Size = new Size(132, 29);
             signup_Firstnamelbl.TabIndex = 14;
@@ -608,23 +634,13 @@
             // 
             // updatebtn
             // 
-            updatebtn.Location = new Point(799, 12);
+            updatebtn.Location = new Point(786, 12);
             updatebtn.Name = "updatebtn";
             updatebtn.Size = new Size(136, 34);
             updatebtn.TabIndex = 2;
             updatebtn.Text = "Update";
             updatebtn.UseVisualStyleBackColor = true;
             updatebtn.Click += updatebtn_Click;
-            // 
-            // Admin_useresdatagrid
-            // 
-            Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Admin_useresdatagrid.Location = new Point(22, 62);
-            Admin_useresdatagrid.Name = "Admin_useresdatagrid";
-            Admin_useresdatagrid.RowHeadersWidth = 53;
-            Admin_useresdatagrid.Size = new Size(913, 486);
-            Admin_useresdatagrid.TabIndex = 1;
             // 
             // fetch_databtn
             // 
@@ -720,11 +736,11 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(profilepnl);
-            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Controls.Add(Titlepnl);
             Homepagepnl.Dock = DockStyle.Fill;
@@ -763,6 +779,17 @@
             Book_catagorypnl.TabIndex = 7;
             Book_catagorypnl.TabStop = true;
             // 
+            // Admin_useresdatagrid
+            // 
+            Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Admin_useresdatagrid.Location = new Point(9, 57);
+            Admin_useresdatagrid.Name = "Admin_useresdatagrid";
+            Admin_useresdatagrid.RowHeadersWidth = 53;
+            Admin_useresdatagrid.Size = new Size(913, 503);
+            Admin_useresdatagrid.TabIndex = 1;
+            Admin_useresdatagrid.CellContentClick += Admin_useresdatagrid_CellContentClick_1;
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -788,12 +815,12 @@
             Titlepnl.PerformLayout();
             sidebar.ResumeLayout(false);
             Admin_userspnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
             profilepnl.ResumeLayout(false);
             profilepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
             Book_catagorypnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Admin_useresdatagrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -832,7 +859,6 @@
         private Button Homebtn;
         private Button settignbtn;
         private Panel Admin_userspnl;
-        private DataGridView Admin_useresdatagrid;
         private Button fetch_databtn;
         private Button updatebtn;
         private Panel profilepnl;
@@ -850,5 +876,8 @@
         private TextBox Profile_lastnamebx;
         private TextBox Profile_usernamebx;
         private TextBox Profile_firstnamebx;
+        private ComboBox Signip_rolecbx;
+        private Label Signip_rolelbl;
+        private DataGridView Admin_useresdatagrid;
     }
 }
