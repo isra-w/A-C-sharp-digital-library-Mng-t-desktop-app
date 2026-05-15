@@ -1,7 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
@@ -83,6 +82,12 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Admin_userspnl.Visible = false;
                             Usersbtn.Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid user role.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
                     }
                 }
@@ -272,22 +277,29 @@ namespace d.labdemo
         {
             try
             {
-                SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
                 DBConnection.checkConnection.Open();
-                cmd2.ExecuteReader();
-                DBConnection.checkConnection.Close();
+                Admin_useresdatagrid.EndEdit();
+                DataGridViewRow row = Admin_useresdatagrid.CurrentRow;
 
-                MessageBox.Show("Role has updated successfully");
+                int userId = Convert.ToInt32(row.Cells["UserId"].Value);
+                string firstName = row.Cells["First_Name"].Value?.ToString();
+                string lastName = row.Cells["Last_Name"].Value?.ToString();
+                string username = row.Cells["Username"].Value?.ToString();
+                string role = row.Cells["Role"].Value?.ToString();
+
+                string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
+                SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+                cmd.Parameters.AddWithValue("@Role", role);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                MessageBox.Show($"Updated {rowsAffected} row(s) successfully!");
             }
-            catch (Exception ex1)
+            catch (Exception ex)
             {
-
-                MessageBox.Show(ex1.Message);
+                MessageBox.Show("Update error: " + ex.Message);
             }
-                ;
+
             DBConnection.checkConnection.Close();
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
