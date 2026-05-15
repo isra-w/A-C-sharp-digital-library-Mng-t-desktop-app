@@ -11,6 +11,7 @@ namespace d.labdemo
         public string? Role { get; private set; }
         public object? Full_Name { get; private set; }
 
+
         public d_lab()
         {
             InitializeComponent();
@@ -82,12 +83,6 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Admin_userspnl.Visible = false;
                             Usersbtn.Visible = false;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid user role.", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
                         }
                     }
                 }
@@ -249,57 +244,64 @@ namespace d.labdemo
 
         private void fetch_databtn_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT Userid, First_Name, Last_Name, Username, Role from Users", DBConnection.checkConnection);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            Admin_useresdatagrid.DataSource = dt;
+            try
+            {
+                DBConnection.checkConnection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT UserId, First_Name, Last_Name, Username, Role FROM Users", DBConnection.checkConnection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                Admin_useresdatagrid.DataSource = dt;
+                AddRoleComboBoxColumn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fetch error: " + ex.Message);
+            }
             DBConnection.checkConnection.Close();
 
         }
 
-        private void Admin_useresdatagrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void AddRoleComboBoxColumn()
         {
-            DBConnection.checkConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Userid, First_Name, Last_Name, Username, Role from Users", DBConnection.checkConnection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
+            Admin_useresdatagrid.Columns.Remove("Role");
+            DataGridViewComboBoxColumn RoleCombo = new DataGridViewComboBoxColumn();
+            RoleCombo.Name = "Role";
+            RoleCombo.HeaderText = "Role";
+            RoleCombo.DataPropertyName = "Role";
+            RoleCombo.Items.Add("Admin");
+            RoleCombo.Items.Add("User");
 
-
-            }
-            reader.Close();
-            DBConnection.checkConnection.Close();
-
+            Admin_useresdatagrid.Columns.Insert(4, RoleCombo);
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
             try
             {
-                DBConnection.checkConnection.Open();
                 Admin_useresdatagrid.EndEdit();
                 DataGridViewRow row = Admin_useresdatagrid.CurrentRow;
 
                 int userId = Convert.ToInt32(row.Cells["UserId"].Value);
-                string firstName = row.Cells["First_Name"].Value?.ToString();
-                string lastName = row.Cells["Last_Name"].Value?.ToString();
-                string username = row.Cells["Username"].Value?.ToString();
-                string role = row.Cells["Role"].Value?.ToString();
+                string Role = row.Cells["Role"].Value?.ToString();
+
+                DBConnection.checkConnection.Open();
 
                 string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
                 SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
-                cmd.Parameters.AddWithValue("@Role", role);
+                cmd.Parameters.AddWithValue("@Role", Role);
                 cmd.Parameters.AddWithValue("@UserId", userId);
                 int rowsAffected = cmd.ExecuteNonQuery();
                 MessageBox.Show($"Updated {rowsAffected} row(s) successfully!");
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Update error: " + ex.Message);
             }
 
-            DBConnection.checkConnection.Close();
+                DBConnection.checkConnection.Close();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -333,7 +335,6 @@ namespace d.labdemo
         {
             Homepnl.BringToFront();
         }
-
 
     }
 }
