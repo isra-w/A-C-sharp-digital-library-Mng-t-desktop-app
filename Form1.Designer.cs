@@ -651,6 +651,7 @@
             Admin_useresdatagrid.RowHeadersWidth = 53;
             Admin_useresdatagrid.Size = new Size(913, 503);
             Admin_useresdatagrid.TabIndex = 1;
+            Admin_useresdatagrid.CellContentClick += Admin_useresdatagrid_CellContentClick_1;
             // 
             // fetch_databtn
             // 
