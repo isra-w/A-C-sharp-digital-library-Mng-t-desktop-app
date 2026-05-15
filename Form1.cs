@@ -1,7 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
@@ -11,6 +10,7 @@ namespace d.labdemo
     {
         public string? Role { get; private set; }
         public object? Full_Name { get; private set; }
+
 
         public d_lab()
         {
@@ -244,37 +244,63 @@ namespace d.labdemo
 
         private void fetch_databtn_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT Userid, First_Name, Last_Name, Username, Role from Users", DBConnection.checkConnection);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            Admin_useresdatagrid.DataSource = dt;
+            try
+            {
+                DBConnection.checkConnection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT UserId, First_Name, Last_Name, Username, Role FROM Users", DBConnection.checkConnection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                Admin_useresdatagrid.DataSource = dt;
+                AddRoleComboBoxColumn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fetch error: " + ex.Message);
+            }
             DBConnection.checkConnection.Close();
 
         }
 
+        private void AddRoleComboBoxColumn()
+        {
+            Admin_useresdatagrid.Columns.Remove("Role");
+            DataGridViewComboBoxColumn RoleCombo = new DataGridViewComboBoxColumn();
+            RoleCombo.Name = "Role";
+            RoleCombo.HeaderText = "Role";
+            RoleCombo.DataPropertyName = "Role";
+            RoleCombo.Items.Add("Admin");
+            RoleCombo.Items.Add("User");
+
+            Admin_useresdatagrid.Columns.Insert(4, RoleCombo);
+        }
+
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i <= Admin_useresdatagrid.Rows.Count; i++)
+            try
             {
-                try
-                {
-                    SqlCommand cmd2 = new SqlCommand("update Users set Role=@Role WHERE UserId = @userId", DBConnection.checkConnection);
-                    DBConnection.checkConnection.Open();
-                    cmd2.ExecuteReader();
-                    DBConnection.checkConnection.Close();
+                Admin_useresdatagrid.EndEdit();
+                DataGridViewRow row = Admin_useresdatagrid.CurrentRow;
 
-                    MessageBox.Show("Role has updated successfully");
-                }
-                catch (Exception ex1)
-                {
+                int userId = Convert.ToInt32(row.Cells["UserId"].Value);
+                string Role = row.Cells["Role"].Value?.ToString();
 
-                    MessageBox.Show(ex1.Message);
-                }
-                ;
-                DBConnection.checkConnection.Close();
+                DBConnection.checkConnection.Open();
 
+                string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
+                SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+                cmd.Parameters.AddWithValue("@Role", Role);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                MessageBox.Show($"Updated {rowsAffected} row(s) successfully!");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update error: " + ex.Message);
+            }
+
+                DBConnection.checkConnection.Close();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
