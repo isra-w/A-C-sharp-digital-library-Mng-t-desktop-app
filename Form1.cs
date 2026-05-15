@@ -294,6 +294,7 @@ namespace d.labdemo
                 int rowsAffected = cmd.ExecuteNonQuery();
                 MessageBox.Show($"Updated {rowsAffected} row(s) successfully!");
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Update error: " + ex.Message);
