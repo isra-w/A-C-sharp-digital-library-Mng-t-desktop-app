@@ -300,8 +300,8 @@ namespace d.labdemo
                 MessageBox.Show("Update error: " + ex.Message);
             }
 
-                DBConnection.checkConnection.Close();
-            
+            DBConnection.checkConnection.Close();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
