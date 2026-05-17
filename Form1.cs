@@ -336,5 +336,14 @@ namespace d.labdemo
             Homepnl.BringToFront();
         }
 
+        private void Study_timer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Study_timepnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
