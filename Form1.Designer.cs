@@ -127,7 +127,7 @@
             Book_catagorytab.Padding = new Point(11, 3);
             Book_catagorytab.RightToLeftLayout = true;
             Book_catagorytab.SelectedIndex = 0;
-            Book_catagorytab.Size = new Size(929, 572);
+            Book_catagorytab.Size = new Size(929, 604);
             Book_catagorytab.TabIndex = 4;
             Book_catagorytab.Tag = "";
             // 
@@ -142,7 +142,7 @@
             Programmingtab.Location = new Point(4, 54);
             Programmingtab.Name = "Programmingtab";
             Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(921, 514);
+            Programmingtab.Size = new Size(921, 546);
             Programmingtab.TabIndex = 0;
             Programmingtab.Text = "Programming";
             // 
@@ -153,7 +153,7 @@
             Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(921, 514);
+            Medicinetab.Size = new Size(921, 546);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
@@ -162,7 +162,7 @@
             Noveltab.BorderStyle = BorderStyle.Fixed3D;
             Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(921, 514);
+            Noveltab.Size = new Size(921, 546);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
@@ -508,16 +508,17 @@
             Titlepnl.Dock = DockStyle.Top;
             Titlepnl.Location = new Point(0, 0);
             Titlepnl.Name = "Titlepnl";
-            Titlepnl.Size = new Size(1090, 80);
+            Titlepnl.Size = new Size(1090, 48);
             Titlepnl.TabIndex = 1;
             // 
             // profilelnk
             // 
             profilelnk.ActiveLinkColor = SystemColors.ActiveCaption;
             profilelnk.AutoSize = true;
+            profilelnk.Dock = DockStyle.Right;
             profilelnk.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
             profilelnk.LinkColor = Color.AliceBlue;
-            profilelnk.Location = new Point(943, 21);
+            profilelnk.Location = new Point(979, 0);
             profilelnk.Margin = new Padding(3, 3, 3, 0);
             profilelnk.Name = "profilelnk";
             profilelnk.Size = new Size(111, 30);
@@ -536,11 +537,11 @@
             sidebar.Controls.Add(Homebtn);
             sidebar.Controls.Add(settignbtn);
             sidebar.Dock = DockStyle.Left;
-            sidebar.Location = new Point(0, 80);
-            sidebar.MaximumSize = new Size(161, 578);
-            sidebar.MinimumSize = new Size(161, 560);
+            sidebar.Location = new Point(0, 48);
+            sidebar.MaximumSize = new Size(160, 600);
+            sidebar.MinimumSize = new Size(161, 600);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(161, 572);
+            sidebar.Size = new Size(161, 600);
             sidebar.TabIndex = 0;
             // 
             // Usersbtn
@@ -612,7 +613,7 @@
             settignbtn.FlatStyle = FlatStyle.Flat;
             settignbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
             settignbtn.ForeColor = Color.LightYellow;
-            settignbtn.Location = new Point(0, 528);
+            settignbtn.Location = new Point(0, 556);
             settignbtn.Margin = new Padding(0, 0, 0, 3);
             settignbtn.Name = "settignbtn";
             settignbtn.Size = new Size(161, 44);
@@ -627,9 +628,9 @@
             Admin_userspnl.Controls.Add(Admin_useresdatagrid);
             Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
-            Admin_userspnl.Location = new Point(161, 80);
+            Admin_userspnl.Location = new Point(161, 48);
             Admin_userspnl.Name = "Admin_userspnl";
-            Admin_userspnl.Size = new Size(929, 572);
+            Admin_userspnl.Size = new Size(929, 604);
             Admin_userspnl.TabIndex = 3;
             // 
             // updatebtn
@@ -649,7 +650,7 @@
             Admin_useresdatagrid.Location = new Point(9, 57);
             Admin_useresdatagrid.Name = "Admin_useresdatagrid";
             Admin_useresdatagrid.RowHeadersWidth = 53;
-            Admin_useresdatagrid.Size = new Size(913, 503);
+            Admin_useresdatagrid.Size = new Size(913, 535);
             Admin_useresdatagrid.TabIndex = 1;
             // 
             // fetch_databtn
@@ -673,9 +674,9 @@
             profilepnl.Controls.Add(Profile_firstnamelbl);
             profilepnl.Controls.Add(Profilepic);
             profilepnl.Dock = DockStyle.Fill;
-            profilepnl.Location = new Point(161, 80);
+            profilepnl.Location = new Point(161, 48);
             profilepnl.Name = "profilepnl";
-            profilepnl.Size = new Size(929, 572);
+            profilepnl.Size = new Size(929, 604);
             profilepnl.TabIndex = 3;
             // 
             // Profile_lastnamebx
@@ -763,18 +764,18 @@
             // 
             Homepnl.BackColor = SystemColors.InactiveBorder;
             Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(161, 80);
+            Homepnl.Location = new Point(161, 48);
             Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(929, 572);
+            Homepnl.Size = new Size(929, 604);
             Homepnl.TabIndex = 1;
             // 
             // Studypnl
             // 
             Studypnl.BackColor = Color.FromArgb(192, 255, 192);
             Studypnl.Dock = DockStyle.Fill;
-            Studypnl.Location = new Point(161, 80);
+            Studypnl.Location = new Point(161, 48);
             Studypnl.Name = "Studypnl";
-            Studypnl.Size = new Size(929, 572);
+            Studypnl.Size = new Size(929, 604);
             Studypnl.TabIndex = 0;
             // 
             // Book_catagorypnl
@@ -783,9 +784,9 @@
             Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
             Book_catagorypnl.Controls.Add(Book_catagorytab);
             Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(161, 80);
+            Book_catagorypnl.Location = new Point(161, 48);
             Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(929, 572);
+            Book_catagorypnl.Size = new Size(929, 604);
             Book_catagorypnl.TabIndex = 7;
             Book_catagorypnl.TabStop = true;
             // 
