@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
             Study_assistbtn = new Button();
             Book_catagorytab = new TabControl();
@@ -79,9 +80,14 @@
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
             Homepagepnl = new Panel();
-            Homepnl = new Panel();
             Studypnl = new Panel();
+            Study_timepnl = new Panel();
+            Homepnl = new Panel();
+            panel2 = new Panel();
+            Admin_addbookpnl = new Panel();
+            Home_bookspnl = new Panel();
             Book_catagorypnl = new Panel();
+            Study_timer = new System.Windows.Forms.Timer(components);
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -93,6 +99,8 @@
             profilepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
+            Studypnl.SuspendLayout();
+            Homepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
             SuspendLayout();
             // 
@@ -127,7 +135,7 @@
             Book_catagorytab.Padding = new Point(11, 3);
             Book_catagorytab.RightToLeftLayout = true;
             Book_catagorytab.SelectedIndex = 0;
-            Book_catagorytab.Size = new Size(929, 604);
+            Book_catagorytab.Size = new Size(929, 598);
             Book_catagorytab.TabIndex = 4;
             Book_catagorytab.Tag = "";
             // 
@@ -142,7 +150,7 @@
             Programmingtab.Location = new Point(4, 54);
             Programmingtab.Name = "Programmingtab";
             Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(921, 546);
+            Programmingtab.Size = new Size(921, 540);
             Programmingtab.TabIndex = 0;
             Programmingtab.Text = "Programming";
             // 
@@ -153,7 +161,7 @@
             Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(921, 546);
+            Medicinetab.Size = new Size(921, 540);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
@@ -162,7 +170,7 @@
             Noveltab.BorderStyle = BorderStyle.Fixed3D;
             Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(921, 546);
+            Noveltab.Size = new Size(921, 540);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
@@ -508,7 +516,7 @@
             Titlepnl.Dock = DockStyle.Top;
             Titlepnl.Location = new Point(0, 0);
             Titlepnl.Name = "Titlepnl";
-            Titlepnl.Size = new Size(1090, 48);
+            Titlepnl.Size = new Size(1090, 54);
             Titlepnl.TabIndex = 1;
             // 
             // profilelnk
@@ -537,7 +545,7 @@
             sidebar.Controls.Add(Homebtn);
             sidebar.Controls.Add(settignbtn);
             sidebar.Dock = DockStyle.Left;
-            sidebar.Location = new Point(0, 48);
+            sidebar.Location = new Point(0, 54);
             sidebar.MaximumSize = new Size(160, 600);
             sidebar.MinimumSize = new Size(161, 600);
             sidebar.Name = "sidebar";
@@ -628,9 +636,9 @@
             Admin_userspnl.Controls.Add(Admin_useresdatagrid);
             Admin_userspnl.Controls.Add(fetch_databtn);
             Admin_userspnl.Dock = DockStyle.Fill;
-            Admin_userspnl.Location = new Point(161, 48);
+            Admin_userspnl.Location = new Point(161, 54);
             Admin_userspnl.Name = "Admin_userspnl";
-            Admin_userspnl.Size = new Size(929, 604);
+            Admin_userspnl.Size = new Size(929, 598);
             Admin_userspnl.TabIndex = 3;
             // 
             // updatebtn
@@ -674,9 +682,9 @@
             profilepnl.Controls.Add(Profile_firstnamelbl);
             profilepnl.Controls.Add(Profilepic);
             profilepnl.Dock = DockStyle.Fill;
-            profilepnl.Location = new Point(161, 48);
+            profilepnl.Location = new Point(161, 54);
             profilepnl.Name = "profilepnl";
-            profilepnl.Size = new Size(929, 604);
+            profilepnl.Size = new Size(929, 598);
             profilepnl.TabIndex = 3;
             // 
             // Profile_lastnamebx
@@ -747,9 +755,9 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Admin_userspnl);
-            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Studypnl);
+            Homepagepnl.Controls.Add(Homepnl);
+            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(sidebar);
@@ -760,23 +768,60 @@
             Homepagepnl.Size = new Size(1090, 652);
             Homepagepnl.TabIndex = 0;
             // 
-            // Homepnl
-            // 
-            Homepnl.BackColor = SystemColors.InactiveBorder;
-            Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(161, 48);
-            Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(929, 604);
-            Homepnl.TabIndex = 1;
-            // 
             // Studypnl
             // 
             Studypnl.BackColor = Color.FromArgb(192, 255, 192);
+            Studypnl.Controls.Add(Study_timepnl);
             Studypnl.Dock = DockStyle.Fill;
-            Studypnl.Location = new Point(161, 48);
+            Studypnl.Location = new Point(161, 54);
             Studypnl.Name = "Studypnl";
-            Studypnl.Size = new Size(929, 604);
+            Studypnl.Size = new Size(929, 598);
             Studypnl.TabIndex = 0;
+            // 
+            // Study_timepnl
+            // 
+            Study_timepnl.BackColor = Color.Black;
+            Study_timepnl.Location = new Point(18, 15);
+            Study_timepnl.Name = "Study_timepnl";
+            Study_timepnl.Size = new Size(280, 159);
+            Study_timepnl.TabIndex = 0;
+            Study_timepnl.Paint += Study_timepnl_Paint;
+            // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = SystemColors.InactiveBorder;
+            Homepnl.Controls.Add(panel2);
+            Homepnl.Controls.Add(Admin_addbookpnl);
+            Homepnl.Controls.Add(Home_bookspnl);
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(161, 54);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(929, 598);
+            Homepnl.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.GradientActiveCaption;
+            panel2.Location = new Point(627, 28);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(276, 535);
+            panel2.TabIndex = 1;
+            // 
+            // Admin_addbookpnl
+            // 
+            Admin_addbookpnl.BackColor = Color.RosyBrown;
+            Admin_addbookpnl.Location = new Point(324, 28);
+            Admin_addbookpnl.Name = "Admin_addbookpnl";
+            Admin_addbookpnl.Size = new Size(276, 535);
+            Admin_addbookpnl.TabIndex = 1;
+            // 
+            // Home_bookspnl
+            // 
+            Home_bookspnl.BackColor = SystemColors.GradientActiveCaption;
+            Home_bookspnl.Location = new Point(21, 28);
+            Home_bookspnl.Name = "Home_bookspnl";
+            Home_bookspnl.Size = new Size(276, 535);
+            Home_bookspnl.TabIndex = 0;
             // 
             // Book_catagorypnl
             // 
@@ -784,11 +829,16 @@
             Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
             Book_catagorypnl.Controls.Add(Book_catagorytab);
             Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(161, 48);
+            Book_catagorypnl.Location = new Point(161, 54);
             Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(929, 604);
+            Book_catagorypnl.Size = new Size(929, 598);
             Book_catagorypnl.TabIndex = 7;
             Book_catagorypnl.TabStop = true;
+            // 
+            // Study_timer
+            // 
+            Study_timer.Enabled = true;
+            Study_timer.Tick += Study_timer_Tick;
             // 
             // d_lab
             // 
@@ -820,6 +870,8 @@
             profilepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
+            Studypnl.ResumeLayout(false);
+            Homepnl.ResumeLayout(false);
             Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -879,5 +931,10 @@
         private ComboBox Signip_rolecbx;
         private Label Signip_rolelbl;
         private DataGridView Admin_useresdatagrid;
+        private Panel Home_bookspnl;
+        private Panel panel2;
+        private Panel Admin_addbookpnl;
+        private Panel Study_timepnl;
+        private System.Windows.Forms.Timer Study_timer;
     }
 }
