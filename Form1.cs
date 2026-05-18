@@ -8,20 +8,16 @@ namespace d.labdemo
 {
     public partial class d_lab : Form
     {
+        private int totalSeconds;
         public string? Role { get; private set; }
         public object? Full_Name { get; private set; }
-
+        public object Study_timebx { get; private set; }
 
         public d_lab()
         {
             InitializeComponent();
             Wellcome_page.Visible = true;
             Wellcome_page.BringToFront();
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -286,7 +282,6 @@ namespace d.labdemo
                 string Role = row.Cells["Role"].Value?.ToString();
 
                 DBConnection.checkConnection.Open();
-
                 string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
                 SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
                 cmd.Parameters.AddWithValue("@Role", Role);
@@ -302,13 +297,6 @@ namespace d.labdemo
 
             DBConnection.checkConnection.Close();
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            /*this.Close();
-            adminpnl back = new adminpnl();
-            back.Show();*/
         }
 
         private void profilelnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -336,14 +324,52 @@ namespace d.labdemo
             Homepnl.BringToFront();
         }
 
-        private void Study_timer_Tick(object sender, EventArgs e)
-        {
 
-        }
 
         private void Study_timepnl_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        private void Timer_startbtn_Click(object sender, EventArgs e)
+        {
+            //to check if the timer is counting and to stop it
+            if (Study_timer.Enabled)
+            {
+                Study_timer.Stop();
+                Timer_startbtn.Text = "START";
+                Timer_amountbx.Enabled = true;
+            }
+            else
+            {
+                int minutes = Convert.ToInt32(Timer_amountbx.Text);
+                totalSeconds = minutes * 60;
+                Study_timer.Interval = 1000;
+                Timer_countdownlbl.Text = $"{minutes:D2} : 00";
+                Timer_amountbx.Enabled = false;
+                Timer_startbtn.Text = "STOP";
+                Study_timer.Start();
+            }
+        }
+
+        private void Study_timer_Tick(object sender, EventArgs e)
+        {
+            if (totalSeconds > 0)
+            {
+                totalSeconds--;
+                // to calculate the remaining minut and second
+                int currentMinutes = totalSeconds / 60;
+                int currentSeconds = totalSeconds % 60;
+                Timer_countdownlbl.Text = $"{currentMinutes:D2} : {currentSeconds:D2}";
+            }
+            else
+            {
+                Study_timer.Stop();
+                Timer_startbtn.Text = "START";
+                Timer_amountbx.Enabled = true;
+                Timer_countdownlbl.Text = "00 : 00";
+                MessageBox.Show("Good job 👍 Take a break.");
+            }
+        }
     }
 }
+
