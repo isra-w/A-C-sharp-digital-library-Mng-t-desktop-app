@@ -370,6 +370,27 @@ namespace d.labdemo
                 MessageBox.Show("Good job 👍 Take a break.");
             }
         }
+
+        private void profilepic_updatebtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Select a Profile Photo";
+                openFileDialog.Filter = "Image Files(*.jpg; *.jpeg;*.png;)|*.jpg; *.jpeg; *.png;";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        Profilepic.Image = Image.FromFile(openFileDialog.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not load image: " + ex.Message);
+                    }
+                }
+            }
+        }
     }
 }
 
