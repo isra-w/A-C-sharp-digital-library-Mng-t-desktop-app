@@ -65,7 +65,9 @@
             Bookbtn = new Button();
             Homebtn = new Button();
             profile_sidebarpnl = new Panel();
+            label1 = new Label();
             settignbtn = new Button();
+            menuStrip1 = new MenuStrip();
             Admin_userspnl = new Panel();
             updatebtn = new Button();
             Admin_useresdatagrid = new DataGridView();
@@ -90,8 +92,6 @@
             Timer_startbtn = new Button();
             Book_catagorypnl = new Panel();
             Study_timer = new System.Windows.Forms.Timer(components);
-            label1 = new Label();
-            menuStrip1 = new MenuStrip();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -604,6 +604,17 @@
             profile_sidebarpnl.Size = new Size(225, 93);
             profile_sidebarpnl.TabIndex = 10;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Harlow Solid Italic", 36.288F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(255, 255, 128);
+            label1.Location = new Point(21, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(182, 79);
+            label1.TabIndex = 0;
+            label1.Text = "D-lab";
+            // 
             // settignbtn
             // 
             settignbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -622,6 +633,18 @@
             settignbtn.TabIndex = 5;
             settignbtn.Text = "⚙️ Setting";
             settignbtn.UseVisualStyleBackColor = false;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.GripStyle = ToolStripGripStyle.Visible;
+            menuStrip1.ImageScalingSize = new Size(21, 21);
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+            menuStrip1.Size = new Size(211, 24);
+            menuStrip1.TabIndex = 11;
+            menuStrip1.Text = "menuStrip1";
             // 
             // Admin_userspnl
             // 
@@ -794,7 +817,7 @@
             Home_bookspnl.Dock = DockStyle.Top;
             Home_bookspnl.Location = new Point(0, 0);
             Home_bookspnl.Name = "Home_bookspnl";
-            Home_bookspnl.Size = new Size(981, 73);
+            Home_bookspnl.Size = new Size(981, 61);
             Home_bookspnl.TabIndex = 0;
             // 
             // Studypnl
@@ -879,29 +902,6 @@
             Study_timer.Enabled = true;
             Study_timer.Interval = 1000;
             Study_timer.Tick += Study_timer_Tick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Harlow Solid Italic", 36.288F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(255, 255, 128);
-            label1.Location = new Point(21, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(182, 79);
-            label1.TabIndex = 0;
-            label1.Text = "D-lab";
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.Dock = DockStyle.None;
-            menuStrip1.GripStyle = ToolStripGripStyle.Visible;
-            menuStrip1.ImageScalingSize = new Size(21, 21);
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(211, 24);
-            menuStrip1.TabIndex = 11;
-            menuStrip1.Text = "menuStrip1";
             // 
             // d_lab
             // 
