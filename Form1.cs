@@ -267,6 +267,7 @@ namespace d.labdemo
             RoleCombo.DataPropertyName = "Role";
             RoleCombo.Items.Add("Admin");
             RoleCombo.Items.Add("User");
+            RoleCombo.Items.Add("Librarian");
 
             Admin_useresdatagrid.Columns.Insert(4, RoleCombo);
         }
@@ -325,11 +326,6 @@ namespace d.labdemo
         }
 
 
-
-        private void Study_timepnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void Timer_startbtn_Click(object sender, EventArgs e)
         {
             //to check if the timer is counting and to stop it
@@ -359,7 +355,7 @@ namespace d.labdemo
                 // to calculate the remaining minut and second
                 int currentMinutes = totalSeconds / 60;
                 int currentSeconds = totalSeconds % 60;
-                Timer_countdownlbl.Text = $"{currentMinutes:D2} : {currentSeconds:D2}";
+                Timer_countdownlbl.Text = $"{currentMinutes} : {currentSeconds}";
             }
             else
             {
@@ -367,7 +363,6 @@ namespace d.labdemo
                 Timer_startbtn.Text = "START";
                 Timer_amountbx.Enabled = true;
                 Timer_countdownlbl.Text = "00 : 00";
-                MessageBox.Show("Good job 👍 Take a break.");
             }
         }
 
@@ -391,6 +386,7 @@ namespace d.labdemo
                 }
             }
         }
+
     }
 }
 
