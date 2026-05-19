@@ -1,4 +1,5 @@
 using d.labdemo.DB;
+using d_labdemo;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -387,6 +388,17 @@ namespace d.labdemo
             }
         }
 
+        private void Timer_countdownlbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserControl Add_bookcontrol = new UserControl();
+            Homepagepnl.Controls.Add(Add_bookcontrol);
+            
+        }
     }
 }
 
