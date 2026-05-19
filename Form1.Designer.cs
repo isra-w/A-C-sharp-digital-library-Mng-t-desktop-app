@@ -82,16 +82,17 @@
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
             Homepagepnl = new Panel();
-            Homepnl = new Panel();
-            Home_bookspnl = new Panel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
             Timer_countdownlbl = new Label();
             Timer_amountbx = new TextBox();
             Timer_typelbl = new Label();
             Timer_startbtn = new Button();
+            Homepnl = new Panel();
+            Home_bookspnl = new Panel();
             Book_catagorypnl = new Panel();
             Study_timer = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -103,9 +104,9 @@
             profilepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
-            Homepnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
+            Homepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
             SuspendLayout();
             // 
@@ -649,6 +650,7 @@
             // Admin_userspnl
             // 
             Admin_userspnl.BackColor = Color.FromArgb(192, 192, 255);
+            Admin_userspnl.Controls.Add(button1);
             Admin_userspnl.Controls.Add(updatebtn);
             Admin_userspnl.Controls.Add(Admin_useresdatagrid);
             Admin_userspnl.Controls.Add(fetch_databtn);
@@ -788,10 +790,10 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Homepnl);
-            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Studypnl);
+            Homepagepnl.Controls.Add(Homepnl);
+            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
@@ -799,26 +801,6 @@
             Homepagepnl.Name = "Homepagepnl";
             Homepagepnl.Size = new Size(1210, 735);
             Homepagepnl.TabIndex = 0;
-            // 
-            // Homepnl
-            // 
-            Homepnl.BackColor = SystemColors.InactiveBorder;
-            Homepnl.BorderStyle = BorderStyle.Fixed3D;
-            Homepnl.Controls.Add(Home_bookspnl);
-            Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(225, 0);
-            Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(985, 735);
-            Homepnl.TabIndex = 1;
-            // 
-            // Home_bookspnl
-            // 
-            Home_bookspnl.BackColor = SystemColors.GradientActiveCaption;
-            Home_bookspnl.Dock = DockStyle.Top;
-            Home_bookspnl.Location = new Point(0, 0);
-            Home_bookspnl.Name = "Home_bookspnl";
-            Home_bookspnl.Size = new Size(981, 61);
-            Home_bookspnl.TabIndex = 0;
             // 
             // Studypnl
             // 
@@ -852,6 +834,7 @@
             Timer_countdownlbl.Size = new Size(133, 61);
             Timer_countdownlbl.TabIndex = 3;
             Timer_countdownlbl.Text = "00:00";
+            Timer_countdownlbl.Click += Timer_countdownlbl_Click;
             // 
             // Timer_amountbx
             // 
@@ -885,6 +868,26 @@
             Timer_startbtn.UseVisualStyleBackColor = false;
             Timer_startbtn.Click += Timer_startbtn_Click;
             // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = SystemColors.InactiveBorder;
+            Homepnl.BorderStyle = BorderStyle.Fixed3D;
+            Homepnl.Controls.Add(Home_bookspnl);
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(225, 0);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(985, 735);
+            Homepnl.TabIndex = 1;
+            // 
+            // Home_bookspnl
+            // 
+            Home_bookspnl.BackColor = SystemColors.GradientActiveCaption;
+            Home_bookspnl.Dock = DockStyle.Top;
+            Home_bookspnl.Location = new Point(0, 0);
+            Home_bookspnl.Name = "Home_bookspnl";
+            Home_bookspnl.Size = new Size(981, 61);
+            Home_bookspnl.TabIndex = 0;
+            // 
             // Book_catagorypnl
             // 
             Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -902,6 +905,16 @@
             Study_timer.Enabled = true;
             Study_timer.Interval = 1000;
             Study_timer.Tick += Study_timer_Tick;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(310, 14);
+            button1.Name = "button1";
+            button1.Size = new Size(243, 36);
+            button1.TabIndex = 3;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // d_lab
             // 
@@ -934,10 +947,10 @@
             profilepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
-            Homepnl.ResumeLayout(false);
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
+            Homepnl.ResumeLayout(false);
             Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -1006,5 +1019,6 @@
         private Button settignbtn;
         private Label label1;
         private MenuStrip menuStrip1;
+        private Button button1;
     }
 }
