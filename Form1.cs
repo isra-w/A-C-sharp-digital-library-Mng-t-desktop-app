@@ -457,7 +457,10 @@ namespace d.labdemo
             AddBooks_userControl.Focus();
         }
 
+        private void Profile_editbtn_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 
