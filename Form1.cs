@@ -14,6 +14,9 @@ namespace d.labdemo
         public object? Full_Name { get; private set; }
         public object Study_timebx { get; private set; }
 
+        // instance of Add_bookusercontrol to avoid using type as instance
+        private Add_bookusercontrol? AddBooks_userControl;
+
         public d_lab()
         {
             InitializeComponent();
@@ -442,9 +445,16 @@ namespace d.labdemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserControl Add_bookcontrol = new UserControl();
-            Homepagepnl.Controls.Add(Add_bookcontrol);
+            if (AddBooks_userControl == null)
+            {
+                AddBooks_userControl = new Add_bookusercontrol();
+                AddBooks_userControl.Dock = DockStyle.Fill;
+                Homepagepnl.Controls.Add(AddBooks_userControl);
+            }
 
+            AddBooks_userControl.Visible = true;
+            AddBooks_userControl.BringToFront();
+            AddBooks_userControl.Focus();
         }
 
 
