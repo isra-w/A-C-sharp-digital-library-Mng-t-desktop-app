@@ -33,5 +33,9 @@ namespace d.labdemo.DB
             return sqlCommand.ExecuteNonQuery();
         }
 
+        internal static IEnumerable<object> GetAllBooks()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -14,10 +14,6 @@ namespace d.labdemo
         public object? Full_Name { get; private set; }
         public object Study_timebx { get; private set; }
 
-        // instance of Add_bookusercontrol to avoid using type as instance
-        private Add_bookusercontrol? AddBooks_userControl;
-        //private Edit_profileusercontrol? Edit_profileusercontrol;
-
         public d_lab()
         {
             InitializeComponent();
@@ -76,8 +72,6 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Study_assistbtn.Visible = false;
                             Studypnl.Visible = false;
-                            LibrarianAdd_bookbtn.Visible = false;
-                            Book_catagorytab.Dock = DockStyle.Fill;
                         }
                         else if (role == "User")
                         {
@@ -86,18 +80,6 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Admin_userspnl.Visible = false;
                             Usersbtn.Visible = false;
-                            Librarin_pnl.Visible = false;
-                            LibrarianAdd_bookbtn.Visible = false;
-                            Book_catagorytab.Dock = DockStyle.Fill;
-                        }
-                        else if (role == "Librarian")
-                        {
-                            Homepagepnl.Visible = true;
-                            loginpnl.Visible = false;
-                            signuppnl.Visible = false;
-                            Study_assistbtn.Visible = false;
-                            Studypnl.Visible = false;
-                            LibrarianAdd_bookbtn.Visible = true;
                         }
                     }
                 }
@@ -157,7 +139,7 @@ namespace d.labdemo
              }*/
         }
 
-        private void login_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Homepagepnl.Visible = false;
             loginpnl.Visible = false;
@@ -165,7 +147,11 @@ namespace d.labdemo
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
-            Librarin_pnl.Visible = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void signupbtn_Click(object sender, EventArgs e)
@@ -194,6 +180,11 @@ namespace d.labdemo
 
         }
 
+        private void namebx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void Wellcome_loginbtn_Click(object sender, EventArgs e)
         {
             Homepagepnl.Visible = false;
@@ -203,7 +194,6 @@ namespace d.labdemo
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
-            Librarin_pnl.Visible = false;
         }
 
         private void Wellcome_page_Paint(object sender, PaintEventArgs e)
@@ -214,7 +204,6 @@ namespace d.labdemo
             signuppnl.Visible = false;
             Wellcome_page.Visible = true;
             profilepnl.Visible = false;
-            Librarin_pnl.Visible = false;
         }
 
         private void Signup_loginlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -225,7 +214,6 @@ namespace d.labdemo
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
-            Librarin_pnl.Visible = false;
 
         }
 
@@ -237,7 +225,6 @@ namespace d.labdemo
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
-            Librarin_pnl.Visible = false;
 
         }
 
@@ -276,19 +263,15 @@ namespace d.labdemo
             try
             {
                 DBConnection.checkConnection.Open();
-                string query = "SELECT UserId, First_Name, Last_Name, Username, ISNULL(Role, 'Pending') as Role FROM Users";
+                string query = "SELECT UserId, First_Name, Last_Name, Username, Role FROM Users";
 
-                if (role == "Pending")
-                {
-                    query += " WHERE Role IS NULL OR Role = ''";
-                }
-                else if (role != "All")
+                if (role != "All")
                 {
                     query += " WHERE Role = @Role";
                 }
 
                 SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
-                if (role != "All" && role != "Pending")
+                if (role != "All")
                 {
                     cmd.Parameters.AddWithValue("@Role", role);
                 }
@@ -303,10 +286,8 @@ namespace d.labdemo
             {
                 MessageBox.Show("Load users error: " + ex.Message);
             }
-            finally
-            {
-                DBConnection.checkConnection.Close();
-            }
+            DBConnection.checkConnection.Close();
+
         }
 
         private void AdminFetch_datacombobx_SelectedIndexChanged(object sender, EventArgs e)
@@ -366,6 +347,14 @@ namespace d.labdemo
             profilepnl.BringToFront();
         }
 
+        private void signup_wellcomebx_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
         private void Study_assistbtn_Click(object sender, EventArgs e)
         {
             Studypnl.BringToFront();
@@ -444,15 +433,10 @@ namespace d.labdemo
 
         }
 
-        private void L_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            AddBooks_userControl.Visible = true;
-            AddBooks_userControl.BringToFront();
-            AddBooks_userControl.Focus();
-        }
-
-        private void Profile_editbtn_Click(object sender, EventArgs e)
-        {
+            UserControl Add_bookcontrol = new UserControl();
+            Homepagepnl.Controls.Add(Add_bookcontrol);
 
         }
 
