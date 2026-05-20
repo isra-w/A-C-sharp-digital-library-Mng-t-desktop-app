@@ -444,7 +444,7 @@ namespace d.labdemo
 
         }
 
-        private void Librarian_addbtn_Click(object sender, EventArgs e)
+        private void L_Click(object sender, EventArgs e)
         {
             AddBooks_userControl.Visible = true;
             AddBooks_userControl.BringToFront();
