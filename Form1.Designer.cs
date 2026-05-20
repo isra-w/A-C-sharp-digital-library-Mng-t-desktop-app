@@ -153,7 +153,7 @@
             Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(977, 677);
+            Medicinetab.Size = new Size(977, 628);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
@@ -162,7 +162,7 @@
             Noveltab.BorderStyle = BorderStyle.Fixed3D;
             Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(977, 677);
+            Noveltab.Size = new Size(977, 628);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
