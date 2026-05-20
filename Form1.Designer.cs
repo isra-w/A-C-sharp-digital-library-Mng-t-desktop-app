@@ -74,6 +74,7 @@
             fetch_databtn = new Button();
             LibrarianAdd_bookbtn = new Button();
             profilepnl = new Panel();
+            Profile_editbtn = new Button();
             profilepic_updatebtn = new Button();
             Profile_lastnamebx = new TextBox();
             Profile_usernamebx = new TextBox();
@@ -700,11 +701,12 @@
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
-            LibrarianAdd_bookbtn.Click += button1_Click;
+            LibrarianAdd_bookbtn.Click += Librarian_addbtn_Click;
             // 
             // profilepnl
             // 
             profilepnl.BackColor = Color.PowderBlue;
+            profilepnl.Controls.Add(Profile_editbtn);
             profilepnl.Controls.Add(profilepic_updatebtn);
             profilepnl.Controls.Add(Profile_lastnamebx);
             profilepnl.Controls.Add(Profile_usernamebx);
@@ -719,13 +721,23 @@
             profilepnl.Size = new Size(985, 735);
             profilepnl.TabIndex = 3;
             // 
+            // Profile_editbtn
+            // 
+            Profile_editbtn.Location = new Point(725, 15);
+            Profile_editbtn.Name = "Profile_editbtn";
+            Profile_editbtn.Size = new Size(164, 49);
+            Profile_editbtn.TabIndex = 19;
+            Profile_editbtn.Text = "Edit profile";
+            Profile_editbtn.UseVisualStyleBackColor = true;
+            Profile_editbtn.Click += Profile_editbtn_Click;
+            // 
             // profilepic_updatebtn
             // 
             profilepic_updatebtn.BackColor = Color.Black;
             profilepic_updatebtn.FlatAppearance.BorderSize = 0;
             profilepic_updatebtn.FlatStyle = FlatStyle.Flat;
             profilepic_updatebtn.ForeColor = Color.White;
-            profilepic_updatebtn.Location = new Point(190, 137);
+            profilepic_updatebtn.Location = new Point(195, 213);
             profilepic_updatebtn.Name = "profilepic_updatebtn";
             profilepic_updatebtn.Size = new Size(39, 35);
             profilepic_updatebtn.TabIndex = 18;
@@ -736,7 +748,7 @@
             // Profile_lastnamebx
             // 
             Profile_lastnamebx.BackColor = Color.PowderBlue;
-            Profile_lastnamebx.Location = new Point(480, 117);
+            Profile_lastnamebx.Location = new Point(485, 193);
             Profile_lastnamebx.Name = "Profile_lastnamebx";
             Profile_lastnamebx.Size = new Size(352, 29);
             Profile_lastnamebx.TabIndex = 17;
@@ -744,7 +756,7 @@
             // Profile_usernamebx
             // 
             Profile_usernamebx.BackColor = Color.PowderBlue;
-            Profile_usernamebx.Location = new Point(480, 187);
+            Profile_usernamebx.Location = new Point(485, 263);
             Profile_usernamebx.Name = "Profile_usernamebx";
             Profile_usernamebx.Size = new Size(352, 29);
             Profile_usernamebx.TabIndex = 16;
@@ -752,7 +764,7 @@
             // Profile_firstnamebx
             // 
             Profile_firstnamebx.BackColor = Color.PowderBlue;
-            Profile_firstnamebx.Location = new Point(480, 49);
+            Profile_firstnamebx.Location = new Point(485, 125);
             Profile_firstnamebx.Name = "Profile_firstnamebx";
             Profile_firstnamebx.Size = new Size(352, 29);
             Profile_firstnamebx.TabIndex = 15;
@@ -761,7 +773,7 @@
             // 
             Profile_usernamelbl.AutoSize = true;
             Profile_usernamelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Profile_usernamelbl.Location = new Point(287, 186);
+            Profile_usernamelbl.Location = new Point(292, 262);
             Profile_usernamelbl.Name = "Profile_usernamelbl";
             Profile_usernamelbl.Size = new Size(119, 30);
             Profile_usernamelbl.TabIndex = 14;
@@ -771,7 +783,7 @@
             // 
             Profile_lastnamelbl.AutoSize = true;
             Profile_lastnamelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Profile_lastnamelbl.Location = new Point(287, 116);
+            Profile_lastnamelbl.Location = new Point(292, 192);
             Profile_lastnamelbl.Name = "Profile_lastnamelbl";
             Profile_lastnamelbl.Size = new Size(114, 30);
             Profile_lastnamelbl.TabIndex = 2;
@@ -781,7 +793,7 @@
             // 
             Profile_firstnamelbl.AutoSize = true;
             Profile_firstnamelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Profile_firstnamelbl.Location = new Point(287, 49);
+            Profile_firstnamelbl.Location = new Point(292, 125);
             Profile_firstnamelbl.Name = "Profile_firstnamelbl";
             Profile_firstnamelbl.Size = new Size(117, 30);
             Profile_firstnamelbl.TabIndex = 1;
@@ -792,7 +804,7 @@
             Profilepic.BackColor = Color.DarkSlateGray;
             Profilepic.BackgroundImage = d_labdemo.Properties.Resources.Screenshot_2026_05_13_222611;
             Profilepic.BackgroundImageLayout = ImageLayout.Stretch;
-            Profilepic.Location = new Point(49, 28);
+            Profilepic.Location = new Point(54, 104);
             Profilepic.Name = "Profilepic";
             Profilepic.Size = new Size(180, 146);
             Profilepic.TabIndex = 0;
@@ -803,10 +815,10 @@
             Homepagepnl.BackColor = Color.Black;
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
+            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Studypnl);
-            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
             Homepagepnl.Location = new Point(0, 0);
@@ -1052,5 +1064,6 @@
         private ToolStripMenuItem librarianToolStripMenuItem;
         private Panel Librarin_pnl;
         private ComboBox AdminFilter_datacombobx;
+        private Button Profile_editbtn;
     }
 }

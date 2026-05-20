@@ -16,6 +16,7 @@ namespace d.labdemo
 
         // instance of Add_bookusercontrol to avoid using type as instance
         private Add_bookusercontrol? AddBooks_userControl;
+        private Edit_profileusercontrol? Edit_profileusercontrol;
 
         public d_lab()
         {
@@ -443,18 +444,16 @@ namespace d.labdemo
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Librarian_addbtn_Click(object sender, EventArgs e)
         {
-            if (AddBooks_userControl == null)
-            {
-                AddBooks_userControl = new Add_bookusercontrol();
-                AddBooks_userControl.Dock = DockStyle.Fill;
-                Homepagepnl.Controls.Add(AddBooks_userControl);
-            }
-
             AddBooks_userControl.Visible = true;
             AddBooks_userControl.BringToFront();
             AddBooks_userControl.Focus();
+        }
+
+        private void Profile_editbtn_Click(object sender, EventArgs e)
+        {
+
         }
 
 
