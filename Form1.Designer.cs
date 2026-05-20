@@ -83,21 +83,20 @@
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
             Homepagepnl = new Panel();
+            Book_catagorypnl = new Panel();
+            Librarin_pnl = new Panel();
             Homepnl = new Panel();
             Home_bookspnl = new Panel();
-            Librarin_pnl = new Panel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
             Timer_countdownlbl = new Label();
             Timer_amountbx = new TextBox();
             Timer_typelbl = new Label();
             Timer_startbtn = new Button();
-            Book_catagorypnl = new Panel();
             Study_timer = new System.Windows.Forms.Timer(components);
             adminToolStripMenuItem = new ToolStripMenuItem();
             userToolStripMenuItem = new ToolStripMenuItem();
             librarianToolStripMenuItem = new ToolStripMenuItem();
-            Librarian_addbooktab = new TabPage();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -109,27 +108,26 @@
             profilepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
+            Book_catagorypnl.SuspendLayout();
             Homepnl.SuspendLayout();
-            Librarin_pnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
-            Book_catagorypnl.SuspendLayout();
             SuspendLayout();
             // 
             // Book_catagorytab
             // 
-            Book_catagorytab.Controls.Add(Librarian_addbooktab);
             Book_catagorytab.Controls.Add(Programmingtab);
             Book_catagorytab.Controls.Add(Medicinetab);
             Book_catagorytab.Controls.Add(Noveltab);
-            Book_catagorytab.Dock = DockStyle.Fill;
+            Book_catagorytab.Dock = DockStyle.Bottom;
+            Book_catagorytab.HotTrack = true;
             Book_catagorytab.ItemSize = new Size(109, 50);
-            Book_catagorytab.Location = new Point(0, 0);
+            Book_catagorytab.Location = new Point(0, 49);
             Book_catagorytab.Name = "Book_catagorytab";
             Book_catagorytab.Padding = new Point(11, 3);
             Book_catagorytab.RightToLeftLayout = true;
             Book_catagorytab.SelectedIndex = 0;
-            Book_catagorytab.Size = new Size(985, 735);
+            Book_catagorytab.Size = new Size(985, 686);
             Book_catagorytab.TabIndex = 4;
             Book_catagorytab.Tag = "";
             // 
@@ -144,7 +142,7 @@
             Programmingtab.Location = new Point(4, 54);
             Programmingtab.Name = "Programmingtab";
             Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(977, 677);
+            Programmingtab.Size = new Size(977, 628);
             Programmingtab.TabIndex = 0;
             Programmingtab.Text = "Programming";
             // 
@@ -695,9 +693,10 @@
             // 
             // LibrarianAdd_bookbtn
             // 
-            LibrarianAdd_bookbtn.Location = new Point(38, 24);
+            LibrarianAdd_bookbtn.Dock = DockStyle.Top;
+            LibrarianAdd_bookbtn.Location = new Point(0, 0);
             LibrarianAdd_bookbtn.Name = "LibrarianAdd_bookbtn";
-            LibrarianAdd_bookbtn.Size = new Size(142, 36);
+            LibrarianAdd_bookbtn.Size = new Size(985, 51);
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
@@ -803,9 +802,9 @@
             // 
             Homepagepnl.BackColor = Color.Black;
             Homepagepnl.Controls.Add(Book_catagorypnl);
+            Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
-            Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(sidebar);
@@ -814,6 +813,27 @@
             Homepagepnl.Name = "Homepagepnl";
             Homepagepnl.Size = new Size(1210, 735);
             Homepagepnl.TabIndex = 0;
+            // 
+            // Book_catagorypnl
+            // 
+            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
+            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
+            Book_catagorypnl.Controls.Add(Book_catagorytab);
+            Book_catagorypnl.Dock = DockStyle.Fill;
+            Book_catagorypnl.Location = new Point(225, 0);
+            Book_catagorypnl.Name = "Book_catagorypnl";
+            Book_catagorypnl.Size = new Size(985, 735);
+            Book_catagorypnl.TabIndex = 7;
+            Book_catagorypnl.TabStop = true;
+            // 
+            // Librarin_pnl
+            // 
+            Librarin_pnl.Dock = DockStyle.Fill;
+            Librarin_pnl.Location = new Point(225, 0);
+            Librarin_pnl.Name = "Librarin_pnl";
+            Librarin_pnl.Size = new Size(985, 735);
+            Librarin_pnl.TabIndex = 13;
             // 
             // Homepnl
             // 
@@ -834,15 +854,6 @@
             Home_bookspnl.Name = "Home_bookspnl";
             Home_bookspnl.Size = new Size(981, 61);
             Home_bookspnl.TabIndex = 0;
-            // 
-            // Librarin_pnl
-            // 
-            Librarin_pnl.Controls.Add(LibrarianAdd_bookbtn);
-            Librarin_pnl.Dock = DockStyle.Fill;
-            Librarin_pnl.Location = new Point(225, 0);
-            Librarin_pnl.Name = "Librarin_pnl";
-            Librarin_pnl.Size = new Size(985, 735);
-            Librarin_pnl.TabIndex = 13;
             // 
             // Studypnl
             // 
@@ -910,18 +921,6 @@
             Timer_startbtn.UseVisualStyleBackColor = false;
             Timer_startbtn.Click += Timer_startbtn_Click;
             // 
-            // Book_catagorypnl
-            // 
-            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
-            Book_catagorypnl.Controls.Add(Book_catagorytab);
-            Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(225, 0);
-            Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(985, 735);
-            Book_catagorypnl.TabIndex = 7;
-            Book_catagorypnl.TabStop = true;
-            // 
             // Study_timer
             // 
             Study_timer.Enabled = true;
@@ -945,16 +944,6 @@
             librarianToolStripMenuItem.Name = "librarianToolStripMenuItem";
             librarianToolStripMenuItem.Size = new Size(233, 30);
             librarianToolStripMenuItem.Text = "Librarian";
-            // 
-            // Librarian_addbooktab
-            // 
-            Librarian_addbooktab.Location = new Point(4, 54);
-            Librarian_addbooktab.Name = "Librarian_addbooktab";
-            Librarian_addbooktab.Padding = new Padding(3);
-            Librarian_addbooktab.Size = new Size(977, 677);
-            Librarian_addbooktab.TabIndex = 3;
-            Librarian_addbooktab.Text = "Add Books";
-            Librarian_addbooktab.UseVisualStyleBackColor = true;
             // 
             // d_lab
             // 
@@ -986,12 +975,11 @@
             profilepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
+            Book_catagorypnl.ResumeLayout(false);
             Homepnl.ResumeLayout(false);
-            Librarin_pnl.ResumeLayout(false);
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
-            Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1064,6 +1052,5 @@
         private ToolStripMenuItem librarianToolStripMenuItem;
         private Panel Librarin_pnl;
         private ComboBox AdminFilter_datacombobx;
-        private TabPage Librarian_addbooktab;
     }
 }

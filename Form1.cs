@@ -72,8 +72,8 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Study_assistbtn.Visible = false;
                             Studypnl.Visible = false;
-                            Librarian_addbooktab.Visible = false;
                             LibrarianAdd_bookbtn.Visible = false;
+                            Book_catagorytab.Dock = DockStyle.Fill;
                         }
                         else if (role == "User")
                         {
@@ -83,8 +83,8 @@ namespace d.labdemo
                             Admin_userspnl.Visible = false;
                             Usersbtn.Visible = false;
                             Librarin_pnl.Visible = false;
-                            Librarian_addbooktab.Visible = false;
                             LibrarianAdd_bookbtn.Visible = false;
+                            Book_catagorytab.Dock = DockStyle.Fill;
                         }
                         else if (role == "Librarian")
                         {
@@ -93,7 +93,6 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Study_assistbtn.Visible = false;
                             Studypnl.Visible = false;
-                            Librarian_addbooktab.Visible = true;
                             LibrarianAdd_bookbtn.Visible = true;
                         }
                     }
