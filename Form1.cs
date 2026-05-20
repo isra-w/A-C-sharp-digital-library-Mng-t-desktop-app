@@ -23,9 +23,6 @@ namespace d.labdemo
         }
 
 
-        private readonly Services.AuthService _authService = new Services.AuthService();
-        private readonly Services.UserService _userService = new Services.UserService();
-
         private void Logibtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
@@ -35,50 +32,80 @@ namespace d.labdemo
                 return;
             }
 
-            var result = _authService.Login(namebx.Text, passbx.Text);
-            if (!result.Success)
-            {
-                MessageBox.Show(result.Error ?? "Invalid username or password.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            DBConnection.intiate();
+            string query = "SELECT Password, Role FROM Users WHERE Username = @Username;";
 
-            string role = result.Role ?? "Pending";
+            using (SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("@Username", namebx.Text);
 
-            loginpnl.Visible = false;
-            signuppnl.Visible = false;
-            Homepagepnl.Visible = true;
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                        {
+                            MessageBox.Show("Record not found.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
 
-            if (role == "Admin")
-            {
-                Homepagepnl.Visible = true;
-                loginpnl.Visible = false;
-                signuppnl.Visible = false;
-                Study_assistbtn.Visible = false;
-                Studypnl.Visible = false;
-                Librarian_addbooktab.Visible = false;
-                LibrarianAdd_bookbtn.Visible = false;
-            }
-            else if (role == "User")
-            {
-                Homepagepnl.Visible = true;
-                loginpnl.Visible = false;
-                signuppnl.Visible = false;
-                Admin_userspnl.Visible = false;
-                Usersbtn.Visible = false;
-                Librarin_pnl.Visible = false;
-                Librarian_addbooktab.Visible = false;
-                LibrarianAdd_bookbtn.Visible = false;
-            }
-            else if (role == "Librarian")
-            {
-                Homepagepnl.Visible = true;
-                loginpnl.Visible = false;
-                signuppnl.Visible = false;
-                Study_assistbtn.Visible = false;
-                Studypnl.Visible = false;
-                Librarian_addbooktab.Visible = true;
-                LibrarianAdd_bookbtn.Visible = true;
+                        string storedHash = reader["Password"].ToString().Trim();
+                        string role = reader["Role"].ToString().Trim();
+
+                        bool passwordVerified = BCrypt.Net.BCrypt.EnhancedVerify(passbx.Text, storedHash);
+
+                        if (!passwordVerified)
+                        {
+                            MessageBox.Show("Invalid username or password.", "Error",
+                                MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            return;
+                        }
+                        loginpnl.Visible = false;
+                        signuppnl.Visible = false;
+                        Homepagepnl.Visible = true;
+
+                        if (role == "Admin")
+                        {
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
+                            Study_assistbtn.Visible = false;
+                            Studypnl.Visible = false;
+                            Librarian_addbooktab.Visible = false;
+                            LibrarianAdd_bookbtn.Visible = false;
+                        }
+                        else if (role == "User")
+                        {
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
+                            Admin_userspnl.Visible = false;
+                            Usersbtn.Visible = false;
+                            Librarin_pnl.Visible = false;
+                            Librarian_addbooktab.Visible = false;
+                            LibrarianAdd_bookbtn.Visible = false;
+                        }
+                        else if (role == "Librarian")
+                        {
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
+                            Study_assistbtn.Visible = false;
+                            Studypnl.Visible = false;
+                            Librarian_addbooktab.Visible = true;
+                            LibrarianAdd_bookbtn.Visible = true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    DBConnection.checkConnection.Close();
+                }
             }
         }
 
@@ -245,13 +272,37 @@ namespace d.labdemo
         {
             try
             {
-                DataTable dt = _userService.LoadUsersByRole(role);
+                DBConnection.checkConnection.Open();
+                string query = "SELECT UserId, First_Name, Last_Name, Username, ISNULL(Role, 'Pending') as Role FROM Users";
+
+                if (role == "Pending")
+                {
+                    query += " WHERE Role IS NULL OR Role = ''";
+                }
+                else if (role != "All")
+                {
+                    query += " WHERE Role = @Role";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+                if (role != "All" && role != "Pending")
+                {
+                    cmd.Parameters.AddWithValue("@Role", role);
+                }
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
                 Admin_useresdatagrid.DataSource = dt;
                 AddRoleComboBoxColumn();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Load users error: " + ex.Message);
+            }
+            finally
+            {
+                DBConnection.checkConnection.Close();
             }
         }
 
@@ -288,7 +339,12 @@ namespace d.labdemo
                 int userId = Convert.ToInt32(row.Cells["UserId"].Value);
                 string Role = row.Cells["Role"].Value?.ToString();
 
-                int rowsAffected = _userService.UpdateUserRole(userId, Role ?? "");
+                DBConnection.checkConnection.Open();
+                string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
+                SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+                cmd.Parameters.AddWithValue("@Role", Role);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                int rowsAffected = cmd.ExecuteNonQuery();
                 MessageBox.Show($"Updated {rowsAffected} row(s) successfully!");
             }
 
@@ -296,6 +352,8 @@ namespace d.labdemo
             {
                 MessageBox.Show("Update error: " + ex.Message);
             }
+
+            DBConnection.checkConnection.Close();
 
         }
 
