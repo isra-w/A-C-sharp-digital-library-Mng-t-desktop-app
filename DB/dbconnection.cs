@@ -32,5 +32,6 @@ namespace d.labdemo.DB
             SqlCommand sqlCommand = new SqlCommand(query, checkConnection);// it's used to send the query commands to the database
             return sqlCommand.ExecuteNonQuery();
         }
+
     }
 }

@@ -16,7 +16,7 @@ namespace d.labdemo
 
         // instance of Add_bookusercontrol to avoid using type as instance
         private Add_bookusercontrol? AddBooks_userControl;
-        private Edit_profileusercontrol? Edit_profileusercontrol;
+        //private Edit_profileusercontrol? Edit_profileusercontrol;
 
         public d_lab()
         {

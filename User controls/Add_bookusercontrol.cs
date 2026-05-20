@@ -149,7 +149,7 @@ namespace d_labdemo
                     Author = BookAuthor_textbox.Text,
                     Category = BookCategory_textbox.Text,
                     Year = year,
-                    PdfFilePath = destinationPath
+                    //File_Path = destinationPath
                 };
 
                 // Add book to database

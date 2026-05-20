@@ -10,10 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
-    <PackageReference Include="Kimtoo.BindingProvider" Version="1.2.7" />
-    <PackageReference Include="Kimtoo.DbManager" Version="1.0.8" />
-    <PackageReference Include="Kimtoo.NavigationMenu" Version="1.0.2" />
-    <PackageReference Include="Kimtoo.ThemeProvider" Version="1.0.2" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
     <PackageReference Include="Npgsql" Version="10.0.2" />
