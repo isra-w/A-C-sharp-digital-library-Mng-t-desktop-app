@@ -701,7 +701,7 @@
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
-            LibrarianAdd_bookbtn.Click += Librarian_addbtn_Click;
+            //LibrarianAdd_bookbtn.Click += Librarian_addbtn_Click;
             // 
             // profilepnl
             // 
@@ -729,7 +729,7 @@
             Profile_editbtn.TabIndex = 19;
             Profile_editbtn.Text = "Edit profile";
             Profile_editbtn.UseVisualStyleBackColor = true;
-            Profile_editbtn.Click += Profile_editbtn_Click;
+            //Profile_editbtn.Click += Profile_editbtn_Click;
             // 
             // profilepic_updatebtn
             // 
