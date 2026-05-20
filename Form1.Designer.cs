@@ -202,7 +202,7 @@
             login_signup.TabStop = true;
             login_signup.Text = "Don' have an account?\r\nSIGN IP";
             login_signup.TextAlign = ContentAlignment.TopCenter;
-            login_signup.LinkClicked += login_signup_LinkClicked;
+            //login_signup.LinkClicked += login_signup_LinkClicked;
             // 
             // logibtn
             // 
