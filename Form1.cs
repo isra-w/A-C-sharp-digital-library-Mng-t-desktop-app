@@ -72,6 +72,8 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Study_assistbtn.Visible = false;
                             Studypnl.Visible = false;
+                            Librarian_addbooktab.Visible = false;
+                            LibrarianAdd_bookbtn.Visible = false;
                         }
                         else if (role == "User")
                         {
@@ -80,6 +82,19 @@ namespace d.labdemo
                             signuppnl.Visible = false;
                             Admin_userspnl.Visible = false;
                             Usersbtn.Visible = false;
+                            Librarin_pnl.Visible = false;
+                            Librarian_addbooktab.Visible = false;
+                            LibrarianAdd_bookbtn.Visible = false;
+                        }
+                        else if (role == "Librarian")
+                        {
+                            Homepagepnl.Visible = true;
+                            loginpnl.Visible = false;
+                            signuppnl.Visible = false;
+                            Study_assistbtn.Visible = false;
+                            Studypnl.Visible = false;
+                            Librarian_addbooktab.Visible = true;
+                            LibrarianAdd_bookbtn.Visible = true;
                         }
                     }
                 }
@@ -139,7 +154,7 @@ namespace d.labdemo
              }*/
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void login_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Homepagepnl.Visible = false;
             loginpnl.Visible = false;
@@ -147,11 +162,7 @@ namespace d.labdemo
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            Librarin_pnl.Visible = false;
         }
 
         private void signupbtn_Click(object sender, EventArgs e)
@@ -180,11 +191,6 @@ namespace d.labdemo
 
         }
 
-        private void namebx_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Wellcome_loginbtn_Click(object sender, EventArgs e)
         {
             Homepagepnl.Visible = false;
@@ -194,6 +200,7 @@ namespace d.labdemo
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
+            Librarin_pnl.Visible = false;
         }
 
         private void Wellcome_page_Paint(object sender, PaintEventArgs e)
@@ -204,6 +211,7 @@ namespace d.labdemo
             signuppnl.Visible = false;
             Wellcome_page.Visible = true;
             profilepnl.Visible = false;
+            Librarin_pnl.Visible = false;
         }
 
         private void Signup_loginlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -214,6 +222,7 @@ namespace d.labdemo
             signuppnl.Visible = false;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
+            Librarin_pnl.Visible = false;
 
         }
 
@@ -225,6 +234,7 @@ namespace d.labdemo
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
+            Librarin_pnl.Visible = false;
 
         }
 
@@ -243,8 +253,43 @@ namespace d.labdemo
         {
             try
             {
+                AdminFilter_datacombobx.Items.Clear();
+                AdminFilter_datacombobx.Items.Add("All");
+                AdminFilter_datacombobx.Items.Add("Admin");
+                AdminFilter_datacombobx.Items.Add("User");
+                AdminFilter_datacombobx.Items.Add("Librarian");
+                AdminFilter_datacombobx.Items.Add("Pending");
+                AdminFilter_datacombobx.SelectedIndex = 0;
+                LoadUsersByRole("All");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fetch error: " + ex.Message);
+            }
+        }
+
+        private void LoadUsersByRole(string role)
+        {
+            try
+            {
                 DBConnection.checkConnection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT UserId, First_Name, Last_Name, Username, Role FROM Users", DBConnection.checkConnection);
+                string query = "SELECT UserId, First_Name, Last_Name, Username, ISNULL(Role, 'Pending') as Role FROM Users";
+
+                if (role == "Pending")
+                {
+                    query += " WHERE Role IS NULL OR Role = ''";
+                }
+                else if (role != "All")
+                {
+                    query += " WHERE Role = @Role";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
+                if (role != "All" && role != "Pending")
+                {
+                    cmd.Parameters.AddWithValue("@Role", role);
+                }
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
@@ -253,10 +298,21 @@ namespace d.labdemo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fetch error: " + ex.Message);
+                MessageBox.Show("Load users error: " + ex.Message);
             }
-            DBConnection.checkConnection.Close();
+            finally
+            {
+                DBConnection.checkConnection.Close();
+            }
+        }
 
+        private void AdminFetch_datacombobx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (AdminFilter_datacombobx.SelectedIndex >= 0)
+            {
+                string selectedRole = AdminFilter_datacombobx.SelectedItem.ToString();
+                LoadUsersByRole(selectedRole);
+            }
         }
 
         private void AddRoleComboBoxColumn()
@@ -307,14 +363,6 @@ namespace d.labdemo
             profilepnl.BringToFront();
         }
 
-        private void signup_wellcomebx_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void Study_assistbtn_Click(object sender, EventArgs e)
         {
             Studypnl.BringToFront();
@@ -397,8 +445,10 @@ namespace d.labdemo
         {
             UserControl Add_bookcontrol = new UserControl();
             Homepagepnl.Controls.Add(Add_bookcontrol);
-            
+
         }
+
+
     }
 }
 
