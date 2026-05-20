@@ -74,6 +74,7 @@
             fetch_databtn = new Button();
             LibrarianAdd_bookbtn = new Button();
             profilepnl = new Panel();
+            Profile_editbtn = new Button();
             profilepic_updatebtn = new Button();
             Profile_lastnamebx = new TextBox();
             Profile_usernamebx = new TextBox();
@@ -97,7 +98,6 @@
             adminToolStripMenuItem = new ToolStripMenuItem();
             userToolStripMenuItem = new ToolStripMenuItem();
             librarianToolStripMenuItem = new ToolStripMenuItem();
-            Profile_editbtn = new Button();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -701,7 +701,7 @@
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
-            LibrarianAdd_bookbtn.Click += button1_Click;
+            LibrarianAdd_bookbtn.Click += Librarian_addbtn_Click;
             // 
             // profilepnl
             // 
@@ -720,6 +720,16 @@
             profilepnl.Name = "profilepnl";
             profilepnl.Size = new Size(985, 735);
             profilepnl.TabIndex = 3;
+            // 
+            // Profile_editbtn
+            // 
+            Profile_editbtn.Location = new Point(725, 15);
+            Profile_editbtn.Name = "Profile_editbtn";
+            Profile_editbtn.Size = new Size(164, 49);
+            Profile_editbtn.TabIndex = 19;
+            Profile_editbtn.Text = "Edit profile";
+            Profile_editbtn.UseVisualStyleBackColor = true;
+            Profile_editbtn.Click += Profile_editbtn_Click;
             // 
             // profilepic_updatebtn
             // 
@@ -803,9 +813,9 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
+            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Studypnl);
@@ -946,16 +956,6 @@
             librarianToolStripMenuItem.Name = "librarianToolStripMenuItem";
             librarianToolStripMenuItem.Size = new Size(233, 30);
             librarianToolStripMenuItem.Text = "Librarian";
-            // 
-            // Profile_editbtn
-            // 
-            Profile_editbtn.Location = new Point(725, 15);
-            Profile_editbtn.Name = "Profile_editbtn";
-            Profile_editbtn.Size = new Size(164, 49);
-            Profile_editbtn.TabIndex = 19;
-            Profile_editbtn.Text = "Edit profile";
-            Profile_editbtn.UseVisualStyleBackColor = true;
-            Profile_editbtn.Click += Profile_editbtn_Click;
             // 
             // d_lab
             // 

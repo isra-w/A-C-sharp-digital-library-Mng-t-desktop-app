@@ -9,5 +9,6 @@ namespace d.labdemo.Models
         public int Year { get; set; }
         public string ISBN { get; set; } = string.Empty;
         public string? CoverImagePath { get; set; }
+        public string? PdfFilePath { get; set; }
     }
 }

@@ -12,7 +12,6 @@ namespace d_labdemo.User_controls
     {
         public Edit_profile()
         {
-            InitializeComponent();
         }
     }
 }
