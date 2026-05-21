@@ -139,11 +139,6 @@ namespace d.labdemo
 
         }
 
-        private void namebx_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Wellcome_loginbtn_Click(object sender, EventArgs e)
         {
             Homepagepnl.Visible = false;
