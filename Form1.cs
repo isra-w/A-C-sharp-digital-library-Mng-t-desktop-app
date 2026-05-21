@@ -75,22 +75,36 @@ namespace d.labdemo
                         Usersbtn.Visible = false;
                         Study_assistbtn.Visible = false;
                         Studypnl.Visible = false;
+                        Librarin_pnl.Visible = false;
 
-                        if (role == "Admin")
+                        if (role == "Super_Admin")
                         {
                             Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
+                            Admin_userspnl.Visible = true;
+                            Usersbtn.Visible = true;
+                            Study_assistbtn.Visible = true;
+                            Studypnl.Visible = true;
+                        }
+                        else if (role == "Admin")
+                        {
+                            Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
                             Usersbtn.Visible = true;
                             Admin_userspnl.Visible = true;
                         }
                         else if (role == "User")
                         {
                             Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
                             Study_assistbtn.Visible = true;
                             Studypnl.Visible = true;
                         }
                         else if (role == "Librarian")
                         {
                             Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
+                            Librarin_pnl.Visible = true;
                         }
                         else
                         {
