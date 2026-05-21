@@ -1,7 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 
@@ -64,7 +63,7 @@ namespace d.labdemo
                         // to check the user role
                         if (string.IsNullOrWhiteSpace(role))
                         {
-                            MessageBox.Show("You dont have a role yet \n Please wait until the admin gives role.","Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("You dont have a role yet \n Please wait until the admin gives role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
@@ -76,22 +75,36 @@ namespace d.labdemo
                         Usersbtn.Visible = false;
                         Study_assistbtn.Visible = false;
                         Studypnl.Visible = false;
+                        Librarin_pnl.Visible = false;
 
-                        if (role == "Admin")
+                        if (role == "Super_Admin")
                         {
                             Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
+                            Admin_userspnl.Visible = true;
+                            Usersbtn.Visible = true;
+                            Study_assistbtn.Visible = true;
+                            Studypnl.Visible = true;
+                        }
+                        else if (role == "Admin")
+                        {
+                            Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
                             Usersbtn.Visible = true;
                             Admin_userspnl.Visible = true;
                         }
                         else if (role == "User")
                         {
                             Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
                             Study_assistbtn.Visible = true;
                             Studypnl.Visible = true;
                         }
                         else if (role == "Librarian")
                         {
                             Homepagepnl.Visible = true;
+                            Homepagepnl.BringToFront();
+                            Librarin_pnl.Visible = true;
                         }
                         else
                         {
@@ -136,11 +149,6 @@ namespace d.labdemo
             profilepnl.Visible = false;
             Homepagepnl.Visible = false;
             DBConnection.checkConnection.Close();
-
-        }
-
-        private void namebx_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
