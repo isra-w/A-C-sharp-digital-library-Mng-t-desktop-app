@@ -58,13 +58,14 @@
             Wellcome_signupbtn = new Button();
             Wellcome_loginbtn = new Button();
             sidebar = new Panel();
+            Librarian_managebtn = new Button();
             Study_assistbtn = new Button();
             Usersbtn = new Button();
             Bookbtn = new Button();
             Homebtn = new Button();
             Sidebar_logopnl = new Panel();
             logolbl = new Label();
-            settignbtn = new Button();
+            Logoutbtn = new Button();
             Admin_userspnl = new Panel();
             AdminFilter_datacombobx = new ComboBox();
             updatebtn = new Button();
@@ -82,10 +83,10 @@
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
             Homepagepnl = new Panel();
+            Librarin_pnl = new Panel();
             Book_catagorypnl = new Panel();
             Homepnl = new Panel();
             Home_profilelnk = new LinkLabel();
-            Librarin_pnl = new Panel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
             Timer_countdownlbl = new Label();
@@ -152,7 +153,7 @@
             Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(857, 542);
+            Medicinetab.Size = new Size(953, 542);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
@@ -161,7 +162,7 @@
             Noveltab.BorderStyle = BorderStyle.Fixed3D;
             Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(857, 542);
+            Noveltab.Size = new Size(953, 542);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
@@ -480,17 +481,37 @@
             // sidebar
             // 
             sidebar.BackColor = Color.FromArgb(35, 40, 45);
+            sidebar.Controls.Add(Librarian_managebtn);
             sidebar.Controls.Add(Study_assistbtn);
             sidebar.Controls.Add(Usersbtn);
             sidebar.Controls.Add(Bookbtn);
             sidebar.Controls.Add(Homebtn);
             sidebar.Controls.Add(Sidebar_logopnl);
-            sidebar.Controls.Add(settignbtn);
+            sidebar.Controls.Add(Logoutbtn);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(225, 737);
             sidebar.TabIndex = 0;
+            // 
+            // Librarian_managebtn
+            // 
+            Librarian_managebtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Librarian_managebtn.BackColor = Color.FromArgb(30, 40, 45);
+            Librarian_managebtn.Cursor = Cursors.Hand;
+            Librarian_managebtn.Dock = DockStyle.Top;
+            Librarian_managebtn.FlatAppearance.BorderSize = 0;
+            Librarian_managebtn.FlatAppearance.CheckedBackColor = Color.White;
+            Librarian_managebtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Librarian_managebtn.FlatStyle = FlatStyle.Flat;
+            Librarian_managebtn.ForeColor = Color.LightYellow;
+            Librarian_managebtn.Location = new Point(0, 252);
+            Librarian_managebtn.Name = "Librarian_managebtn";
+            Librarian_managebtn.Size = new Size(225, 57);
+            Librarian_managebtn.TabIndex = 11;
+            Librarian_managebtn.Text = "⚙️ Manage";
+            Librarian_managebtn.UseVisualStyleBackColor = false;
+            Librarian_managebtn.Click += Librarian_managebtn_Click;
             // 
             // Study_assistbtn
             // 
@@ -507,7 +528,7 @@
             Study_assistbtn.Name = "Study_assistbtn";
             Study_assistbtn.Size = new Size(225, 57);
             Study_assistbtn.TabIndex = 6;
-            Study_assistbtn.Text = "🏠︎ study";
+            Study_assistbtn.Text = "📖 study";
             Study_assistbtn.UseVisualStyleBackColor = false;
             Study_assistbtn.Click += Study_assistbtn_Click;
             // 
@@ -590,24 +611,25 @@
             logolbl.TabIndex = 0;
             logolbl.Text = "D-lab";
             // 
-            // settignbtn
+            // Logoutbtn
             // 
-            settignbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            settignbtn.BackColor = Color.FromArgb(30, 40, 45);
-            settignbtn.Dock = DockStyle.Bottom;
-            settignbtn.FlatAppearance.BorderSize = 0;
-            settignbtn.FlatAppearance.CheckedBackColor = Color.White;
-            settignbtn.FlatAppearance.MouseOverBackColor = Color.Black;
-            settignbtn.FlatStyle = FlatStyle.Flat;
-            settignbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            settignbtn.ForeColor = Color.LightYellow;
-            settignbtn.Location = new Point(0, 693);
-            settignbtn.Margin = new Padding(0, 0, 0, 3);
-            settignbtn.Name = "settignbtn";
-            settignbtn.Size = new Size(225, 44);
-            settignbtn.TabIndex = 5;
-            settignbtn.Text = "⚙️ Setting";
-            settignbtn.UseVisualStyleBackColor = false;
+            Logoutbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Logoutbtn.BackColor = Color.FromArgb(30, 40, 45);
+            Logoutbtn.Dock = DockStyle.Bottom;
+            Logoutbtn.FlatAppearance.BorderSize = 0;
+            Logoutbtn.FlatAppearance.CheckedBackColor = Color.White;
+            Logoutbtn.FlatAppearance.MouseOverBackColor = Color.Black;
+            Logoutbtn.FlatStyle = FlatStyle.Flat;
+            Logoutbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Logoutbtn.ForeColor = Color.LightYellow;
+            Logoutbtn.Location = new Point(0, 693);
+            Logoutbtn.Margin = new Padding(0, 0, 0, 3);
+            Logoutbtn.Name = "Logoutbtn";
+            Logoutbtn.Size = new Size(225, 44);
+            Logoutbtn.TabIndex = 5;
+            Logoutbtn.Text = "\u23fb Log Out";
+            Logoutbtn.UseVisualStyleBackColor = false;
+            Logoutbtn.Click += Logoutbtn_Click;
             // 
             // Admin_userspnl
             // 
@@ -802,6 +824,14 @@
             Homepagepnl.Size = new Size(1186, 737);
             Homepagepnl.TabIndex = 0;
             // 
+            // Librarin_pnl
+            // 
+            Librarin_pnl.Dock = DockStyle.Fill;
+            Librarin_pnl.Location = new Point(225, 0);
+            Librarin_pnl.Name = "Librarin_pnl";
+            Librarin_pnl.Size = new Size(961, 737);
+            Librarin_pnl.TabIndex = 13;
+            // 
             // Book_catagorypnl
             // 
             Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -839,14 +869,6 @@
             Home_profilelnk.TabStop = true;
             Home_profilelnk.Text = "👤 Profile";
             Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
-            // 
-            // Librarin_pnl
-            // 
-            Librarin_pnl.Dock = DockStyle.Fill;
-            Librarin_pnl.Location = new Point(225, 0);
-            Librarin_pnl.Name = "Librarin_pnl";
-            Librarin_pnl.Size = new Size(961, 737);
-            Librarin_pnl.TabIndex = 13;
             // 
             // Studypnl
             // 
@@ -1037,7 +1059,7 @@
         private Button Homebtn;
         private Panel Sidebar_logopnl;
         private Button profilepic_updatebtn;
-        private Button settignbtn;
+        private Button Logoutbtn;
         private Label logolbl;
         private Button LibrarianAdd_bookbtn;
         private ToolStripMenuItem adminToolStripMenuItem;
@@ -1047,5 +1069,6 @@
         private ComboBox AdminFilter_datacombobx;
         private Button Profile_editbtn;
         private LinkLabel Home_profilelnk;
+        private Button Librarian_managebtn;
     }
 }

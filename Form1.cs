@@ -76,6 +76,7 @@ namespace d.labdemo
                         Study_assistbtn.Visible = false;
                         Studypnl.Visible = false;
                         Librarin_pnl.Visible = false;
+                        Librarian_managebtn.Visible = false;
 
                         if (role == "Super_Admin")
                         {
@@ -105,6 +106,7 @@ namespace d.labdemo
                             Homepagepnl.Visible = true;
                             Homepagepnl.BringToFront();
                             Librarin_pnl.Visible = true;
+                            Librarian_managebtn.Visible = true;
                         }
                         else
                         {
@@ -330,6 +332,10 @@ namespace d.labdemo
             Studypnl.BringToFront();
 
         }
+                private void Librarian_managebtn_Click(object sender, EventArgs e)
+        {
+            Librarin_pnl.BringToFront();
+        }
 
         private void Homebtn_Click(object sender, EventArgs e)
         {
@@ -420,6 +426,34 @@ namespace d.labdemo
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
         }
+
+        private void Logoutbtn_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.No) return;
+
+            // to close the previous login 
+            if (DBConnection.checkConnection != null && DBConnection.checkConnection.State == ConnectionState.Open)
+            {
+                DBConnection.checkConnection.Close();
+            }
+
+            // deeting the last data
+            namebx.Text = string.Empty;
+            passbx.Text = string.Empty;
+
+            Homepagepnl.Visible = false;
+            Admin_userspnl.Visible = false;
+            Studypnl.Visible = false;
+
+            // to make sure the buttons work properly on next login
+            Usersbtn.Visible = true;
+            Study_assistbtn.Visible = true;
+
+            loginpnl.Visible = true;
+        }
+
     }
 }
 
