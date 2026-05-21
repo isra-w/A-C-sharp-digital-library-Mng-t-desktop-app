@@ -332,7 +332,7 @@ namespace d.labdemo
             Studypnl.BringToFront();
 
         }
-                private void Librarian_managebtn_Click(object sender, EventArgs e)
+        private void Librarian_managebtn_Click(object sender, EventArgs e)
         {
             Librarin_pnl.BringToFront();
         }
@@ -357,7 +357,7 @@ namespace d.labdemo
                 int minutes = Convert.ToInt32(Timer_amountbx.Text);
                 totalSeconds = minutes * 60;
                 Study_timer.Interval = 1000;
-                Timer_countdownlbl.Text = $"{minutes:D2} : 00";
+                Timer_countdownlbl.Text = $"{minutes} : 00";
                 Timer_amountbx.Enabled = false;
                 Timer_startbtn.Text = "STOP";
                 Study_timer.Start();
@@ -454,6 +454,10 @@ namespace d.labdemo
             loginpnl.Visible = true;
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

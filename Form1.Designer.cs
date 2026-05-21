@@ -505,11 +505,13 @@
             Librarian_managebtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Librarian_managebtn.FlatStyle = FlatStyle.Flat;
             Librarian_managebtn.ForeColor = Color.LightYellow;
+            Librarian_managebtn.Image = d_labdemo.Properties.Resources.management;
+            Librarian_managebtn.ImageAlign = ContentAlignment.MiddleLeft;
             Librarian_managebtn.Location = new Point(0, 252);
             Librarian_managebtn.Name = "Librarian_managebtn";
             Librarian_managebtn.Size = new Size(225, 57);
             Librarian_managebtn.TabIndex = 11;
-            Librarian_managebtn.Text = "⚙️ Manage";
+            Librarian_managebtn.Text = "Manage";
             Librarian_managebtn.UseVisualStyleBackColor = false;
             Librarian_managebtn.Click += Librarian_managebtn_Click;
             // 
@@ -524,11 +526,13 @@
             Study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Study_assistbtn.FlatStyle = FlatStyle.Flat;
             Study_assistbtn.ForeColor = Color.LightYellow;
+            Study_assistbtn.Image = d_labdemo.Properties.Resources.book__1_;
+            Study_assistbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Study_assistbtn.Location = new Point(0, 195);
             Study_assistbtn.Name = "Study_assistbtn";
             Study_assistbtn.Size = new Size(225, 57);
             Study_assistbtn.TabIndex = 6;
-            Study_assistbtn.Text = "📖 study";
+            Study_assistbtn.Text = "study";
             Study_assistbtn.UseVisualStyleBackColor = false;
             Study_assistbtn.Click += Study_assistbtn_Click;
             // 
@@ -543,11 +547,13 @@
             Usersbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Usersbtn.FlatStyle = FlatStyle.Flat;
             Usersbtn.ForeColor = Color.LightYellow;
+            Usersbtn.Image = d_labdemo.Properties.Resources.user__2_;
+            Usersbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Usersbtn.Location = new Point(0, 151);
             Usersbtn.Name = "Usersbtn";
             Usersbtn.Size = new Size(225, 44);
             Usersbtn.TabIndex = 7;
-            Usersbtn.Text = "👤  Users";
+            Usersbtn.Text = "Users";
             Usersbtn.UseVisualStyleBackColor = false;
             Usersbtn.Click += Usersbtn_Click;
             // 
@@ -562,11 +568,13 @@
             Bookbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Bookbtn.FlatStyle = FlatStyle.Flat;
             Bookbtn.ForeColor = Color.LightYellow;
+            Bookbtn.Image = d_labdemo.Properties.Resources.shelf;
+            Bookbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Bookbtn.Location = new Point(0, 107);
             Bookbtn.Name = "Bookbtn";
             Bookbtn.Size = new Size(225, 44);
             Bookbtn.TabIndex = 9;
-            Bookbtn.Text = "📊  Books";
+            Bookbtn.Text = "Books";
             Bookbtn.UseVisualStyleBackColor = false;
             Bookbtn.Click += Booksbtn_Click;
             // 
@@ -582,11 +590,13 @@
             Homebtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Homebtn.FlatStyle = FlatStyle.Flat;
             Homebtn.ForeColor = Color.LightYellow;
+            Homebtn.Image = (Image)resources.GetObject("Homebtn.Image");
+            Homebtn.ImageAlign = ContentAlignment.MiddleLeft;
             Homebtn.Location = new Point(0, 63);
             Homebtn.Name = "Homebtn";
             Homebtn.Size = new Size(225, 44);
             Homebtn.TabIndex = 8;
-            Homebtn.Text = "🏠︎ Home";
+            Homebtn.Text = " Home";
             Homebtn.UseVisualStyleBackColor = false;
             Homebtn.Click += Homebtn_Click;
             // 
@@ -622,12 +632,14 @@
             Logoutbtn.FlatStyle = FlatStyle.Flat;
             Logoutbtn.Font = new Font("Segoe UI", 8.064F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Logoutbtn.ForeColor = Color.LightYellow;
+            Logoutbtn.Image = (Image)resources.GetObject("Logoutbtn.Image");
+            Logoutbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Logoutbtn.Location = new Point(0, 693);
-            Logoutbtn.Margin = new Padding(0, 0, 0, 3);
+            Logoutbtn.Margin = new Padding(0);
             Logoutbtn.Name = "Logoutbtn";
             Logoutbtn.Size = new Size(225, 44);
             Logoutbtn.TabIndex = 5;
-            Logoutbtn.Text = "\u23fb Log Out";
+            Logoutbtn.Text = "Log Out";
             Logoutbtn.UseVisualStyleBackColor = false;
             Logoutbtn.Click += Logoutbtn_Click;
             // 
