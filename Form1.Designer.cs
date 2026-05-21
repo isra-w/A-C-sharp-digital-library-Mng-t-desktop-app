@@ -789,11 +789,11 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Homepnl);
-            Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
