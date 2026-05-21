@@ -332,7 +332,7 @@ namespace d.labdemo
             Studypnl.BringToFront();
 
         }
-                private void Librarian_managebtn_Click(object sender, EventArgs e)
+        private void Librarian_managebtn_Click(object sender, EventArgs e)
         {
             Librarin_pnl.BringToFront();
         }
@@ -454,6 +454,10 @@ namespace d.labdemo
             loginpnl.Visible = true;
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
