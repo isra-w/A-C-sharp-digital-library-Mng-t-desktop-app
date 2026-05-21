@@ -1,5 +1,4 @@
 using d.labdemo.DB;
-using d_labdemo;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -87,9 +86,9 @@ namespace d.labdemo
                 {
                     MessageBox.Show(ex.Message);
                 }
-                    DBConnection.checkConnection.Close();
+                DBConnection.checkConnection.Close();
 
-             }
+            }
         }
 
 
@@ -379,7 +378,16 @@ namespace d.labdemo
 
         }
 
+        private void login_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
+            Homepagepnl.Visible = false;
+            loginpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
+            signuppnl.Visible = true;
+            Wellcome_page.Visible = false;
+            profilepnl.Visible = false;
+        }
     }
 }
 
