@@ -1,6 +1,7 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 
@@ -53,41 +54,61 @@ namespace d.labdemo
                         string role = reader["Role"].ToString().Trim();
 
                         bool passwordVerified = BCrypt.Net.BCrypt.EnhancedVerify(passbx.Text, storedHash);
-
                         if (!passwordVerified)
                         {
                             MessageBox.Show("Invalid username or password.", "Error",
                                 MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                             return;
                         }
+
+                        // to check the user role
+                        if (string.IsNullOrWhiteSpace(role))
+                        {
+                            MessageBox.Show("You dont have a role yet \n Please wait until the admin gives role.","Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        // to hide all then to show themm accordig to users role
                         loginpnl.Visible = false;
                         signuppnl.Visible = false;
-                        Homepagepnl.Visible = true;
+                        Homepagepnl.Visible = false;
+                        Admin_userspnl.Visible = false;
+                        Usersbtn.Visible = false;
+                        Study_assistbtn.Visible = false;
+                        Studypnl.Visible = false;
 
                         if (role == "Admin")
                         {
                             Homepagepnl.Visible = true;
-                            loginpnl.Visible = false;
-                            signuppnl.Visible = false;
-                            Study_assistbtn.Visible = false;
-                            Studypnl.Visible = false;
+                            Usersbtn.Visible = true;
+                            Admin_userspnl.Visible = true;
                         }
                         else if (role == "User")
                         {
                             Homepagepnl.Visible = true;
-                            loginpnl.Visible = false;
-                            signuppnl.Visible = false;
-                            Admin_userspnl.Visible = false;
-                            Usersbtn.Visible = false;
+                            Study_assistbtn.Visible = true;
+                            Studypnl.Visible = true;
+                        }
+                        else if (role == "Librarian")
+                        {
+                            Homepagepnl.Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Unrecognized role: '{role}'.\nAccess denied.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                DBConnection.checkConnection.Close();
-
+                finally
+                {
+                    DBConnection.checkConnection.Close();
+                }
             }
         }
 
@@ -186,7 +207,7 @@ namespace d.labdemo
                 AdminFilter_datacombobx.Items.Add("Admin");
                 AdminFilter_datacombobx.Items.Add("User");
                 AdminFilter_datacombobx.Items.Add("Librarian");
-                AdminFilter_datacombobx.Items.Add("Pending");
+                AdminFilter_datacombobx.Items.Add("\0");
                 AdminFilter_datacombobx.SelectedIndex = 0;
                 LoadUsersByRole("All");
             }
@@ -255,17 +276,20 @@ namespace d.labdemo
         {
             try
             {
-                Admin_useresdatagrid.EndEdit();
+                //Admin_useresdatagrid.EndEdit();
                 DataGridViewRow row = Admin_useresdatagrid.CurrentRow;
 
                 int userId = Convert.ToInt32(row.Cells["UserId"].Value);
                 string Role = row.Cells["Role"].Value?.ToString();
 
                 DBConnection.checkConnection.Open();
-                string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
+                string query = "UPDATE Users SET First_Name=@First_Name, Last_Name=@Last_Name, Username=@Username, Role=@Role WHERE UserId = @UserId";
                 SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
                 cmd.Parameters.AddWithValue("@Role", Role);
                 cmd.Parameters.AddWithValue("@UserId", userId);
+                cmd.Parameters.AddWithValue("@First_Name", row.Cells["First_Name"].Value);
+                cmd.Parameters.AddWithValue("@Last_Name", row.Cells["Last_Name"].Value);
+                cmd.Parameters.AddWithValue("@Username", row.Cells["Username"].Value);
                 int rowsAffected = cmd.ExecuteNonQuery();
                 MessageBox.Show($"Updated {rowsAffected} row(s) successfully!");
             }
