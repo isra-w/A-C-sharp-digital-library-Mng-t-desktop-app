@@ -1,5 +1,4 @@
 using d.labdemo.DB;
-using d_labdemo;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -87,72 +86,11 @@ namespace d.labdemo
                 {
                     MessageBox.Show(ex.Message);
                 }
-                finally
-                {
-                    DBConnection.checkConnection.Close();
-                }
+                DBConnection.checkConnection.Close();
+
             }
         }
 
-        private void loginpnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void User_shelfbtn_Click(object sender, EventArgs e)
-        {
-            /* string query = $"SELECT Catagory FROM Book WHERE Catagory = '{Catagory}';";
-             DBConnection.intiate();
-             SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection);
-             var Role = cmd.ExecuteScalar().ToString().Trim();
-             if (Role == null)
-             {
-                 MessageBox.Show($"Record not found", "db error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-
-             else if (Catagory == "Programming")
-             {
-                 Programmingtab.Visible = true;
-                 Noveltab.Visible = false;
-                 Medicinetab.Visible = false;
-             }
-             else if (Catagory == "Medicine")
-             {
-                 Programmingtab.Visible = false;
-                 Noveltab.Visible = false;
-                 Medicinetab.Visible = true;
-             }
-             else if (Catagory == "novel")
-             {
-                 Programmingtab.Visible = false;
-                 Noveltab.Visible = true;
-                 Medicinetab.Visible = false;
-             }
-             else
-             {
-                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-             }*/
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Homepagepnl.Visible = false;
-            loginpnl.Visible = false;
-            Book_catagorypnl.Visible = false;
-            signuppnl.Visible = true;
-            Wellcome_page.Visible = false;
-            profilepnl.Visible = false;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
@@ -440,7 +378,16 @@ namespace d.labdemo
 
         }
 
+        private void login_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
+            Homepagepnl.Visible = false;
+            loginpnl.Visible = false;
+            Book_catagorypnl.Visible = false;
+            signuppnl.Visible = true;
+            Wellcome_page.Visible = false;
+            profilepnl.Visible = false;
+        }
     }
 }
 
