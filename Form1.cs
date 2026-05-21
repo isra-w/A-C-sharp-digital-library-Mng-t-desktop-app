@@ -357,7 +357,7 @@ namespace d.labdemo
                 int minutes = Convert.ToInt32(Timer_amountbx.Text);
                 totalSeconds = minutes * 60;
                 Study_timer.Interval = 1000;
-                Timer_countdownlbl.Text = $"{minutes:D2} : 00";
+                Timer_countdownlbl.Text = $"{minutes} : 00";
                 Timer_amountbx.Enabled = false;
                 Timer_startbtn.Text = "STOP";
                 Study_timer.Start();
