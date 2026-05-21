@@ -943,9 +943,9 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1210, 735);
-            Controls.Add(signuppnl);
             Controls.Add(Homepagepnl);
             Controls.Add(loginpnl);
+            Controls.Add(signuppnl);
             Controls.Add(Wellcome_page);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;

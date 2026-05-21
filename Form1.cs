@@ -1,7 +1,6 @@
 using d.labdemo.DB;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 
@@ -64,7 +63,7 @@ namespace d.labdemo
                         // to check the user role
                         if (string.IsNullOrWhiteSpace(role))
                         {
-                            MessageBox.Show("You dont have a role yet \n Please wait until the admin gives role.","Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("You dont have a role yet \n Please wait until the admin gives role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
