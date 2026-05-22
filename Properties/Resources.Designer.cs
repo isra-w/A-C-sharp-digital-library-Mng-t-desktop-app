@@ -83,6 +83,16 @@ namespace d_labdemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Book_pics {
+            get {
+                object obj = ResourceManager.GetObject("Book pics", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bookshelf_Wallpaper_Desktop_HD {
             get {
                 object obj = ResourceManager.GetObject("Bookshelf Wallpaper Desktop HD", resourceCulture);
@@ -96,6 +106,26 @@ namespace d_labdemo.Properties {
         internal static System.Drawing.Bitmap Bookshelf_Wallpaper_Desktop_HD__1_ {
             get {
                 object obj = ResourceManager.GetObject("Bookshelf Wallpaper Desktop HD (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +173,17 @@ namespace d_labdemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Quill_pen_and_rolled_papyrus_sheets_on_a_wooden_table_with_old_books__sepia_effect_Stock_Photo___Adobe_Stock {
+            get {
+                object obj = ResourceManager.GetObject("Quill pen and rolled papyrus sheets on a wooden table with old books, sepia effec" +
+                        "t Stock Photo _ Adobe Stock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2026_05_13_222611 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2026-05-13 222611", resourceCulture);
@@ -156,6 +197,16 @@ namespace d_labdemo.Properties {
         internal static System.Drawing.Bitmap shelf {
             get {
                 object obj = ResourceManager.GetObject("shelf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap the_matrix_GIF___Find___Share_on_GIPHY {
+            get {
+                object obj = ResourceManager.GetObject("the matrix GIF - Find & Share on GIPHY", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

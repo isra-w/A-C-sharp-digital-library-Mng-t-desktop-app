@@ -86,6 +86,8 @@ namespace d.labdemo
                             Usersbtn.Visible = true;
                             Study_assistbtn.Visible = true;
                             Studypnl.Visible = true;
+                            Librarin_pnl.Visible = true;
+                            Librarian_managebtn.Visible = true;
                         }
                         else if (role == "Admin")
                         {
@@ -214,11 +216,11 @@ namespace d.labdemo
             {
                 AdminFilter_datacombobx.Items.Clear();
                 AdminFilter_datacombobx.Items.Add("All");
+                AdminFilter_datacombobx.Items.Add("Super_Admin");
                 AdminFilter_datacombobx.Items.Add("Admin");
                 AdminFilter_datacombobx.Items.Add("User");
                 AdminFilter_datacombobx.Items.Add("Librarian");
                 AdminFilter_datacombobx.Items.Add("\0");
-                AdminFilter_datacombobx.SelectedIndex = 0;
                 LoadUsersByRole("All");
             }
             catch (Exception ex)
@@ -270,11 +272,13 @@ namespace d.labdemo
 
         private void AddRoleComboBoxColumn()
         {
+
             Admin_useresdatagrid.Columns.Remove("Role");
             DataGridViewComboBoxColumn RoleCombo = new DataGridViewComboBoxColumn();
             RoleCombo.Name = "Role";
             RoleCombo.HeaderText = "Role";
             RoleCombo.DataPropertyName = "Role";
+            RoleCombo.Items.Add("Super_Admin");
             RoleCombo.Items.Add("Admin");
             RoleCombo.Items.Add("User");
             RoleCombo.Items.Add("Librarian");
@@ -458,6 +462,17 @@ namespace d.labdemo
         {
 
         }
+
+        private void LibrarianAdd_bookbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Librarin_pnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }
 
