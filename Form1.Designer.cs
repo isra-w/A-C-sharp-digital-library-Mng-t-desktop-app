@@ -104,6 +104,9 @@
             userToolStripMenuItem = new ToolStripMenuItem();
             librarianToolStripMenuItem = new ToolStripMenuItem();
             Home_titlebar = new Panel();
+            Profile_viewdbookspnl = new Panel();
+            Profile_titlebar = new Panel();
+            Profile_mybookslbl = new Label();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -122,6 +125,8 @@
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
             Home_titlebar.SuspendLayout();
+            Profile_viewdbookspnl.SuspendLayout();
+            Profile_titlebar.SuspendLayout();
             SuspendLayout();
             // 
             // Book_catagorytab
@@ -741,8 +746,9 @@
             // 
             // profilepnl
             // 
-            profilepnl.BackColor = Color.PowderBlue;
-            profilepnl.Controls.Add(Profile_editbtn);
+            profilepnl.BackColor = Color.Honeydew;
+            profilepnl.Controls.Add(Profile_titlebar);
+            profilepnl.Controls.Add(Profile_viewdbookspnl);
             profilepnl.Controls.Add(profilepic_updatebtn);
             profilepnl.Controls.Add(Profile_lastnamebx);
             profilepnl.Controls.Add(Profile_usernamebx);
@@ -759,16 +765,17 @@
             // 
             // Profile_editbtn
             // 
-            Profile_editbtn.BackColor = Color.PowderBlue;
+            Profile_editbtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Profile_editbtn.BackColor = SystemColors.Highlight;
             Profile_editbtn.FlatAppearance.BorderSize = 0;
             Profile_editbtn.FlatStyle = FlatStyle.Flat;
-            Profile_editbtn.Font = new Font("Segoe UI", 10.9439993F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Profile_editbtn.ForeColor = SystemColors.ActiveCaptionText;
-            Profile_editbtn.Location = new Point(754, 7);
+            Profile_editbtn.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Profile_editbtn.ForeColor = Color.Beige;
+            Profile_editbtn.Location = new Point(954, 10);
             Profile_editbtn.Name = "Profile_editbtn";
-            Profile_editbtn.Size = new Size(159, 42);
+            Profile_editbtn.Size = new Size(166, 39);
             Profile_editbtn.TabIndex = 19;
-            Profile_editbtn.Text = "Edit profile";
+            Profile_editbtn.Text = "✏️ Edit profile";
             Profile_editbtn.UseVisualStyleBackColor = false;
             // 
             // profilepic_updatebtn
@@ -787,7 +794,7 @@
             // 
             // Profile_lastnamebx
             // 
-            Profile_lastnamebx.BackColor = Color.PowderBlue;
+            Profile_lastnamebx.BackColor = Color.White;
             Profile_lastnamebx.Location = new Point(485, 193);
             Profile_lastnamebx.Name = "Profile_lastnamebx";
             Profile_lastnamebx.Size = new Size(352, 29);
@@ -795,7 +802,7 @@
             // 
             // Profile_usernamebx
             // 
-            Profile_usernamebx.BackColor = Color.PowderBlue;
+            Profile_usernamebx.BackColor = Color.White;
             Profile_usernamebx.Location = new Point(485, 263);
             Profile_usernamebx.Name = "Profile_usernamebx";
             Profile_usernamebx.Size = new Size(352, 29);
@@ -803,7 +810,7 @@
             // 
             // Profile_firstnamebx
             // 
-            Profile_firstnamebx.BackColor = Color.PowderBlue;
+            Profile_firstnamebx.BackColor = Color.White;
             Profile_firstnamebx.Location = new Point(485, 125);
             Profile_firstnamebx.Name = "Profile_firstnamebx";
             Profile_firstnamebx.Size = new Size(352, 29);
@@ -853,9 +860,9 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
-            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
@@ -1079,6 +1086,35 @@
             Home_titlebar.Size = new Size(1153, 61);
             Home_titlebar.TabIndex = 1;
             // 
+            // Profile_viewdbookspnl
+            // 
+            Profile_viewdbookspnl.BackColor = Color.Azure;
+            Profile_viewdbookspnl.Controls.Add(Profile_mybookslbl);
+            Profile_viewdbookspnl.Location = new Point(54, 326);
+            Profile_viewdbookspnl.Name = "Profile_viewdbookspnl";
+            Profile_viewdbookspnl.Size = new Size(417, 430);
+            Profile_viewdbookspnl.TabIndex = 20;
+            // 
+            // Profile_titlebar
+            // 
+            Profile_titlebar.BackColor = SystemColors.Highlight;
+            Profile_titlebar.Controls.Add(Profile_editbtn);
+            Profile_titlebar.Dock = DockStyle.Top;
+            Profile_titlebar.Location = new Point(0, 0);
+            Profile_titlebar.Name = "Profile_titlebar";
+            Profile_titlebar.Size = new Size(1157, 63);
+            Profile_titlebar.TabIndex = 21;
+            // 
+            // Profile_mybookslbl
+            // 
+            Profile_mybookslbl.AutoSize = true;
+            Profile_mybookslbl.Font = new Font("Cooper Black", 12.096F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            Profile_mybookslbl.Location = new Point(132, 0);
+            Profile_mybookslbl.Name = "Profile_mybookslbl";
+            Profile_mybookslbl.Size = new Size(113, 24);
+            Profile_mybookslbl.TabIndex = 0;
+            Profile_mybookslbl.Text = "My Books";
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -1121,6 +1157,9 @@
             Study_timepnl.PerformLayout();
             Home_titlebar.ResumeLayout(false);
             Home_titlebar.PerformLayout();
+            Profile_viewdbookspnl.ResumeLayout(false);
+            Profile_viewdbookspnl.PerformLayout();
+            Profile_titlebar.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1200,5 +1239,8 @@
         private Button Librarian_allbookaddbtn;
         private Label Librarian_allbookslbl;
         private Panel Home_titlebar;
+        private Panel Profile_titlebar;
+        private Panel Profile_viewdbookspnl;
+        private Label Profile_mybookslbl;
     }
 }
