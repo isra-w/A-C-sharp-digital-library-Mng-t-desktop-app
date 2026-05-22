@@ -103,6 +103,7 @@
             adminToolStripMenuItem = new ToolStripMenuItem();
             userToolStripMenuItem = new ToolStripMenuItem();
             librarianToolStripMenuItem = new ToolStripMenuItem();
+            Home_titlebar = new Panel();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
             signuppnl.SuspendLayout();
@@ -120,6 +121,7 @@
             Book_catagorypnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
+            Home_titlebar.SuspendLayout();
             SuspendLayout();
             // 
             // Book_catagorytab
@@ -528,6 +530,7 @@
             Librarian_managebtn.ImageAlign = ContentAlignment.MiddleLeft;
             Librarian_managebtn.Location = new Point(0, 252);
             Librarian_managebtn.Name = "Librarian_managebtn";
+            Librarian_managebtn.Padding = new Padding(30, 0, 0, 0);
             Librarian_managebtn.Size = new Size(225, 57);
             Librarian_managebtn.TabIndex = 11;
             Librarian_managebtn.Text = "Manage";
@@ -549,6 +552,7 @@
             Study_assistbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Study_assistbtn.Location = new Point(0, 195);
             Study_assistbtn.Name = "Study_assistbtn";
+            Study_assistbtn.Padding = new Padding(30, 0, 0, 0);
             Study_assistbtn.Size = new Size(225, 57);
             Study_assistbtn.TabIndex = 6;
             Study_assistbtn.Text = "study";
@@ -570,6 +574,7 @@
             Usersbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Usersbtn.Location = new Point(0, 151);
             Usersbtn.Name = "Usersbtn";
+            Usersbtn.Padding = new Padding(30, 0, 0, 0);
             Usersbtn.Size = new Size(225, 44);
             Usersbtn.TabIndex = 7;
             Usersbtn.Text = "Users";
@@ -591,6 +596,7 @@
             Bookbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Bookbtn.Location = new Point(0, 107);
             Bookbtn.Name = "Bookbtn";
+            Bookbtn.Padding = new Padding(30, 0, 0, 0);
             Bookbtn.Size = new Size(225, 44);
             Bookbtn.TabIndex = 9;
             Bookbtn.Text = "Books";
@@ -613,6 +619,7 @@
             Homebtn.ImageAlign = ContentAlignment.MiddleLeft;
             Homebtn.Location = new Point(0, 63);
             Homebtn.Name = "Homebtn";
+            Homebtn.Padding = new Padding(30, 0, 0, 0);
             Homebtn.Size = new Size(225, 44);
             Homebtn.TabIndex = 8;
             Homebtn.Text = " Home";
@@ -633,7 +640,7 @@
             // 
             logolbl.AutoSize = true;
             logolbl.Font = new Font("Harlow Solid Italic", 25.92F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-            logolbl.ForeColor = Color.FromArgb(255, 255, 128);
+            logolbl.ForeColor = SystemColors.MenuHighlight;
             logolbl.Location = new Point(38, 1);
             logolbl.Name = "logolbl";
             logolbl.Size = new Size(132, 56);
@@ -656,6 +663,7 @@
             Logoutbtn.Location = new Point(0, 738);
             Logoutbtn.Margin = new Padding(0);
             Logoutbtn.Name = "Logoutbtn";
+            Logoutbtn.Padding = new Padding(30, 0, 0, 0);
             Logoutbtn.Size = new Size(225, 44);
             Logoutbtn.TabIndex = 5;
             Logoutbtn.Text = "Log Out";
@@ -845,11 +853,11 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
-            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
@@ -937,7 +945,7 @@
             // 
             Homepnl.BackColor = SystemColors.InactiveBorder;
             Homepnl.BorderStyle = BorderStyle.Fixed3D;
-            Homepnl.Controls.Add(Home_profilelnk);
+            Homepnl.Controls.Add(Home_titlebar);
             Homepnl.Dock = DockStyle.Fill;
             Homepnl.Location = new Point(225, 0);
             Homepnl.Name = "Homepnl";
@@ -950,7 +958,7 @@
             Home_profilelnk.AutoSize = true;
             Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             Home_profilelnk.LinkColor = Color.Black;
-            Home_profilelnk.Location = new Point(976, 13);
+            Home_profilelnk.Location = new Point(1024, 16);
             Home_profilelnk.Name = "Home_profilelnk";
             Home_profilelnk.Size = new Size(94, 25);
             Home_profilelnk.TabIndex = 0;
@@ -1061,6 +1069,16 @@
             librarianToolStripMenuItem.Size = new Size(233, 30);
             librarianToolStripMenuItem.Text = "Librarian";
             // 
+            // Home_titlebar
+            // 
+            Home_titlebar.BackColor = SystemColors.Highlight;
+            Home_titlebar.Controls.Add(Home_profilelnk);
+            Home_titlebar.Dock = DockStyle.Top;
+            Home_titlebar.Location = new Point(0, 0);
+            Home_titlebar.Name = "Home_titlebar";
+            Home_titlebar.Size = new Size(1153, 61);
+            Home_titlebar.TabIndex = 1;
+            // 
             // d_lab
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -1097,11 +1115,12 @@
             Librarian_allbookspnl.ResumeLayout(false);
             Librarian_allbookspnl.PerformLayout();
             Homepnl.ResumeLayout(false);
-            Homepnl.PerformLayout();
             Book_catagorypnl.ResumeLayout(false);
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
+            Home_titlebar.ResumeLayout(false);
+            Home_titlebar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1180,5 +1199,6 @@
         private Panel Librarian_topuserspnl;
         private Button Librarian_allbookaddbtn;
         private Label Librarian_allbookslbl;
+        private Panel Home_titlebar;
     }
 }
