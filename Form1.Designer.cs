@@ -83,8 +83,6 @@
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
             Homepagepnl = new Panel();
-            Homepnl = new Panel();
-            Home_profilelnk = new LinkLabel();
             Librarin_pnl = new Panel();
             panel1 = new Panel();
             Librarian_topuserspnl = new Panel();
@@ -92,6 +90,8 @@
             Librarian_allbookslbl = new Label();
             Librarian_allbookaddbtn = new Button();
             Librarian_visitedbookspnl = new Panel();
+            Homepnl = new Panel();
+            Home_profilelnk = new LinkLabel();
             Book_catagorypnl = new Panel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
@@ -114,9 +114,9 @@
             profilepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
-            Homepnl.SuspendLayout();
             Librarin_pnl.SuspendLayout();
             Librarian_allbookspnl.SuspendLayout();
+            Homepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
@@ -130,12 +130,12 @@
             Book_catagorytab.Dock = DockStyle.Bottom;
             Book_catagorytab.HotTrack = true;
             Book_catagorytab.ItemSize = new Size(109, 50);
-            Book_catagorytab.Location = new Point(0, 52);
+            Book_catagorytab.Location = new Point(0, 55);
             Book_catagorytab.Name = "Book_catagorytab";
             Book_catagorytab.Padding = new Point(11, 3);
             Book_catagorytab.RightToLeftLayout = true;
             Book_catagorytab.SelectedIndex = 0;
-            Book_catagorytab.Size = new Size(961, 685);
+            Book_catagorytab.Size = new Size(1157, 727);
             Book_catagorytab.TabIndex = 4;
             Book_catagorytab.Tag = "";
             // 
@@ -152,7 +152,7 @@
             Programmingtab.Location = new Point(4, 54);
             Programmingtab.Name = "Programmingtab";
             Programmingtab.Padding = new Padding(3);
-            Programmingtab.Size = new Size(953, 627);
+            Programmingtab.Size = new Size(1149, 669);
             Programmingtab.TabIndex = 0;
             Programmingtab.Text = "Programming";
             // 
@@ -164,7 +164,7 @@
             Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
             Medicinetab.Padding = new Padding(3);
-            Medicinetab.Size = new Size(953, 627);
+            Medicinetab.Size = new Size(1149, 627);
             Medicinetab.TabIndex = 1;
             Medicinetab.Text = "Medicine";
             // 
@@ -174,7 +174,7 @@
             Noveltab.BackgroundImageLayout = ImageLayout.Stretch;
             Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
-            Noveltab.Size = new Size(953, 627);
+            Noveltab.Size = new Size(1149, 627);
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
@@ -194,20 +194,21 @@
             loginpnl.Controls.Add(welcome_labele);
             loginpnl.Dock = DockStyle.Fill;
             loginpnl.Location = new Point(0, 0);
-            loginpnl.MaximumSize = new Size(1210, 735);
-            loginpnl.MinimumSize = new Size(1210, 735);
+            loginpnl.MaximumSize = new Size(1382, 782);
+            loginpnl.MinimumSize = new Size(1382, 782);
             loginpnl.Name = "loginpnl";
-            loginpnl.Size = new Size(1210, 735);
+            loginpnl.Size = new Size(1382, 782);
             loginpnl.TabIndex = 2;
             // 
             // login_signup
             // 
             login_signup.AutoSize = true;
             login_signup.BackColor = Color.Transparent;
+            login_signup.Font = new Font("Segoe UI", 12.096F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_signup.LinkColor = Color.LightYellow;
-            login_signup.Location = new Point(37, 569);
+            login_signup.Location = new Point(38, 696);
             login_signup.Name = "login_signup";
-            login_signup.Size = new Size(166, 42);
+            login_signup.Size = new Size(225, 60);
             login_signup.TabIndex = 12;
             login_signup.TabStop = true;
             login_signup.Text = "Don' have an account?\r\nSIGN IP";
@@ -216,11 +217,14 @@
             // 
             // logibtn
             // 
-            logibtn.BackColor = Color.LightYellow;
-            logibtn.Font = new Font("Segoe UI", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logibtn.Location = new Point(448, 361);
+            logibtn.BackColor = Color.FromArgb(89, 36, 16);
+            logibtn.FlatAppearance.BorderSize = 0;
+            logibtn.FlatStyle = FlatStyle.Popup;
+            logibtn.Font = new Font("Cooper Black", 12.096F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            logibtn.ForeColor = Color.FromArgb(255, 255, 204);
+            logibtn.Location = new Point(555, 400);
             logibtn.Name = "logibtn";
-            logibtn.Size = new Size(168, 55);
+            logibtn.Size = new Size(187, 65);
             logibtn.TabIndex = 11;
             logibtn.Text = "LOGIN";
             logibtn.UseVisualStyleBackColor = false;
@@ -229,11 +233,11 @@
             // passbx
             // 
             passbx.BackColor = Color.LightYellow;
-            passbx.Location = new Point(461, 289);
+            passbx.Location = new Point(615, 290);
             passbx.Name = "passbx";
             passbx.PasswordChar = '.';
             passbx.PlaceholderText = "Password";
-            passbx.Size = new Size(300, 29);
+            passbx.Size = new Size(322, 29);
             passbx.TabIndex = 10;
             passbx.UseSystemPasswordChar = true;
             // 
@@ -241,11 +245,11 @@
             // 
             namebx.BackColor = Color.LightYellow;
             namebx.BorderStyle = BorderStyle.None;
-            namebx.Location = new Point(461, 195);
+            namebx.Location = new Point(615, 196);
             namebx.Multiline = true;
             namebx.Name = "namebx";
             namebx.PlaceholderText = "User name or email";
-            namebx.Size = new Size(300, 33);
+            namebx.Size = new Size(322, 33);
             namebx.TabIndex = 9;
             // 
             // passlbl
@@ -254,7 +258,7 @@
             passlbl.BackColor = Color.Transparent;
             passlbl.Font = new Font("Arial Narrow", 16.128F, FontStyle.Bold);
             passlbl.ForeColor = Color.LightYellow;
-            passlbl.Location = new Point(261, 289);
+            passlbl.Location = new Point(415, 290);
             passlbl.Name = "passlbl";
             passlbl.Size = new Size(124, 33);
             passlbl.TabIndex = 8;
@@ -266,7 +270,7 @@
             usernamelbl.BackColor = Color.Transparent;
             usernamelbl.Font = new Font("Arial Narrow", 16.128F, FontStyle.Bold);
             usernamelbl.ForeColor = Color.LightYellow;
-            usernamelbl.Location = new Point(254, 193);
+            usernamelbl.Location = new Point(408, 194);
             usernamelbl.Name = "usernamelbl";
             usernamelbl.Size = new Size(136, 33);
             usernamelbl.TabIndex = 7;
@@ -276,11 +280,11 @@
             // 
             welcome_labele.AutoSize = true;
             welcome_labele.BackColor = Color.Transparent;
-            welcome_labele.Font = new Font("Ravie", 24.192F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcome_labele.Font = new Font("Cooper Black", 47.808F, FontStyle.Italic, GraphicsUnit.Point, 0);
             welcome_labele.ForeColor = Color.LightYellow;
-            welcome_labele.Location = new Point(393, 66);
+            welcome_labele.Location = new Point(417, 63);
             welcome_labele.Name = "welcome_labele";
-            welcome_labele.Size = new Size(337, 65);
+            welcome_labele.Size = new Size(547, 109);
             welcome_labele.TabIndex = 6;
             welcome_labele.Text = "WELLCOME";
             welcome_labele.TextAlign = ContentAlignment.MiddleCenter;
@@ -301,23 +305,22 @@
             signuppnl.Controls.Add(Signup_firstnamebx);
             signuppnl.Controls.Add(signup_Firstnamelbl);
             signuppnl.Controls.Add(signup_wellcomebx);
-            signuppnl.Dock = DockStyle.Fill;
             signuppnl.Location = new Point(0, 0);
-            signuppnl.MaximumSize = new Size(1210, 735);
-            signuppnl.MinimumSize = new Size(1210, 735);
+            signuppnl.MaximumSize = new Size(1382, 782);
+            signuppnl.MinimumSize = new Size(1382, 782);
             signuppnl.Name = "signuppnl";
-            signuppnl.Size = new Size(1210, 735);
+            signuppnl.Size = new Size(1382, 782);
             signuppnl.TabIndex = 13;
             // 
             // Signup_lastnamebx
             // 
             Signup_lastnamebx.BackColor = Color.LightYellow;
             Signup_lastnamebx.BorderStyle = BorderStyle.None;
-            Signup_lastnamebx.Location = new Point(478, 213);
+            Signup_lastnamebx.Location = new Point(592, 235);
             Signup_lastnamebx.Multiline = true;
             Signup_lastnamebx.Name = "Signup_lastnamebx";
             Signup_lastnamebx.PlaceholderText = "Enter your Last Name";
-            Signup_lastnamebx.Size = new Size(300, 29);
+            Signup_lastnamebx.Size = new Size(372, 29);
             Signup_lastnamebx.TabIndex = 25;
             // 
             // Signup_Lastnamelbl
@@ -326,7 +329,7 @@
             Signup_Lastnamelbl.BackColor = Color.Transparent;
             Signup_Lastnamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Signup_Lastnamelbl.ForeColor = Color.FromArgb(255, 255, 204);
-            Signup_Lastnamelbl.Location = new Point(183, 213);
+            Signup_Lastnamelbl.Location = new Point(393, 235);
             Signup_Lastnamelbl.Name = "Signup_Lastnamelbl";
             Signup_Lastnamelbl.Size = new Size(127, 29);
             Signup_Lastnamelbl.TabIndex = 24;
@@ -335,10 +338,10 @@
             // Signup_passbx
             // 
             Signup_passbx.BackColor = Color.LightYellow;
-            Signup_passbx.Location = new Point(478, 361);
+            Signup_passbx.Location = new Point(592, 383);
             Signup_passbx.Name = "Signup_passbx";
             Signup_passbx.PlaceholderText = "Password";
-            Signup_passbx.Size = new Size(300, 29);
+            Signup_passbx.Size = new Size(372, 29);
             Signup_passbx.TabIndex = 23;
             Signup_passbx.UseSystemPasswordChar = true;
             // 
@@ -348,7 +351,7 @@
             Signup_Usernamelbl.BackColor = Color.Transparent;
             Signup_Usernamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Signup_Usernamelbl.ForeColor = Color.FromArgb(255, 255, 204);
-            Signup_Usernamelbl.Location = new Point(179, 289);
+            Signup_Usernamelbl.Location = new Point(393, 311);
             Signup_Usernamelbl.Name = "Signup_Usernamelbl";
             Signup_Usernamelbl.Size = new Size(131, 29);
             Signup_Usernamelbl.TabIndex = 22;
@@ -360,7 +363,7 @@
             signpass.BackColor = Color.Transparent;
             signpass.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signpass.ForeColor = Color.FromArgb(255, 255, 204);
-            signpass.Location = new Point(183, 361);
+            signpass.Location = new Point(393, 383);
             signpass.Name = "signpass";
             signpass.Size = new Size(111, 29);
             signpass.TabIndex = 21;
@@ -369,27 +372,29 @@
             // Signup_usernamebx
             // 
             Signup_usernamebx.BackColor = Color.LightYellow;
-            Signup_usernamebx.Location = new Point(478, 289);
+            Signup_usernamebx.Location = new Point(592, 311);
             Signup_usernamebx.Multiline = true;
             Signup_usernamebx.Name = "Signup_usernamebx";
             Signup_usernamebx.PlaceholderText = "Username";
-            Signup_usernamebx.Size = new Size(300, 29);
+            Signup_usernamebx.Size = new Size(372, 29);
             Signup_usernamebx.TabIndex = 20;
             // 
             // Signup_loginlink
             // 
+            Signup_loginlink.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Signup_loginlink.AutoSize = true;
             Signup_loginlink.BackColor = Color.Transparent;
             Signup_loginlink.Font = new Font("Segoe UI Semibold", 9.792F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Signup_loginlink.ForeColor = Color.FromArgb(255, 255, 204);
-            Signup_loginlink.LinkColor = Color.FromArgb(0, 15, 255, 204);
-            Signup_loginlink.Location = new Point(12, 565);
+            Signup_loginlink.ForeColor = SystemColors.AppWorkspace;
+            Signup_loginlink.LinkColor = Color.FromArgb(255, 255, 204);
+            Signup_loginlink.Location = new Point(22, 708);
             Signup_loginlink.Name = "Signup_loginlink";
             Signup_loginlink.Size = new Size(213, 46);
             Signup_loginlink.TabIndex = 19;
             Signup_loginlink.TabStop = true;
             Signup_loginlink.Text = "Already have an account ?\r\nSIGN IN";
-            Signup_loginlink.TextAlign = ContentAlignment.TopCenter;
+            Signup_loginlink.TextAlign = ContentAlignment.MiddleCenter;
+            Signup_loginlink.VisitedLinkColor = Color.FromArgb(192, 0, 0);
             Signup_loginlink.LinkClicked += Signup_loginlink_LinkClicked;
             Signup_loginlink.Click += Wellcome_loginbtn_Click;
             // 
@@ -398,7 +403,7 @@
             signupbtn.BackColor = Color.FromArgb(50, 50, 50);
             signupbtn.Font = new Font("Segoe UI", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signupbtn.ForeColor = Color.FromArgb(255, 255, 204);
-            signupbtn.Location = new Point(415, 461);
+            signupbtn.Location = new Point(592, 461);
             signupbtn.Name = "signupbtn";
             signupbtn.Size = new Size(191, 66);
             signupbtn.TabIndex = 18;
@@ -410,11 +415,11 @@
             // 
             Signup_firstnamebx.BackColor = Color.LightYellow;
             Signup_firstnamebx.BorderStyle = BorderStyle.None;
-            Signup_firstnamebx.Location = new Point(478, 134);
+            Signup_firstnamebx.Location = new Point(592, 156);
             Signup_firstnamebx.Multiline = true;
             Signup_firstnamebx.Name = "Signup_firstnamebx";
             Signup_firstnamebx.PlaceholderText = "Enter your First Name";
-            Signup_firstnamebx.Size = new Size(300, 29);
+            Signup_firstnamebx.Size = new Size(372, 29);
             Signup_firstnamebx.TabIndex = 16;
             // 
             // signup_Firstnamelbl
@@ -423,7 +428,7 @@
             signup_Firstnamelbl.BackColor = Color.Transparent;
             signup_Firstnamelbl.Font = new Font("Bell MT", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signup_Firstnamelbl.ForeColor = Color.FromArgb(255, 255, 204);
-            signup_Firstnamelbl.Location = new Point(183, 134);
+            signup_Firstnamelbl.Location = new Point(393, 156);
             signup_Firstnamelbl.Name = "signup_Firstnamelbl";
             signup_Firstnamelbl.Size = new Size(132, 29);
             signup_Firstnamelbl.TabIndex = 14;
@@ -431,11 +436,13 @@
             // 
             // signup_wellcomebx
             // 
+            signup_wellcomebx.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signup_wellcomebx.AutoSize = true;
             signup_wellcomebx.BackColor = Color.Transparent;
             signup_wellcomebx.Font = new Font("Ravie", 36.288F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signup_wellcomebx.ForeColor = Color.FromArgb(255, 255, 204);
-            signup_wellcomebx.Location = new Point(290, 21);
+            signup_wellcomebx.ImageAlign = ContentAlignment.TopCenter;
+            signup_wellcomebx.Location = new Point(433, 21);
             signup_wellcomebx.Name = "signup_wellcomebx";
             signup_wellcomebx.Size = new Size(515, 95);
             signup_wellcomebx.TabIndex = 13;
@@ -452,10 +459,10 @@
             Wellcome_page.Controls.Add(Wellcome_loginbtn);
             Wellcome_page.Dock = DockStyle.Fill;
             Wellcome_page.Location = new Point(0, 0);
-            Wellcome_page.MaximumSize = new Size(1210, 735);
-            Wellcome_page.MinimumSize = new Size(1210, 735);
+            Wellcome_page.MaximumSize = new Size(1382, 782);
+            Wellcome_page.MinimumSize = new Size(1382, 782);
             Wellcome_page.Name = "Wellcome_page";
-            Wellcome_page.Size = new Size(1210, 735);
+            Wellcome_page.Size = new Size(1382, 782);
             Wellcome_page.TabIndex = 2;
             Wellcome_page.Paint += Wellcome_page_Paint;
             // 
@@ -467,7 +474,7 @@
             Wellcome_signupbtn.Cursor = Cursors.Hand;
             Wellcome_signupbtn.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Wellcome_signupbtn.ForeColor = Color.White;
-            Wellcome_signupbtn.Location = new Point(453, 388);
+            Wellcome_signupbtn.Location = new Point(508, 461);
             Wellcome_signupbtn.Name = "Wellcome_signupbtn";
             Wellcome_signupbtn.Size = new Size(183, 67);
             Wellcome_signupbtn.TabIndex = 1;
@@ -482,7 +489,7 @@
             Wellcome_loginbtn.Cursor = Cursors.Hand;
             Wellcome_loginbtn.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Wellcome_loginbtn.ForeColor = Color.White;
-            Wellcome_loginbtn.Location = new Point(130, 388);
+            Wellcome_loginbtn.Location = new Point(174, 461);
             Wellcome_loginbtn.Name = "Wellcome_loginbtn";
             Wellcome_loginbtn.Size = new Size(183, 67);
             Wellcome_loginbtn.TabIndex = 0;
@@ -503,7 +510,7 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(225, 737);
+            sidebar.Size = new Size(225, 782);
             sidebar.TabIndex = 0;
             // 
             // Librarian_managebtn
@@ -646,7 +653,7 @@
             Logoutbtn.ForeColor = Color.LightYellow;
             Logoutbtn.Image = (Image)resources.GetObject("Logoutbtn.Image");
             Logoutbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            Logoutbtn.Location = new Point(0, 693);
+            Logoutbtn.Location = new Point(0, 738);
             Logoutbtn.Margin = new Padding(0);
             Logoutbtn.Name = "Logoutbtn";
             Logoutbtn.Size = new Size(225, 44);
@@ -665,7 +672,7 @@
             Admin_userspnl.Dock = DockStyle.Fill;
             Admin_userspnl.Location = new Point(225, 0);
             Admin_userspnl.Name = "Admin_userspnl";
-            Admin_userspnl.Size = new Size(961, 737);
+            Admin_userspnl.Size = new Size(1157, 782);
             Admin_userspnl.TabIndex = 3;
             // 
             // AdminFilter_datacombobx
@@ -673,7 +680,7 @@
             AdminFilter_datacombobx.Font = new Font("Segoe UI", 9.792F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AdminFilter_datacombobx.FormattingEnabled = true;
             AdminFilter_datacombobx.Items.AddRange(new object[] { "ALL", "Admins", "Users", "Librarian", "Pending" });
-            AdminFilter_datacombobx.Location = new Point(190, 12);
+            AdminFilter_datacombobx.Location = new Point(204, 15);
             AdminFilter_datacombobx.Name = "AdminFilter_datacombobx";
             AdminFilter_datacombobx.Size = new Size(207, 31);
             AdminFilter_datacombobx.TabIndex = 3;
@@ -682,7 +689,8 @@
             // 
             // updatebtn
             // 
-            updatebtn.Location = new Point(786, 12);
+            updatebtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            updatebtn.Location = new Point(996, 12);
             updatebtn.Name = "updatebtn";
             updatebtn.Size = new Size(136, 34);
             updatebtn.TabIndex = 2;
@@ -695,10 +703,11 @@
             Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Admin_useresdatagrid.BackgroundColor = Color.White;
             Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Admin_useresdatagrid.Location = new Point(0, 57);
+            Admin_useresdatagrid.Dock = DockStyle.Bottom;
+            Admin_useresdatagrid.Location = new Point(0, 69);
             Admin_useresdatagrid.Name = "Admin_useresdatagrid";
             Admin_useresdatagrid.RowHeadersWidth = 53;
-            Admin_useresdatagrid.Size = new Size(985, 678);
+            Admin_useresdatagrid.Size = new Size(1157, 713);
             Admin_useresdatagrid.TabIndex = 1;
             // 
             // fetch_databtn
@@ -716,7 +725,7 @@
             LibrarianAdd_bookbtn.Dock = DockStyle.Top;
             LibrarianAdd_bookbtn.Location = new Point(0, 0);
             LibrarianAdd_bookbtn.Name = "LibrarianAdd_bookbtn";
-            LibrarianAdd_bookbtn.Size = new Size(961, 51);
+            LibrarianAdd_bookbtn.Size = new Size(1157, 51);
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
@@ -737,7 +746,7 @@
             profilepnl.Dock = DockStyle.Fill;
             profilepnl.Location = new Point(225, 0);
             profilepnl.Name = "profilepnl";
-            profilepnl.Size = new Size(961, 737);
+            profilepnl.Size = new Size(1157, 782);
             profilepnl.TabIndex = 3;
             // 
             // Profile_editbtn
@@ -836,43 +845,18 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Admin_userspnl);
-            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
-            Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Studypnl);
+            Homepagepnl.Controls.Add(Book_catagorypnl);
+            Homepagepnl.Controls.Add(Homepnl);
+            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
             Homepagepnl.Location = new Point(0, 0);
             Homepagepnl.Name = "Homepagepnl";
-            Homepagepnl.Size = new Size(1186, 737);
+            Homepagepnl.Size = new Size(1382, 782);
             Homepagepnl.TabIndex = 0;
-            // 
-            // Homepnl
-            // 
-            Homepnl.BackColor = SystemColors.InactiveBorder;
-            Homepnl.BorderStyle = BorderStyle.Fixed3D;
-            Homepnl.Controls.Add(Home_profilelnk);
-            Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(225, 0);
-            Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(961, 737);
-            Homepnl.TabIndex = 1;
-            // 
-            // Home_profilelnk
-            // 
-            Home_profilelnk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Home_profilelnk.AutoSize = true;
-            Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            Home_profilelnk.LinkColor = Color.Black;
-            Home_profilelnk.Location = new Point(780, 13);
-            Home_profilelnk.Name = "Home_profilelnk";
-            Home_profilelnk.Size = new Size(94, 25);
-            Home_profilelnk.TabIndex = 0;
-            Home_profilelnk.TabStop = true;
-            Home_profilelnk.Text = "👤 Profile";
-            Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
             // 
             // Librarin_pnl
             // 
@@ -884,24 +868,24 @@
             Librarin_pnl.Dock = DockStyle.Fill;
             Librarin_pnl.Location = new Point(225, 0);
             Librarin_pnl.Name = "Librarin_pnl";
-            Librarin_pnl.Size = new Size(961, 737);
+            Librarin_pnl.Size = new Size(1157, 782);
             Librarin_pnl.TabIndex = 13;
             Librarin_pnl.Paint += Librarin_pnl_Paint;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(26, 26, 0);
-            panel1.Location = new Point(12, 461);
+            panel1.Location = new Point(29, 458);
             panel1.Name = "panel1";
-            panel1.Size = new Size(467, 264);
+            panel1.Size = new Size(510, 296);
             panel1.TabIndex = 3;
             // 
             // Librarian_topuserspnl
             // 
             Librarian_topuserspnl.BackColor = Color.FromArgb(20, 30, 48);
-            Librarian_topuserspnl.Location = new Point(511, 388);
+            Librarian_topuserspnl.Location = new Point(625, 385);
             Librarian_topuserspnl.Name = "Librarian_topuserspnl";
-            Librarian_topuserspnl.Size = new Size(426, 337);
+            Librarian_topuserspnl.Size = new Size(510, 369);
             Librarian_topuserspnl.TabIndex = 2;
             // 
             // Librarian_allbookspnl
@@ -909,9 +893,9 @@
             Librarian_allbookspnl.BackColor = Color.FromArgb(46, 31, 27);
             Librarian_allbookspnl.Controls.Add(Librarian_allbookslbl);
             Librarian_allbookspnl.Controls.Add(Librarian_allbookaddbtn);
-            Librarian_allbookspnl.Location = new Point(12, 18);
+            Librarian_allbookspnl.Location = new Point(29, 18);
             Librarian_allbookspnl.Name = "Librarian_allbookspnl";
-            Librarian_allbookspnl.Size = new Size(467, 398);
+            Librarian_allbookspnl.Size = new Size(510, 400);
             Librarian_allbookspnl.TabIndex = 1;
             // 
             // Librarian_allbookslbl
@@ -927,13 +911,14 @@
             // 
             // Librarian_allbookaddbtn
             // 
+            Librarian_allbookaddbtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Librarian_allbookaddbtn.BackColor = Color.FromArgb(46, 31, 27);
             Librarian_allbookaddbtn.FlatAppearance.BorderColor = Color.Cornsilk;
             Librarian_allbookaddbtn.FlatAppearance.BorderSize = 2;
             Librarian_allbookaddbtn.FlatStyle = FlatStyle.Flat;
             Librarian_allbookaddbtn.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Librarian_allbookaddbtn.ForeColor = Color.Cornsilk;
-            Librarian_allbookaddbtn.Location = new Point(295, 2);
+            Librarian_allbookaddbtn.Location = new Point(383, 4);
             Librarian_allbookaddbtn.Name = "Librarian_allbookaddbtn";
             Librarian_allbookaddbtn.Size = new Size(124, 35);
             Librarian_allbookaddbtn.TabIndex = 0;
@@ -943,10 +928,35 @@
             // Librarian_visitedbookspnl
             // 
             Librarian_visitedbookspnl.BackColor = Color.FromArgb(15, 44, 27);
-            Librarian_visitedbookspnl.Location = new Point(511, 21);
+            Librarian_visitedbookspnl.Location = new Point(625, 18);
             Librarian_visitedbookspnl.Name = "Librarian_visitedbookspnl";
-            Librarian_visitedbookspnl.Size = new Size(426, 320);
+            Librarian_visitedbookspnl.Size = new Size(510, 320);
             Librarian_visitedbookspnl.TabIndex = 0;
+            // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = SystemColors.InactiveBorder;
+            Homepnl.BorderStyle = BorderStyle.Fixed3D;
+            Homepnl.Controls.Add(Home_profilelnk);
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(225, 0);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(1157, 782);
+            Homepnl.TabIndex = 1;
+            // 
+            // Home_profilelnk
+            // 
+            Home_profilelnk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Home_profilelnk.AutoSize = true;
+            Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Home_profilelnk.LinkColor = Color.Black;
+            Home_profilelnk.Location = new Point(976, 13);
+            Home_profilelnk.Name = "Home_profilelnk";
+            Home_profilelnk.Size = new Size(94, 25);
+            Home_profilelnk.TabIndex = 0;
+            Home_profilelnk.TabStop = true;
+            Home_profilelnk.Text = "👤 Profile";
+            Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
             // 
             // Book_catagorypnl
             // 
@@ -957,7 +967,7 @@
             Book_catagorypnl.Dock = DockStyle.Fill;
             Book_catagorypnl.Location = new Point(225, 0);
             Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(961, 737);
+            Book_catagorypnl.Size = new Size(1157, 782);
             Book_catagorypnl.TabIndex = 7;
             Book_catagorypnl.TabStop = true;
             // 
@@ -968,7 +978,7 @@
             Studypnl.Dock = DockStyle.Fill;
             Studypnl.Location = new Point(225, 0);
             Studypnl.Name = "Studypnl";
-            Studypnl.Size = new Size(961, 737);
+            Studypnl.Size = new Size(1157, 782);
             Studypnl.TabIndex = 0;
             // 
             // Study_timepnl
@@ -1055,15 +1065,15 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1186, 737);
+            ClientSize = new Size(1382, 782);
             Controls.Add(Homepagepnl);
-            Controls.Add(loginpnl);
             Controls.Add(signuppnl);
+            Controls.Add(loginpnl);
             Controls.Add(Wellcome_page);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(1204, 785);
-            MinimumSize = new Size(1204, 785);
+            MaximumSize = new Size(1400, 830);
+            MinimumSize = new Size(1400, 830);
             Name = "d_lab";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "d_lab";
@@ -1083,11 +1093,11 @@
             profilepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
-            Homepnl.ResumeLayout(false);
-            Homepnl.PerformLayout();
             Librarin_pnl.ResumeLayout(false);
             Librarian_allbookspnl.ResumeLayout(false);
             Librarian_allbookspnl.PerformLayout();
+            Homepnl.ResumeLayout(false);
+            Homepnl.PerformLayout();
             Book_catagorypnl.ResumeLayout(false);
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
