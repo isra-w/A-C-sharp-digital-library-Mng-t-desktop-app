@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "Edit_profileUControl1";
-            Size = new Size(779, 418);
+            Size = new Size(811, 441);
             ResumeLayout(false);
         }
 
