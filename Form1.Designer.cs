@@ -742,7 +742,6 @@
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
-            LibrarianAdd_bookbtn.Click += LibrarianAdd_bookbtn_Click;
             // 
             // profilepnl
             // 

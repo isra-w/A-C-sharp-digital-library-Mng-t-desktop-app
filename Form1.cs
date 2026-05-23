@@ -463,10 +463,6 @@ namespace d.labdemo
 
         }
 
-        private void LibrarianAdd_bookbtn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Librarin_pnl_Paint(object sender, PaintEventArgs e)
         {
