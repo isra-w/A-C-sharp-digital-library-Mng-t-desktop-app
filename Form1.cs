@@ -1,4 +1,5 @@
 using d.labdemo.DB;
+using d_labdemo.User_controls;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -77,6 +78,7 @@ namespace d.labdemo
                         Studypnl.Visible = false;
                         Librarin_pnl.Visible = false;
                         Librarian_managebtn.Visible = false;
+                        Book_addpnl.Visible = false;
 
                         if (role == "Super_Admin")
                         {
@@ -463,16 +465,26 @@ namespace d.labdemo
 
         }
 
-        private void LibrarianAdd_bookbtn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Librarin_pnl_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+        private void LibrarianAdd_bookbtn_Click(object sender, EventArgs e)
+        {
+            Book_addpnl.Controls.Clear();
+            Add_bookucontrol addBookControl = new Add_bookucontrol();
+            {
+                Book_addpnl.Controls.Clear();
+                Book_addpnl.Visible = false;
+            };
+            Book_addpnl.Controls.Add(addBookControl);
+            Book_addpnl.Visible = true;
+            Book_addpnl.BringToFront();
+            addBookControl.Dock = DockStyle.Fill;
+
+        }
     }
 }
 
