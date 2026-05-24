@@ -34,6 +34,7 @@
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
             Noveltab = new TabPage();
+            Book_addpnl = new Panel();
             loginpnl = new Panel();
             login_signup = new LinkLabel();
             logibtn = new Button();
@@ -86,6 +87,7 @@
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
             Homepagepnl = new Panel();
+            Book_catagorypnl = new Panel();
             Homepnl = new Panel();
             Home_titlebar = new Panel();
             Home_profilelnk = new LinkLabel();
@@ -102,7 +104,6 @@
             Timer_amountbx = new TextBox();
             Timer_typelbl = new Label();
             Timer_startbtn = new Button();
-            Book_catagorypnl = new Panel();
             Study_timer = new System.Windows.Forms.Timer(components);
             adminToolStripMenuItem = new ToolStripMenuItem();
             userToolStripMenuItem = new ToolStripMenuItem();
@@ -120,13 +121,13 @@
             Profile_viewdbookspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
+            Book_catagorypnl.SuspendLayout();
             Homepnl.SuspendLayout();
             Home_titlebar.SuspendLayout();
             Librarin_pnl.SuspendLayout();
             Librarian_allbookspnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
-            Book_catagorypnl.SuspendLayout();
             SuspendLayout();
             // 
             // Book_catagorytab
@@ -185,6 +186,14 @@
             Noveltab.TabIndex = 2;
             Noveltab.Text = "Novel tab";
             Noveltab.UseVisualStyleBackColor = true;
+            // 
+            // Book_addpnl
+            // 
+            Book_addpnl.Location = new Point(14, 12);
+            Book_addpnl.Name = "Book_addpnl";
+            Book_addpnl.Size = new Size(799, 470);
+            Book_addpnl.TabIndex = 0;
+            Book_addpnl.Visible = false;
             // 
             // loginpnl
             // 
@@ -742,6 +751,7 @@
             LibrarianAdd_bookbtn.TabIndex = 3;
             LibrarianAdd_bookbtn.Text = "Add books";
             LibrarianAdd_bookbtn.UseVisualStyleBackColor = true;
+            LibrarianAdd_bookbtn.Click += LibrarianAdd_bookbtn_Click;
             // 
             // profilepnl
             // 
@@ -900,6 +910,20 @@
             Homepagepnl.Name = "Homepagepnl";
             Homepagepnl.Size = new Size(1382, 782);
             Homepagepnl.TabIndex = 0;
+            // 
+            // Book_catagorypnl
+            // 
+            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
+            Book_catagorypnl.Controls.Add(Book_addpnl);
+            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
+            Book_catagorypnl.Controls.Add(Book_catagorytab);
+            Book_catagorypnl.Dock = DockStyle.Fill;
+            Book_catagorypnl.Location = new Point(225, 0);
+            Book_catagorypnl.Name = "Book_catagorypnl";
+            Book_catagorypnl.Size = new Size(1157, 782);
+            Book_catagorypnl.TabIndex = 7;
+            Book_catagorypnl.TabStop = true;
             // 
             // Homepnl
             // 
@@ -1077,19 +1101,6 @@
             Timer_startbtn.UseVisualStyleBackColor = false;
             Timer_startbtn.Click += Timer_startbtn_Click;
             // 
-            // Book_catagorypnl
-            // 
-            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
-            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
-            Book_catagorypnl.Controls.Add(Book_catagorytab);
-            Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(225, 0);
-            Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(1157, 782);
-            Book_catagorypnl.TabIndex = 7;
-            Book_catagorypnl.TabStop = true;
-            // 
             // Study_timer
             // 
             Study_timer.Enabled = true;
@@ -1149,6 +1160,7 @@
             Profile_viewdbookspnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
+            Book_catagorypnl.ResumeLayout(false);
             Homepnl.ResumeLayout(false);
             Home_titlebar.ResumeLayout(false);
             Home_titlebar.PerformLayout();
@@ -1158,7 +1170,6 @@
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
-            Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1241,5 +1252,6 @@
         private Panel Profile_titlebar;
         private Panel Profile_viewdbookspnl;
         private Label Profile_mybookslbl;
+        private Panel Book_addpnl;
     }
 }
