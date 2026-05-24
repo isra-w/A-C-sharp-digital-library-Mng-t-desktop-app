@@ -478,12 +478,26 @@ namespace d.labdemo
             {
                 Book_addpnl.Controls.Clear();
                 Book_addpnl.Visible = false;
-            };
+            }
             Book_addpnl.Controls.Add(addBookControl);
             Book_addpnl.Visible = true;
             Book_addpnl.BringToFront();
             addBookControl.Dock = DockStyle.Fill;
 
+        }
+
+        private void Profile_editbtn_Click(object sender, EventArgs e)
+        {
+            Editprofilepnl.Controls.Clear();
+            Profile_updateucontrol editprofile = new Profile_updateucontrol();
+            {
+                Editprofilepnl.Controls.Clear();
+                Editprofilepnl.Visible = false;
+            }
+            Editprofilepnl.Controls.Add(editprofile);
+            Editprofilepnl.Visible = true;
+            Editprofilepnl.BringToFront();
+            editprofile.Dock = DockStyle.Fill;
         }
     }
 }

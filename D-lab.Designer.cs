@@ -74,6 +74,7 @@
             fetch_databtn = new Button();
             LibrarianAdd_bookbtn = new Button();
             profilepnl = new Panel();
+            Editprofilepnl = new Panel();
             Profile_titlebar = new Panel();
             Profile_editbtn = new Button();
             Profile_viewdbookspnl = new Panel();
@@ -189,7 +190,7 @@
             // 
             // Book_addpnl
             // 
-            Book_addpnl.Location = new Point(14, 12);
+            Book_addpnl.Location = new Point(12, 12);
             Book_addpnl.Name = "Book_addpnl";
             Book_addpnl.Size = new Size(799, 470);
             Book_addpnl.TabIndex = 0;
@@ -756,6 +757,7 @@
             // profilepnl
             // 
             profilepnl.BackColor = Color.Honeydew;
+            profilepnl.Controls.Add(Editprofilepnl);
             profilepnl.Controls.Add(Profile_titlebar);
             profilepnl.Controls.Add(Profile_viewdbookspnl);
             profilepnl.Controls.Add(profilepic_updatebtn);
@@ -771,6 +773,14 @@
             profilepnl.Name = "profilepnl";
             profilepnl.Size = new Size(1157, 782);
             profilepnl.TabIndex = 3;
+            // 
+            // Editprofilepnl
+            // 
+            Editprofilepnl.Location = new Point(545, 69);
+            Editprofilepnl.Name = "Editprofilepnl";
+            Editprofilepnl.Size = new Size(604, 488);
+            Editprofilepnl.TabIndex = 22;
+            Editprofilepnl.Visible = false;
             // 
             // Profile_titlebar
             // 
@@ -796,6 +806,7 @@
             Profile_editbtn.TabIndex = 19;
             Profile_editbtn.Text = "✏️ Edit profile";
             Profile_editbtn.UseVisualStyleBackColor = false;
+            Profile_editbtn.Click += Profile_editbtn_Click;
             // 
             // Profile_viewdbookspnl
             // 
@@ -899,8 +910,8 @@
             // 
             Homepagepnl.BackColor = Color.Black;
             Homepagepnl.Controls.Add(Book_catagorypnl);
-            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(profilepnl);
+            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
@@ -915,9 +926,9 @@
             // 
             Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
-            Book_catagorypnl.Controls.Add(Book_addpnl);
             Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
             Book_catagorypnl.Controls.Add(Book_catagorytab);
+            Book_catagorypnl.Controls.Add(Book_addpnl);
             Book_catagorypnl.Dock = DockStyle.Fill;
             Book_catagorypnl.Location = new Point(225, 0);
             Book_catagorypnl.Name = "Book_catagorypnl";
@@ -1253,5 +1264,6 @@
         private Panel Profile_viewdbookspnl;
         private Label Profile_mybookslbl;
         private Panel Book_addpnl;
+        private Panel Editprofilepnl;
     }
 }
