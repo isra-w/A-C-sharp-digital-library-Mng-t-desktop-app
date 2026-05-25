@@ -480,6 +480,7 @@ namespace d.labdemo
 
         private void LibrarianAdd_bookbtn_Click(object sender, EventArgs e)
         {
+            Book_addpnl.BringToFront();
             Book_addpnl.Controls.Clear();
             Add_bookucontrol addBookControl = new Add_bookucontrol();
             {

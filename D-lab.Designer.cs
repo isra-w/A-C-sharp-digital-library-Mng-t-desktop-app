@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
@@ -91,16 +91,16 @@
             Profilepic = new PictureBox();
             Editprofilepnl = new Panel();
             Homepagepnl = new Panel();
-            Book_catagorypnl = new Panel();
-            Homepnl = new Panel();
-            Home_titlebar = new Panel();
-            Home_profilelnk = new LinkLabel();
             Librarin_pnl = new Panel();
             panel1 = new Panel();
             Librarian_topuserspnl = new Panel();
             Librarian_allbookspnl = new Panel();
             Librarian_allbookslbl = new Label();
             Librarian_visitedbookspnl = new Panel();
+            Book_catagorypnl = new Panel();
+            Homepnl = new Panel();
+            Home_titlebar = new Panel();
+            Home_profilelnk = new LinkLabel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
             Timer_countdownlbl = new Label();
@@ -125,11 +125,11 @@
             Profile_viewdbookspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
+            Librarin_pnl.SuspendLayout();
+            Librarian_allbookspnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
             Homepnl.SuspendLayout();
             Home_titlebar.SuspendLayout();
-            Librarin_pnl.SuspendLayout();
-            Librarian_allbookspnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
             SuspendLayout();
@@ -738,20 +738,20 @@
             // 
             // Admin_useresdatagrid
             // 
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(192, 255, 255);
-            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(192, 255, 255);
+            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Admin_useresdatagrid.BackgroundColor = Color.White;
             Admin_useresdatagrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.216F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 0, 0);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.216F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Admin_useresdatagrid.Dock = DockStyle.Bottom;
             Admin_useresdatagrid.Location = new Point(0, 69);
@@ -939,8 +939,8 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
+            Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(profilepnl);
@@ -951,55 +951,6 @@
             Homepagepnl.Name = "Homepagepnl";
             Homepagepnl.Size = new Size(1382, 782);
             Homepagepnl.TabIndex = 0;
-            // 
-            // Book_catagorypnl
-            // 
-            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
-            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
-            Book_catagorypnl.Controls.Add(Book_catagorytab);
-            Book_catagorypnl.Controls.Add(Book_addpnl);
-            Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(225, 0);
-            Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(1157, 782);
-            Book_catagorypnl.TabIndex = 7;
-            Book_catagorypnl.TabStop = true;
-            // 
-            // Homepnl
-            // 
-            Homepnl.BackColor = SystemColors.InactiveBorder;
-            Homepnl.BorderStyle = BorderStyle.Fixed3D;
-            Homepnl.Controls.Add(Home_titlebar);
-            Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(225, 0);
-            Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(1157, 782);
-            Homepnl.TabIndex = 1;
-            // 
-            // Home_titlebar
-            // 
-            Home_titlebar.BackColor = SystemColors.Highlight;
-            Home_titlebar.Controls.Add(Home_profilelnk);
-            Home_titlebar.Dock = DockStyle.Top;
-            Home_titlebar.Location = new Point(0, 0);
-            Home_titlebar.Name = "Home_titlebar";
-            Home_titlebar.Size = new Size(1153, 61);
-            Home_titlebar.TabIndex = 1;
-            // 
-            // Home_profilelnk
-            // 
-            Home_profilelnk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Home_profilelnk.AutoSize = true;
-            Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            Home_profilelnk.LinkColor = Color.Black;
-            Home_profilelnk.Location = new Point(1024, 16);
-            Home_profilelnk.Name = "Home_profilelnk";
-            Home_profilelnk.Size = new Size(94, 25);
-            Home_profilelnk.TabIndex = 0;
-            Home_profilelnk.TabStop = true;
-            Home_profilelnk.Text = "👤 Profile";
-            Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
             // 
             // Librarin_pnl
             // 
@@ -1058,6 +1009,55 @@
             Librarian_visitedbookspnl.Name = "Librarian_visitedbookspnl";
             Librarian_visitedbookspnl.Size = new Size(510, 320);
             Librarian_visitedbookspnl.TabIndex = 0;
+            // 
+            // Book_catagorypnl
+            // 
+            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
+            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
+            Book_catagorypnl.Controls.Add(Book_catagorytab);
+            Book_catagorypnl.Controls.Add(Book_addpnl);
+            Book_catagorypnl.Dock = DockStyle.Fill;
+            Book_catagorypnl.Location = new Point(225, 0);
+            Book_catagorypnl.Name = "Book_catagorypnl";
+            Book_catagorypnl.Size = new Size(1157, 782);
+            Book_catagorypnl.TabIndex = 7;
+            Book_catagorypnl.TabStop = true;
+            // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = SystemColors.InactiveBorder;
+            Homepnl.BorderStyle = BorderStyle.Fixed3D;
+            Homepnl.Controls.Add(Home_titlebar);
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(225, 0);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(1157, 782);
+            Homepnl.TabIndex = 1;
+            // 
+            // Home_titlebar
+            // 
+            Home_titlebar.BackColor = SystemColors.Highlight;
+            Home_titlebar.Controls.Add(Home_profilelnk);
+            Home_titlebar.Dock = DockStyle.Top;
+            Home_titlebar.Location = new Point(0, 0);
+            Home_titlebar.Name = "Home_titlebar";
+            Home_titlebar.Size = new Size(1153, 61);
+            Home_titlebar.TabIndex = 1;
+            // 
+            // Home_profilelnk
+            // 
+            Home_profilelnk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Home_profilelnk.AutoSize = true;
+            Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Home_profilelnk.LinkColor = Color.Black;
+            Home_profilelnk.Location = new Point(1024, 16);
+            Home_profilelnk.Name = "Home_profilelnk";
+            Home_profilelnk.Size = new Size(94, 25);
+            Home_profilelnk.TabIndex = 0;
+            Home_profilelnk.TabStop = true;
+            Home_profilelnk.Text = "👤 Profile";
+            Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
             // 
             // Studypnl
             // 
@@ -1186,13 +1186,13 @@
             Profile_viewdbookspnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
+            Librarin_pnl.ResumeLayout(false);
+            Librarian_allbookspnl.ResumeLayout(false);
+            Librarian_allbookspnl.PerformLayout();
             Book_catagorypnl.ResumeLayout(false);
             Homepnl.ResumeLayout(false);
             Home_titlebar.ResumeLayout(false);
             Home_titlebar.PerformLayout();
-            Librarin_pnl.ResumeLayout(false);
-            Librarian_allbookspnl.ResumeLayout(false);
-            Librarian_allbookspnl.PerformLayout();
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
