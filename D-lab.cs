@@ -2,7 +2,6 @@ using d.labdemo.DB;
 using D_lab.User_controls;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Drawing.Imaging;
 
 
 
@@ -21,6 +20,7 @@ namespace d.labdemo
             InitializeComponent();
             Wellcome_page.Visible = true;
             Wellcome_page.BringToFront();
+            this.Load += new EventHandler(D_lab_Load);
 
         }
 
@@ -465,6 +465,7 @@ namespace d.labdemo
             Study_assistbtn.Visible = true;
 
             loginpnl.Visible = true;
+            RefreshBooks();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -511,6 +512,62 @@ namespace d.labdemo
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             Logintxtfild.BringToFront();
+        }
+
+        private void D_lab_Load(object sender, EventArgs e)
+        {
+            //to load the data of book in their catagory
+            LoadBooksByCategory("Programming", Books_programmingcatagorydatagrid);
+            LoadBooksByCategory("Medicine", Books_medicinecatagorydatagrid);
+            LoadBooksByCategory("Novel", Books_novelcatagorydatagrid);
+        }
+
+        private void LoadBooksByCategory(string category, DataGridView datagrid)
+        {
+            //to fill the  book in their catagory
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    DBConnection.checkConnection.Open();
+
+                    string query = @"SELECT Bookid, Title, Author, Category, Year, Format 
+                                 FROM Books 
+                                 WHERE Category = @Category";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, DBConnection.checkConnection);
+                    da.SelectCommand.Parameters.AddWithValue("@Category", category);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    datagrid.DataSource = dt;
+
+                    DBConnection.checkConnection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading books: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void StyleGrid(DataGridView datagrid)
+        {
+            datagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            datagrid.RowHeadersVisible = false;
+            datagrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            datagrid.ReadOnly = true;
+            datagrid.AllowUserToAddRows = false;
+            datagrid.BackgroundColor = System.Drawing.Color.White;
+
+            DBConnection.checkConnection.Close();
+        }
+        public void RefreshBooks()
+        {
+            LoadBooksByCategory("Programming", Books_programmingcatagorydatagrid);
+            LoadBooksByCategory("Medicine", Books_medicinecatagorydatagrid);
+            LoadBooksByCategory("Novel", Books_novelcatagorydatagrid);
+
+            DBConnection.checkConnection.Close();
         }
     }
 }
