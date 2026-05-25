@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 
 
 
+
 namespace d.labdemo
 {
     public partial class d_lab : Form
@@ -33,7 +34,7 @@ namespace d.labdemo
                 return;
             }
 
-            DBConnection.intiate();
+            DBConnection.Initiate();
             string query = "SELECT Password, Role FROM Users WHERE Username = @Username;";
 
             using (SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection))
@@ -80,6 +81,7 @@ namespace d.labdemo
                         Librarin_pnl.Visible = false;
                         Librarian_managebtn.Visible = false;
                         Book_addpnl.Visible = false;
+                        LibrarianAdd_bookbtn.Visible = false;
 
                         if (role == "Super_Admin")
                         {
@@ -91,6 +93,7 @@ namespace d.labdemo
                             Studypnl.Visible = true;
                             Librarin_pnl.Visible = true;
                             Librarian_managebtn.Visible = true;
+                            LibrarianAdd_bookbtn.Visible = true;
                         }
                         else if (role == "Admin")
                         {
@@ -98,6 +101,7 @@ namespace d.labdemo
                             Homepagepnl.BringToFront();
                             Usersbtn.Visible = true;
                             Admin_userspnl.Visible = true;
+                            Book_catagorytab.Dock = DockStyle.Fill;
                         }
                         else if (role == "User")
                         {
@@ -105,6 +109,7 @@ namespace d.labdemo
                             Homepagepnl.BringToFront();
                             Study_assistbtn.Visible = true;
                             Studypnl.Visible = true;
+                            Book_catagorytab.Dock = DockStyle.Fill;
                         }
                         else if (role == "Librarian")
                         {
@@ -112,6 +117,7 @@ namespace d.labdemo
                             Homepagepnl.BringToFront();
                             Librarin_pnl.Visible = true;
                             Librarian_managebtn.Visible = true;
+                            LibrarianAdd_bookbtn.Visible = true;
                         }
                         else
                         {
@@ -135,7 +141,7 @@ namespace d.labdemo
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
-            DBConnection.intiate();
+            DBConnection.Initiate();
             string First_Name = Signup_firstnamebx.Text;
             string Last_Name = Signup_lastnamebx.Text;
             string Username = Signup_usernamebx.Text;
