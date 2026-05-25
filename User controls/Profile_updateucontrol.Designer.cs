@@ -106,6 +106,7 @@
             Updateprofile_updatebtn.TabIndex = 7;
             Updateprofile_updatebtn.Text = "Update";
             Updateprofile_updatebtn.UseVisualStyleBackColor = true;
+            Updateprofile_updatebtn.Click += Updateprofile_updatebtn_Click;
             // 
             // profileedtitclosebtn
             // 
@@ -119,7 +120,7 @@
             profileedtitclosebtn.TabIndex = 8;
             profileedtitclosebtn.Text = "❌";
             profileedtitclosebtn.UseVisualStyleBackColor = false;
-            profileedtitclosebtn.Click += profileedtitclosebtn_Click;
+            profileedtitclosebtn.Click += profileedditclosebtn_Click;
             // 
             // Profile_updateucontrol
             // 
