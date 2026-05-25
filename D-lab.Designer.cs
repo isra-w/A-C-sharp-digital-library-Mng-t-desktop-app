@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
@@ -77,7 +77,6 @@
             fetch_databtn = new Button();
             LibrarianAdd_bookbtn = new Button();
             profilepnl = new Panel();
-            Editprofilepnl = new Panel();
             Profile_titlebar = new Panel();
             Profile_editbtn = new Button();
             Profile_viewdbookspnl = new Panel();
@@ -90,6 +89,7 @@
             Profile_lastnamelbl = new Label();
             Profile_firstnamelbl = new Label();
             Profilepic = new PictureBox();
+            Editprofilepnl = new Panel();
             Homepagepnl = new Panel();
             Book_catagorypnl = new Panel();
             Homepnl = new Panel();
@@ -100,7 +100,6 @@
             Librarian_topuserspnl = new Panel();
             Librarian_allbookspnl = new Panel();
             Librarian_allbookslbl = new Label();
-            Librarian_allbookaddbtn = new Button();
             Librarian_visitedbookspnl = new Panel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
@@ -196,7 +195,7 @@
             // 
             Book_addpnl.Location = new Point(12, 12);
             Book_addpnl.Name = "Book_addpnl";
-            Book_addpnl.Size = new Size(799, 470);
+            Book_addpnl.Size = new Size(799, 515);
             Book_addpnl.TabIndex = 0;
             Book_addpnl.Visible = false;
             // 
@@ -739,20 +738,20 @@
             // 
             // Admin_useresdatagrid
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(192, 255, 255);
-            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(192, 255, 255);
+            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Admin_useresdatagrid.BackgroundColor = Color.White;
             Admin_useresdatagrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.216F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(192, 0, 0);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.216F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Admin_useresdatagrid.Dock = DockStyle.Bottom;
             Admin_useresdatagrid.Location = new Point(0, 69);
@@ -785,7 +784,6 @@
             // profilepnl
             // 
             profilepnl.BackColor = Color.Honeydew;
-            profilepnl.Controls.Add(Editprofilepnl);
             profilepnl.Controls.Add(Profile_titlebar);
             profilepnl.Controls.Add(Profile_viewdbookspnl);
             profilepnl.Controls.Add(profilepic_updatebtn);
@@ -796,19 +794,12 @@
             profilepnl.Controls.Add(Profile_lastnamelbl);
             profilepnl.Controls.Add(Profile_firstnamelbl);
             profilepnl.Controls.Add(Profilepic);
+            profilepnl.Controls.Add(Editprofilepnl);
             profilepnl.Dock = DockStyle.Fill;
             profilepnl.Location = new Point(225, 0);
             profilepnl.Name = "profilepnl";
             profilepnl.Size = new Size(1157, 782);
             profilepnl.TabIndex = 3;
-            // 
-            // Editprofilepnl
-            // 
-            Editprofilepnl.Location = new Point(545, 69);
-            Editprofilepnl.Name = "Editprofilepnl";
-            Editprofilepnl.Size = new Size(604, 488);
-            Editprofilepnl.TabIndex = 22;
-            Editprofilepnl.Visible = false;
             // 
             // Profile_titlebar
             // 
@@ -872,6 +863,7 @@
             // Profile_lastnamebx
             // 
             Profile_lastnamebx.BackColor = Color.White;
+            Profile_lastnamebx.Enabled = false;
             Profile_lastnamebx.Location = new Point(485, 193);
             Profile_lastnamebx.Name = "Profile_lastnamebx";
             Profile_lastnamebx.Size = new Size(352, 29);
@@ -880,6 +872,7 @@
             // Profile_usernamebx
             // 
             Profile_usernamebx.BackColor = Color.White;
+            Profile_usernamebx.Enabled = false;
             Profile_usernamebx.Location = new Point(485, 263);
             Profile_usernamebx.Name = "Profile_usernamebx";
             Profile_usernamebx.Size = new Size(352, 29);
@@ -888,6 +881,7 @@
             // Profile_firstnamebx
             // 
             Profile_firstnamebx.BackColor = Color.White;
+            Profile_firstnamebx.Enabled = false;
             Profile_firstnamebx.Location = new Point(485, 125);
             Profile_firstnamebx.Name = "Profile_firstnamebx";
             Profile_firstnamebx.Size = new Size(352, 29);
@@ -934,14 +928,22 @@
             Profilepic.TabIndex = 0;
             Profilepic.TabStop = false;
             // 
+            // Editprofilepnl
+            // 
+            Editprofilepnl.Location = new Point(545, 69);
+            Editprofilepnl.Name = "Editprofilepnl";
+            Editprofilepnl.Size = new Size(604, 488);
+            Editprofilepnl.TabIndex = 22;
+            Editprofilepnl.Visible = false;
+            // 
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Admin_userspnl);
-            Homepagepnl.Controls.Add(Book_catagorypnl);
-            Homepagepnl.Controls.Add(profilepnl);
-            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
+            Homepagepnl.Controls.Add(Book_catagorypnl);
+            Homepagepnl.Controls.Add(Admin_userspnl);
+            Homepagepnl.Controls.Add(Homepnl);
+            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Studypnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
@@ -1033,7 +1035,6 @@
             // 
             Librarian_allbookspnl.BackColor = Color.FromArgb(46, 31, 27);
             Librarian_allbookspnl.Controls.Add(Librarian_allbookslbl);
-            Librarian_allbookspnl.Controls.Add(Librarian_allbookaddbtn);
             Librarian_allbookspnl.Location = new Point(29, 18);
             Librarian_allbookspnl.Name = "Librarian_allbookspnl";
             Librarian_allbookspnl.Size = new Size(510, 400);
@@ -1049,22 +1050,6 @@
             Librarian_allbookslbl.Size = new Size(106, 30);
             Librarian_allbookslbl.TabIndex = 1;
             Librarian_allbookslbl.Text = "All books";
-            // 
-            // Librarian_allbookaddbtn
-            // 
-            Librarian_allbookaddbtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Librarian_allbookaddbtn.BackColor = Color.FromArgb(46, 31, 27);
-            Librarian_allbookaddbtn.FlatAppearance.BorderColor = Color.Cornsilk;
-            Librarian_allbookaddbtn.FlatAppearance.BorderSize = 2;
-            Librarian_allbookaddbtn.FlatStyle = FlatStyle.Flat;
-            Librarian_allbookaddbtn.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Librarian_allbookaddbtn.ForeColor = Color.Cornsilk;
-            Librarian_allbookaddbtn.Location = new Point(383, 4);
-            Librarian_allbookaddbtn.Name = "Librarian_allbookaddbtn";
-            Librarian_allbookaddbtn.Size = new Size(124, 35);
-            Librarian_allbookaddbtn.TabIndex = 0;
-            Librarian_allbookaddbtn.Text = "Add book";
-            Librarian_allbookaddbtn.UseVisualStyleBackColor = false;
             // 
             // Librarian_visitedbookspnl
             // 
@@ -1282,7 +1267,6 @@
         private Panel Librarian_allbookspnl;
         private Panel panel1;
         private Panel Librarian_topuserspnl;
-        private Button Librarian_allbookaddbtn;
         private Label Librarian_allbookslbl;
         private Panel Home_titlebar;
         private Panel Profile_titlebar;
