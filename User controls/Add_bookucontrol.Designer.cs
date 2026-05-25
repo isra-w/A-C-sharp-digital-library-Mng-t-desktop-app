@@ -170,6 +170,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(Adducontrol_publicationyeardatepiker);
             Controls.Add(Adducontrol_publicationyearlbl);
             Controls.Add(Adducontrol_closebtn);
