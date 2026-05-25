@@ -217,15 +217,15 @@
             // 
             // Logintxtfild
             // 
-            Logintxtfild.BackColor = Color.FromArgb(100, 163, 163, 163);
+            Logintxtfild.BackColor = Color.FromArgb(80, 213, 213, 213);
             Logintxtfild.Controls.Add(logibtn);
             Logintxtfild.Controls.Add(passbx);
             Logintxtfild.Controls.Add(passlbl);
             Logintxtfild.Controls.Add(namebx);
             Logintxtfild.Controls.Add(usernamelbl);
-            Logintxtfild.Location = new Point(321, 187);
+            Logintxtfild.Location = new Point(308, 187);
             Logintxtfild.Name = "Logintxtfild";
-            Logintxtfild.Size = new Size(643, 417);
+            Logintxtfild.Size = new Size(640, 391);
             Logintxtfild.TabIndex = 13;
             Logintxtfild.Paint += panel2_Paint;
             // 
@@ -236,7 +236,7 @@
             logibtn.FlatStyle = FlatStyle.Popup;
             logibtn.Font = new Font("Cooper Black", 12.096F, FontStyle.Italic, GraphicsUnit.Point, 0);
             logibtn.ForeColor = Color.FromArgb(255, 255, 204);
-            logibtn.Location = new Point(228, 316);
+            logibtn.Location = new Point(228, 287);
             logibtn.Name = "logibtn";
             logibtn.Size = new Size(187, 65);
             logibtn.TabIndex = 11;
@@ -247,6 +247,7 @@
             // passbx
             // 
             passbx.BackColor = Color.LightYellow;
+            passbx.ForeColor = Color.Black;
             passbx.Location = new Point(218, 211);
             passbx.Name = "passbx";
             passbx.PasswordChar = '.';
@@ -260,7 +261,7 @@
             passlbl.AutoSize = true;
             passlbl.BackColor = Color.Transparent;
             passlbl.Font = new Font("Arial Narrow", 16.128F, FontStyle.Bold);
-            passlbl.ForeColor = Color.LightYellow;
+            passlbl.ForeColor = Color.LightCyan;
             passlbl.Location = new Point(39, 205);
             passlbl.Name = "passlbl";
             passlbl.Size = new Size(124, 33);
@@ -271,6 +272,7 @@
             // 
             namebx.BackColor = Color.LightYellow;
             namebx.BorderStyle = BorderStyle.None;
+            namebx.ForeColor = Color.Black;
             namebx.Location = new Point(218, 91);
             namebx.Multiline = true;
             namebx.Name = "namebx";
@@ -283,7 +285,7 @@
             usernamelbl.AutoSize = true;
             usernamelbl.BackColor = Color.Transparent;
             usernamelbl.Font = new Font("Arial Narrow", 16.128F, FontStyle.Bold);
-            usernamelbl.ForeColor = Color.LightYellow;
+            usernamelbl.ForeColor = Color.LightCyan;
             usernamelbl.Location = new Point(39, 91);
             usernamelbl.Name = "usernamelbl";
             usernamelbl.Size = new Size(136, 33);
