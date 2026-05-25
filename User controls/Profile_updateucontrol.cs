@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace d_labdemo.User_controls
+namespace D_lab.User_controls
 {
     public partial class Profile_updateucontrol : UserControl
     {

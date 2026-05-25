@@ -275,7 +275,7 @@ A-C-sharp-digital-library-Mng-t-desktop-app/
 │   ├── Resources.resx               # Resource definitions
 │   └── Resources.Designer.cs        # Auto-generated resource accessor
 │
-├── 📄 d_labdemo.csproj             # Project configuration
+├── 📄 D_lab.csproj             # Project configuration
 ├── 📄 d.labdemo.slnx               # Solution file
 │
 ├── 📄 SQLQuery2.sql                 # Database schema/migration script

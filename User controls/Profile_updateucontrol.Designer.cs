@@ -1,4 +1,4 @@
-﻿namespace d_labdemo.User_controls
+﻿namespace D_lab.User_controls
 {
     partial class Profile_updateucontrol
     {
