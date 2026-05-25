@@ -217,7 +217,7 @@
             // 
             // Logintxtfild
             // 
-            Logintxtfild.BackColor = Color.FromArgb(150, 103, 103, 103);
+            Logintxtfild.BackColor = Color.FromArgb(100, 163, 163, 163);
             Logintxtfild.Controls.Add(logibtn);
             Logintxtfild.Controls.Add(passbx);
             Logintxtfild.Controls.Add(passlbl);
@@ -225,7 +225,7 @@
             Logintxtfild.Controls.Add(usernamelbl);
             Logintxtfild.Location = new Point(321, 187);
             Logintxtfild.Name = "Logintxtfild";
-            Logintxtfild.Size = new Size(627, 367);
+            Logintxtfild.Size = new Size(643, 417);
             Logintxtfild.TabIndex = 13;
             Logintxtfild.Paint += panel2_Paint;
             // 
@@ -236,7 +236,7 @@
             logibtn.FlatStyle = FlatStyle.Popup;
             logibtn.Font = new Font("Cooper Black", 12.096F, FontStyle.Italic, GraphicsUnit.Point, 0);
             logibtn.ForeColor = Color.FromArgb(255, 255, 204);
-            logibtn.Location = new Point(201, 280);
+            logibtn.Location = new Point(228, 316);
             logibtn.Name = "logibtn";
             logibtn.Size = new Size(187, 65);
             logibtn.TabIndex = 11;
@@ -251,7 +251,7 @@
             passbx.Name = "passbx";
             passbx.PasswordChar = '.';
             passbx.PlaceholderText = "Password";
-            passbx.Size = new Size(322, 29);
+            passbx.Size = new Size(357, 29);
             passbx.TabIndex = 10;
             passbx.UseSystemPasswordChar = true;
             // 
@@ -275,7 +275,7 @@
             namebx.Multiline = true;
             namebx.Name = "namebx";
             namebx.PlaceholderText = "User name or email";
-            namebx.Size = new Size(322, 33);
+            namebx.Size = new Size(357, 33);
             namebx.TabIndex = 9;
             // 
             // usernamelbl
