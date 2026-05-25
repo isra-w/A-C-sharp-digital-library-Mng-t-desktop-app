@@ -1,7 +1,8 @@
 using d.labdemo.DB;
-using d_labdemo.User_controls;
+using D_lab.User_controls;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Drawing.Imaging;
 
 
 
@@ -499,6 +500,11 @@ namespace d.labdemo
             Editprofilepnl.BringToFront();
             editprofile.Dock = DockStyle.Fill;
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            Logintxtfild.BackColor = Color.FromArgb(20, 63, 63, 63);
+           }
     }
 }
 

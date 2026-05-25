@@ -36,13 +36,14 @@
             Noveltab = new TabPage();
             Book_addpnl = new Panel();
             loginpnl = new Panel();
-            login_signup = new LinkLabel();
+            Logintxtfild = new Panel();
             logibtn = new Button();
             passbx = new TextBox();
-            namebx = new TextBox();
             passlbl = new Label();
+            namebx = new TextBox();
             usernamelbl = new Label();
             welcome_labele = new Label();
+            login_signup = new LinkLabel();
             signuppnl = new Panel();
             Signup_lastnamebx = new TextBox();
             Signup_Lastnamelbl = new Label();
@@ -111,6 +112,7 @@
             librarianToolStripMenuItem = new ToolStripMenuItem();
             Book_catagorytab.SuspendLayout();
             loginpnl.SuspendLayout();
+            Logintxtfild.SuspendLayout();
             signuppnl.SuspendLayout();
             Wellcome_page.SuspendLayout();
             sidebar.SuspendLayout();
@@ -168,7 +170,7 @@
             // Medicinetab
             // 
             Medicinetab.BackColor = SystemColors.ActiveBorder;
-            Medicinetab.BackgroundImage = d_labdemo.Properties.Resources.download;
+            Medicinetab.BackgroundImage = D_lab.Properties.Resources.download;
             Medicinetab.BackgroundImageLayout = ImageLayout.Stretch;
             Medicinetab.Location = new Point(4, 54);
             Medicinetab.Name = "Medicinetab";
@@ -179,7 +181,7 @@
             // 
             // Noveltab
             // 
-            Noveltab.BackgroundImage = d_labdemo.Properties.Resources.Quill_pen_and_rolled_papyrus_sheets_on_a_wooden_table_with_old_books__sepia_effect_Stock_Photo___Adobe_Stock;
+            Noveltab.BackgroundImage = D_lab.Properties.Resources.Quill_pen_and_rolled_papyrus_sheets_on_a_wooden_table_with_old_books__sepia_effect_Stock_Photo___Adobe_Stock;
             Noveltab.BackgroundImageLayout = ImageLayout.Stretch;
             Noveltab.Location = new Point(4, 54);
             Noveltab.Name = "Noveltab";
@@ -200,15 +202,11 @@
             // 
             loginpnl.AutoSize = true;
             loginpnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            loginpnl.BackgroundImage = d_labdemo.Properties.Resources.Bookshelf_Wallpaper_Desktop_HD__1_;
+            loginpnl.BackgroundImage = D_lab.Properties.Resources.Bookshelf_Wallpaper_Desktop_HD__1_;
             loginpnl.BackgroundImageLayout = ImageLayout.Stretch;
-            loginpnl.Controls.Add(login_signup);
-            loginpnl.Controls.Add(logibtn);
-            loginpnl.Controls.Add(passbx);
-            loginpnl.Controls.Add(namebx);
-            loginpnl.Controls.Add(passlbl);
-            loginpnl.Controls.Add(usernamelbl);
+            loginpnl.Controls.Add(Logintxtfild);
             loginpnl.Controls.Add(welcome_labele);
+            loginpnl.Controls.Add(login_signup);
             loginpnl.Dock = DockStyle.Fill;
             loginpnl.Location = new Point(0, 0);
             loginpnl.MaximumSize = new Size(1382, 782);
@@ -217,20 +215,19 @@
             loginpnl.Size = new Size(1382, 782);
             loginpnl.TabIndex = 2;
             // 
-            // login_signup
+            // Logintxtfild
             // 
-            login_signup.AutoSize = true;
-            login_signup.BackColor = Color.Transparent;
-            login_signup.Font = new Font("Segoe UI", 12.096F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            login_signup.LinkColor = Color.LightYellow;
-            login_signup.Location = new Point(38, 696);
-            login_signup.Name = "login_signup";
-            login_signup.Size = new Size(225, 60);
-            login_signup.TabIndex = 12;
-            login_signup.TabStop = true;
-            login_signup.Text = "Don' have an account?\r\nSIGN IP";
-            login_signup.TextAlign = ContentAlignment.TopCenter;
-            login_signup.LinkClicked += login_signup_LinkClicked;
+            Logintxtfild.BackColor = Color.FromArgb(150, 103, 103, 103);
+            Logintxtfild.Controls.Add(logibtn);
+            Logintxtfild.Controls.Add(passbx);
+            Logintxtfild.Controls.Add(passlbl);
+            Logintxtfild.Controls.Add(namebx);
+            Logintxtfild.Controls.Add(usernamelbl);
+            Logintxtfild.Location = new Point(321, 187);
+            Logintxtfild.Name = "Logintxtfild";
+            Logintxtfild.Size = new Size(627, 367);
+            Logintxtfild.TabIndex = 13;
+            Logintxtfild.Paint += panel2_Paint;
             // 
             // logibtn
             // 
@@ -239,7 +236,7 @@
             logibtn.FlatStyle = FlatStyle.Popup;
             logibtn.Font = new Font("Cooper Black", 12.096F, FontStyle.Italic, GraphicsUnit.Point, 0);
             logibtn.ForeColor = Color.FromArgb(255, 255, 204);
-            logibtn.Location = new Point(555, 400);
+            logibtn.Location = new Point(201, 280);
             logibtn.Name = "logibtn";
             logibtn.Size = new Size(187, 65);
             logibtn.TabIndex = 11;
@@ -250,7 +247,7 @@
             // passbx
             // 
             passbx.BackColor = Color.LightYellow;
-            passbx.Location = new Point(615, 290);
+            passbx.Location = new Point(218, 211);
             passbx.Name = "passbx";
             passbx.PasswordChar = '.';
             passbx.PlaceholderText = "Password";
@@ -258,28 +255,28 @@
             passbx.TabIndex = 10;
             passbx.UseSystemPasswordChar = true;
             // 
-            // namebx
-            // 
-            namebx.BackColor = Color.LightYellow;
-            namebx.BorderStyle = BorderStyle.None;
-            namebx.Location = new Point(615, 196);
-            namebx.Multiline = true;
-            namebx.Name = "namebx";
-            namebx.PlaceholderText = "User name or email";
-            namebx.Size = new Size(322, 33);
-            namebx.TabIndex = 9;
-            // 
             // passlbl
             // 
             passlbl.AutoSize = true;
             passlbl.BackColor = Color.Transparent;
             passlbl.Font = new Font("Arial Narrow", 16.128F, FontStyle.Bold);
             passlbl.ForeColor = Color.LightYellow;
-            passlbl.Location = new Point(415, 290);
+            passlbl.Location = new Point(39, 205);
             passlbl.Name = "passlbl";
             passlbl.Size = new Size(124, 33);
             passlbl.TabIndex = 8;
             passlbl.Text = "Password";
+            // 
+            // namebx
+            // 
+            namebx.BackColor = Color.LightYellow;
+            namebx.BorderStyle = BorderStyle.None;
+            namebx.Location = new Point(218, 91);
+            namebx.Multiline = true;
+            namebx.Name = "namebx";
+            namebx.PlaceholderText = "User name or email";
+            namebx.Size = new Size(322, 33);
+            namebx.TabIndex = 9;
             // 
             // usernamelbl
             // 
@@ -287,7 +284,7 @@
             usernamelbl.BackColor = Color.Transparent;
             usernamelbl.Font = new Font("Arial Narrow", 16.128F, FontStyle.Bold);
             usernamelbl.ForeColor = Color.LightYellow;
-            usernamelbl.Location = new Point(408, 194);
+            usernamelbl.Location = new Point(39, 91);
             usernamelbl.Name = "usernamelbl";
             usernamelbl.Size = new Size(136, 33);
             usernamelbl.TabIndex = 7;
@@ -306,6 +303,21 @@
             welcome_labele.Text = "WELLCOME";
             welcome_labele.TextAlign = ContentAlignment.MiddleCenter;
             welcome_labele.UseCompatibleTextRendering = true;
+            // 
+            // login_signup
+            // 
+            login_signup.AutoSize = true;
+            login_signup.BackColor = Color.Transparent;
+            login_signup.Font = new Font("Segoe UI", 12.096F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            login_signup.LinkColor = Color.LightYellow;
+            login_signup.Location = new Point(23, 678);
+            login_signup.Name = "login_signup";
+            login_signup.Size = new Size(225, 60);
+            login_signup.TabIndex = 12;
+            login_signup.TabStop = true;
+            login_signup.Text = "Don' have an account?\r\nSIGN IP";
+            login_signup.TextAlign = ContentAlignment.TopCenter;
+            login_signup.LinkClicked += login_signup_LinkClicked;
             // 
             // signuppnl
             // 
@@ -470,7 +482,7 @@
             // Wellcome_page
             // 
             Wellcome_page.BackColor = SystemColors.ButtonShadow;
-            Wellcome_page.BackgroundImage = d_labdemo.Properties.Resources.Presentation3_Page_01;
+            Wellcome_page.BackgroundImage = D_lab.Properties.Resources.Presentation3_Page_01;
             Wellcome_page.BackgroundImageLayout = ImageLayout.Stretch;
             Wellcome_page.Controls.Add(Wellcome_signupbtn);
             Wellcome_page.Controls.Add(Wellcome_loginbtn);
@@ -541,7 +553,7 @@
             Librarian_managebtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Librarian_managebtn.FlatStyle = FlatStyle.Flat;
             Librarian_managebtn.ForeColor = Color.LightYellow;
-            Librarian_managebtn.Image = d_labdemo.Properties.Resources.management;
+            Librarian_managebtn.Image = D_lab.Properties.Resources.management;
             Librarian_managebtn.ImageAlign = ContentAlignment.MiddleLeft;
             Librarian_managebtn.Location = new Point(0, 252);
             Librarian_managebtn.Name = "Librarian_managebtn";
@@ -563,7 +575,7 @@
             Study_assistbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Study_assistbtn.FlatStyle = FlatStyle.Flat;
             Study_assistbtn.ForeColor = Color.LightYellow;
-            Study_assistbtn.Image = d_labdemo.Properties.Resources.book__1_;
+            Study_assistbtn.Image = D_lab.Properties.Resources.book__1_;
             Study_assistbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Study_assistbtn.Location = new Point(0, 195);
             Study_assistbtn.Name = "Study_assistbtn";
@@ -585,7 +597,7 @@
             Usersbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Usersbtn.FlatStyle = FlatStyle.Flat;
             Usersbtn.ForeColor = Color.LightYellow;
-            Usersbtn.Image = d_labdemo.Properties.Resources.user__2_;
+            Usersbtn.Image = D_lab.Properties.Resources.user__2_;
             Usersbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Usersbtn.Location = new Point(0, 151);
             Usersbtn.Name = "Usersbtn";
@@ -607,7 +619,7 @@
             Bookbtn.FlatAppearance.MouseOverBackColor = Color.Black;
             Bookbtn.FlatStyle = FlatStyle.Flat;
             Bookbtn.ForeColor = Color.LightYellow;
-            Bookbtn.Image = d_labdemo.Properties.Resources.shelf;
+            Bookbtn.Image = D_lab.Properties.Resources.shelf;
             Bookbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Bookbtn.Location = new Point(0, 107);
             Bookbtn.Name = "Bookbtn";
@@ -898,7 +910,7 @@
             // Profilepic
             // 
             Profilepic.BackColor = Color.DarkSlateGray;
-            Profilepic.BackgroundImage = d_labdemo.Properties.Resources.Screenshot_2026_05_13_222611;
+            Profilepic.BackgroundImage = D_lab.Properties.Resources.Screenshot_2026_05_13_222611;
             Profilepic.BackgroundImageLayout = ImageLayout.Stretch;
             Profilepic.Location = new Point(54, 104);
             Profilepic.Name = "Profilepic";
@@ -1141,10 +1153,10 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1382, 782);
-            Controls.Add(Homepagepnl);
-            Controls.Add(signuppnl);
             Controls.Add(loginpnl);
             Controls.Add(Wellcome_page);
+            Controls.Add(Homepagepnl);
+            Controls.Add(signuppnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(1400, 830);
@@ -1155,6 +1167,8 @@
             Book_catagorytab.ResumeLayout(false);
             loginpnl.ResumeLayout(false);
             loginpnl.PerformLayout();
+            Logintxtfild.ResumeLayout(false);
+            Logintxtfild.PerformLayout();
             signuppnl.ResumeLayout(false);
             signuppnl.PerformLayout();
             Wellcome_page.ResumeLayout(false);
@@ -1187,11 +1201,6 @@
 
         #endregion
         private Panel loginpnl;
-        private Button logibtn;
-        private TextBox passbx;
-        private TextBox namebx;
-        private Label passlbl;
-        private Label usernamelbl;
         private Label welcome_labele;
         private LinkLabel login_signup;
         private TabPage Programmingtab;
@@ -1265,5 +1274,11 @@
         private Label Profile_mybookslbl;
         private Panel Book_addpnl;
         private Panel Editprofilepnl;
+        private Panel Logintxtfild;
+        private Button logibtn;
+        private TextBox passbx;
+        private Label passlbl;
+        private TextBox namebx;
+        private Label usernamelbl;
     }
 }
