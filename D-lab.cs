@@ -503,8 +503,8 @@ namespace d.labdemo
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            Logintxtfild.BackColor = Color.FromArgb(20, 63, 63, 63);
-           }
+            Logintxtfild.BringToFront();
+        }
     }
 }
 
