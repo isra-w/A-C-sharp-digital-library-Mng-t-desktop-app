@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Medicinetab = new TabPage();
@@ -737,8 +739,20 @@
             // 
             // Admin_useresdatagrid
             // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(192, 255, 255);
+            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Admin_useresdatagrid.BackgroundColor = Color.White;
+            Admin_useresdatagrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 0, 0);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.216F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Admin_useresdatagrid.Dock = DockStyle.Bottom;
             Admin_useresdatagrid.Location = new Point(0, 69);
@@ -923,12 +937,12 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Studypnl);
-            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
             Homepagepnl.Location = new Point(0, 0);
@@ -1155,10 +1169,10 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1382, 782);
-            Controls.Add(loginpnl);
-            Controls.Add(Wellcome_page);
             Controls.Add(Homepagepnl);
             Controls.Add(signuppnl);
+            Controls.Add(loginpnl);
+            Controls.Add(Wellcome_page);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(1400, 830);
