@@ -84,6 +84,8 @@ namespace d.labdemo
                         loginpnl.Visible = false;
                         signuppnl.Visible = false;
                         Homepagepnl.Visible = false;
+                        HOME_DASHBOARSUSERSPNL.Visible = false;
+                        HOME_DASHBOARDBOKSPNL.Visible = false;
                         Admin_userspnl.Visible = false;
                         Usersbtn.Visible = false;
                         Study_assistbtn.Visible = false;
@@ -98,6 +100,8 @@ namespace d.labdemo
                         {
                             Homepagepnl.Visible = true;
                             Homepagepnl.BringToFront();
+                            HOME_DASHBOARSUSERSPNL.Visible = true;
+                            HOME_DASHBOARDBOKSPNL.Visible = true;
                             Admin_userspnl.Visible = true;
                             Usersbtn.Visible = true;
                             Study_assistbtn.Visible = true;
@@ -111,6 +115,7 @@ namespace d.labdemo
                             Homepagepnl.Visible = true;
                             Homepagepnl.BringToFront();
                             Usersbtn.Visible = true;
+                            HOME_DASHBOARSUSERSPNL.Visible = true;
                             Admin_userspnl.Visible = true;
                             Book_catagorytab.Dock = DockStyle.Fill;
                         }
@@ -119,6 +124,7 @@ namespace d.labdemo
                             Homepagepnl.Visible = true;
                             Homepagepnl.BringToFront();
                             Study_assistbtn.Visible = true;
+                            HOME_DASHBOARDBOKSPNL.Visible = true;
                             Studypnl.Visible = true;
                             Book_catagorytab.Dock = DockStyle.Fill;
                         }
@@ -126,6 +132,7 @@ namespace d.labdemo
                         {
                             Homepagepnl.Visible = true;
                             Homepagepnl.BringToFront();
+                            HOME_DASHBOARDBOKSPNL.Visible = true;
                             Librarin_pnl.Visible = true;
                             Librarian_managebtn.Visible = true;
                             LibrarianAdd_bookbtn.Visible = true;
@@ -598,6 +605,16 @@ namespace d.labdemo
             LoadBooksByCategory("Novel", Books_novelcatagorydatagrid);
 
             DBConnection.checkConnection.Close();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
