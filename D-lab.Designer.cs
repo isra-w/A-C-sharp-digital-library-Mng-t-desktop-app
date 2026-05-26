@@ -97,15 +97,29 @@
             Profilepic = new PictureBox();
             Editprofilepnl = new Panel();
             Homepagepnl = new Panel();
+            Homepnl = new Panel();
+            Home_titlebar = new Panel();
+            Home_profilelnk = new LinkLabel();
+            home_dashboard = new Panel();
+            HOME_DASHBOARSUSERSPNL = new Panel();
+            dataGridView2 = new DataGridView();
+            panel5 = new Panel();
+            label2 = new Label();
+            panel4 = new Panel();
+            HOME_DASHBOARDBOKSPNL = new Panel();
+            dataGridView1 = new DataGridView();
+            panel3 = new Panel();
+            label1 = new Label();
+            panel6 = new Panel();
+            Home_dashboardpnl = new Panel();
+            HOME_DAHBOARDLOGOLBL = new Label();
+            panel2 = new Panel();
             Librarin_pnl = new Panel();
             panel1 = new Panel();
             Librarian_topuserspnl = new Panel();
             Librarian_allbookspnl = new Panel();
             Librarian_allbookslbl = new Label();
             Librarian_visitedbookspnl = new Panel();
-            Homepnl = new Panel();
-            Home_titlebar = new Panel();
-            Home_profilelnk = new LinkLabel();
             Studypnl = new Panel();
             Study_timepnl = new Panel();
             Timer_countdownlbl = new Label();
@@ -137,10 +151,18 @@
             Profile_viewdbookspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
-            Librarin_pnl.SuspendLayout();
-            Librarian_allbookspnl.SuspendLayout();
             Homepnl.SuspendLayout();
             Home_titlebar.SuspendLayout();
+            home_dashboard.SuspendLayout();
+            HOME_DASHBOARSUSERSPNL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            panel5.SuspendLayout();
+            HOME_DASHBOARDBOKSPNL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel3.SuspendLayout();
+            Home_dashboardpnl.SuspendLayout();
+            Librarin_pnl.SuspendLayout();
+            Librarian_allbookspnl.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
             Book_catagorypnl.SuspendLayout();
@@ -1019,11 +1041,11 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
+            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
-            Homepagepnl.Controls.Add(Admin_userspnl);
-            Homepagepnl.Controls.Add(Homepnl);
             Homepagepnl.Controls.Add(Studypnl);
+            Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
@@ -1031,6 +1053,199 @@
             Homepagepnl.Name = "Homepagepnl";
             Homepagepnl.Size = new Size(1382, 782);
             Homepagepnl.TabIndex = 0;
+            // 
+            // Homepnl
+            // 
+            Homepnl.BackColor = SystemColors.InactiveBorder;
+            Homepnl.BorderStyle = BorderStyle.Fixed3D;
+            Homepnl.Controls.Add(Home_titlebar);
+            Homepnl.Controls.Add(home_dashboard);
+            Homepnl.Dock = DockStyle.Fill;
+            Homepnl.Location = new Point(225, 0);
+            Homepnl.Name = "Homepnl";
+            Homepnl.Size = new Size(1157, 782);
+            Homepnl.TabIndex = 1;
+            // 
+            // Home_titlebar
+            // 
+            Home_titlebar.BackColor = SystemColors.Highlight;
+            Home_titlebar.Controls.Add(Home_profilelnk);
+            Home_titlebar.Dock = DockStyle.Top;
+            Home_titlebar.Location = new Point(0, 0);
+            Home_titlebar.Name = "Home_titlebar";
+            Home_titlebar.Size = new Size(1153, 61);
+            Home_titlebar.TabIndex = 1;
+            // 
+            // Home_profilelnk
+            // 
+            Home_profilelnk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Home_profilelnk.AutoSize = true;
+            Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Home_profilelnk.LinkColor = Color.Black;
+            Home_profilelnk.Location = new Point(1024, 16);
+            Home_profilelnk.Name = "Home_profilelnk";
+            Home_profilelnk.Size = new Size(94, 25);
+            Home_profilelnk.TabIndex = 0;
+            Home_profilelnk.TabStop = true;
+            Home_profilelnk.Text = "👤 Profile";
+            Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
+            // 
+            // home_dashboard
+            // 
+            home_dashboard.Controls.Add(HOME_DASHBOARSUSERSPNL);
+            home_dashboard.Controls.Add(panel5);
+            home_dashboard.Controls.Add(panel4);
+            home_dashboard.Controls.Add(HOME_DASHBOARDBOKSPNL);
+            home_dashboard.Controls.Add(panel6);
+            home_dashboard.Controls.Add(Home_dashboardpnl);
+            home_dashboard.Location = new Point(21, 83);
+            home_dashboard.Name = "home_dashboard";
+            home_dashboard.Size = new Size(1122, 671);
+            home_dashboard.TabIndex = 5;
+            // 
+            // HOME_DASHBOARSUSERSPNL
+            // 
+            HOME_DASHBOARSUSERSPNL.BackColor = Color.DarkSeaGreen;
+            HOME_DASHBOARSUSERSPNL.Controls.Add(dataGridView2);
+            HOME_DASHBOARSUSERSPNL.Dock = DockStyle.Top;
+            HOME_DASHBOARSUSERSPNL.Location = new Point(219, 501);
+            HOME_DASHBOARSUSERSPNL.Name = "HOME_DASHBOARSUSERSPNL";
+            HOME_DASHBOARSUSERSPNL.Size = new Size(903, 170);
+            HOME_DASHBOARSUSERSPNL.TabIndex = 4;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.BackgroundColor = Color.DarkSeaGreen;
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Dock = DockStyle.Right;
+            dataGridView2.Location = new Point(0, 0);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 53;
+            dataGridView2.Size = new Size(903, 170);
+            dataGridView2.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            panel5.BackgroundImage = D_lab.Properties.Resources.USERS;
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel5.Controls.Add(label2);
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(0, 501);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(219, 170);
+            panel5.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Impact", 21.8879986F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.RosyBrown;
+            label2.Location = new Point(47, 66);
+            label2.Name = "label2";
+            label2.Size = new Size(122, 46);
+            label2.TabIndex = 3;
+            label2.Text = "USERS";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 432);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1122, 69);
+            panel4.TabIndex = 1;
+            // 
+            // HOME_DASHBOARDBOKSPNL
+            // 
+            HOME_DASHBOARDBOKSPNL.BackColor = Color.RosyBrown;
+            HOME_DASHBOARDBOKSPNL.Controls.Add(dataGridView1);
+            HOME_DASHBOARDBOKSPNL.Controls.Add(panel3);
+            HOME_DASHBOARDBOKSPNL.Dock = DockStyle.Top;
+            HOME_DASHBOARDBOKSPNL.Location = new Point(0, 269);
+            HOME_DASHBOARDBOKSPNL.Name = "HOME_DASHBOARDBOKSPNL";
+            HOME_DASHBOARDBOKSPNL.Size = new Size(1122, 163);
+            HOME_DASHBOARDBOKSPNL.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.RosyBrown;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Right;
+            dataGridView1.Location = new Point(212, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 53;
+            dataGridView1.Size = new Size(910, 163);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(label1);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(216, 163);
+            panel3.TabIndex = 0;
+            panel3.Paint += panel3_Paint;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Impact", 21.8879986F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(47, 66);
+            label1.Name = "label1";
+            label1.Size = new Size(127, 46);
+            label1.TabIndex = 2;
+            label1.Text = "BOOKS";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel6
+            // 
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 207);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1122, 62);
+            panel6.TabIndex = 6;
+            // 
+            // Home_dashboardpnl
+            // 
+            Home_dashboardpnl.BackColor = SystemColors.GradientActiveCaption;
+            Home_dashboardpnl.Controls.Add(HOME_DAHBOARDLOGOLBL);
+            Home_dashboardpnl.Controls.Add(panel2);
+            Home_dashboardpnl.Dock = DockStyle.Top;
+            Home_dashboardpnl.Location = new Point(0, 0);
+            Home_dashboardpnl.Name = "Home_dashboardpnl";
+            Home_dashboardpnl.Size = new Size(1122, 207);
+            Home_dashboardpnl.TabIndex = 2;
+            // 
+            // HOME_DAHBOARDLOGOLBL
+            // 
+            HOME_DAHBOARDLOGOLBL.AutoSize = true;
+            HOME_DAHBOARDLOGOLBL.Font = new Font("Impact", 25.92F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            HOME_DAHBOARDLOGOLBL.ForeColor = Color.RosyBrown;
+            HOME_DAHBOARDLOGOLBL.Location = new Point(529, 6);
+            HOME_DAHBOARDLOGOLBL.Name = "HOME_DAHBOARDLOGOLBL";
+            HOME_DAHBOARDLOGOLBL.Size = new Size(416, 112);
+            HOME_DAHBOARDLOGOLBL.TabIndex = 1;
+            HOME_DAHBOARDLOGOLBL.Text = "WELLCOME TO D_LAB \r\nLIBRARY MANAGMENT";
+            HOME_DAHBOARDLOGOLBL.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(281, 207);
+            panel2.TabIndex = 0;
             // 
             // Librarin_pnl
             // 
@@ -1089,41 +1304,6 @@
             Librarian_visitedbookspnl.Name = "Librarian_visitedbookspnl";
             Librarian_visitedbookspnl.Size = new Size(510, 320);
             Librarian_visitedbookspnl.TabIndex = 0;
-            // 
-            // Homepnl
-            // 
-            Homepnl.BackColor = SystemColors.InactiveBorder;
-            Homepnl.BorderStyle = BorderStyle.Fixed3D;
-            Homepnl.Controls.Add(Home_titlebar);
-            Homepnl.Dock = DockStyle.Fill;
-            Homepnl.Location = new Point(225, 0);
-            Homepnl.Name = "Homepnl";
-            Homepnl.Size = new Size(1157, 782);
-            Homepnl.TabIndex = 1;
-            // 
-            // Home_titlebar
-            // 
-            Home_titlebar.BackColor = SystemColors.Highlight;
-            Home_titlebar.Controls.Add(Home_profilelnk);
-            Home_titlebar.Dock = DockStyle.Top;
-            Home_titlebar.Location = new Point(0, 0);
-            Home_titlebar.Name = "Home_titlebar";
-            Home_titlebar.Size = new Size(1153, 61);
-            Home_titlebar.TabIndex = 1;
-            // 
-            // Home_profilelnk
-            // 
-            Home_profilelnk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Home_profilelnk.AutoSize = true;
-            Home_profilelnk.Font = new Font("Segoe UI Semibold", 10.9439993F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            Home_profilelnk.LinkColor = Color.Black;
-            Home_profilelnk.Location = new Point(1024, 16);
-            Home_profilelnk.Name = "Home_profilelnk";
-            Home_profilelnk.Size = new Size(94, 25);
-            Home_profilelnk.TabIndex = 0;
-            Home_profilelnk.TabStop = true;
-            Home_profilelnk.Text = "👤 Profile";
-            Home_profilelnk.LinkClicked += profilelnk_LinkClicked;
             // 
             // Studypnl
             // 
@@ -1272,12 +1452,23 @@
             Profile_viewdbookspnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
-            Librarin_pnl.ResumeLayout(false);
-            Librarian_allbookspnl.ResumeLayout(false);
-            Librarian_allbookspnl.PerformLayout();
             Homepnl.ResumeLayout(false);
             Home_titlebar.ResumeLayout(false);
             Home_titlebar.PerformLayout();
+            home_dashboard.ResumeLayout(false);
+            HOME_DASHBOARSUSERSPNL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            HOME_DASHBOARDBOKSPNL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            Home_dashboardpnl.ResumeLayout(false);
+            Home_dashboardpnl.PerformLayout();
+            Librarin_pnl.ResumeLayout(false);
+            Librarian_allbookspnl.ResumeLayout(false);
+            Librarian_allbookspnl.PerformLayout();
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
@@ -1371,5 +1562,19 @@
         private DataGridView Books_novelcatagorydatagrid;
         private Label Profile_rolelbl;
         private TextBox Profile_rolebx;
+        private Panel HOME_DASHBOARSUSERSPNL;
+        private Panel HOME_DASHBOARDBOKSPNL;
+        private Panel Home_dashboardpnl;
+        private Label HOME_DAHBOARDLOGOLBL;
+        private Panel panel2;
+        private Panel panel3;
+        private Label label1;
+        private Panel panel5;
+        private Panel home_dashboard;
+        private Panel panel4;
+        private Panel panel6;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private Label label2;
     }
 }
