@@ -25,17 +25,19 @@ namespace d.labdemo
         }
 
 
+
         private void Logibtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(namebx.Text) || string.IsNullOrWhiteSpace(passbx.Text))
             {
                 MessageBox.Show("Please enter your username and password.", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             DBConnection.Initiate();
-            string query = "SELECT Password, Role FROM Users WHERE Username = @Username;";
+
+            string query = "SELECT UserId, First_Name, Last_Name, Username, Password, Role FROM Users WHERE Username = @Username;";
 
             using (SqlCommand cmd = new SqlCommand(query, DBConnection.checkConnection))
             {
@@ -48,29 +50,37 @@ namespace d.labdemo
                         if (!reader.Read())
                         {
                             MessageBox.Show("Record not found.", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
                         string storedHash = reader["Password"].ToString().Trim();
                         string role = reader["Role"].ToString().Trim();
 
+                        Session.UserId = Convert.ToInt32(reader["UserId"]);
+                        Session.Username = reader["Username"].ToString();
+                        Session.First_Name = reader["First_Name"].ToString();
+                        Session.Last_Name = reader["Last_Name"].ToString();
+                        Session.Role = role;
+
+                        // Verify password
                         bool passwordVerified = BCrypt.Net.BCrypt.EnhancedVerify(passbx.Text, storedHash);
                         if (!passwordVerified)
                         {
                             MessageBox.Show("Invalid username or password.", "Error",
-                                MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                                            MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                             return;
                         }
 
-                        // to check the user role
+                        // Check role
                         if (string.IsNullOrWhiteSpace(role))
                         {
-                            MessageBox.Show("You dont have a role yet \n Please wait until the admin gives role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("You don't have a role yet.\nPlease wait until the admin gives you a role.",
+                                            "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
-                        // to hide all then to show themm accordig to users role
+                        // Hide all panels first
                         loginpnl.Visible = false;
                         signuppnl.Visible = false;
                         Homepagepnl.Visible = false;
@@ -83,6 +93,7 @@ namespace d.labdemo
                         Book_addpnl.Visible = false;
                         LibrarianAdd_bookbtn.Visible = false;
 
+                        // Show based on role
                         if (role == "Super_Admin")
                         {
                             Homepagepnl.Visible = true;
@@ -122,7 +133,7 @@ namespace d.labdemo
                         else
                         {
                             MessageBox.Show($"Unrecognized role: '{role}'.\nAccess denied.",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                     }
@@ -131,13 +142,18 @@ namespace d.labdemo
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                finally
-                {
-                    DBConnection.checkConnection.Close();
-                }
+
+                DBConnection.checkConnection.Close();
             }
         }
-
+        public static class Session
+        {
+            public static int UserId { get; set; }
+            public static string Username { get; set; }
+            public static string First_Name { get; set; }
+            public static string Last_Name { get; set; }
+            public static string Role { get; set; }
+        }
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
@@ -330,6 +346,11 @@ namespace d.labdemo
         {
             profilepnl.Visible = true;
             profilepnl.BringToFront();
+            // to fill the user info
+            Profile_firstnamebx.Text = Session.First_Name;
+            Profile_lastnamebx.Text = Session.Last_Name;
+            Profile_usernamebx.Text = Session.Username;
+            Profile_rolebx.Text = Session.Role;
         }
 
         private void signup_wellcomebx_Click(object sender, EventArgs e)
@@ -438,6 +459,9 @@ namespace d.labdemo
             signuppnl.Visible = true;
             Wellcome_page.Visible = false;
             profilepnl.Visible = false;
+
+            profilepnl.Visible = true;
+            profilepnl.BringToFront();
         }
 
         private void Logoutbtn_Click(object sender, EventArgs e)
@@ -449,6 +473,12 @@ namespace d.labdemo
             // to close the previous login 
             if (DBConnection.checkConnection != null && DBConnection.checkConnection.State == ConnectionState.Open)
             {
+                // to clear users loged in data
+                Session.UserId = 0;
+                Session.Username = string.Empty;
+                Session.First_Name = string.Empty;
+                Session.Last_Name = string.Empty;
+                Session.Role = string.Empty;
                 DBConnection.checkConnection.Close();
             }
 
