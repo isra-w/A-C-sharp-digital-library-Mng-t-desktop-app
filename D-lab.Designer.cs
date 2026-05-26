@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(d_lab));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Book_catagorytab = new TabControl();
             Programmingtab = new TabPage();
             Books_programmingcatagorydatagrid = new DataGridView();
@@ -81,6 +81,8 @@
             fetch_databtn = new Button();
             LibrarianAdd_bookbtn = new Button();
             profilepnl = new Panel();
+            Profile_rolelbl = new Label();
+            Profile_rolebx = new TextBox();
             Profile_titlebar = new Panel();
             Profile_editbtn = new Button();
             Profile_viewdbookspnl = new Panel();
@@ -95,7 +97,6 @@
             Profilepic = new PictureBox();
             Editprofilepnl = new Panel();
             Homepagepnl = new Panel();
-            Book_catagorypnl = new Panel();
             Librarin_pnl = new Panel();
             panel1 = new Panel();
             Librarian_topuserspnl = new Panel();
@@ -111,6 +112,7 @@
             Timer_amountbx = new TextBox();
             Timer_typelbl = new Label();
             Timer_startbtn = new Button();
+            Book_catagorypnl = new Panel();
             Study_timer = new System.Windows.Forms.Timer(components);
             adminToolStripMenuItem = new ToolStripMenuItem();
             userToolStripMenuItem = new ToolStripMenuItem();
@@ -135,13 +137,13 @@
             Profile_viewdbookspnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).BeginInit();
             Homepagepnl.SuspendLayout();
-            Book_catagorypnl.SuspendLayout();
             Librarin_pnl.SuspendLayout();
             Librarian_allbookspnl.SuspendLayout();
             Homepnl.SuspendLayout();
             Home_titlebar.SuspendLayout();
             Studypnl.SuspendLayout();
             Study_timepnl.SuspendLayout();
+            Book_catagorypnl.SuspendLayout();
             SuspendLayout();
             // 
             // Book_catagorytab
@@ -182,14 +184,14 @@
             // Books_programmingcatagorydatagrid
             // 
             Books_programmingcatagorydatagrid.BackgroundColor = Color.DimGray;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.Teal;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            Books_programmingcatagorydatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Teal;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9.216F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            Books_programmingcatagorydatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             Books_programmingcatagorydatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Books_programmingcatagorydatagrid.Location = new Point(156, 59);
             Books_programmingcatagorydatagrid.Name = "Books_programmingcatagorydatagrid";
@@ -787,20 +789,20 @@
             // 
             // Admin_useresdatagrid
             // 
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(192, 255, 255);
-            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(192, 255, 255);
+            Admin_useresdatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             Admin_useresdatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Admin_useresdatagrid.BackgroundColor = Color.White;
             Admin_useresdatagrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.216F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(192, 0, 0);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.216F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            Admin_useresdatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             Admin_useresdatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Admin_useresdatagrid.Dock = DockStyle.Bottom;
             Admin_useresdatagrid.Location = new Point(0, 69);
@@ -833,6 +835,8 @@
             // profilepnl
             // 
             profilepnl.BackColor = Color.Honeydew;
+            profilepnl.Controls.Add(Profile_rolelbl);
+            profilepnl.Controls.Add(Profile_rolebx);
             profilepnl.Controls.Add(Profile_titlebar);
             profilepnl.Controls.Add(Profile_viewdbookspnl);
             profilepnl.Controls.Add(profilepic_updatebtn);
@@ -849,6 +853,27 @@
             profilepnl.Name = "profilepnl";
             profilepnl.Size = new Size(1157, 782);
             profilepnl.TabIndex = 3;
+            // 
+            // Profile_rolelbl
+            // 
+            Profile_rolelbl.AutoSize = true;
+            Profile_rolelbl.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Profile_rolelbl.Location = new Point(292, 324);
+            Profile_rolelbl.Name = "Profile_rolelbl";
+            Profile_rolelbl.Size = new Size(54, 30);
+            Profile_rolelbl.TabIndex = 23;
+            Profile_rolelbl.Text = "Role";
+            // 
+            // Profile_rolebx
+            // 
+            Profile_rolebx.BackColor = Color.White;
+            Profile_rolebx.Enabled = false;
+            Profile_rolebx.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold);
+            Profile_rolebx.ForeColor = Color.Black;
+            Profile_rolebx.Location = new Point(485, 328);
+            Profile_rolebx.Name = "Profile_rolebx";
+            Profile_rolebx.Size = new Size(352, 35);
+            Profile_rolebx.TabIndex = 24;
             // 
             // Profile_titlebar
             // 
@@ -880,9 +905,9 @@
             // 
             Profile_viewdbookspnl.BackColor = Color.Azure;
             Profile_viewdbookspnl.Controls.Add(Profile_mybookslbl);
-            Profile_viewdbookspnl.Location = new Point(54, 326);
+            Profile_viewdbookspnl.Location = new Point(54, 428);
             Profile_viewdbookspnl.Name = "Profile_viewdbookspnl";
-            Profile_viewdbookspnl.Size = new Size(417, 430);
+            Profile_viewdbookspnl.Size = new Size(417, 328);
             Profile_viewdbookspnl.TabIndex = 20;
             // 
             // Profile_mybookslbl
@@ -913,27 +938,33 @@
             // 
             Profile_lastnamebx.BackColor = Color.White;
             Profile_lastnamebx.Enabled = false;
+            Profile_lastnamebx.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold);
+            Profile_lastnamebx.ForeColor = Color.Black;
             Profile_lastnamebx.Location = new Point(485, 193);
             Profile_lastnamebx.Name = "Profile_lastnamebx";
-            Profile_lastnamebx.Size = new Size(352, 29);
+            Profile_lastnamebx.Size = new Size(352, 35);
             Profile_lastnamebx.TabIndex = 17;
             // 
             // Profile_usernamebx
             // 
             Profile_usernamebx.BackColor = Color.White;
             Profile_usernamebx.Enabled = false;
+            Profile_usernamebx.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold);
+            Profile_usernamebx.ForeColor = Color.Black;
             Profile_usernamebx.Location = new Point(485, 263);
             Profile_usernamebx.Name = "Profile_usernamebx";
-            Profile_usernamebx.Size = new Size(352, 29);
+            Profile_usernamebx.Size = new Size(352, 35);
             Profile_usernamebx.TabIndex = 16;
             // 
             // Profile_firstnamebx
             // 
             Profile_firstnamebx.BackColor = Color.White;
             Profile_firstnamebx.Enabled = false;
+            Profile_firstnamebx.Font = new Font("Segoe UI Semibold", 12.096F, FontStyle.Bold);
+            Profile_firstnamebx.ForeColor = Color.Black;
             Profile_firstnamebx.Location = new Point(485, 125);
             Profile_firstnamebx.Name = "Profile_firstnamebx";
-            Profile_firstnamebx.Size = new Size(352, 29);
+            Profile_firstnamebx.Size = new Size(352, 35);
             Profile_firstnamebx.TabIndex = 15;
             // 
             // Profile_usernamelbl
@@ -988,32 +1019,18 @@
             // Homepagepnl
             // 
             Homepagepnl.BackColor = Color.Black;
-            Homepagepnl.Controls.Add(Book_catagorypnl);
+            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Librarin_pnl);
             Homepagepnl.Controls.Add(Admin_userspnl);
             Homepagepnl.Controls.Add(Homepnl);
-            Homepagepnl.Controls.Add(profilepnl);
             Homepagepnl.Controls.Add(Studypnl);
+            Homepagepnl.Controls.Add(Book_catagorypnl);
             Homepagepnl.Controls.Add(sidebar);
             Homepagepnl.Dock = DockStyle.Fill;
             Homepagepnl.Location = new Point(0, 0);
             Homepagepnl.Name = "Homepagepnl";
             Homepagepnl.Size = new Size(1382, 782);
             Homepagepnl.TabIndex = 0;
-            // 
-            // Book_catagorypnl
-            // 
-            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
-            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
-            Book_catagorypnl.Controls.Add(Book_catagorytab);
-            Book_catagorypnl.Controls.Add(Book_addpnl);
-            Book_catagorypnl.Dock = DockStyle.Fill;
-            Book_catagorypnl.Location = new Point(225, 0);
-            Book_catagorypnl.Name = "Book_catagorypnl";
-            Book_catagorypnl.Size = new Size(1157, 782);
-            Book_catagorypnl.TabIndex = 7;
-            Book_catagorypnl.TabStop = true;
             // 
             // Librarin_pnl
             // 
@@ -1174,6 +1191,20 @@
             Timer_startbtn.UseVisualStyleBackColor = false;
             Timer_startbtn.Click += Timer_startbtn_Click;
             // 
+            // Book_catagorypnl
+            // 
+            Book_catagorypnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Book_catagorypnl.BackColor = Color.FromArgb(128, 64, 64);
+            Book_catagorypnl.Controls.Add(LibrarianAdd_bookbtn);
+            Book_catagorypnl.Controls.Add(Book_catagorytab);
+            Book_catagorypnl.Controls.Add(Book_addpnl);
+            Book_catagorypnl.Dock = DockStyle.Fill;
+            Book_catagorypnl.Location = new Point(225, 0);
+            Book_catagorypnl.Name = "Book_catagorypnl";
+            Book_catagorypnl.Size = new Size(1157, 782);
+            Book_catagorypnl.TabIndex = 7;
+            Book_catagorypnl.TabStop = true;
+            // 
             // Study_timer
             // 
             Study_timer.Enabled = true;
@@ -1241,7 +1272,6 @@
             Profile_viewdbookspnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Profilepic).EndInit();
             Homepagepnl.ResumeLayout(false);
-            Book_catagorypnl.ResumeLayout(false);
             Librarin_pnl.ResumeLayout(false);
             Librarian_allbookspnl.ResumeLayout(false);
             Librarian_allbookspnl.PerformLayout();
@@ -1251,6 +1281,7 @@
             Studypnl.ResumeLayout(false);
             Study_timepnl.ResumeLayout(false);
             Study_timepnl.PerformLayout();
+            Book_catagorypnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1338,5 +1369,7 @@
         private DataGridView Books_programmingcatagorydatagrid;
         private DataGridView Books_medicinecatagorydatagrid;
         private DataGridView Books_novelcatagorydatagrid;
+        private Label Profile_rolelbl;
+        private TextBox Profile_rolebx;
     }
 }
