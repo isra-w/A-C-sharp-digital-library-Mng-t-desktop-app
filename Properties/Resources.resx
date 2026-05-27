@@ -151,6 +151,9 @@
   <data name="book (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="USERS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\USERS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,7 +169,13 @@
   <data name="shelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shelf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="USERS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\USERS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AA.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BOOKS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOKS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="USERS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\USERS1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
