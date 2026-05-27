@@ -63,6 +63,16 @@ namespace D_lab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AA {
+            get {
+                object obj = ResourceManager.GetObject("AA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book {
             get {
                 object obj = ResourceManager.GetObject("book", resourceCulture);
@@ -86,6 +96,16 @@ namespace D_lab.Properties {
         internal static System.Drawing.Bitmap Book_pics {
             get {
                 object obj = ResourceManager.GetObject("Book pics", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BOOKS {
+            get {
+                object obj = ResourceManager.GetObject("BOOKS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -227,6 +247,16 @@ namespace D_lab.Properties {
         internal static System.Drawing.Bitmap USERS {
             get {
                 object obj = ResourceManager.GetObject("USERS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap USERS1 {
+            get {
+                object obj = ResourceManager.GetObject("USERS1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
