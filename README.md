@@ -460,8 +460,6 @@ For issues, questions, or suggestions:
 
 <div align="center">
 
-**Made with ❤️ by the D-Lab Team**
-
 ⭐ **If you found this useful, give it a star!** ⭐
 
 </div>
