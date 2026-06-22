@@ -4,7 +4,7 @@
 
 # 📚 D-Lab — Digital Library Management System with Study Assistant
 
-> **A feature-rich Windows Forms C# desktop application** that combines a personal digital library management system with an integrated study planning and timer feature — helping students stay organized and manage their reading progress effectively.
+> **A feature-rich Windows Forms C# desktop application** that combines a comprehensive digital library management system with an integrated study planning and timer feature — helping students and book enthusiasts stay organized and focused.
 
 <br/>
 
@@ -32,6 +32,7 @@
 - [Project Structure](#-project-structure)
 - [Architecture](#️-architecture)
 - [Database Schema](#-database-schema)
+- [Security Features](#-security-features)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -39,15 +40,16 @@
 
 ## 🎯 About the Project
 
-**D-Lab** is a comprehensive **Windows Forms desktop application** built with **C# and .NET 10** that bridges the gap between personal library management and academic productivity. It provides a complete solution for users to:
+**D-Lab** is a comprehensive **Windows Forms desktop application** built with **C# and .NET 10** that empowers users to manage their personal digital library while enhancing academic productivity. It provides a complete solution for:
 
-- 📚 **Manage a Digital Library** — Organize, search, and catalog personal book collections
+- 📚 **Manage a Digital Library** — Organize, catalog, and browse a personal collection of books across multiple categories
 - 🗓️ **Plan Study Sessions** — Schedule and track dedicated study/reading sessions
-- ⏰ **Study Timer** — Built-in timer feature with countdown display for focused study sessions
-- 👤 **Role-based Access** — Admin, Librarian, and User roles with different permissions
-- 🔐 **Secure Authentication** — BCrypt password hashing for enhanced security
+- ⏰ **Study Timer** — Built-in countdown timer with customizable duration for focused, distraction-free study sessions
+- 👥 **Role-based Access Control** — Super Admin, Admin, Librarian, and User roles with distinct permissions and interfaces
+- 🔐 **Secure Authentication** — BCrypt password hashing and parameterized SQL queries for enhanced security
+- 👤 **User Profile Management** — Update profile pictures and personal information
 
-Whether you're a student managing multiple subjects, a librarian cataloging resources, or an avid reader staying organized, D-Lab provides an efficient workflow integrated into a clean Windows Forms interface.
+Whether you're a student managing multiple subjects, a librarian cataloging resources, or an avid reader staying organized, D-Lab provides an intuitive and efficient workflow tailored to your needs.
 
 ---
 
@@ -57,49 +59,51 @@ Whether you're a student managing multiple subjects, a librarian cataloging reso
 
 | Feature | Description |
 |---|---|
-| 📖 **Book Management** | Add, edit, view, and remove books from your personal library |
-| 🔍 **Search & Filter** | Find books with advanced search and category filtering |
-| 📂 **Category Organization** | Organize books by genre and custom categories (Programming, Medicine, Novel, etc.) |
-| 📝 **Book Metadata** | Store author, title, category, and other book information |
-| 👤 **User Collections** | Each user maintains their own personal library |
+| 📖 **Book Management** | Add, edit, view, and remove books from the library (Librarian/Super Admin) |
+| 🔍 **Book Browsing** | Browse books organized by categories (Programming, Medicine, Novel, etc.) |
+| 📂 **Category Organization** | View and filter books by predefined and custom categories |
+| 📝 **Book Metadata** | Store comprehensive book information including Title, Author, Category, Year, and Format |
+| 📋 **Book Grid View** | Display books in organized data grids with sortable columns |
 
-### 🗓️ Study Assistant Module
-
-| Feature | Description |
-|---|---|
-| ⏰ **Study Timer** | Customizable countdown timer for focused study sessions |
-| 📊 **Session Tracking** | Monitor and track study session duration and progress |
-| 🎯 **Study Planning** | Plan and organize study goals linked to library books |
-| ✅ **Task Management** | Create and track study-related tasks |
-
-### 👤 User & Admin Features
+### ⏱️ Study Assistant Module
 
 | Feature | Description |
 |---|---|
-| 🔐 **Role-Based Access Control** | Admin, Librarian, and User roles with distinct interfaces |
-| 👥 **User Management** | Admins can manage users, assign roles, and view user statistics |
-| 📋 **User Approval** | Manage pending user registrations and role assignments |
-| 👤 **User Profile** | Update profile picture and personal information |
+| ⏰ **Study Timer** | Set custom study session duration in minutes with real-time countdown |
+| ⏱️ **Timer Controls** | Start/Stop functionality for flexible session management |
+| 📊 **Session Display** | Clear display of remaining time in MM:SS format |
+| 🎯 **Focus Mode** | Dedicated study panel for distraction-free timer usage |
+
+### 👥 User & Admin Features
+
+| Feature | Description |
+|---|---|
+| 🔐 **Role-Based Access Control** | Super Admin, Admin, Librarian, and User roles with distinct interfaces |
+| 👥 **User Management** | Admins can manage users, assign/modify roles, and view user statistics |
+| 📋 **User Approval** | Manage pending user registrations and assign initial roles |
+| 👤 **User Profile** | Update profile picture and view personal information |
+| 🔄 **Role Assignment** | Dynamic UI changes based on assigned user role |
 
 ---
 
 ## 🛠️ Tech Stack
 
 ```
-Language          │  C# (100%)
-Platform          │  Windows Forms Desktop Application (.NET 10)
-Database          │  Microsoft SQL Server
-Authentication    │  BCrypt.Net-Next (password hashing)
-Framework         │  .NET 10.0-windows
-Additional Tools  │  Theme Provider, Navigation Menu, Binding Provider
+Language              │  C# (.NET 10)
+Platform              │  Windows Forms Desktop Application
+Framework             │  .NET 10.0-windows
+Database              │  Microsoft SQL Server
+Authentication        │  BCrypt.Net-Next (password hashing)
+Dependencies          │  Microsoft.Data.SqlClient, Npgsql, Oracle.ManagedDataAccess.Core
 ```
 
 ### Key Dependencies
 
 - **Microsoft.Data.SqlClient 7.0.1** — SQL Server connectivity
-- **BCrypt.Net-Next 4.2.0** — Secure password hashing
-- **Kimtoo Libraries** — UI components (ThemeProvider, NavigationMenu, BindingProvider, DbManager)
 - **System.Data.SqlClient 4.9.1** — Legacy SQL support
+- **BCrypt.Net-Next 4.2.0** — Secure password hashing and verification
+- **Npgsql 10.0.2** — PostgreSQL connectivity (for future expansion)
+- **Oracle.ManagedDataAccess.Core 23.26.200** — Oracle database support
 
 ---
 
@@ -120,40 +124,38 @@ Make sure you have the following installed:
 
 ```bash
 git clone https://github.com/isra-w/A-C-sharp-digital-library-Mng-t-desktop-app.git
-```
-
-2. **Navigate into the project directory**
-
-```bash
 cd A-C-sharp-digital-library-Mng-t-desktop-app
 ```
 
-3. **Restore NuGet packages**
+2. **Restore NuGet packages**
 
 ```bash
 dotnet restore
 ```
 
-4. **Set up the database**
+3. **Set up the database**
 
    - Open SQL Server Management Studio (SSMS)
-   - Execute the `SQLQuery2.sql` script to create the database schema
-   - Update the database connection string in your project configuration
+   - Execute the `SQLQuery2.sql` script to create the database schema and tables
+   - Update the connection string in `DB/dbconnection.cs`:
+   ```csharp
+   return @"Data Source=YOUR_SERVER;Initial Catalog=d_lab;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+   ```
 
-5. **Open in Visual Studio**
+4. **Open in Visual Studio**
 
 ```bash
-# Open the solution
-start d.labdemo.slnx
-
-# Or run directly with .NET CLI
-dotnet run
+# Open the solution file
+start D_lab.slnx
 ```
 
-6. **Build & Run**
+5. **Build & Run**
 
 ```bash
+# Build the project
 dotnet build
+
+# Run the application
 dotnet run
 ```
 
@@ -161,89 +163,94 @@ dotnet run
 
 ## 📋 Usage
 
-Upon launching the application, you'll see a welcome page with options to **Login** or **Sign Up**:
+### Initial Launch
 
-### Initial Screens
+Upon launching the application, you'll encounter the **Welcome Page** with options to Login or Sign Up.
 
-```
-┌─────────────────────────────────┐
-│    D-LAB Welcome Page           │
-├─────────────────────────────────┤
-│   [Login]     [Sign Up]         │
-└─────────────────────────────────┘
-```
+### Authentication Flow
 
-### Login & Registration
+#### For New Users (Sign Up)
 
-**New Users:**
 1. Click **"Sign Up"** on the welcome screen
-2. Enter: First Name, Last Name, Username, and Password
-3. Account is created with "User" role (pending admin approval)
-4. Complete login credentials are encrypted using BCrypt
+2. Enter your details:
+   - First Name
+   - Last Name
+   - Username
+   - Password (will be hashed with BCrypt)
+3. Your account is created with a pending role status (awaiting admin approval)
+4. Return to login with your credentials once approved
 
-**Existing Users:**
-1. Enter your username and password
-2. Password is verified against the encrypted stored hash
-3. You're authenticated and redirected to your role-specific dashboard
+#### For Existing Users (Login)
 
-### User Dashboard (User Role)
+1. Enter your **Username** and **Password**
+2. Credentials are validated against the database
+3. Password is verified using BCrypt enhanced verification
+4. If role is not yet assigned, you'll see an access denied message
+5. Upon successful authentication, you're redirected to your role-specific dashboard
 
-After login, users with the **User** role see:
+### Role-Based Dashboards
 
-```
-┌──────────────────────────────────┐
-│      D-LAB Main Menu             │
-├──────────────────────────────────┤
-│  [📚 Books]                      │
-│  [🗓️  Study Assistant]           │
-│  [👤 Profile]                    │
-│  [🚪 Logout]                     │
-└──────────────────────────────────┘
-```
+#### 👤 User Role
+After login, regular users can access:
+- **Books Section** — Browse books by category (Programming, Medicine, Novel)
+- **Study Assistant** — Access the countdown timer
+- **Profile** — View and update personal information
 
-**Books Section:**
-- View all available books in the library
-- Filter by category (Programming, Medicine, Novel, etc.)
-- Add books to your personal collection
-- Manage reading status
+#### 🔧 Librarian Role
+Librarians have access to:
+- **Library Management** — Add new books to the catalog
+- **Book Management** — Edit and manage book information
+- **Category Management** — Organize books by categories
+- **Books Section** — Browse the complete library
 
-**Study Assistant:**
-- Access the study timer (set custom duration in minutes)
-- Start/Stop countdown sessions
-- Track study session duration
+#### ⚙️ Admin Role
+Admins can:
+- **User Management** — View all registered users
+- **Role Assignment** — Assign and modify user roles
+- **Filter by Role** — View users filtered by role (All, Super_Admin, Admin, User, Librarian, Pending)
+- **User Statistics** — Monitor user count and role distribution
 
-**Profile:**
-- Update profile picture
-- View and edit personal information
+#### 🏆 Super Admin Role
+Super Admins have full access to:
+- All Admin features
+- All Librarian features
+- All User features
+- Complete system control
 
-### Admin Dashboard (Admin Role)
+### How to Use Features
 
-Admins have access to:
+#### 📚 Managing Books (Librarian/Super Admin)
 
-```
-┌──────────────────────────────────┐
-│      D-LAB Admin Panel           │
-├──────────────────────────────────┤
-│  [📊 Manage Users]               │
-│  [👥 View Statistics]            │
-│  [🚪 Logout]                     │
-└──────────────────────────────────┘
-```
+1. Click **"Manage Books"** button
+2. Fill in book details:
+   - **Title** (Required) — Book name
+   - **Author** (Required) — Author name
+   - **Category** — Select from dropdown
+   - **Publication Year** — Select date
+   - **Format** — Choose format type
+3. Click **"Add"** to save the book
+4. Success message confirms addition to the library
 
-**User Management:**
-- View all registered users
-- Filter by role: All, Admin, User, Librarian, Pending
-- Assign roles to pending users
-- Update user roles (Admin, User, Librarian)
-- View user details (ID, Name, Username)
+#### ⏰ Using the Study Timer (All Users)
 
-### Librarian Dashboard (Librarian Role)
+1. Click **"Study Assistant"** on the home menu
+2. Enter desired study duration in **minutes**
+3. Click **"START"** to begin the countdown
+4. Timer displays remaining time in **MM:SS** format
+5. Click **"STOP"** to pause the timer
+6. Resume by clicking **"START"** again
 
-Librarians can:
-- Add new books to the library
-- Manage library catalog
-- Update book information
-- Manage book categories
+#### 👤 Updating Profile
+
+1. Click **"Profile"** link on the navigation
+2. View current profile information:
+   - First Name
+   - Last Name
+   - Username
+   - Current Role
+3. Click **"Edit"** to update profile picture
+4. Select an image file (JPG, PNG, JPEG)
+5. Changes are saved to the user profile
 
 ---
 
@@ -252,59 +259,57 @@ Librarians can:
 ```
 A-C-sharp-digital-library-Mng-t-desktop-app/
 │
-├── 📄 Program.cs                    # Application entry point
-├── 📄 Form1.cs                      # Main form (d_lab) - primary UI logic
-├── 📄 Form1.Designer.cs             # Auto-generated Windows Forms designer code
-├── 📄 Form1.resx                    # Form resources
-├── 📄 Add_bookusercontrol.cs        # User control for adding books (empty stub)
+├── 📄 Program.cs                           # Application entry point
+├── 📄 D-lab.cs                             # Main form - primary UI and business logic
+├── 📄 D-lab.Designer.cs                    # Auto-generated Windows Forms designer code
+├── 📄 D-lab.resx                           # Form resources
 │
-├── 📁 Models/                       # Data model classes
-│   └── (Model definitions for entities)
+├── 📁 DB/                                  # Database layer
+│   └── 📄 dbconnection.cs                  # Database connection management
 │
-├── 📁 DB/                           # Database layer
-│   ├── DBConnection.cs              # Database connection management
-│   └── (Database-related code)
+├── 📁 User controls/                       # Custom Windows Forms user controls
+│   ├── 📄 Add_bookucontrol.cs              # User control for adding/managing books
+│   ├── 📄 Add_bookucontrol.Designer.cs     # Designer file for book control
+│   ├── 📄 Add_bookucontrol.resx            # Resources for book control
+│   ├── 📄 Profile_updateucontrol.cs        # User control for profile updates
+│   ├── 📄 Profile_updateucontrol.Designer.cs
+│   └── 📄 Profile_updateucontrol.resx
 │
-├── 📁 User controls/                # Custom Windows Forms user controls
-│   └── (Reusable UI components)
+├── 📁 Properties/                          # .NET project properties
+│   ├── 📄 Resources.resx                   # Resource definitions
+│   └── 📄 Resources.Designer.cs            # Auto-generated resource accessor
 │
-├── 📁 Resources/                    # Application resources
-│   └── (Images, icons, etc.)
+├── 📁 Resources/                           # Application resources (images, icons, etc.)
 │
-├── 📁 Properties/                   # .NET project properties
-│   ├── Resources.resx               # Resource definitions
-│   └── Resources.Designer.cs        # Auto-generated resource accessor
+├── 📁 diagrams for d_lab/                  # Visual diagrams and documentation
 │
-├── 📄 D_lab.csproj             # Project configuration
-├── 📄 d.labdemo.slnx               # Solution file
+├── 📄 D_lab.csproj                         # Project configuration and dependencies
+├── 📄 D_lab.slnx                           # Solution file
 │
-├── 📄 SQLQuery2.sql                 # Database schema/migration script
-├── 📄 .gitignore                    # Git ignore rules
-├── 📄 .gitattributes               # Git attributes
+├── 📄 SQLQuery2.sql                        # Database schema and migration script
+├── 📄 .gitignore                           # Git ignore rules
+├── 📄 .gitattributes                       # Git attributes
 │
-└── 📄 README.md                     # You are here 👋
+└── 📄 README.md                            # You are here 👋
 ```
 
-### Key Files
+### Key Files Explained
 
-- **Program.cs** — Entry point that initializes and runs the WinForms application
-- **Form1.cs (d_lab)** — Main application form containing all UI logic:
-  - Login/Registration workflow
-  - Role-based UI rendering
-  - User management for admins
-  - Study timer implementation
-  - Database interactions
-- **Form1.Designer.cs** — Auto-generated designer file with control definitions (48KB)
-- **Add_bookusercontrol.cs** — User control template for book addition (currently empty)
-- **SQLQuery2.sql** — Database migration script for table schema setup
+| File | Purpose |
+|---|---|
+| **Program.cs** | Entry point; initializes and runs the WinForms application |
+| **D-lab.cs** | Main form containing all UI logic, authentication, role management, and feature implementations |
+| **D-lab.Designer.cs** | Auto-generated designer code with control definitions |
+| **dbconnection.cs** | Manages database connections and SQL query execution |
+| **Add_bookucontrol.cs** | User control for book addition with form validation and database insertion |
+| **Profile_updateucontrol.cs** | User control for profile picture and information updates |
+| **SQLQuery2.sql** | Database schema defining Users, Books, and related tables |
 
 ---
 
 ## 🏗️ Architecture
 
-The application follows a **layered architecture** with separation of concerns:
-
-### Architecture Diagram
+The application follows a **layered architecture** with clear separation of concerns:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -314,45 +319,51 @@ The application follows a **layered architecture** with separation of concerns:
 │  ┌──────────────────────────────────────────────────────┐  │
 │  │        Presentation Layer (Windows Forms)            │  │
 │  │  ┌─────────────────────────────────────────────────┐ │  │
-│  │  │  Form1 (d_lab) - Main Form                     │ │  │
-│  │  │  - Welcome Page                                │ │  │
-│  │  │  - Login/Registration                          │ │  │
-│  │  │  - Book Category Panel                         │ │  │
-│  │  │  - User Management Panel                       │ │  │
-│  │  │  - Study Assistant Panel                       │ │  │
-│  │  │  - Profile Panel                               │ │  │
+│  │  │  D-lab.cs - Main Form                          │ │  │
+│  │  │  ├─ Welcome/Login/SignUp Panels               │ │  │
+│  │  │  ├─ Book Category Display                      │ │  │
+│  │  │  ├─ User Management Dashboard                 │ │  │
+│  │  │  ├─ Study Assistant Panel (Timer)             │ │  │
+│  │  │  ├─ Profile Management Panel                  │ │  │
+│  │  │  └─ Role-Based UI Rendering                   │ │  │
 │  │  └─────────────────────────────────────────────────┘ │  │
 │  │  ┌─────────────────────────────────────────────────┐ │  │
 │  │  │  User Controls                                 │ │  │
-│  │  │  - Add_bookusercontrol                        │ │  │
+│  │  │  ├─ Add_bookucontrol - Book Addition          │ │  │
+│  │  │  └─ Profile_updateucontrol - Profile Update   │ │  │
 │  │  └─────────────────────────────────────────────────┘ │  │
 │  └──────────────────────────────────────────────────────┘  │
 │                           │                                │
 ├────────────────────────────┴────────────────────────────────┤
 │                   Business Logic Layer                      │
-│  - Authentication & password verification (BCrypt)         │
-│  - Study timer logic                                        │
-│  - Role-based access control                               │
-│  - User and book management workflows                       │
-├─────────────────────────────────────────────────────────────┤
+│  ├─ Authentication & BCrypt password verification          │
+│  ├─ Study timer countdown logic                            │
+│  ├─ Role-based access control                              │
+│  ├─ User and book management workflows                     │
+│  ├─ Book category filtering                                │
+│  └─ Profile management                                     │
+├───────────────────────────────────────���─────────────────────┤
 │                   Data Access Layer (DB)                    │
-│  - DBConnection - SQL Server connection management         │
-│  - Direct SQL queries                                       │
-│  - Data reader operations                                   │
+│  ├─ DBConnection - SQL Server connection pooling           │
+│  ├─ Parameterized SQL queries                              │
+│  ├─ SqlDataAdapter for data binding                        │
+│  ├─ SqlDataReader for result processing                    │
+│  └─ Connection state management                            │
 ├─────────────────────────────────────────────────────────────┤
 │              Database Layer (SQL Server)                    │
-│  - Users Table (authentication & role storage)              │
-│  - Books Table (library catalog)                            │
-│  - Study Sessions & Tasks (planning features)               │
+│  ├─ Users Table (authentication & role storage)            │
+│  ├─ Books Table (library catalog)                          │
+│  └─ Related tables for extended functionality              │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Design Patterns
+### Design Patterns Used
 
 - **Layered Architecture** — Clear separation between presentation, business logic, and data access
-- **Windows Forms Pattern** — Standard .NET Forms with designer-generated UI
-- **Singleton-like Connection** — DBConnection manages shared database connections
-- **Role-Based Access Control** — Different UI/features based on user role
+- **MVC-inspired Pattern** — Windows Forms with separated control logic
+- **Session Management** — Static Session class for maintaining user context
+- **Role-Based Access Control (RBAC)** — Different UI and features based on assigned role
+- **Parameterized Queries** — SQL injection prevention
 
 ---
 
@@ -366,100 +377,164 @@ CREATE TABLE Users (
     First_Name NVARCHAR(MAX) NOT NULL,
     Last_Name NVARCHAR(MAX) NOT NULL,
     Username NVARCHAR(MAX) NOT NULL,
-    Password NVARCHAR(MAX) NOT NULL,  -- BCrypt hashed
-    Role NVARCHAR(MAX) NULL           -- 'Admin', 'User', 'Librarian', or NULL (Pending)
-)
+    Password NVARCHAR(MAX) NOT NULL,          -- BCrypt hashed password
+    Role NVARCHAR(MAX) NULL                   -- 'Super_Admin', 'Admin', 'Librarian', 'User', or NULL (Pending)
+);
 ```
 
-### Supported Roles
+### Books Table
 
-- **Admin** — Full system access, user management, role assignment
-- **User** — Access to library, personal collections, study tools
-- **Librarian** — Can add and manage books in the library
-- **Pending** — New users awaiting role assignment (Role = NULL)
+```sql
+CREATE TABLE Books (
+    BookId INT PRIMARY KEY IDENTITY(1, 1),
+    Title NVARCHAR(MAX) NOT NULL,
+    Author NVARCHAR(MAX) NOT NULL,
+    Category NVARCHAR(MAX) NOT NULL,          -- 'Programming', 'Medicine', 'Novel', etc.
+    Year INT NOT NULL,
+    Format NVARCHAR(MAX) NOT NULL,            -- Book format (PDF, Hardcover, eBook, etc.)
+    AddedBy INT NOT NULL,
+    AddedDate DATETIME DEFAULT GETDATE()
+);
+```
 
-### Other Tables
+### Supported User Roles
 
-The schema includes tables for:
-- **Books** — Digital library catalog (category, author, title, etc.)
-- **Study Sessions** — User study session records
-- **Tasks** — Study-related tasks and goals
-
-(See SQLQuery2.sql for complete schema)
+| Role | Permissions |
+|---|---|
+| **Super_Admin** | Full system access, all features, complete control |
+| **Admin** | User management, role assignment, user statistics |
+| **Librarian** | Add/edit/delete books, manage library catalog, category management |
+| **User** | Browse library, add to personal collection, use study timer, update profile |
+| **Pending** | None - awaiting role assignment from admin (Role = NULL) |
 
 ---
 
 ## 🔐 Security Features
 
-- **BCrypt Password Hashing** — Passwords are hashed using BCrypt.Net-Next with enhanced verification
-- **Parameterized Queries** — SQL injection prevention via parameterized SqlCommand
-- **Role-Based Access Control** — Different UI and features based on user role
-- **Secure Connection** — Uses Microsoft.Data.SqlClient for secure database communication
+- **BCrypt Password Hashing** — Industry-standard password hashing with enhanced verification
+- **Parameterized SQL Queries** — Full SQL injection prevention
+- **Secure Database Connection** — TLS/SSL encryption for database communications
+- **Role-Based Access Control** — UI and features restricted by user role
+- **Session State Management** — Secure session tracking with user context
+- **Input Validation** — Required field validation before database operations
+- **Error Handling** — Graceful exception handling with user-friendly messages
 
 ---
 
-## 🗺️ Roadmap
+## 🛣️ Development Roadmap
 
-- [x] Core digital library management
-- [x] User authentication with role-based access
-- [x] Study timer with countdown
-- [x] User management dashboard (Admin)
+### ✅ Completed Features
+- [x] Core digital library management system
+- [x] User authentication with BCrypt hashing
+- [x] Role-based access control (4 roles)
+- [x] Study timer with countdown functionality
+- [x] User management dashboard for admins
 - [x] Windows Forms UI implementation
-- [ ] Enhanced UI/UX improvements
+- [x] Profile management with picture upload
+
+### 🚀 Planned Enhancements
+- [ ] Enhanced UI/UX with modern styling
+- [ ] Book search functionality
+- [ ] User reading history tracking
 - [ ] Data export (PDF/Excel reports)
 - [ ] Reading progress analytics
+- [ ] Study session statistics
 - [ ] Cloud backup/sync support
 - [ ] Mobile companion app
+- [ ] Dark mode support
+- [ ] Notification system
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how to get involved:
+Contributions are welcome! We appreciate your interest in improving D-Lab. Here's how to contribute:
+
+### Getting Started
 
 1. **Fork** the repository
-2. **Create** a feature branch:
+2. **Clone** your fork locally
+3. **Create** a feature branch with a descriptive name:
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b feature/add-search-functionality
    ```
-3. **Commit** your changes:
+
+### Making Changes
+
+1. **Make** your code changes
+2. **Test** thoroughly before committing
+3. **Follow** C# naming conventions:
+   - `PascalCase` for classes, methods, and properties
+   - `camelCase` for local variables
+   - `_camelCase` for private fields
+4. **Comment** complex logic
+5. **Keep commits** atomic and well-described
+
+### Submitting Changes
+
+1. **Commit** your changes with clear messages:
    ```bash
-   git commit -m "feat: add your feature description"
+   git commit -m "feat: add book search functionality"
+   git commit -m "fix: resolve timer bug"
    ```
-4. **Push** to your branch:
+2. **Push** to your fork:
    ```bash
-   git push origin feature/your-feature-name
+   git push origin feature/add-search-functionality
    ```
-5. **Open** a Pull Request and describe your changes
+3. **Open** a Pull Request with:
+   - Clear description of changes
+   - Reference to related issues
+   - Before/after screenshots if UI changes
 
 ### Guidelines
 
-- Follow C# naming conventions (PascalCase for classes, camelCase for variables)
-- Include comments for complex logic
-- Test your changes before submitting a PR
-- Update this README if adding new features
+- Follow existing code style and patterns
+- Write meaningful commit messages
+- Test all changes before submitting PR
+- Update README if adding new features
+- No breaking changes without discussion
+- Request code review before merging
 
-> 💡 Found a bug? Have a feature request? [Open an issue](https://github.com/isra-w/A-C-sharp-digital-library-Mng-t-desktop-app/issues)!
+### Reporting Issues
+
+Found a bug? Have a feature request? We'd love to hear from you!
+
+- **Issues**: [Open an issue](https://github.com/isra-w/A-C-sharp-digital-library-Mng-t-desktop-app/issues)
+- **Discussions**: Use GitHub Discussions for questions and ideas
+- **Contact**: [@isra-w](https://github.com/isra-w)
 
 ---
 
 ## 📄 License
 
-This project is currently unlicensed. Please review the repository for licensing details or contact the maintainer.
+This project is currently **unlicensed**. For licensing information or to request a specific license, please contact the repository maintainer at [@isra-w](https://github.com/isra-w).
 
 ---
 
-## 📞 Support
+## 📞 Support & Contact
 
-For issues, questions, or suggestions:
+Need help? Have questions? Here's how to reach out:
 
-- **Issues**: [GitHub Issues](https://github.com/isra-w/A-C-sharp-digital-library-Mng-t-desktop-app/issues)
-- **Owner**: [@isra-w](https://github.com/isra-w)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/isra-w/A-C-sharp-digital-library-Mng-t-desktop-app/issues)
+- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/isra-w/A-C-sharp-digital-library-Mng-t-desktop-app/discussions)
+- **Repository Owner**: [@isra-w](https://github.com/isra-w)
+
+---
+
+## 🌟 Acknowledgments
+
+- Built with [.NET 10](https://dotnet.microsoft.com/)
+- Secure password hashing with [BCrypt.Net-Next](https://github.com/BcryptNet/bcrypt.net)
+- Database connectivity via [Microsoft.Data.SqlClient](https://github.com/dotnet/SqlClient)
 
 ---
 
 <div align="center">
 
-⭐ **If you found this useful, give it a star!** ⭐
+**⭐ If you find this project helpful, please consider giving it a star! ⭐**
+
+Made with ❤️ by [@isra-w](https://github.com/isra-w)
+
+[Back to top](#-d-lab--digital-library-management-system-with-study-assistant)
 
 </div>
